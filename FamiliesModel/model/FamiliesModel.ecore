@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="FamiliesModel" nsURI="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore"
+    nsPrefix="FamiliesModel">
+  <eClassifiers xsi:type="ecore:EClass" name="Families">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="family" upperBound="-1"
+        eType="#//Family" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Family">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="father" eType="#//FamilyMember"
+        containment="true" eOpposite="#//FamilyMember/family_father"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mother" eType="#//FamilyMember"
+        containment="true" eOpposite="#//FamilyMember/family_mother"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sons" upperBound="-1" eType="#//FamilyMember"
+        containment="true" eOpposite="#//FamilyMember/family_son"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="daughters" upperBound="-1"
+        eType="#//FamilyMember" containment="true" eOpposite="#//FamilyMember/family_daughter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="familyName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FamilyMember">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="family_father" eType="#//Family"
+        eOpposite="#//Family/father"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="family_mother" eType="#//Family"
+        eOpposite="#//Family/mother"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="family_son" eType="#//Family"
+        eOpposite="#//Family/sons"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="family_daughter" eType="#//Family"
+        eOpposite="#//Family/daughters"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="firstName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
