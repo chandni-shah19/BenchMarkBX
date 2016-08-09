@@ -1,6 +1,7 @@
 package org.benchmarx.familiestopersons;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.IOException;
 
@@ -35,11 +36,23 @@ public class CreateRootElements {
 	@Test
 	public void testCreateFamilyRegister() {
 		tool.initiateSynchronisationDialogue();  // Expect root elements of both source and target models to be consistently created
+		tool.checkCreateFamiliesRoot();
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		familiesComparator.compare(tool.getSourceModel(), (Families) loadExpectedModel("families1"));
 		personsComparator.compare(tool.getTargetModel(), (Persons) loadExpectedModel("persons1"));
 	}
 	
+
+	public void checkCreateFamiliesRoot() {
+		int familyRegister = 0;
+		Resource familyModel = (Resource) tool.getSourceModel();
+		for ( EObject obj : familyModel.getContents()) {
+			if ( obj.eClass().getName().equals("Families"))
+				familyRegister ++;
+		}
+		assertEquals ("Expected root element of Families model ", 1, familyRegister);
+		}		
+
 	private EObject loadExpectedModel(String name) {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		Resource resource = resourceSet.createResource(URI.createFileURI("resources/" + name + ".xmi"));
