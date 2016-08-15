@@ -14,5 +14,4 @@ public interface BXTool<S, T> {
 
 	public T getTargetModel();
 
-	public void checkCreateFamiliesRoot();
 }

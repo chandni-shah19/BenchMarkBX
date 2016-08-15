@@ -11,5 +11,10 @@ Require-Bundle: org.eclipse.emf.ecore,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtend.lib,
- org.eclipse.xtend.lib.macro
+ org.eclipse.xtend.lib.macro,
+ FamiliesToPersons
+Import-Package: FamiliesToPersons,
+ FamiliesToPersons.impl,
+ org.moflon.tgg.algorithm.synchronization,
+ org.moflon.tie
 
