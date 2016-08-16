@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FamiliesModel:Families
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:FamiliesModel="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore"
+    xsi:schemaLocation="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore ../../FamiliesModel/model/FamiliesModel.ecore">
+  <family familyName="Simpson"/>
+</FamiliesModel:Families>
