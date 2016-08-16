@@ -1,6 +1,7 @@
 package org.benchmarkx.emoflon;
 import java.util.function.Consumer;
 
+import org.apache.log4j.BasicConfigurator;
 import org.benchmarx.core.BXTool;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -19,6 +20,7 @@ public class EMoflon implements BXTool<Families, Persons>   {
 	
 	@Override
 	public void initiateSynchronisationDialogue() {
+		BasicConfigurator.configure();
 		helper = new SynchronizationHelper(FamiliesToPersonsPackage.eINSTANCE, "../FamiliesToPersons");
 		Resource r = helper.getResourceSet().createResource(URI.createURI("sourceModel"));
 		Families familiesRoot = FamiliesModelFactory.eINSTANCE.createFamilies();
