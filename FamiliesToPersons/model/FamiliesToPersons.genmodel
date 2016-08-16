@@ -1,0 +1,1400 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/FamiliesToPersons/gen" modelPluginID="FamiliesToPersons"
+    modelName="FamiliesToPersons" updateClasspath="false" codeFormatting="true" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.genmodel#//runtime platform:/plugin/FamiliesModel/model/FamiliesModel.genmodel#//FamiliesModel platform:/plugin/PersonsModel/model/PersonsModel.genmodel#//PersonsModel platform:/plugin/org.moflon.tgg.language/model/Language.genmodel#//language platform:/plugin/SDMLanguage/model/SDMLanguage.genmodel#//SDMLanguage platform:/plugin/MocaTree/model/MocaTree.genmodel#//MocaTree"
+    operationReflection="true">
+  <foreignModel>FamiliesToPersons.ecore</foreignModel>
+  <genPackages prefix="FamiliesToPersons" disposableProviderFactory="true" ecorePackage="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#/">
+    <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/target"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr/target"/>
+    </genClasses>
+    <nestedGenPackages prefix="Rules" basePackage="FamiliesToPersons" disposableProviderFactory="true"
+        loadInitialization="true" literalsInterface="false" ecorePackage="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules">
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FamilyMember2Person"/>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD_EMoflonEdge_0">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_FWD_EMoflonEdge_0/_edge_family"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD_EMoflonEdge_0">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isAppropriate_BWD_EMoflonEdge_0/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherToFemale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_FWD_Families_0">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_FWD_Families_0/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_BWD_Persons_0">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isAppropriate_BWD_Persons_0/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel/ruleEntryContainer"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/Families2Persons/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD_EMoflonEdge_1">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_FWD_EMoflonEdge_1/_edge_family"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD_EMoflonEdge_1">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isAppropriate_BWD_EMoflonEdge_1/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterToFemale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD_EMoflonEdge_2">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_FWD_EMoflonEdge_2/_edge_family_son"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD_EMoflonEdge_2">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isAppropriate_BWD_EMoflonEdge_2/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonOfExistingFamilyToMale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD_EMoflonEdge_3">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_FWD_EMoflonEdge_3/_edge_family_daughter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD_EMoflonEdge_3">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isAppropriate_BWD_EMoflonEdge_3/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/DaughterOfExistingFamilyToFemale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/ExistingFamily2Person"/>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD_EMoflonEdge_4">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_FWD_EMoflonEdge_4/_edge_family_father"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD_EMoflonEdge_4">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isAppropriate_BWD_EMoflonEdge_4/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherOfExistingFamilyToMale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD_EMoflonEdge_5">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_FWD_EMoflonEdge_5/_edge_family"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD_EMoflonEdge_5">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isAppropriate_BWD_EMoflonEdge_5/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/FatherToMale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD_EMoflonEdge_6">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_FWD_EMoflonEdge_6/_edge_family_mother"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD_EMoflonEdge_6">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isAppropriate_BWD_EMoflonEdge_6/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/MotherOfExistingFamilyToFemale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale">
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjectsToMatch_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_solveCsp_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/familyMember2Persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/registerObjects_BWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD_EMoflonEdge_7">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_FWD_EMoflonEdge_7/_edge_family"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD_EMoflonEdge_7">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isAppropriate_BWD_EMoflonEdge_7/_edge_person"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_CC">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/perform_CC/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_FWD/f"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_FWD/fm"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_FWD/families"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_BWD/p"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/checkDEC_BWD/persons"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel/families2personsParameter"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD/families2persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD/persons"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD/families"/>
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules/SonToMale/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

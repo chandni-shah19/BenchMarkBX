@@ -1,0 +1,21 @@
+#using FamiliesToPersons.*
+#using AttrCondDefLibrary.*
+
+#abstract #rule ExistingFamily2Person #extends FamilyMember2Person #with FamiliesToPersons
+
+#source { 
+	families : Families {
+		-family->f
+	}
+	f : Family
+}
+
+#target {
+}
+
+#correspondence {
+}
+
+#attributeConditions {
+	
+}

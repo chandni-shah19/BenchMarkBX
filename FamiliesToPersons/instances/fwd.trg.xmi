@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<PersonsModel:Persons xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:PersonsModel="platform:/plugin/PersonsModel/model/PersonsModel.ecore">
+  <person xsi:type="PersonsModel:Male" fullName="Oppermann, Martin"/>
+  <person xsi:type="PersonsModel:Female" fullName="Oppermann, Sigrid"/>
+  <person xsi:type="PersonsModel:Female" fullName="Robrecht, Mareike"/>
+  <person xsi:type="PersonsModel:Male" fullName="Robrecht, Patrick"/>
+  <person xsi:type="PersonsModel:Male" fullName="Robrecht, Hubert"/>
+  <person xsi:type="PersonsModel:Male" fullName="Oppermann, Robin"/>
+  <person xsi:type="PersonsModel:Female" fullName="Robrecht, Dagmar"/>
+</PersonsModel:Persons>

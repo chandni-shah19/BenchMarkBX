@@ -1,0 +1,28 @@
+#using FamiliesToPersons.*
+#using AttrCondDefLibrary.*
+
+#rule FatherToMale #extends FamilyMember2Person #with FamiliesToPersons
+
+#source { 
+	++ f : Family {
+		
+	}
+	++ fm : FamilyMember {
+		++ -family_father->f
+	}
+}
+
+#target {
+	++ p : Male
+}
+
+#correspondence {
+	++ familyMember2Persons : FamilyMemberToPerson {
+		#src->fm
+		#trg->p
+	}
+}
+
+#attributeConditions {
+	
+}

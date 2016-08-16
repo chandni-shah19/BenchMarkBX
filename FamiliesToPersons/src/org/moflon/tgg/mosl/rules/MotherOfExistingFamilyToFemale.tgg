@@ -1,0 +1,12 @@
+#using FamiliesToPersons.*
+#using AttrCondDefLibrary.*
+
+#rule MotherOfExistingFamilyToFemale #extends ExistingFamily2Person, MotherToFemale #with FamiliesToPersons
+
+#source {
+	! existingMother : FamilyMember{
+		-family_mother->f
+	}
+	
+	f : Family 
+}

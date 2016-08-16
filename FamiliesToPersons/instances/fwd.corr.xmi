@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:CorrespondenceModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:FamiliesToPersons="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore" xmlns:PersonsModel="platform:/plugin/PersonsModel/model/PersonsModel.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <correspondences xsi:type="FamiliesToPersons:FamiliesToPersonsCorr">
+    <source href="fwd.src.xmi#/"/>
+    <target href="fwd.trg.xmi#/"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.0/@father"/>
+    <target xsi:type="PersonsModel:Male" href="fwd.trg.xmi#//@person.0"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.0/@mother"/>
+    <target xsi:type="PersonsModel:Female" href="fwd.trg.xmi#//@person.1"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.1/@daughters.0"/>
+    <target xsi:type="PersonsModel:Female" href="fwd.trg.xmi#//@person.2"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.1/@sons.0"/>
+    <target xsi:type="PersonsModel:Male" href="fwd.trg.xmi#//@person.3"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.1/@father"/>
+    <target xsi:type="PersonsModel:Male" href="fwd.trg.xmi#//@person.4"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.0/@sons.0"/>
+    <target xsi:type="PersonsModel:Male" href="fwd.trg.xmi#//@person.5"/>
+  </correspondences>
+  <correspondences xsi:type="FamiliesToPersons:FamilyMemberToPerson">
+    <source href="fwd.src.xmi#//@family.1/@mother"/>
+    <target xsi:type="PersonsModel:Female" href="fwd.trg.xmi#//@person.6"/>
+  </correspondences>
+  <source href="fwd.src.xmi#/"/>
+  <target href="fwd.trg.xmi#/"/>
+</org.moflon.tgg.runtime:CorrespondenceModel>
