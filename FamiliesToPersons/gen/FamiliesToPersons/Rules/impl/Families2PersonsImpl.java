@@ -31,10 +31,10 @@ import org.moflon.tgg.language.csp.CSP;
 import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
+import org.moflon.tgg.runtime.CCMatch;
 import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
-import org.moflon.tgg.runtime.IsApplicableMatchCC;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
 import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
@@ -153,39 +153,39 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		Families families = (Families) result1_bindingAndBlack[0];
 		// CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = Families2PersonsImpl
-				.pattern_Families2Persons_1_1_performtransformation_greenFFB(families);
-		Persons persons = (Persons) result1_green[0];
-		FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result1_green[1];
+				.pattern_Families2Persons_1_1_performtransformation_greenFBF(families);
+		FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result1_green[0];
+		Persons persons = (Persons) result1_green[2];
 
 		// collect translated elements
 		Object[] result2_black = Families2PersonsImpl
-				.pattern_Families2Persons_1_2_collecttranslatedelements_blackBBB(persons, families2persons, families);
+				.pattern_Families2Persons_1_2_collecttranslatedelements_blackBBB(families2persons, families, persons);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching in node [collect translated elements] failed." + " Variables: "
-					+ "[persons] = " + persons + ", " + "[families2persons] = " + families2persons + ", "
-					+ "[families] = " + families + ".");
+					+ "[families2persons] = " + families2persons + ", " + "[families] = " + families + ", "
+					+ "[persons] = " + persons + ".");
 		}
 		Object[] result2_green = Families2PersonsImpl
-				.pattern_Families2Persons_1_2_collecttranslatedelements_greenFBBB(persons, families2persons, families);
+				.pattern_Families2Persons_1_2_collecttranslatedelements_greenFBBB(families2persons, families, persons);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		// bookkeeping for edges
 		Object[] result3_black = Families2PersonsImpl.pattern_Families2Persons_1_3_bookkeepingforedges_blackBBBB(
-				ruleresult, persons, families2persons, families);
+				ruleresult, families2persons, families, persons);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching in node [bookkeeping for edges] failed." + " Variables: "
-					+ "[ruleresult] = " + ruleresult + ", " + "[persons] = " + persons + ", " + "[families2persons] = "
-					+ families2persons + ", " + "[families] = " + families + ".");
+					+ "[ruleresult] = " + ruleresult + ", " + "[families2persons] = " + families2persons + ", "
+					+ "[families] = " + families + ", " + "[persons] = " + persons + ".");
 		}
-		Families2PersonsImpl.pattern_Families2Persons_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, persons,
-				families2persons, families);
-		// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[4];
-		// EMoflonEdge families2persons__families____source = (EMoflonEdge) result3_green[5];
+		Families2PersonsImpl.pattern_Families2Persons_1_3_bookkeepingforedges_greenBBBBFF(ruleresult, families2persons,
+				families, persons);
+		// EMoflonEdge families2persons__families____source = (EMoflonEdge) result3_green[4];
+		// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[5];
 
 		// perform postprocessing story node is empty
 		// register objects
-		Families2PersonsImpl.pattern_Families2Persons_1_5_registerobjects_expressionBBBBB(this, ruleresult, persons,
-				families2persons, families);
+		Families2PersonsImpl.pattern_Families2Persons_1_5_registerobjects_expressionBBBBB(this, ruleresult,
+				families2persons, families, persons);
 		return Families2PersonsImpl.pattern_Families2Persons_1_6_expressionFB(ruleresult);
 	}
 
@@ -333,11 +333,11 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject persons, EObject families2persons,
-			EObject families) {
-		ruleresult.registerObject("persons", persons);
+	public void registerObjects_FWD(PerformRuleResult ruleresult, EObject families2persons, EObject families,
+			EObject persons) {
 		ruleresult.registerObject("families2persons", families2persons);
 		ruleresult.registerObject("families", families);
+		ruleresult.registerObject("persons", persons);
 
 	}
 
@@ -418,39 +418,39 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		Persons persons = (Persons) result1_bindingAndBlack[0];
 		// CSP csp = (CSP) result1_bindingAndBlack[1];
 		Object[] result1_green = Families2PersonsImpl
-				.pattern_Families2Persons_11_1_performtransformation_greenBFF(persons);
-		FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result1_green[1];
-		Families families = (Families) result1_green[2];
+				.pattern_Families2Persons_11_1_performtransformation_greenFFB(persons);
+		FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result1_green[0];
+		Families families = (Families) result1_green[1];
 
 		// collect translated elements
 		Object[] result2_black = Families2PersonsImpl
-				.pattern_Families2Persons_11_2_collecttranslatedelements_blackBBB(persons, families2persons, families);
+				.pattern_Families2Persons_11_2_collecttranslatedelements_blackBBB(families2persons, families, persons);
 		if (result2_black == null) {
 			throw new RuntimeException("Pattern matching in node [collect translated elements] failed." + " Variables: "
-					+ "[persons] = " + persons + ", " + "[families2persons] = " + families2persons + ", "
-					+ "[families] = " + families + ".");
+					+ "[families2persons] = " + families2persons + ", " + "[families] = " + families + ", "
+					+ "[persons] = " + persons + ".");
 		}
 		Object[] result2_green = Families2PersonsImpl
-				.pattern_Families2Persons_11_2_collecttranslatedelements_greenFBBB(persons, families2persons, families);
+				.pattern_Families2Persons_11_2_collecttranslatedelements_greenFBBB(families2persons, families, persons);
 		PerformRuleResult ruleresult = (PerformRuleResult) result2_green[0];
 
 		// bookkeeping for edges
 		Object[] result3_black = Families2PersonsImpl.pattern_Families2Persons_11_3_bookkeepingforedges_blackBBBB(
-				ruleresult, persons, families2persons, families);
+				ruleresult, families2persons, families, persons);
 		if (result3_black == null) {
 			throw new RuntimeException("Pattern matching in node [bookkeeping for edges] failed." + " Variables: "
-					+ "[ruleresult] = " + ruleresult + ", " + "[persons] = " + persons + ", " + "[families2persons] = "
-					+ families2persons + ", " + "[families] = " + families + ".");
+					+ "[ruleresult] = " + ruleresult + ", " + "[families2persons] = " + families2persons + ", "
+					+ "[families] = " + families + ", " + "[persons] = " + persons + ".");
 		}
-		Families2PersonsImpl.pattern_Families2Persons_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, persons,
-				families2persons, families);
-		// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[4];
-		// EMoflonEdge families2persons__families____source = (EMoflonEdge) result3_green[5];
+		Families2PersonsImpl.pattern_Families2Persons_11_3_bookkeepingforedges_greenBBBBFF(ruleresult, families2persons,
+				families, persons);
+		// EMoflonEdge families2persons__families____source = (EMoflonEdge) result3_green[4];
+		// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[5];
 
 		// perform postprocessing story node is empty
 		// register objects
-		Families2PersonsImpl.pattern_Families2Persons_11_5_registerobjects_expressionBBBBB(this, ruleresult, persons,
-				families2persons, families);
+		Families2PersonsImpl.pattern_Families2Persons_11_5_registerobjects_expressionBBBBB(this, ruleresult,
+				families2persons, families, persons);
 		return Families2PersonsImpl.pattern_Families2Persons_11_6_expressionFB(ruleresult);
 	}
 
@@ -598,11 +598,11 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject persons, EObject families2persons,
-			EObject families) {
-		ruleresult.registerObject("persons", persons);
+	public void registerObjects_BWD(PerformRuleResult ruleresult, EObject families2persons, EObject families,
+			EObject persons) {
 		ruleresult.registerObject("families2persons", families2persons);
 		ruleresult.registerObject("families", families);
+		ruleresult.registerObject("persons", persons);
 
 	}
 
@@ -621,7 +621,7 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_Families_0(Families families) {
+	public EObjectContainer isAppropriate_FWD_Families_4(Families families) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = Families2PersonsImpl
 				.pattern_Families2Persons_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -679,7 +679,7 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_Persons_0(Persons persons) {
+	public EObjectContainer isAppropriate_BWD_Persons_4(Persons persons) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = Families2PersonsImpl
 				.pattern_Families2Persons_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -799,55 +799,69 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 */
 	public IsApplicableRuleResult isApplicable_CC(Match sourceMatch, Match targetMatch) {
 		// prepare
-		Object[] result1_bindingAndBlack = Families2PersonsImpl
-				.pattern_Families2Persons_24_1_prepare_bindingAndBlackFFB(this);
-		if (result1_bindingAndBlack == null) {
+		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_24_1_prepare_blackB(this);
+		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
 		}
-		EOperation perform_CC = (EOperation) result1_bindingAndBlack[0];
-		// EClass __eClass = (EClass) result1_bindingAndBlack[1];
-		Object[] result1_green = Families2PersonsImpl.pattern_Families2Persons_24_1_prepare_greenBF(perform_CC);
-		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[1];
+		Object[] result1_green = Families2PersonsImpl.pattern_Families2Persons_24_1_prepare_greenF();
+		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
-		// ForEach match context
-		Object[] result2_binding = Families2PersonsImpl
-				.pattern_Families2Persons_24_2_matchcontext_bindingFFBB(targetMatch, sourceMatch);
-		if (result2_binding == null) {
-			throw new RuntimeException("Binding in node match context failed." + " Variables: " + "[targetMatch] = "
-					+ targetMatch + ", " + "[sourceMatch] = " + sourceMatch + ".");
+		// match src trg context
+		Object[] result2_bindingAndBlack = Families2PersonsImpl
+				.pattern_Families2Persons_24_2_matchsrctrgcontext_bindingAndBlackFFBB(sourceMatch, targetMatch);
+		if (result2_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [match src trg context] failed." + " Variables: "
+					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Persons persons = (Persons) result2_binding[0];
-		Families families = (Families) result2_binding[1];
-		for (Object[] result2_black : Families2PersonsImpl.pattern_Families2Persons_24_2_matchcontext_blackBBBB(persons,
-				families, sourceMatch, targetMatch)) {
-			Object[] result2_green = Families2PersonsImpl.pattern_Families2Persons_24_2_matchcontext_greenBBBFB(persons,
-					families, sourceMatch, targetMatch);
-			IsApplicableMatchCC isApplicableMatch = (IsApplicableMatchCC) result2_green[3];
+		Families families = (Families) result2_bindingAndBlack[0];
+		Persons persons = (Persons) result2_bindingAndBlack[1];
 
-			// check csp
-			Object[] result3_bindingAndBlack = Families2PersonsImpl
-					.pattern_Families2Persons_24_3_checkcsp_bindingAndBlackFBBBBBB(this, isApplicableMatch, persons,
-							families, sourceMatch, targetMatch);
-			if (result3_bindingAndBlack != null) {
-				// CSP csp = (CSP) result3_bindingAndBlack[0];
+		// solve csp
+		Object[] result3_bindingAndBlack = Families2PersonsImpl
+				.pattern_Families2Persons_24_3_solvecsp_bindingAndBlackFBBBBB(this, families, persons, sourceMatch,
+						targetMatch);
+		if (result3_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [solve csp] failed." + " Variables: " + "[this] = "
+					+ this + ", " + "[families] = " + families + ", " + "[persons] = " + persons + ", "
+					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
+		}
+		CSP csp = (CSP) result3_bindingAndBlack[0];
+		// check CSP
+		if (Families2PersonsImpl.pattern_Families2Persons_24_4_checkCSP_expressionFB(csp)) {
+			// ForEach match corr context
+			for (Object[] result5_black : Families2PersonsImpl
+					.pattern_Families2Persons_24_5_matchcorrcontext_blackBB(sourceMatch, targetMatch)) {
+				Object[] result5_green = Families2PersonsImpl
+						.pattern_Families2Persons_24_5_matchcorrcontext_greenBBF(sourceMatch, targetMatch);
+				CCMatch ccMatch = (CCMatch) result5_green[2];
+
+				// create correspondence
+				Object[] result6_black = Families2PersonsImpl
+						.pattern_Families2Persons_24_6_createcorrespondence_blackBBB(families, persons, ccMatch);
+				if (result6_black == null) {
+					throw new RuntimeException("Pattern matching in node [create correspondence] failed."
+							+ " Variables: " + "[families] = " + families + ", " + "[persons] = " + persons + ", "
+							+ "[ccMatch] = " + ccMatch + ".");
+				}
+				Families2PersonsImpl.pattern_Families2Persons_24_6_createcorrespondence_greenFBBB(families, persons,
+						ccMatch);
+				// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result6_green[0];
 
 				// add to returned result
-				Object[] result4_black = Families2PersonsImpl
-						.pattern_Families2Persons_24_4_addtoreturnedresult_blackBB(result, isApplicableMatch);
-				if (result4_black == null) {
-					throw new RuntimeException(
-							"Pattern matching in node [add to returned result] failed." + " Variables: " + "[result] = "
-									+ result + ", " + "[isApplicableMatch] = " + isApplicableMatch + ".");
+				Object[] result7_black = Families2PersonsImpl
+						.pattern_Families2Persons_24_7_addtoreturnedresult_blackBB(result, ccMatch);
+				if (result7_black == null) {
+					throw new RuntimeException("Pattern matching in node [add to returned result] failed."
+							+ " Variables: " + "[result] = " + result + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				Families2PersonsImpl.pattern_Families2Persons_24_4_addtoreturnedresult_greenBB(result,
-						isApplicableMatch);
+				Families2PersonsImpl.pattern_Families2Persons_24_7_addtoreturnedresult_greenBB(result, ccMatch);
 
-			} else {
 			}
 
+		} else {
 		}
-		return Families2PersonsImpl.pattern_Families2Persons_24_5_expressionFB(result);
+		return Families2PersonsImpl.pattern_Families2Persons_24_8_expressionFB(result);
 	}
 
 	/**
@@ -855,10 +869,8 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(IsApplicableMatchCC isApplicableMatch, Persons persons, Families families,
-			Match sourceMatch, Match targetMatch) {// Create CSP
+	public CSP isApplicable_solveCsp_CC(Families families, Persons persons, Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
-		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 
@@ -869,10 +881,6 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		// Create constraints
 
 		// Solve CSP
-
-		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("persons", persons);
-		isApplicableMatch.registerObject("families", families);
 		return csp;
 	}
 
@@ -890,29 +898,14 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PerformRuleResult perform_CC(IsApplicableMatchCC isApplicableMatch) {
-		// prepare
-		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_27_1_prepare_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException(
-					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
+	public boolean checkDEC_FWD(Families families) {// match tgg pattern
+		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_27_1_matchtggpattern_blackB(families);
+		if (result1_black != null) {
+			return Families2PersonsImpl.pattern_Families2Persons_27_2_expressionF();
+		} else {
+			return Families2PersonsImpl.pattern_Families2Persons_27_3_expressionF();
 		}
 
-		// create correspondence links
-		Object[] result2_bindingAndBlack = Families2PersonsImpl
-				.pattern_Families2Persons_27_2_createcorrespondencelinks_bindingAndBlackFFB(isApplicableMatch);
-		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching in node [create correspondence links] failed." + " Variables: "
-					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
-		}
-		Persons persons = (Persons) result2_bindingAndBlack[0];
-		Families families = (Families) result2_bindingAndBlack[1];
-		Object[] result2_green = Families2PersonsImpl
-				.pattern_Families2Persons_27_2_createcorrespondencelinks_greenBBFF(persons, families);
-		PerformRuleResult result = (PerformRuleResult) result2_green[2];
-		// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_green[3];
-
-		return Families2PersonsImpl.pattern_Families2Persons_27_3_expressionFB(result);
 	}
 
 	/**
@@ -920,8 +913,8 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Families families) {// match tgg pattern
-		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_28_1_matchtggpattern_blackB(families);
+	public boolean checkDEC_BWD(Persons persons) {// match tgg pattern
+		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_28_1_matchtggpattern_blackB(persons);
 		if (result1_black != null) {
 			return Families2PersonsImpl.pattern_Families2Persons_28_2_expressionF();
 		} else {
@@ -935,39 +928,24 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Persons persons) {// match tgg pattern
-		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_29_1_matchtggpattern_blackB(persons);
-		if (result1_black != null) {
-			return Families2PersonsImpl.pattern_Families2Persons_29_2_expressionF();
-		} else {
-			return Families2PersonsImpl.pattern_Families2Persons_29_3_expressionF();
-		}
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer) {
 		// create result
-		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_30_1_createresult_blackB(this);
+		Object[] result1_black = Families2PersonsImpl.pattern_Families2Persons_29_1_createresult_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [create result] failed." + " Variables: " + "[this] = " + this + ".");
 		}
-		Object[] result1_green = Families2PersonsImpl.pattern_Families2Persons_30_1_createresult_greenFF();
+		Object[] result1_green = Families2PersonsImpl.pattern_Families2Persons_29_1_createresult_greenFF();
 		IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result1_green[0];
 		ModelgeneratorRuleResult ruleResult = (ModelgeneratorRuleResult) result1_green[1];
 
 		// is applicable core
-		Object[] result2_black = Families2PersonsImpl.pattern_Families2Persons_30_2_isapplicablecore_blackB(this);
+		Object[] result2_black = Families2PersonsImpl.pattern_Families2Persons_29_2_isapplicablecore_blackB(this);
 		if (result2_black != null) {
 
 			// solve CSP
 			Object[] result3_bindingAndBlack = Families2PersonsImpl
-					.pattern_Families2Persons_30_3_solveCSP_bindingAndBlackFBBB(this, isApplicableMatch, ruleResult);
+					.pattern_Families2Persons_29_3_solveCSP_bindingAndBlackFBBB(this, isApplicableMatch, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching in node [solve CSP] failed." + " Variables: " + "[this] = "
 						+ this + ", " + "[isApplicableMatch] = " + isApplicableMatch + ", " + "[ruleResult] = "
@@ -975,26 +953,26 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// check CSP
-			if (Families2PersonsImpl.pattern_Families2Persons_30_4_checkCSP_expressionFBB(this, csp)) {
+			if (Families2PersonsImpl.pattern_Families2Persons_29_4_checkCSP_expressionFBB(this, csp)) {
 				// check nacs story node is empty
 
 				// perform
-				Object[] result6_black = Families2PersonsImpl.pattern_Families2Persons_30_6_perform_blackB(ruleResult);
+				Object[] result6_black = Families2PersonsImpl.pattern_Families2Persons_29_6_perform_blackB(ruleResult);
 				if (result6_black == null) {
 					throw new RuntimeException("Pattern matching in node [perform] failed." + " Variables: "
 							+ "[ruleResult] = " + ruleResult + ".");
 				}
-				Families2PersonsImpl.pattern_Families2Persons_30_6_perform_greenFFFB(ruleResult);
-				// Persons persons = (Persons) result6_green[0];
-				// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result6_green[1];
-				// Families families = (Families) result6_green[2];
+				Families2PersonsImpl.pattern_Families2Persons_29_6_perform_greenFFFB(ruleResult);
+				// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result6_green[0];
+				// Families families = (Families) result6_green[1];
+				// Persons persons = (Persons) result6_green[2];
 
 			} else {
 			}
 
 		} else {
 		}
-		return Families2PersonsImpl.pattern_Families2Persons_30_7_expressionFB(ruleResult);
+		return Families2PersonsImpl.pattern_Families2Persons_29_7_expressionFB(ruleResult);
 	}
 
 	/**
@@ -1083,23 +1061,21 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 			return null;
 		case RulesPackage.FAMILIES2_PERSONS___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.FAMILIES2_PERSONS___IS_APPROPRIATE_FWD_FAMILIES_0__FAMILIES:
-			return isAppropriate_FWD_Families_0((Families) arguments.get(0));
-		case RulesPackage.FAMILIES2_PERSONS___IS_APPROPRIATE_BWD_PERSONS_0__PERSONS:
-			return isAppropriate_BWD_Persons_0((Persons) arguments.get(0));
+		case RulesPackage.FAMILIES2_PERSONS___IS_APPROPRIATE_FWD_FAMILIES_4__FAMILIES:
+			return isAppropriate_FWD_Families_4((Families) arguments.get(0));
+		case RulesPackage.FAMILIES2_PERSONS___IS_APPROPRIATE_BWD_PERSONS_4__PERSONS:
+			return isAppropriate_BWD_Persons_4((Persons) arguments.get(0));
 		case RulesPackage.FAMILIES2_PERSONS___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FAMILIES2_PERSONS___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.FAMILIES2_PERSONS___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.FAMILIES2_PERSONS___IS_APPLICABLE_SOLVE_CSP_CC__ISAPPLICABLEMATCHCC_PERSONS_FAMILIES_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((IsApplicableMatchCC) arguments.get(0), (Persons) arguments.get(1),
-					(Families) arguments.get(2), (Match) arguments.get(3), (Match) arguments.get(4));
+		case RulesPackage.FAMILIES2_PERSONS___IS_APPLICABLE_SOLVE_CSP_CC__FAMILIES_PERSONS_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Families) arguments.get(0), (Persons) arguments.get(1),
+					(Match) arguments.get(2), (Match) arguments.get(3));
 		case RulesPackage.FAMILIES2_PERSONS___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.FAMILIES2_PERSONS___PERFORM_CC__ISAPPLICABLEMATCHCC:
-			return perform_CC((IsApplicableMatchCC) arguments.get(0));
 		case RulesPackage.FAMILIES2_PERSONS___CHECK_DEC_FWD__FAMILIES:
 			return checkDEC_FWD((Families) arguments.get(0));
 		case RulesPackage.FAMILIES2_PERSONS___CHECK_DEC_BWD__PERSONS:
@@ -1229,34 +1205,34 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return null;
 	}
 
-	public static final Object[] pattern_Families2Persons_1_1_performtransformation_greenFFB(Families families) {
-		Persons persons = PersonsModelFactory.eINSTANCE.createPersons();
+	public static final Object[] pattern_Families2Persons_1_1_performtransformation_greenFBF(Families families) {
 		FamiliesToPersonsCorr families2persons = FamiliesToPersonsFactory.eINSTANCE.createFamiliesToPersonsCorr();
-		families2persons.setTarget(persons);
+		Persons persons = PersonsModelFactory.eINSTANCE.createPersons();
 		families2persons.setSource(families);
-		return new Object[] { persons, families2persons, families };
+		families2persons.setTarget(persons);
+		return new Object[] { families2persons, families, persons };
 	}
 
-	public static final Object[] pattern_Families2Persons_1_2_collecttranslatedelements_blackBBB(Persons persons,
-			FamiliesToPersonsCorr families2persons, Families families) {
-		return new Object[] { persons, families2persons, families };
+	public static final Object[] pattern_Families2Persons_1_2_collecttranslatedelements_blackBBB(
+			FamiliesToPersonsCorr families2persons, Families families, Persons persons) {
+		return new Object[] { families2persons, families, persons };
 	}
 
-	public static final Object[] pattern_Families2Persons_1_2_collecttranslatedelements_greenFBBB(Persons persons,
-			FamiliesToPersonsCorr families2persons, Families families) {
+	public static final Object[] pattern_Families2Persons_1_2_collecttranslatedelements_greenFBBB(
+			FamiliesToPersonsCorr families2persons, Families families, Persons persons) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getCreatedElements().add(persons);
 		ruleresult.getCreatedLinkElements().add(families2persons);
 		ruleresult.getTranslatedElements().add(families);
-		return new Object[] { ruleresult, persons, families2persons, families };
+		ruleresult.getCreatedElements().add(persons);
+		return new Object[] { ruleresult, families2persons, families, persons };
 	}
 
 	public static final Object[] pattern_Families2Persons_1_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
 		if (!families2persons.equals(persons)) {
-			if (!families.equals(persons)) {
-				if (!families.equals(families2persons)) {
-					return new Object[] { ruleresult, persons, families2persons, families };
+			if (!families.equals(families2persons)) {
+				if (!families.equals(persons)) {
+					return new Object[] { ruleresult, families2persons, families, persons };
 				}
 			}
 		}
@@ -1264,28 +1240,28 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	}
 
 	public static final Object[] pattern_Families2Persons_1_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
-		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
 		EMoflonEdge families2persons__families____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Families2Persons";
-		String families2persons__persons____target_name_prime = "target";
 		String families2persons__families____source_name_prime = "source";
-		families2persons__persons____target.setSrc(families2persons);
-		families2persons__persons____target.setTrg(persons);
-		ruleresult.getCreatedEdges().add(families2persons__persons____target);
+		String families2persons__persons____target_name_prime = "target";
 		families2persons__families____source.setSrc(families2persons);
 		families2persons__families____source.setTrg(families);
 		ruleresult.getCreatedEdges().add(families2persons__families____source);
+		families2persons__persons____target.setSrc(families2persons);
+		families2persons__persons____target.setTrg(persons);
+		ruleresult.getCreatedEdges().add(families2persons__persons____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
 		families2persons__families____source.setName(families2persons__families____source_name_prime);
-		return new Object[] { ruleresult, persons, families2persons, families, families2persons__persons____target,
-				families2persons__families____source };
+		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
+		return new Object[] { ruleresult, families2persons, families, persons, families2persons__families____source,
+				families2persons__persons____target };
 	}
 
 	public static final void pattern_Families2Persons_1_5_registerobjects_expressionBBBBB(Families2Persons _this,
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
-		_this.registerObjects_FWD(ruleresult, persons, families2persons, families);
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
+		_this.registerObjects_FWD(ruleresult, families2persons, families, persons);
 
 	}
 
@@ -1544,34 +1520,34 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return null;
 	}
 
-	public static final Object[] pattern_Families2Persons_11_1_performtransformation_greenBFF(Persons persons) {
+	public static final Object[] pattern_Families2Persons_11_1_performtransformation_greenFFB(Persons persons) {
 		FamiliesToPersonsCorr families2persons = FamiliesToPersonsFactory.eINSTANCE.createFamiliesToPersonsCorr();
 		Families families = FamiliesModelFactory.eINSTANCE.createFamilies();
 		families2persons.setTarget(persons);
 		families2persons.setSource(families);
-		return new Object[] { persons, families2persons, families };
+		return new Object[] { families2persons, families, persons };
 	}
 
-	public static final Object[] pattern_Families2Persons_11_2_collecttranslatedelements_blackBBB(Persons persons,
-			FamiliesToPersonsCorr families2persons, Families families) {
-		return new Object[] { persons, families2persons, families };
+	public static final Object[] pattern_Families2Persons_11_2_collecttranslatedelements_blackBBB(
+			FamiliesToPersonsCorr families2persons, Families families, Persons persons) {
+		return new Object[] { families2persons, families, persons };
 	}
 
-	public static final Object[] pattern_Families2Persons_11_2_collecttranslatedelements_greenFBBB(Persons persons,
-			FamiliesToPersonsCorr families2persons, Families families) {
+	public static final Object[] pattern_Families2Persons_11_2_collecttranslatedelements_greenFBBB(
+			FamiliesToPersonsCorr families2persons, Families families, Persons persons) {
 		PerformRuleResult ruleresult = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		ruleresult.getTranslatedElements().add(persons);
 		ruleresult.getCreatedLinkElements().add(families2persons);
 		ruleresult.getCreatedElements().add(families);
-		return new Object[] { ruleresult, persons, families2persons, families };
+		ruleresult.getTranslatedElements().add(persons);
+		return new Object[] { ruleresult, families2persons, families, persons };
 	}
 
 	public static final Object[] pattern_Families2Persons_11_3_bookkeepingforedges_blackBBBB(
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
 		if (!families2persons.equals(persons)) {
-			if (!families.equals(persons)) {
-				if (!families.equals(families2persons)) {
-					return new Object[] { ruleresult, persons, families2persons, families };
+			if (!families.equals(families2persons)) {
+				if (!families.equals(persons)) {
+					return new Object[] { ruleresult, families2persons, families, persons };
 				}
 			}
 		}
@@ -1579,28 +1555,28 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 	}
 
 	public static final Object[] pattern_Families2Persons_11_3_bookkeepingforedges_greenBBBBFF(
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
-		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
 		EMoflonEdge families2persons__families____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String ruleresult_ruleName_prime = "Families2Persons";
-		String families2persons__persons____target_name_prime = "target";
 		String families2persons__families____source_name_prime = "source";
-		families2persons__persons____target.setSrc(families2persons);
-		families2persons__persons____target.setTrg(persons);
-		ruleresult.getCreatedEdges().add(families2persons__persons____target);
+		String families2persons__persons____target_name_prime = "target";
 		families2persons__families____source.setSrc(families2persons);
 		families2persons__families____source.setTrg(families);
 		ruleresult.getCreatedEdges().add(families2persons__families____source);
+		families2persons__persons____target.setSrc(families2persons);
+		families2persons__persons____target.setTrg(persons);
+		ruleresult.getCreatedEdges().add(families2persons__persons____target);
 		ruleresult.setRuleName(ruleresult_ruleName_prime);
-		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
 		families2persons__families____source.setName(families2persons__families____source_name_prime);
-		return new Object[] { ruleresult, persons, families2persons, families, families2persons__persons____target,
-				families2persons__families____source };
+		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
+		return new Object[] { ruleresult, families2persons, families, persons, families2persons__families____source,
+				families2persons__persons____target };
 	}
 
 	public static final void pattern_Families2Persons_11_5_registerobjects_expressionBBBBB(Families2Persons _this,
-			PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families) {
-		_this.registerObjects_BWD(ruleresult, persons, families2persons, families);
+			PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons) {
+		_this.registerObjects_BWD(ruleresult, families2persons, families, persons);
 
 	}
 
@@ -1952,202 +1928,164 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_24_1_prepare_bindingFB(Families2Persons _this) {
-		EClass _localVariable_0 = _this.eClass();
-		EClass __eClass = _localVariable_0;
-		if (__eClass != null) {
-			return new Object[] { __eClass, _this };
-		}
-		return null;
+	public static final Object[] pattern_Families2Persons_24_1_prepare_blackB(Families2Persons _this) {
+		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_1_prepare_blackFBB(EClass __eClass,
-			Families2Persons _this) {
-		for (EOperation perform_CC : __eClass.getEOperations()) {
-			String perform_CC_name = perform_CC.getName();
-			if (perform_CC_name.equals("perform_CC")) {
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Families2Persons_24_1_prepare_bindingAndBlackFFB(Families2Persons _this) {
-		Object[] result_pattern_Families2Persons_24_1_prepare_binding = pattern_Families2Persons_24_1_prepare_bindingFB(
-				_this);
-		if (result_pattern_Families2Persons_24_1_prepare_binding != null) {
-			EClass __eClass = (EClass) result_pattern_Families2Persons_24_1_prepare_binding[0];
-
-			Object[] result_pattern_Families2Persons_24_1_prepare_black = pattern_Families2Persons_24_1_prepare_blackFBB(
-					__eClass, _this);
-			if (result_pattern_Families2Persons_24_1_prepare_black != null) {
-				EOperation perform_CC = (EOperation) result_pattern_Families2Persons_24_1_prepare_black[0];
-
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Families2Persons_24_1_prepare_greenBF(EOperation perform_CC) {
+	public static final Object[] pattern_Families2Persons_24_1_prepare_greenF() {
 		IsApplicableRuleResult result = RuntimeFactory.eINSTANCE.createIsApplicableRuleResult();
-		result.setPerformOperation(perform_CC);
-		return new Object[] { perform_CC, result };
+		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_2_matchcontext_bindingFFBB(Match targetMatch,
-			Match sourceMatch) {
-		EObject _localVariable_0 = targetMatch.getObject("persons");
-		EObject _localVariable_1 = sourceMatch.getObject("families");
-		EObject tmpPersons = _localVariable_0;
-		EObject tmpFamilies = _localVariable_1;
-		if (tmpPersons instanceof Persons) {
-			Persons persons = (Persons) tmpPersons;
-			if (tmpFamilies instanceof Families) {
-				Families families = (Families) tmpFamilies;
-				return new Object[] { persons, families, targetMatch, sourceMatch };
+	public static final Object[] pattern_Families2Persons_24_2_matchsrctrgcontext_bindingFFBB(Match sourceMatch,
+			Match targetMatch) {
+		EObject _localVariable_0 = sourceMatch.getObject("families");
+		EObject _localVariable_1 = targetMatch.getObject("persons");
+		EObject tmpFamilies = _localVariable_0;
+		EObject tmpPersons = _localVariable_1;
+		if (tmpFamilies instanceof Families) {
+			Families families = (Families) tmpFamilies;
+			if (tmpPersons instanceof Persons) {
+				Persons persons = (Persons) tmpPersons;
+				return new Object[] { families, persons, sourceMatch, targetMatch };
 			}
 		}
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_Families2Persons_24_2_matchcontext_blackBBBB(Persons persons,
-			Families families, Match sourceMatch, Match targetMatch) {
+	public static final Object[] pattern_Families2Persons_24_2_matchsrctrgcontext_blackBBBB(Families families,
+			Persons persons, Match sourceMatch, Match targetMatch) {
+		if (!sourceMatch.equals(targetMatch)) {
+			return new Object[] { families, persons, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Families2Persons_24_2_matchsrctrgcontext_bindingAndBlackFFBB(Match sourceMatch,
+			Match targetMatch) {
+		Object[] result_pattern_Families2Persons_24_2_matchsrctrgcontext_binding = pattern_Families2Persons_24_2_matchsrctrgcontext_bindingFFBB(
+				sourceMatch, targetMatch);
+		if (result_pattern_Families2Persons_24_2_matchsrctrgcontext_binding != null) {
+			Families families = (Families) result_pattern_Families2Persons_24_2_matchsrctrgcontext_binding[0];
+			Persons persons = (Persons) result_pattern_Families2Persons_24_2_matchsrctrgcontext_binding[1];
+
+			Object[] result_pattern_Families2Persons_24_2_matchsrctrgcontext_black = pattern_Families2Persons_24_2_matchsrctrgcontext_blackBBBB(
+					families, persons, sourceMatch, targetMatch);
+			if (result_pattern_Families2Persons_24_2_matchsrctrgcontext_black != null) {
+
+				return new Object[] { families, persons, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Families2Persons_24_3_solvecsp_bindingFBBBBB(Families2Persons _this,
+			Families families, Persons persons, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_2 = _this.isApplicable_solveCsp_CC(families, persons, sourceMatch, targetMatch);
+		CSP csp = _localVariable_2;
+		if (csp != null) {
+			return new Object[] { csp, _this, families, persons, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_Families2Persons_24_3_solvecsp_blackB(CSP csp) {
+		return new Object[] { csp };
+	}
+
+	public static final Object[] pattern_Families2Persons_24_3_solvecsp_bindingAndBlackFBBBBB(Families2Persons _this,
+			Families families, Persons persons, Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_Families2Persons_24_3_solvecsp_binding = pattern_Families2Persons_24_3_solvecsp_bindingFBBBBB(
+				_this, families, persons, sourceMatch, targetMatch);
+		if (result_pattern_Families2Persons_24_3_solvecsp_binding != null) {
+			CSP csp = (CSP) result_pattern_Families2Persons_24_3_solvecsp_binding[0];
+
+			Object[] result_pattern_Families2Persons_24_3_solvecsp_black = pattern_Families2Persons_24_3_solvecsp_blackB(
+					csp);
+			if (result_pattern_Families2Persons_24_3_solvecsp_black != null) {
+
+				return new Object[] { csp, _this, families, persons, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final boolean pattern_Families2Persons_24_4_checkCSP_expressionFB(CSP csp) {
+		boolean _localVariable_0 = csp.check();
+		boolean _result = Boolean.valueOf(_localVariable_0);
+		return _result;
+	}
+
+	public static final Iterable<Object[]> pattern_Families2Persons_24_5_matchcorrcontext_blackBB(Match sourceMatch,
+			Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			_result.add(new Object[] { persons, families, sourceMatch, targetMatch });
+			_result.add(new Object[] { sourceMatch, targetMatch });
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_24_2_matchcontext_greenBBBFB(Persons persons,
-			Families families, Match sourceMatch, Match targetMatch) {
-		IsApplicableMatchCC isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatchCC();
-		String isApplicableMatch_ruleName_prime = "Families2Persons";
-		isApplicableMatch.setSourceMatch(sourceMatch);
-		isApplicableMatch.setTargetMatch(targetMatch);
-		isApplicableMatch.getAllContextElements().add(families);
-		isApplicableMatch.getAllContextElements().add(persons);
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { persons, families, sourceMatch, isApplicableMatch, targetMatch };
-	}
-
-	public static final Object[] pattern_Families2Persons_24_3_checkcsp_bindingFBBBBBB(Families2Persons _this,
-			IsApplicableMatchCC isApplicableMatch, Persons persons, Families families, Match sourceMatch,
+	public static final Object[] pattern_Families2Persons_24_5_matchcorrcontext_greenBBF(Match sourceMatch,
 			Match targetMatch) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_CC(isApplicableMatch, persons, families, sourceMatch,
-				targetMatch);
-		CSP csp = _localVariable_0;
-		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, persons, families, sourceMatch, targetMatch };
-		}
-		return null;
+		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
+		String ccMatch_ruleName_prime = "Families2Persons";
+		ccMatch.setSourceMatch(sourceMatch);
+		ccMatch.setTargetMatch(targetMatch);
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_3_checkcsp_blackB(CSP csp) {
-		return new Object[] { csp };
+	public static final Object[] pattern_Families2Persons_24_6_createcorrespondence_blackBBB(Families families,
+			Persons persons, CCMatch ccMatch) {
+		return new Object[] { families, persons, ccMatch };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_3_checkcsp_bindingAndBlackFBBBBBB(Families2Persons _this,
-			IsApplicableMatchCC isApplicableMatch, Persons persons, Families families, Match sourceMatch,
-			Match targetMatch) {
-		Object[] result_pattern_Families2Persons_24_3_checkcsp_binding = pattern_Families2Persons_24_3_checkcsp_bindingFBBBBBB(
-				_this, isApplicableMatch, persons, families, sourceMatch, targetMatch);
-		if (result_pattern_Families2Persons_24_3_checkcsp_binding != null) {
-			CSP csp = (CSP) result_pattern_Families2Persons_24_3_checkcsp_binding[0];
-
-			Object[] result_pattern_Families2Persons_24_3_checkcsp_black = pattern_Families2Persons_24_3_checkcsp_blackB(
-					csp);
-			if (result_pattern_Families2Persons_24_3_checkcsp_black != null) {
-
-				return new Object[] { csp, _this, isApplicableMatch, persons, families, sourceMatch, targetMatch };
-			}
-		}
-		return null;
+	public static final Object[] pattern_Families2Persons_24_6_createcorrespondence_greenFBBB(Families families,
+			Persons persons, CCMatch ccMatch) {
+		FamiliesToPersonsCorr families2persons = FamiliesToPersonsFactory.eINSTANCE.createFamiliesToPersonsCorr();
+		families2persons.setSource(families);
+		families2persons.setTarget(persons);
+		ccMatch.getCreateCorr().add(families2persons);
+		return new Object[] { families2persons, families, persons, ccMatch };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_4_addtoreturnedresult_blackBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		return new Object[] { result, isApplicableMatch };
+	public static final Object[] pattern_Families2Persons_24_7_addtoreturnedresult_blackBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final Object[] pattern_Families2Persons_24_4_addtoreturnedresult_greenBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		result.getIsApplicableMatch().add(isApplicableMatch);
+	public static final Object[] pattern_Families2Persons_24_7_addtoreturnedresult_greenBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		result.getIsApplicableMatch().add(ccMatch);
 		boolean result_success_prime = Boolean.valueOf(true);
-		String isApplicableMatch_ruleName_prime = "Families2Persons";
+		String ccMatch_ruleName_prime = "Families2Persons";
 		result.setSuccess(Boolean.valueOf(result_success_prime));
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { result, isApplicableMatch };
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final IsApplicableRuleResult pattern_Families2Persons_24_5_expressionFB(
+	public static final IsApplicableRuleResult pattern_Families2Persons_24_8_expressionFB(
 			IsApplicableRuleResult result) {
 		IsApplicableRuleResult _result = result;
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_27_1_prepare_blackB(Families2Persons _this) {
-		return new Object[] { _this };
+	public static final Object[] pattern_Families2Persons_27_1_matchtggpattern_blackB(Families families) {
+		return new Object[] { families };
 	}
 
-	public static final Object[] pattern_Families2Persons_27_2_createcorrespondencelinks_bindingFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("persons");
-		EObject _localVariable_1 = isApplicableMatch.getObject("families");
-		EObject tmpPersons = _localVariable_0;
-		EObject tmpFamilies = _localVariable_1;
-		if (tmpPersons instanceof Persons) {
-			Persons persons = (Persons) tmpPersons;
-			if (tmpFamilies instanceof Families) {
-				Families families = (Families) tmpFamilies;
-				return new Object[] { persons, families, isApplicableMatch };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Families2Persons_27_2_createcorrespondencelinks_blackBBB(Persons persons,
-			Families families, IsApplicableMatchCC isApplicableMatch) {
-		return new Object[] { persons, families, isApplicableMatch };
-	}
-
-	public static final Object[] pattern_Families2Persons_27_2_createcorrespondencelinks_bindingAndBlackFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		Object[] result_pattern_Families2Persons_27_2_createcorrespondencelinks_binding = pattern_Families2Persons_27_2_createcorrespondencelinks_bindingFFB(
-				isApplicableMatch);
-		if (result_pattern_Families2Persons_27_2_createcorrespondencelinks_binding != null) {
-			Persons persons = (Persons) result_pattern_Families2Persons_27_2_createcorrespondencelinks_binding[0];
-			Families families = (Families) result_pattern_Families2Persons_27_2_createcorrespondencelinks_binding[1];
-
-			Object[] result_pattern_Families2Persons_27_2_createcorrespondencelinks_black = pattern_Families2Persons_27_2_createcorrespondencelinks_blackBBB(
-					persons, families, isApplicableMatch);
-			if (result_pattern_Families2Persons_27_2_createcorrespondencelinks_black != null) {
-
-				return new Object[] { persons, families, isApplicableMatch };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_Families2Persons_27_2_createcorrespondencelinks_greenBBFF(Persons persons,
-			Families families) {
-		PerformRuleResult result = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		FamiliesToPersonsCorr families2persons = FamiliesToPersonsFactory.eINSTANCE.createFamiliesToPersonsCorr();
-		result.getCreatedElements().add(families2persons);
-		families2persons.setTarget(persons);
-		families2persons.setSource(families);
-		return new Object[] { persons, families, result, families2persons };
-	}
-
-	public static final PerformRuleResult pattern_Families2Persons_27_3_expressionFB(PerformRuleResult result) {
-		PerformRuleResult _result = result;
+	public static final boolean pattern_Families2Persons_27_2_expressionF() {
+		boolean _result = Boolean.valueOf(true);
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_28_1_matchtggpattern_blackB(Families families) {
-		return new Object[] { families };
+	public static final boolean pattern_Families2Persons_27_3_expressionF() {
+		boolean _result = false;
+		return _result;
+	}
+
+	public static final Object[] pattern_Families2Persons_28_1_matchtggpattern_blackB(Persons persons) {
+		return new Object[] { persons };
 	}
 
 	public static final boolean pattern_Families2Persons_28_2_expressionF() {
@@ -2160,25 +2098,11 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_29_1_matchtggpattern_blackB(Persons persons) {
-		return new Object[] { persons };
-	}
-
-	public static final boolean pattern_Families2Persons_29_2_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final boolean pattern_Families2Persons_29_3_expressionF() {
-		boolean _result = false;
-		return _result;
-	}
-
-	public static final Object[] pattern_Families2Persons_30_1_createresult_blackB(Families2Persons _this) {
+	public static final Object[] pattern_Families2Persons_29_1_createresult_blackB(Families2Persons _this) {
 		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_Families2Persons_30_1_createresult_greenFF() {
+	public static final Object[] pattern_Families2Persons_29_1_createresult_greenFF() {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		ModelgeneratorRuleResult ruleResult = RuntimeFactory.eINSTANCE.createModelgeneratorRuleResult();
 		boolean ruleResult_success_prime = false;
@@ -2186,11 +2110,11 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return new Object[] { isApplicableMatch, ruleResult };
 	}
 
-	public static final Object[] pattern_Families2Persons_30_2_isapplicablecore_blackB(Families2Persons _this) {
+	public static final Object[] pattern_Families2Persons_29_2_isapplicablecore_blackB(Families2Persons _this) {
 		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_Families2Persons_30_3_solveCSP_bindingFBBB(Families2Persons _this,
+	public static final Object[] pattern_Families2Persons_29_3_solveCSP_bindingFBBB(Families2Persons _this,
 			IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult) {
 		CSP _localVariable_0 = _this.generateModel_solveCsp_BWD(isApplicableMatch, ruleResult);
 		CSP csp = _localVariable_0;
@@ -2200,20 +2124,20 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return null;
 	}
 
-	public static final Object[] pattern_Families2Persons_30_3_solveCSP_blackB(CSP csp) {
+	public static final Object[] pattern_Families2Persons_29_3_solveCSP_blackB(CSP csp) {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_Families2Persons_30_3_solveCSP_bindingAndBlackFBBB(Families2Persons _this,
+	public static final Object[] pattern_Families2Persons_29_3_solveCSP_bindingAndBlackFBBB(Families2Persons _this,
 			IsApplicableMatch isApplicableMatch, ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_Families2Persons_30_3_solveCSP_binding = pattern_Families2Persons_30_3_solveCSP_bindingFBBB(
+		Object[] result_pattern_Families2Persons_29_3_solveCSP_binding = pattern_Families2Persons_29_3_solveCSP_bindingFBBB(
 				_this, isApplicableMatch, ruleResult);
-		if (result_pattern_Families2Persons_30_3_solveCSP_binding != null) {
-			CSP csp = (CSP) result_pattern_Families2Persons_30_3_solveCSP_binding[0];
+		if (result_pattern_Families2Persons_29_3_solveCSP_binding != null) {
+			CSP csp = (CSP) result_pattern_Families2Persons_29_3_solveCSP_binding[0];
 
-			Object[] result_pattern_Families2Persons_30_3_solveCSP_black = pattern_Families2Persons_30_3_solveCSP_blackB(
+			Object[] result_pattern_Families2Persons_29_3_solveCSP_black = pattern_Families2Persons_29_3_solveCSP_blackB(
 					csp);
-			if (result_pattern_Families2Persons_30_3_solveCSP_black != null) {
+			if (result_pattern_Families2Persons_29_3_solveCSP_black != null) {
 
 				return new Object[] { csp, _this, isApplicableMatch, ruleResult };
 			}
@@ -2221,34 +2145,34 @@ public class Families2PersonsImpl extends AbstractRuleImpl implements Families2P
 		return null;
 	}
 
-	public static final boolean pattern_Families2Persons_30_4_checkCSP_expressionFBB(Families2Persons _this, CSP csp) {
+	public static final boolean pattern_Families2Persons_29_4_checkCSP_expressionFBB(Families2Persons _this, CSP csp) {
 		boolean _localVariable_0 = _this.generateModel_checkCsp_BWD(csp);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 
-	public static final Object[] pattern_Families2Persons_30_6_perform_blackB(ModelgeneratorRuleResult ruleResult) {
+	public static final Object[] pattern_Families2Persons_29_6_perform_blackB(ModelgeneratorRuleResult ruleResult) {
 		return new Object[] { ruleResult };
 	}
 
-	public static final Object[] pattern_Families2Persons_30_6_perform_greenFFFB(ModelgeneratorRuleResult ruleResult) {
-		Persons persons = PersonsModelFactory.eINSTANCE.createPersons();
+	public static final Object[] pattern_Families2Persons_29_6_perform_greenFFFB(ModelgeneratorRuleResult ruleResult) {
 		FamiliesToPersonsCorr families2persons = FamiliesToPersonsFactory.eINSTANCE.createFamiliesToPersonsCorr();
 		Families families = FamiliesModelFactory.eINSTANCE.createFamilies();
+		Persons persons = PersonsModelFactory.eINSTANCE.createPersons();
 		boolean ruleResult_success_prime = Boolean.valueOf(true);
 		int _localVariable_0 = ruleResult.getIncrementedPerformCount();
-		ruleResult.getTargetObjects().add(persons);
-		families2persons.setTarget(persons);
 		ruleResult.getCorrObjects().add(families2persons);
 		families2persons.setSource(families);
 		ruleResult.getSourceObjects().add(families);
+		families2persons.setTarget(persons);
+		ruleResult.getTargetObjects().add(persons);
 		ruleResult.setSuccess(Boolean.valueOf(ruleResult_success_prime));
 		int ruleResult_performCount_prime = Integer.valueOf(_localVariable_0);
 		ruleResult.setPerformCount(Integer.valueOf(ruleResult_performCount_prime));
-		return new Object[] { persons, families2persons, families, ruleResult };
+		return new Object[] { families2persons, families, persons, ruleResult };
 	}
 
-	public static final ModelgeneratorRuleResult pattern_Families2Persons_30_7_expressionFB(
+	public static final ModelgeneratorRuleResult pattern_Families2Persons_29_7_expressionFB(
 			ModelgeneratorRuleResult ruleResult) {
 		ModelgeneratorRuleResult _result = ruleResult;
 		return _result;

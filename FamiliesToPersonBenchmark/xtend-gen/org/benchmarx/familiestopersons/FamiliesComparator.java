@@ -11,12 +11,12 @@ import org.junit.Assert;
 public class FamiliesComparator implements Comparator<Families> {
   @Override
   public void compare(final Families expected, final Families actual) {
-    CharSequence _familyToString = this.familyToString(expected);
-    CharSequence _familyToString_1 = this.familyToString(actual);
+    String _familyToString = this.familyToString(expected);
+    String _familyToString_1 = this.familyToString(actual);
     Assert.assertEquals(_familyToString, _familyToString_1);
   }
   
-  public CharSequence familyToString(final Families families) {
+  public String familyToString(final Families families) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Families {");
     _builder.newLine();
@@ -38,6 +38,6 @@ public class FamiliesComparator implements Comparator<Families> {
     }
     _builder.append("}");
     _builder.newLine();
-    return _builder;
+    return _builder.toString();
   }
 }

@@ -1,12 +1,9 @@
 package org.benchmarx.familiestopersons;
 
-import static org.junit.Assert.assertTrue;
-
-import org.benchmarkx.emoflon.EmoflonImpl;
+import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
-import org.benchmarx.core.Comparator;
 import org.benchmarx.core.BenchmarxUtil;
-import org.eclipse.emf.ecore.EObject;
+import org.benchmarx.core.Comparator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -24,14 +21,14 @@ public class CreateRootElements {
 
 	@Before
 	public void initialise() {
-		tool = new EmoflonImpl();
+		tool = new EMoflon();
 		util = new BenchmarxUtil();
 		familiesComparator = new FamiliesComparator();
 		personsComparator = new PersonsComparator();
 	}
 
 	@Test
-	public void testCreateFamily(EObject EObject) {
+	public void testCreateFamily() {
 		tool.initiateSynchronisationDialogue();
 
 		// Expect root elements of both source and target models
@@ -52,13 +49,10 @@ public class CreateRootElements {
 		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
 	}
 
-	private void createFamily(EObject root) {
-		assertTrue("Expect root element of Families model", root instanceof Families);
-		Families familyRoot = Families.class.cast(root);
-
+	private void createFamily(Families root) {
 		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Simpson");
-		familyRoot.getFamily().add(family);
+		root.getFamily().add(family);
 	}
 
 }

@@ -54,6 +54,7 @@ public interface Person extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Birthday</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Birthday</em>' attribute isn't clear,
@@ -63,7 +64,7 @@ public interface Person extends EObject {
 	 * @return the value of the '<em>Birthday</em>' attribute.
 	 * @see #setBirthday(Date)
 	 * @see PersonsModel.PersonsModelPackage#getPerson_Birthday()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	Date getBirthday();

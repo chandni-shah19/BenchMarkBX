@@ -69,33 +69,8 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected RulesSwitch<Adapter> modelSwitch = new RulesSwitch<Adapter>() {
 		@Override
-		public Adapter caseFamilyMember2Person(FamilyMember2Person object) {
-			return createFamilyMember2PersonAdapter();
-		}
-
-		@Override
-		public Adapter caseMotherToFemale(MotherToFemale object) {
-			return createMotherToFemaleAdapter();
-		}
-
-		@Override
-		public Adapter caseFamilies2Persons(Families2Persons object) {
-			return createFamilies2PersonsAdapter();
-		}
-
-		@Override
-		public Adapter caseDaughterToFemale(DaughterToFemale object) {
-			return createDaughterToFemaleAdapter();
-		}
-
-		@Override
-		public Adapter caseSonOfExistingFamilyToMale(SonOfExistingFamilyToMale object) {
-			return createSonOfExistingFamilyToMaleAdapter();
-		}
-
-		@Override
-		public Adapter caseDaughterOfExistingFamilyToFemale(DaughterOfExistingFamilyToFemale object) {
-			return createDaughterOfExistingFamilyToFemaleAdapter();
+		public Adapter caseFatherToMale(FatherToMale object) {
+			return createFatherToMaleAdapter();
 		}
 
 		@Override
@@ -104,13 +79,13 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseFatherOfExistingFamilyToMale(FatherOfExistingFamilyToMale object) {
-			return createFatherOfExistingFamilyToMaleAdapter();
+		public Adapter caseDaughterOfExistingFamilyToFemale(DaughterOfExistingFamilyToFemale object) {
+			return createDaughterOfExistingFamilyToFemaleAdapter();
 		}
 
 		@Override
-		public Adapter caseFatherToMale(FatherToMale object) {
-			return createFatherToMaleAdapter();
+		public Adapter caseSonOfExistingFamilyToMale(SonOfExistingFamilyToMale object) {
+			return createSonOfExistingFamilyToMaleAdapter();
 		}
 
 		@Override
@@ -119,8 +94,33 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseFamilyMember2Person(FamilyMember2Person object) {
+			return createFamilyMember2PersonAdapter();
+		}
+
+		@Override
 		public Adapter caseSonToMale(SonToMale object) {
 			return createSonToMaleAdapter();
+		}
+
+		@Override
+		public Adapter caseDaughterToFemale(DaughterToFemale object) {
+			return createDaughterToFemaleAdapter();
+		}
+
+		@Override
+		public Adapter caseMotherToFemale(MotherToFemale object) {
+			return createMotherToFemaleAdapter();
+		}
+
+		@Override
+		public Adapter caseFatherOfExistingFamilyToMale(FatherOfExistingFamilyToMale object) {
+			return createFatherOfExistingFamilyToMaleAdapter();
+		}
+
+		@Override
+		public Adapter caseFamilies2Persons(Families2Persons object) {
+			return createFamilies2PersonsAdapter();
 		}
 
 		@Override
@@ -148,86 +148,16 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FamilyMember2Person <em>Family Member2 Person</em>}'.
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FatherToMale <em>Father To Male</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.FamilyMember2Person
+	 * @see FamiliesToPersons.Rules.FatherToMale
 	 * @generated
 	 */
-	public Adapter createFamilyMember2PersonAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.MotherToFemale <em>Mother To Female</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.MotherToFemale
-	 * @generated
-	 */
-	public Adapter createMotherToFemaleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.Families2Persons <em>Families2 Persons</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.Families2Persons
-	 * @generated
-	 */
-	public Adapter createFamilies2PersonsAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.DaughterToFemale <em>Daughter To Female</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.DaughterToFemale
-	 * @generated
-	 */
-	public Adapter createDaughterToFemaleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.SonOfExistingFamilyToMale <em>Son Of Existing Family To Male</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.SonOfExistingFamilyToMale
-	 * @generated
-	 */
-	public Adapter createSonOfExistingFamilyToMaleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.DaughterOfExistingFamilyToFemale <em>Daughter Of Existing Family To Female</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.DaughterOfExistingFamilyToFemale
-	 * @generated
-	 */
-	public Adapter createDaughterOfExistingFamilyToFemaleAdapter() {
+	public Adapter createFatherToMaleAdapter() {
 		return null;
 	}
 
@@ -246,30 +176,30 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FatherOfExistingFamilyToMale <em>Father Of Existing Family To Male</em>}'.
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.DaughterOfExistingFamilyToFemale <em>Daughter Of Existing Family To Female</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.FatherOfExistingFamilyToMale
+	 * @see FamiliesToPersons.Rules.DaughterOfExistingFamilyToFemale
 	 * @generated
 	 */
-	public Adapter createFatherOfExistingFamilyToMaleAdapter() {
+	public Adapter createDaughterOfExistingFamilyToFemaleAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FatherToMale <em>Father To Male</em>}'.
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.SonOfExistingFamilyToMale <em>Son Of Existing Family To Male</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see FamiliesToPersons.Rules.FatherToMale
+	 * @see FamiliesToPersons.Rules.SonOfExistingFamilyToMale
 	 * @generated
 	 */
-	public Adapter createFatherToMaleAdapter() {
+	public Adapter createSonOfExistingFamilyToMaleAdapter() {
 		return null;
 	}
 
@@ -288,6 +218,20 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FamilyMember2Person <em>Family Member2 Person</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FamiliesToPersons.Rules.FamilyMember2Person
+	 * @generated
+	 */
+	public Adapter createFamilyMember2PersonAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.SonToMale <em>Son To Male</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -298,6 +242,62 @@ public class RulesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSonToMaleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.DaughterToFemale <em>Daughter To Female</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FamiliesToPersons.Rules.DaughterToFemale
+	 * @generated
+	 */
+	public Adapter createDaughterToFemaleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.MotherToFemale <em>Mother To Female</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FamiliesToPersons.Rules.MotherToFemale
+	 * @generated
+	 */
+	public Adapter createMotherToFemaleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.FatherOfExistingFamilyToMale <em>Father Of Existing Family To Male</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FamiliesToPersons.Rules.FatherOfExistingFamilyToMale
+	 * @generated
+	 */
+	public Adapter createFatherOfExistingFamilyToMaleAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link FamiliesToPersons.Rules.Families2Persons <em>Families2 Persons</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see FamiliesToPersons.Rules.Families2Persons
+	 * @generated
+	 */
+	public Adapter createFamilies2PersonsAdapter() {
 		return null;
 	}
 

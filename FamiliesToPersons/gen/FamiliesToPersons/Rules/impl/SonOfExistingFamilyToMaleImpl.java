@@ -36,10 +36,10 @@ import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 import org.moflon.tgg.language.modelgenerator.RuleEntryList;
 
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
+import org.moflon.tgg.runtime.CCMatch;
 import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
-import org.moflon.tgg.runtime.IsApplicableMatchCC;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
 import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
@@ -753,7 +753,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_2(EMoflonEdge _edge_family_son) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_34(EMoflonEdge _edge_family_son) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = SonOfExistingFamilyToMaleImpl
 				.pattern_SonOfExistingFamilyToMale_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -815,7 +815,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_2(EMoflonEdge _edge_person) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_34(EMoflonEdge _edge_person) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = SonOfExistingFamilyToMaleImpl
 				.pattern_SonOfExistingFamilyToMale_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -890,13 +890,13 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		var_fm_firstName.setValue(__helper.getValue("fm", "firstName"));
 		var_fm_firstName.setType("String");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue(", ");
-		var_literal0.setType("");
-
 		Variable var_f_familyName = CSPFactoryHelper.eINSTANCE.createVariable("f", true, csp);
 		var_f_familyName.setValue(__helper.getValue("f", "familyName"));
 		var_f_familyName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue(", ");
+		var_literal0.setType("");
 
 		Variable var_p_fullName = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
 		var_p_fullName.setValue(__helper.getValue("p", "fullName"));
@@ -945,13 +945,13 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		var_fm_firstName.setValue(__helper.getValue("fm", "firstName"));
 		var_fm_firstName.setType("String");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue(", ");
-		var_literal0.setType("");
-
 		Variable var_f_familyName = CSPFactoryHelper.eINSTANCE.createVariable("f", true, csp);
 		var_f_familyName.setValue(__helper.getValue("f", "familyName"));
 		var_f_familyName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue(", ");
+		var_literal0.setType("");
 
 		Variable var_p_fullName = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
 		var_p_fullName.setValue(__helper.getValue("p", "fullName"));
@@ -988,62 +988,81 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 */
 	public IsApplicableRuleResult isApplicable_CC(Match sourceMatch, Match targetMatch) {
 		// prepare
-		Object[] result1_bindingAndBlack = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_24_1_prepare_bindingAndBlackFFB(this);
-		if (result1_bindingAndBlack == null) {
+		Object[] result1_black = SonOfExistingFamilyToMaleImpl
+				.pattern_SonOfExistingFamilyToMale_24_1_prepare_blackB(this);
+		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
 		}
-		EOperation perform_CC = (EOperation) result1_bindingAndBlack[0];
-		// EClass __eClass = (EClass) result1_bindingAndBlack[1];
-		Object[] result1_green = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_24_1_prepare_greenBF(perform_CC);
-		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[1];
+		Object[] result1_green = SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_1_prepare_greenF();
+		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
-		// ForEach match context
-		Object[] result2_binding = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_24_2_matchcontext_bindingFFFFFBB(targetMatch, sourceMatch);
-		if (result2_binding == null) {
-			throw new RuntimeException("Binding in node match context failed." + " Variables: " + "[targetMatch] = "
-					+ targetMatch + ", " + "[sourceMatch] = " + sourceMatch + ".");
+		// match src trg context
+		Object[] result2_bindingAndBlack = SonOfExistingFamilyToMaleImpl
+				.pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(sourceMatch,
+						targetMatch);
+		if (result2_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [match src trg context] failed." + " Variables: "
+					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Male p = (Male) result2_binding[0];
-		Persons persons = (Persons) result2_binding[1];
-		Family f = (Family) result2_binding[2];
-		FamilyMember fm = (FamilyMember) result2_binding[3];
-		Families families = (Families) result2_binding[4];
-		for (Object[] result2_black : SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_24_2_matchcontext_blackBFBBBBBB(p, persons, f, fm, families,
-						sourceMatch, targetMatch)) {
-			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_black[1];
-			Object[] result2_green = SonOfExistingFamilyToMaleImpl
-					.pattern_SonOfExistingFamilyToMale_24_2_matchcontext_greenBBBBBBBFB(p, families2persons, persons, f,
-							fm, families, sourceMatch, targetMatch);
-			IsApplicableMatchCC isApplicableMatch = (IsApplicableMatchCC) result2_green[7];
+		Male p = (Male) result2_bindingAndBlack[0];
+		Persons persons = (Persons) result2_bindingAndBlack[1];
+		Family f = (Family) result2_bindingAndBlack[2];
+		FamilyMember fm = (FamilyMember) result2_bindingAndBlack[3];
+		Families families = (Families) result2_bindingAndBlack[4];
 
-			// check csp
-			Object[] result3_bindingAndBlack = SonOfExistingFamilyToMaleImpl
-					.pattern_SonOfExistingFamilyToMale_24_3_checkcsp_bindingAndBlackFBBBBBBBBBB(this, isApplicableMatch,
-							p, families2persons, persons, f, fm, families, sourceMatch, targetMatch);
-			if (result3_bindingAndBlack != null) {
-				// CSP csp = (CSP) result3_bindingAndBlack[0];
+		// solve csp
+		Object[] result3_bindingAndBlack = SonOfExistingFamilyToMaleImpl
+				.pattern_SonOfExistingFamilyToMale_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, p, persons, f, fm,
+						families, sourceMatch, targetMatch);
+		if (result3_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [solve csp] failed." + " Variables: " + "[this] = "
+					+ this + ", " + "[p] = " + p + ", " + "[persons] = " + persons + ", " + "[f] = " + f + ", "
+					+ "[fm] = " + fm + ", " + "[families] = " + families + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
+		}
+		CSP csp = (CSP) result3_bindingAndBlack[0];
+		// check CSP
+		if (SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_4_checkCSP_expressionFB(csp)) {
+			// ForEach match corr context
+			for (Object[] result5_black : SonOfExistingFamilyToMaleImpl
+					.pattern_SonOfExistingFamilyToMale_24_5_matchcorrcontext_blackFBBBB(persons, families, sourceMatch,
+							targetMatch)) {
+				FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result5_black[0];
+				Object[] result5_green = SonOfExistingFamilyToMaleImpl
+						.pattern_SonOfExistingFamilyToMale_24_5_matchcorrcontext_greenBBBF(families2persons,
+								sourceMatch, targetMatch);
+				CCMatch ccMatch = (CCMatch) result5_green[3];
+
+				// create correspondence
+				Object[] result6_black = SonOfExistingFamilyToMaleImpl
+						.pattern_SonOfExistingFamilyToMale_24_6_createcorrespondence_blackBBBBBB(p, persons, f, fm,
+								families, ccMatch);
+				if (result6_black == null) {
+					throw new RuntimeException(
+							"Pattern matching in node [create correspondence] failed." + " Variables: " + "[p] = " + p
+									+ ", " + "[persons] = " + persons + ", " + "[f] = " + f + ", " + "[fm] = " + fm
+									+ ", " + "[families] = " + families + ", " + "[ccMatch] = " + ccMatch + ".");
+				}
+				SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_6_createcorrespondence_greenBFBB(p,
+						fm, ccMatch);
+				// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result6_green[1];
 
 				// add to returned result
-				Object[] result4_black = SonOfExistingFamilyToMaleImpl
-						.pattern_SonOfExistingFamilyToMale_24_4_addtoreturnedresult_blackBB(result, isApplicableMatch);
-				if (result4_black == null) {
-					throw new RuntimeException(
-							"Pattern matching in node [add to returned result] failed." + " Variables: " + "[result] = "
-									+ result + ", " + "[isApplicableMatch] = " + isApplicableMatch + ".");
+				Object[] result7_black = SonOfExistingFamilyToMaleImpl
+						.pattern_SonOfExistingFamilyToMale_24_7_addtoreturnedresult_blackBB(result, ccMatch);
+				if (result7_black == null) {
+					throw new RuntimeException("Pattern matching in node [add to returned result] failed."
+							+ " Variables: " + "[result] = " + result + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
-				SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_4_addtoreturnedresult_greenBB(result,
-						isApplicableMatch);
+				SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_7_addtoreturnedresult_greenBB(result,
+						ccMatch);
 
-			} else {
 			}
 
+		} else {
 		}
-		return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_5_expressionFB(result);
+		return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_24_8_expressionFB(result);
 	}
 
 	/**
@@ -1051,11 +1070,9 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(IsApplicableMatchCC isApplicableMatch, Male p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
+	public CSP isApplicable_solveCsp_CC(Male p, Persons persons, Family f, FamilyMember fm, Families families,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
-		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 		Variable literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal0", true, csp);
@@ -1083,14 +1100,6 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		// Solve CSP
 		concat.setRuleName("");
 		concat.solve(literal0, var_f_familyName, var_fm_firstName, var_p_fullName);
-
-		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("families2persons", families2persons);
-		isApplicableMatch.registerObject("persons", persons);
-		isApplicableMatch.registerObject("f", f);
-		isApplicableMatch.registerObject("fm", fm);
-		isApplicableMatch.registerObject("families", families);
 		return csp;
 	}
 
@@ -1108,35 +1117,15 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PerformRuleResult perform_CC(IsApplicableMatchCC isApplicableMatch) {
-		// prepare
+	public boolean checkDEC_FWD(Family f, FamilyMember fm, Families families) {// match tgg pattern
 		Object[] result1_black = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_27_1_prepare_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException(
-					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
+				.pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_blackBBB(f, fm, families);
+		if (result1_black != null) {
+			return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_27_2_expressionF();
+		} else {
+			return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_27_3_expressionF();
 		}
 
-		// create correspondence links
-		Object[] result2_bindingAndBlack = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_bindingAndBlackFFFFFFB(
-						isApplicableMatch);
-		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching in node [create correspondence links] failed." + " Variables: "
-					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
-		}
-		Male p = (Male) result2_bindingAndBlack[0];
-		// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_bindingAndBlack[1];
-		// Persons persons = (Persons) result2_bindingAndBlack[2];
-		// Family f = (Family) result2_bindingAndBlack[3];
-		FamilyMember fm = (FamilyMember) result2_bindingAndBlack[4];
-		// Families families = (Families) result2_bindingAndBlack[5];
-		Object[] result2_green = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_greenBBFF(p, fm);
-		PerformRuleResult result = (PerformRuleResult) result2_green[2];
-		// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result2_green[3];
-
-		return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_27_3_expressionFB(result);
 	}
 
 	/**
@@ -1144,9 +1133,9 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Family f, FamilyMember fm, Families families) {// match tgg pattern
+	public boolean checkDEC_BWD(Male p, Persons persons) {// match tgg pattern
 		Object[] result1_black = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_blackBBB(f, fm, families);
+				.pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_blackBB(p, persons);
 		if (result1_black != null) {
 			return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_28_2_expressionF();
 		} else {
@@ -1160,48 +1149,32 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Male p, Persons persons) {// match tgg pattern
-		Object[] result1_black = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_29_1_matchtggpattern_blackBB(p, persons);
-		if (result1_black != null) {
-			return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_29_2_expressionF();
-		} else {
-			return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_29_3_expressionF();
-		}
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
 			FamiliesToPersonsCorr families2personsParameter) {
 		// create result
 		Object[] result1_black = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_30_1_createresult_blackB(this);
+				.pattern_SonOfExistingFamilyToMale_29_1_createresult_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [create result] failed." + " Variables: " + "[this] = " + this + ".");
 		}
 		Object[] result1_green = SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_30_1_createresult_greenFF();
+				.pattern_SonOfExistingFamilyToMale_29_1_createresult_greenFF();
 		IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result1_green[0];
 		ModelgeneratorRuleResult ruleResult = (ModelgeneratorRuleResult) result1_green[1];
 
 		// ForEach is applicable core
 		for (Object[] result2_black : SonOfExistingFamilyToMaleImpl
-				.pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
+				.pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer, ruleResult)) {
 			// RuleEntryList families2personsList = (RuleEntryList) result2_black[0];
 			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_black[1];
-			Families families = (Families) result2_black[2];
-			Family f = (Family) result2_black[3];
-			Persons persons = (Persons) result2_black[4];
+			Persons persons = (Persons) result2_black[2];
+			Families families = (Families) result2_black[3];
+			Family f = (Family) result2_black[4];
 
 			// solve CSP
 			Object[] result3_bindingAndBlack = SonOfExistingFamilyToMaleImpl
-					.pattern_SonOfExistingFamilyToMale_30_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
+					.pattern_SonOfExistingFamilyToMale_29_3_solveCSP_bindingAndBlackFBBBBBBB(this, isApplicableMatch,
 							families2persons, persons, f, families, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching in node [solve CSP] failed." + " Variables: " + "[this] = "
@@ -1211,17 +1184,17 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 			}
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// check CSP
-			if (SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_30_4_checkCSP_expressionFBB(this,
+			if (SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_29_4_checkCSP_expressionFBB(this,
 					csp)) {
 				// check nacs
 				Object[] result5_black = SonOfExistingFamilyToMaleImpl
-						.pattern_SonOfExistingFamilyToMale_30_5_checknacs_blackBBBB(families2persons, persons, f,
+						.pattern_SonOfExistingFamilyToMale_29_5_checknacs_blackBBBB(families2persons, persons, f,
 								families);
 				if (result5_black != null) {
 
 					// perform
 					Object[] result6_black = SonOfExistingFamilyToMaleImpl
-							.pattern_SonOfExistingFamilyToMale_30_6_perform_blackBBBBB(families2persons, persons, f,
+							.pattern_SonOfExistingFamilyToMale_29_6_perform_blackBBBBB(families2persons, persons, f,
 									families, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching in node [perform] failed." + " Variables: "
@@ -1229,7 +1202,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 								+ "[f] = " + f + ", " + "[families] = " + families + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_30_6_perform_greenFBFBFBB(persons,
+					SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_29_6_perform_greenFBFBFBB(persons,
 							f, ruleResult, csp);
 					// Male p = (Male) result6_green[0];
 					// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result6_green[2];
@@ -1242,7 +1215,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 			}
 
 		}
-		return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_30_7_expressionFB(ruleResult);
+		return SonOfExistingFamilyToMaleImpl.pattern_SonOfExistingFamilyToMale_29_7_expressionFB(ruleResult);
 	}
 
 	/**
@@ -1361,25 +1334,22 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 			return null;
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_2__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
-		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_2__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_2((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_34__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_34((EMoflonEdge) arguments.get(0));
+		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_34__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_34((EMoflonEdge) arguments.get(0));
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPLICABLE_SOLVE_CSP_CC__ISAPPLICABLEMATCHCC_MALE_FAMILIESTOPERSONSCORR_PERSONS_FAMILY_FAMILYMEMBER_FAMILIES_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((IsApplicableMatchCC) arguments.get(0), (Male) arguments.get(1),
-					(FamiliesToPersonsCorr) arguments.get(2), (Persons) arguments.get(3), (Family) arguments.get(4),
-					(FamilyMember) arguments.get(5), (Families) arguments.get(6), (Match) arguments.get(7),
-					(Match) arguments.get(8));
+		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPLICABLE_SOLVE_CSP_CC__MALE_PERSONS_FAMILY_FAMILYMEMBER_FAMILIES_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Male) arguments.get(0), (Persons) arguments.get(1),
+					(Family) arguments.get(2), (FamilyMember) arguments.get(3), (Families) arguments.get(4),
+					(Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___PERFORM_CC__ISAPPLICABLEMATCHCC:
-			return perform_CC((IsApplicableMatchCC) arguments.get(0));
 		case RulesPackage.SON_OF_EXISTING_FAMILY_TO_MALE___CHECK_DEC_FWD__FAMILY_FAMILYMEMBER_FAMILIES:
 			return checkDEC_FWD((Family) arguments.get(0), (FamilyMember) arguments.get(1),
 					(Families) arguments.get(2));
@@ -2438,9 +2408,9 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 
 	public static final Object[] pattern_SonOfExistingFamilyToMale_20_2_testcorematchandDECs_black_nac_0BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_father_622954 = fm.getFamily_father();
-		if (__DEC_fm_family_father_622954 != null) {
-			if (!f.equals(__DEC_fm_family_father_622954)) {
+		Family __DEC_fm_family_father_30976 = fm.getFamily_father();
+		if (__DEC_fm_family_father_30976 != null) {
+			if (!f.equals(__DEC_fm_family_father_30976)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2450,9 +2420,9 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 
 	public static final Object[] pattern_SonOfExistingFamilyToMale_20_2_testcorematchandDECs_black_nac_1BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_mother_301909 = fm.getFamily_mother();
-		if (__DEC_fm_family_mother_301909 != null) {
-			if (!f.equals(__DEC_fm_family_mother_301909)) {
+		Family __DEC_fm_family_mother_548065 = fm.getFamily_mother();
+		if (__DEC_fm_family_mother_548065 != null) {
+			if (!f.equals(__DEC_fm_family_mother_548065)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2462,9 +2432,9 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 
 	public static final Object[] pattern_SonOfExistingFamilyToMale_20_2_testcorematchandDECs_black_nac_2BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_daughter_628293 = fm.getFamily_daughter();
-		if (__DEC_fm_family_daughter_628293 != null) {
-			if (!f.equals(__DEC_fm_family_daughter_628293)) {
+		Family __DEC_fm_family_daughter_789828 = fm.getFamily_daughter();
+		if (__DEC_fm_family_daughter_789828 != null) {
+			if (!f.equals(__DEC_fm_family_daughter_789828)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2697,54 +2667,18 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_bindingFB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_blackB(
 			SonOfExistingFamilyToMale _this) {
-		EClass _localVariable_0 = _this.eClass();
-		EClass __eClass = _localVariable_0;
-		if (__eClass != null) {
-			return new Object[] { __eClass, _this };
-		}
-		return null;
+		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_blackFBB(EClass __eClass,
-			SonOfExistingFamilyToMale _this) {
-		for (EOperation perform_CC : __eClass.getEOperations()) {
-			String perform_CC_name = perform_CC.getName();
-			if (perform_CC_name.equals("perform_CC")) {
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_bindingAndBlackFFB(
-			SonOfExistingFamilyToMale _this) {
-		Object[] result_pattern_SonOfExistingFamilyToMale_24_1_prepare_binding = pattern_SonOfExistingFamilyToMale_24_1_prepare_bindingFB(
-				_this);
-		if (result_pattern_SonOfExistingFamilyToMale_24_1_prepare_binding != null) {
-			EClass __eClass = (EClass) result_pattern_SonOfExistingFamilyToMale_24_1_prepare_binding[0];
-
-			Object[] result_pattern_SonOfExistingFamilyToMale_24_1_prepare_black = pattern_SonOfExistingFamilyToMale_24_1_prepare_blackFBB(
-					__eClass, _this);
-			if (result_pattern_SonOfExistingFamilyToMale_24_1_prepare_black != null) {
-				EOperation perform_CC = (EOperation) result_pattern_SonOfExistingFamilyToMale_24_1_prepare_black[0];
-
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_greenBF(EOperation perform_CC) {
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_1_prepare_greenF() {
 		IsApplicableRuleResult result = RuntimeFactory.eINSTANCE.createIsApplicableRuleResult();
-		result.setPerformOperation(perform_CC);
-		return new Object[] { perform_CC, result };
+		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_2_matchcontext_bindingFFFFFBB(Match targetMatch,
-			Match sourceMatch) {
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_bindingFFFFFBB(
+			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("p");
 		EObject _localVariable_1 = targetMatch.getObject("persons");
 		EObject _localVariable_2 = sourceMatch.getObject("f");
@@ -2774,206 +2708,139 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SonOfExistingFamilyToMale_24_2_matchcontext_blackBFBBBBBB(Male p,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_blackBBBBBBB(Male p,
 			Persons persons, Family f, FamilyMember fm, Families families, Match sourceMatch, Match targetMatch) {
+		if (!sourceMatch.equals(targetMatch)) {
+			return new Object[] { p, persons, f, fm, families, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
+			Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding = pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_bindingFFFFFBB(
+				targetMatch, sourceMatch);
+		if (result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding != null) {
+			Male p = (Male) result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding[0];
+			Persons persons = (Persons) result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding[1];
+			Family f = (Family) result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding[2];
+			FamilyMember fm = (FamilyMember) result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding[3];
+			Families families = (Families) result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_binding[4];
+
+			Object[] result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_black = pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_blackBBBBBBB(
+					p, persons, f, fm, families, sourceMatch, targetMatch);
+			if (result_pattern_SonOfExistingFamilyToMale_24_2_matchsrctrgcontext_black != null) {
+
+				return new Object[] { p, persons, f, fm, families, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_solvecsp_bindingFBBBBBBBB(
+			SonOfExistingFamilyToMale _this, Male p, Persons persons, Family f, FamilyMember fm, Families families,
+			Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(p, persons, f, fm, families, sourceMatch, targetMatch);
+		CSP csp = _localVariable_5;
+		if (csp != null) {
+			return new Object[] { csp, _this, p, persons, f, fm, families, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_solvecsp_blackB(CSP csp) {
+		return new Object[] { csp };
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
+			SonOfExistingFamilyToMale _this, Male p, Persons persons, Family f, FamilyMember fm, Families families,
+			Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_SonOfExistingFamilyToMale_24_3_solvecsp_binding = pattern_SonOfExistingFamilyToMale_24_3_solvecsp_bindingFBBBBBBBB(
+				_this, p, persons, f, fm, families, sourceMatch, targetMatch);
+		if (result_pattern_SonOfExistingFamilyToMale_24_3_solvecsp_binding != null) {
+			CSP csp = (CSP) result_pattern_SonOfExistingFamilyToMale_24_3_solvecsp_binding[0];
+
+			Object[] result_pattern_SonOfExistingFamilyToMale_24_3_solvecsp_black = pattern_SonOfExistingFamilyToMale_24_3_solvecsp_blackB(
+					csp);
+			if (result_pattern_SonOfExistingFamilyToMale_24_3_solvecsp_black != null) {
+
+				return new Object[] { csp, _this, p, persons, f, fm, families, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final boolean pattern_SonOfExistingFamilyToMale_24_4_checkCSP_expressionFB(CSP csp) {
+		boolean _localVariable_0 = csp.check();
+		boolean _result = Boolean.valueOf(_localVariable_0);
+		return _result;
+	}
+
+	public static final Iterable<Object[]> pattern_SonOfExistingFamilyToMale_24_5_matchcorrcontext_blackFBBBB(
+			Persons persons, Families families, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			if (families.getFamily().contains(f)) {
-				if (persons.getPerson().contains(p)) {
-					if (f.equals(fm.getFamily_son())) {
-						for (FamiliesToPersonsCorr families2persons : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(persons, FamiliesToPersonsCorr.class, "target")) {
-							if (families.equals(families2persons.getSource())) {
-								_result.add(new Object[] { p, families2persons, persons, f, fm, families, sourceMatch,
-										targetMatch });
-							}
-						}
-					}
+			for (FamiliesToPersonsCorr families2persons : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(persons, FamiliesToPersonsCorr.class, "target")) {
+				if (families.equals(families2persons.getSource())) {
+					_result.add(new Object[] { families2persons, persons, families, sourceMatch, targetMatch });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_2_matchcontext_greenBBBBBBBFB(Male p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		IsApplicableMatchCC isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatchCC();
-		String isApplicableMatch_ruleName_prime = "SonOfExistingFamilyToMale";
-		isApplicableMatch.setSourceMatch(sourceMatch);
-		isApplicableMatch.setTargetMatch(targetMatch);
-		isApplicableMatch.getAllContextElements().add(f);
-		isApplicableMatch.getAllContextElements().add(fm);
-		isApplicableMatch.getAllContextElements().add(families);
-		isApplicableMatch.getAllContextElements().add(p);
-		isApplicableMatch.getAllContextElements().add(persons);
-		isApplicableMatch.getAllContextElements().add(families2persons);
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { p, families2persons, persons, f, fm, families, sourceMatch, isApplicableMatch,
-				targetMatch };
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_5_matchcorrcontext_greenBBBF(
+			FamiliesToPersonsCorr families2persons, Match sourceMatch, Match targetMatch) {
+		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
+		String ccMatch_ruleName_prime = "SonOfExistingFamilyToMale";
+		ccMatch.setSourceMatch(sourceMatch);
+		ccMatch.setTargetMatch(targetMatch);
+		ccMatch.getAllContextElements().add(families2persons);
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { families2persons, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_checkcsp_bindingFBBBBBBBBBB(
-			SonOfExistingFamilyToMale _this, IsApplicableMatchCC isApplicableMatch, Male p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_CC(isApplicableMatch, p, families2persons, persons, f, fm,
-				families, sourceMatch, targetMatch);
-		CSP csp = _localVariable_0;
-		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, p, families2persons, persons, f, fm, families,
-					sourceMatch, targetMatch };
-		}
-		return null;
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_6_createcorrespondence_blackBBBBBB(Male p,
+			Persons persons, Family f, FamilyMember fm, Families families, CCMatch ccMatch) {
+		return new Object[] { p, persons, f, fm, families, ccMatch };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_checkcsp_blackB(CSP csp) {
-		return new Object[] { csp };
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_6_createcorrespondence_greenBFBB(Male p,
+			FamilyMember fm, CCMatch ccMatch) {
+		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
+		familyMember2Persons.setSource(fm);
+		familyMember2Persons.setTarget(p);
+		ccMatch.getCreateCorr().add(familyMember2Persons);
+		return new Object[] { p, familyMember2Persons, fm, ccMatch };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_3_checkcsp_bindingAndBlackFBBBBBBBBBB(
-			SonOfExistingFamilyToMale _this, IsApplicableMatchCC isApplicableMatch, Male p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_SonOfExistingFamilyToMale_24_3_checkcsp_binding = pattern_SonOfExistingFamilyToMale_24_3_checkcsp_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, p, families2persons, persons, f, fm, families, sourceMatch, targetMatch);
-		if (result_pattern_SonOfExistingFamilyToMale_24_3_checkcsp_binding != null) {
-			CSP csp = (CSP) result_pattern_SonOfExistingFamilyToMale_24_3_checkcsp_binding[0];
-
-			Object[] result_pattern_SonOfExistingFamilyToMale_24_3_checkcsp_black = pattern_SonOfExistingFamilyToMale_24_3_checkcsp_blackB(
-					csp);
-			if (result_pattern_SonOfExistingFamilyToMale_24_3_checkcsp_black != null) {
-
-				return new Object[] { csp, _this, isApplicableMatch, p, families2persons, persons, f, fm, families,
-						sourceMatch, targetMatch };
-			}
-		}
-		return null;
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_7_addtoreturnedresult_blackBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_4_addtoreturnedresult_blackBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		return new Object[] { result, isApplicableMatch };
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_24_4_addtoreturnedresult_greenBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		result.getIsApplicableMatch().add(isApplicableMatch);
+	public static final Object[] pattern_SonOfExistingFamilyToMale_24_7_addtoreturnedresult_greenBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		result.getIsApplicableMatch().add(ccMatch);
 		boolean result_success_prime = Boolean.valueOf(true);
-		String isApplicableMatch_ruleName_prime = "SonOfExistingFamilyToMale";
+		String ccMatch_ruleName_prime = "SonOfExistingFamilyToMale";
 		result.setSuccess(Boolean.valueOf(result_success_prime));
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { result, isApplicableMatch };
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final IsApplicableRuleResult pattern_SonOfExistingFamilyToMale_24_5_expressionFB(
+	public static final IsApplicableRuleResult pattern_SonOfExistingFamilyToMale_24_8_expressionFB(
 			IsApplicableRuleResult result) {
 		IsApplicableRuleResult _result = result;
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_prepare_blackB(
-			SonOfExistingFamilyToMale _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_bindingFFFFFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("p");
-		EObject _localVariable_1 = isApplicableMatch.getObject("families2persons");
-		EObject _localVariable_2 = isApplicableMatch.getObject("persons");
-		EObject _localVariable_3 = isApplicableMatch.getObject("f");
-		EObject _localVariable_4 = isApplicableMatch.getObject("fm");
-		EObject _localVariable_5 = isApplicableMatch.getObject("families");
-		EObject tmpP = _localVariable_0;
-		EObject tmpFamilies2persons = _localVariable_1;
-		EObject tmpPersons = _localVariable_2;
-		EObject tmpF = _localVariable_3;
-		EObject tmpFm = _localVariable_4;
-		EObject tmpFamilies = _localVariable_5;
-		if (tmpP instanceof Male) {
-			Male p = (Male) tmpP;
-			if (tmpFamilies2persons instanceof FamiliesToPersonsCorr) {
-				FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) tmpFamilies2persons;
-				if (tmpPersons instanceof Persons) {
-					Persons persons = (Persons) tmpPersons;
-					if (tmpF instanceof Family) {
-						Family f = (Family) tmpF;
-						if (tmpFm instanceof FamilyMember) {
-							FamilyMember fm = (FamilyMember) tmpFm;
-							if (tmpFamilies instanceof Families) {
-								Families families = (Families) tmpFamilies;
-								return new Object[] { p, families2persons, persons, f, fm, families,
-										isApplicableMatch };
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_blackBBBBBBB(Male p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			IsApplicableMatchCC isApplicableMatch) {
-		if (families.getFamily().contains(f)) {
-			if (persons.getPerson().contains(p)) {
-				if (persons.equals(families2persons.getTarget())) {
-					if (f.equals(fm.getFamily_son())) {
-						if (families.equals(families2persons.getSource())) {
-							return new Object[] { p, families2persons, persons, f, fm, families, isApplicableMatch };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_bindingAndBlackFFFFFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		Object[] result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding = pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_bindingFFFFFFB(
-				isApplicableMatch);
-		if (result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding != null) {
-			Male p = (Male) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[0];
-			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[1];
-			Persons persons = (Persons) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[2];
-			Family f = (Family) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[3];
-			FamilyMember fm = (FamilyMember) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[4];
-			Families families = (Families) result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_binding[5];
-
-			Object[] result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_black = pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_blackBBBBBBB(
-					p, families2persons, persons, f, fm, families, isApplicableMatch);
-			if (result_pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_black != null) {
-
-				return new Object[] { p, families2persons, persons, f, fm, families, isApplicableMatch };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_27_2_createcorrespondencelinks_greenBBFF(Male p,
-			FamilyMember fm) {
-		PerformRuleResult result = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
-		result.getCreatedElements().add(familyMember2Persons);
-		familyMember2Persons.setSource(fm);
-		familyMember2Persons.setTarget(p);
-		return new Object[] { p, fm, result, familyMember2Persons };
-	}
-
-	public static final PerformRuleResult pattern_SonOfExistingFamilyToMale_27_3_expressionFB(
-			PerformRuleResult result) {
-		PerformRuleResult _result = result;
-		return _result;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_0BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_0BB(FamilyMember fm,
 			Family f) {
-		Family __DEC_fm_family_father_780775 = fm.getFamily_father();
-		if (__DEC_fm_family_father_780775 != null) {
-			if (!f.equals(__DEC_fm_family_father_780775)) {
+		Family __DEC_fm_family_father_562371 = fm.getFamily_father();
+		if (__DEC_fm_family_father_562371 != null) {
+			if (!f.equals(__DEC_fm_family_father_562371)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2981,11 +2848,11 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_1BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_1BB(FamilyMember fm,
 			Family f) {
-		Family __DEC_fm_family_mother_523046 = fm.getFamily_mother();
-		if (__DEC_fm_family_mother_523046 != null) {
-			if (!f.equals(__DEC_fm_family_mother_523046)) {
+		Family __DEC_fm_family_mother_119673 = fm.getFamily_mother();
+		if (__DEC_fm_family_mother_119673 != null) {
+			if (!f.equals(__DEC_fm_family_mother_119673)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2993,11 +2860,11 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_2BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_2BB(FamilyMember fm,
 			Family f) {
-		Family __DEC_fm_family_daughter_407350 = fm.getFamily_daughter();
-		if (__DEC_fm_family_daughter_407350 != null) {
-			if (!f.equals(__DEC_fm_family_daughter_407350)) {
+		Family __DEC_fm_family_daughter_893534 = fm.getFamily_daughter();
+		if (__DEC_fm_family_daughter_893534 != null) {
+			if (!f.equals(__DEC_fm_family_daughter_893534)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -3005,7 +2872,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_3BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_3BB(FamilyMember fm,
 			Family f) {
 		if (f.equals(fm.getFamily_father())) {
 			return new Object[] { fm, f };
@@ -3013,7 +2880,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_4BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_4BB(FamilyMember fm,
 			Family f) {
 		if (f.equals(fm.getFamily_mother())) {
 			return new Object[] { fm, f };
@@ -3021,7 +2888,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_5BB(FamilyMember fm,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_5BB(FamilyMember fm,
 			Family f) {
 		if (f.equals(fm.getFamily_daughter())) {
 			return new Object[] { fm, f };
@@ -3029,17 +2896,17 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_blackBBB(Family f,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_blackBBB(Family f,
 			FamilyMember fm, Families families) {
 		if (families.getFamily().contains(f)) {
 			if (f.equals(fm.getFamily_son())) {
-				if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_0BB(fm, f) == null) {
-					if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_1BB(fm, f) == null) {
-						if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_2BB(fm, f) == null) {
-							if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_3BB(fm, f) == null) {
-								if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_4BB(fm,
+				if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_0BB(fm, f) == null) {
+					if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_1BB(fm, f) == null) {
+						if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_2BB(fm, f) == null) {
+							if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_3BB(fm, f) == null) {
+								if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_4BB(fm,
 										f) == null) {
-									if (pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_black_nac_5BB(fm,
+									if (pattern_SonOfExistingFamilyToMale_27_1_matchtggpattern_black_nac_5BB(fm,
 											f) == null) {
 										return new Object[] { f, fm, families };
 									}
@@ -3049,6 +2916,24 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 					}
 				}
 			}
+		}
+		return null;
+	}
+
+	public static final boolean pattern_SonOfExistingFamilyToMale_27_2_expressionF() {
+		boolean _result = Boolean.valueOf(true);
+		return _result;
+	}
+
+	public static final boolean pattern_SonOfExistingFamilyToMale_27_3_expressionF() {
+		boolean _result = false;
+		return _result;
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_28_1_matchtggpattern_blackBB(Male p,
+			Persons persons) {
+		if (persons.getPerson().contains(p)) {
+			return new Object[] { p, persons };
 		}
 		return null;
 	}
@@ -3063,30 +2948,12 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_29_1_matchtggpattern_blackBB(Male p,
-			Persons persons) {
-		if (persons.getPerson().contains(p)) {
-			return new Object[] { p, persons };
-		}
-		return null;
-	}
-
-	public static final boolean pattern_SonOfExistingFamilyToMale_29_2_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final boolean pattern_SonOfExistingFamilyToMale_29_3_expressionF() {
-		boolean _result = false;
-		return _result;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_1_createresult_blackB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_1_createresult_blackB(
 			SonOfExistingFamilyToMale _this) {
 		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_1_createresult_greenFF() {
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_1_createresult_greenFF() {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		ModelgeneratorRuleResult ruleResult = RuntimeFactory.eINSTANCE.createModelgeneratorRuleResult();
 		boolean ruleResult_success_prime = false;
@@ -3094,7 +2961,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return new Object[] { isApplicableMatch, ruleResult };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_0BB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_0BB(
 			ModelgeneratorRuleResult ruleResult, FamiliesToPersonsCorr families2persons) {
 		if (ruleResult.getCorrObjects().contains(families2persons)) {
 			return new Object[] { ruleResult, families2persons };
@@ -3102,23 +2969,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Families families) {
-		if (ruleResult.getSourceObjects().contains(families)) {
-			return new Object[] { ruleResult, families };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Family f) {
-		if (ruleResult.getSourceObjects().contains(f)) {
-			return new Object[] { ruleResult, f };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_3BB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, Persons persons) {
 		if (ruleResult.getTargetObjects().contains(persons)) {
 			return new Object[] { ruleResult, persons };
@@ -3126,28 +2977,44 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_blackFFFFFBB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, Families families) {
+		if (ruleResult.getSourceObjects().contains(families)) {
+			return new Object[] { ruleResult, families };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, Family f) {
+		if (ruleResult.getSourceObjects().contains(f)) {
+			return new Object[] { ruleResult, f };
+		}
+		return null;
+	}
+
+	public static final Iterable<Object[]> pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_blackFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList families2personsList : ruleEntryContainer.getRuleEntryList()) {
 			for (EObject tmpFamilies2persons : families2personsList.getEntryObjects()) {
 				if (tmpFamilies2persons instanceof FamiliesToPersonsCorr) {
 					FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) tmpFamilies2persons;
-					Families families = families2persons.getSource();
-					if (families != null) {
-						Persons persons = families2persons.getTarget();
-						if (persons != null) {
-							if (pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_0BB(ruleResult,
+					Persons persons = families2persons.getTarget();
+					if (persons != null) {
+						Families families = families2persons.getSource();
+						if (families != null) {
+							if (pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									families2persons) == null) {
-								if (pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_1BB(ruleResult,
-										families) == null) {
-									if (pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_3BB(
-											ruleResult, persons) == null) {
+								if (pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_1BB(ruleResult,
+										persons) == null) {
+									if (pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_2BB(
+											ruleResult, families) == null) {
 										for (Family f : families.getFamily()) {
-											if (pattern_SonOfExistingFamilyToMale_30_2_isapplicablecore_black_nac_2BB(
+											if (pattern_SonOfExistingFamilyToMale_29_2_isapplicablecore_black_nac_3BB(
 													ruleResult, f) == null) {
 												_result.add(new Object[] { families2personsList, families2persons,
-														families, f, persons, ruleEntryContainer, ruleResult });
+														persons, families, f, ruleEntryContainer, ruleResult });
 											}
 										}
 									}
@@ -3163,7 +3030,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_3_solveCSP_bindingFBBBBBBB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_3_solveCSP_bindingFBBBBBBB(
 			SonOfExistingFamilyToMale _this, IsApplicableMatch isApplicableMatch,
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
@@ -3176,22 +3043,22 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_3_solveCSP_blackB(CSP csp) {
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_3_solveCSP_blackB(CSP csp) {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_3_solveCSP_bindingAndBlackFBBBBBBB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_3_solveCSP_bindingAndBlackFBBBBBBB(
 			SonOfExistingFamilyToMale _this, IsApplicableMatch isApplicableMatch,
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_SonOfExistingFamilyToMale_30_3_solveCSP_binding = pattern_SonOfExistingFamilyToMale_30_3_solveCSP_bindingFBBBBBBB(
+		Object[] result_pattern_SonOfExistingFamilyToMale_29_3_solveCSP_binding = pattern_SonOfExistingFamilyToMale_29_3_solveCSP_bindingFBBBBBBB(
 				_this, isApplicableMatch, families2persons, persons, f, families, ruleResult);
-		if (result_pattern_SonOfExistingFamilyToMale_30_3_solveCSP_binding != null) {
-			CSP csp = (CSP) result_pattern_SonOfExistingFamilyToMale_30_3_solveCSP_binding[0];
+		if (result_pattern_SonOfExistingFamilyToMale_29_3_solveCSP_binding != null) {
+			CSP csp = (CSP) result_pattern_SonOfExistingFamilyToMale_29_3_solveCSP_binding[0];
 
-			Object[] result_pattern_SonOfExistingFamilyToMale_30_3_solveCSP_black = pattern_SonOfExistingFamilyToMale_30_3_solveCSP_blackB(
+			Object[] result_pattern_SonOfExistingFamilyToMale_29_3_solveCSP_black = pattern_SonOfExistingFamilyToMale_29_3_solveCSP_blackB(
 					csp);
-			if (result_pattern_SonOfExistingFamilyToMale_30_3_solveCSP_black != null) {
+			if (result_pattern_SonOfExistingFamilyToMale_29_3_solveCSP_black != null) {
 
 				return new Object[] { csp, _this, isApplicableMatch, families2persons, persons, f, families,
 						ruleResult };
@@ -3200,25 +3067,25 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return null;
 	}
 
-	public static final boolean pattern_SonOfExistingFamilyToMale_30_4_checkCSP_expressionFBB(
+	public static final boolean pattern_SonOfExistingFamilyToMale_29_4_checkCSP_expressionFBB(
 			SonOfExistingFamilyToMale _this, CSP csp) {
 		boolean _localVariable_0 = _this.generateModel_checkCsp_BWD(csp);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_5_checknacs_blackBBBB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_5_checknacs_blackBBBB(
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families) {
 		return new Object[] { families2persons, persons, f, families };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_6_perform_blackBBBBB(
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_6_perform_blackBBBBB(
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
 		return new Object[] { families2persons, persons, f, families, ruleResult };
 	}
 
-	public static final Object[] pattern_SonOfExistingFamilyToMale_30_6_perform_greenFBFBFBB(Persons persons, Family f,
+	public static final Object[] pattern_SonOfExistingFamilyToMale_29_6_perform_greenFBFBFBB(Persons persons, Family f,
 			ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Male p = PersonsModelFactory.eINSTANCE.createMale();
 		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
@@ -3244,7 +3111,7 @@ public class SonOfExistingFamilyToMaleImpl extends AbstractRuleImpl implements S
 		return new Object[] { p, persons, familyMember2Persons, f, fm, ruleResult, csp };
 	}
 
-	public static final ModelgeneratorRuleResult pattern_SonOfExistingFamilyToMale_30_7_expressionFB(
+	public static final ModelgeneratorRuleResult pattern_SonOfExistingFamilyToMale_29_7_expressionFB(
 			ModelgeneratorRuleResult ruleResult) {
 		ModelgeneratorRuleResult _result = ruleResult;
 		return _result;

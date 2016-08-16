@@ -12,7 +12,7 @@ class PersonsComparator implements Comparator<Persons>{
 	}
 	
 	def personsToString(Persons persons) {
-		'''
+		return '''
 		Persons
 		'''
 	}

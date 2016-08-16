@@ -36,10 +36,10 @@ import org.moflon.tgg.language.modelgenerator.RuleEntryContainer;
 import org.moflon.tgg.language.modelgenerator.RuleEntryList;
 
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
+import org.moflon.tgg.runtime.CCMatch;
 import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
-import org.moflon.tgg.runtime.IsApplicableMatchCC;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
 import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
@@ -267,9 +267,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 								persons, f, fm, families);
 				IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result3_green[5];
 				// EMoflonEdge families__f____family = (EMoflonEdge) result3_green[6];
-				// EMoflonEdge fm__f____family_mother = (EMoflonEdge) result3_green[7];
-				// EMoflonEdge f__fm____mother = (EMoflonEdge) result3_green[8];
-				// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[9];
+				// EMoflonEdge families2persons__persons____target = (EMoflonEdge) result3_green[7];
+				// EMoflonEdge fm__f____family_mother = (EMoflonEdge) result3_green[8];
+				// EMoflonEdge f__fm____mother = (EMoflonEdge) result3_green[9];
 				// EMoflonEdge families2persons__families____source = (EMoflonEdge) result3_green[10];
 
 				// solve CSP
@@ -770,7 +770,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_FWD_EMoflonEdge_6(EMoflonEdge _edge_family_mother) {
+	public EObjectContainer isAppropriate_FWD_EMoflonEdge_35(EMoflonEdge _edge_family_mother) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
 				.pattern_MotherOfExistingFamilyToFemale_20_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -833,7 +833,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EObjectContainer isAppropriate_BWD_EMoflonEdge_6(EMoflonEdge _edge_person) {
+	public EObjectContainer isAppropriate_BWD_EMoflonEdge_35(EMoflonEdge _edge_person) {
 		// prepare return value
 		Object[] result1_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
 				.pattern_MotherOfExistingFamilyToFemale_21_1_preparereturnvalue_bindingAndBlackFFBF(this);
@@ -909,13 +909,13 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		var_fm_firstName.setValue(__helper.getValue("fm", "firstName"));
 		var_fm_firstName.setType("String");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue(", ");
-		var_literal0.setType("");
-
 		Variable var_f_familyName = CSPFactoryHelper.eINSTANCE.createVariable("f", true, csp);
 		var_f_familyName.setValue(__helper.getValue("f", "familyName"));
 		var_f_familyName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue(", ");
+		var_literal0.setType("");
 
 		Variable var_p_fullName = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
 		var_p_fullName.setValue(__helper.getValue("p", "fullName"));
@@ -964,13 +964,13 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		var_fm_firstName.setValue(__helper.getValue("fm", "firstName"));
 		var_fm_firstName.setType("String");
 
-		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
-		var_literal0.setValue(", ");
-		var_literal0.setType("");
-
 		Variable var_f_familyName = CSPFactoryHelper.eINSTANCE.createVariable("f", true, csp);
 		var_f_familyName.setValue(__helper.getValue("f", "familyName"));
 		var_f_familyName.setType("String");
+
+		Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal", true, csp);
+		var_literal0.setValue(", ");
+		var_literal0.setType("");
 
 		Variable var_p_fullName = CSPFactoryHelper.eINSTANCE.createVariable("p", true, csp);
 		var_p_fullName.setValue(__helper.getValue("p", "fullName"));
@@ -1007,64 +1007,82 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 */
 	public IsApplicableRuleResult isApplicable_CC(Match sourceMatch, Match targetMatch) {
 		// prepare
-		Object[] result1_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_24_1_prepare_bindingAndBlackFFB(this);
-		if (result1_bindingAndBlack == null) {
+		Object[] result1_black = MotherOfExistingFamilyToFemaleImpl
+				.pattern_MotherOfExistingFamilyToFemale_24_1_prepare_blackB(this);
+		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
 		}
-		EOperation perform_CC = (EOperation) result1_bindingAndBlack[0];
-		// EClass __eClass = (EClass) result1_bindingAndBlack[1];
 		Object[] result1_green = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_24_1_prepare_greenBF(perform_CC);
-		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[1];
+				.pattern_MotherOfExistingFamilyToFemale_24_1_prepare_greenF();
+		IsApplicableRuleResult result = (IsApplicableRuleResult) result1_green[0];
 
-		// ForEach match context
-		Object[] result2_binding = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_bindingFFFFFBB(targetMatch, sourceMatch);
-		if (result2_binding == null) {
-			throw new RuntimeException("Binding in node match context failed." + " Variables: " + "[targetMatch] = "
-					+ targetMatch + ", " + "[sourceMatch] = " + sourceMatch + ".");
+		// match src trg context
+		Object[] result2_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
+				.pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(sourceMatch,
+						targetMatch);
+		if (result2_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [match src trg context] failed." + " Variables: "
+					+ "[sourceMatch] = " + sourceMatch + ", " + "[targetMatch] = " + targetMatch + ".");
 		}
-		Female p = (Female) result2_binding[0];
-		Persons persons = (Persons) result2_binding[1];
-		Family f = (Family) result2_binding[2];
-		FamilyMember fm = (FamilyMember) result2_binding[3];
-		Families families = (Families) result2_binding[4];
-		for (Object[] result2_black : MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_blackBFBBBBBB(p, persons, f, fm, families,
-						sourceMatch, targetMatch)) {
-			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_black[1];
-			Object[] result2_green = MotherOfExistingFamilyToFemaleImpl
-					.pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_greenBBBBBBBFB(p, families2persons,
-							persons, f, fm, families, sourceMatch, targetMatch);
-			IsApplicableMatchCC isApplicableMatch = (IsApplicableMatchCC) result2_green[7];
+		Female p = (Female) result2_bindingAndBlack[0];
+		Persons persons = (Persons) result2_bindingAndBlack[1];
+		Family f = (Family) result2_bindingAndBlack[2];
+		FamilyMember fm = (FamilyMember) result2_bindingAndBlack[3];
+		Families families = (Families) result2_bindingAndBlack[4];
 
-			// check csp
-			Object[] result3_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
-					.pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_bindingAndBlackFBBBBBBBBBB(this,
-							isApplicableMatch, p, families2persons, persons, f, fm, families, sourceMatch, targetMatch);
-			if (result3_bindingAndBlack != null) {
-				// CSP csp = (CSP) result3_bindingAndBlack[0];
+		// solve csp
+		Object[] result3_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
+				.pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_bindingAndBlackFBBBBBBBB(this, p, persons, f, fm,
+						families, sourceMatch, targetMatch);
+		if (result3_bindingAndBlack == null) {
+			throw new RuntimeException("Pattern matching in node [solve csp] failed." + " Variables: " + "[this] = "
+					+ this + ", " + "[p] = " + p + ", " + "[persons] = " + persons + ", " + "[f] = " + f + ", "
+					+ "[fm] = " + fm + ", " + "[families] = " + families + ", " + "[sourceMatch] = " + sourceMatch
+					+ ", " + "[targetMatch] = " + targetMatch + ".");
+		}
+		CSP csp = (CSP) result3_bindingAndBlack[0];
+		// check CSP
+		if (MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_24_4_checkCSP_expressionFB(csp)) {
+			// ForEach match corr context
+			for (Object[] result5_black : MotherOfExistingFamilyToFemaleImpl
+					.pattern_MotherOfExistingFamilyToFemale_24_5_matchcorrcontext_blackFBBBB(persons, families,
+							sourceMatch, targetMatch)) {
+				FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result5_black[0];
+				Object[] result5_green = MotherOfExistingFamilyToFemaleImpl
+						.pattern_MotherOfExistingFamilyToFemale_24_5_matchcorrcontext_greenBBBF(families2persons,
+								sourceMatch, targetMatch);
+				CCMatch ccMatch = (CCMatch) result5_green[3];
 
-				// add to returned result
-				Object[] result4_black = MotherOfExistingFamilyToFemaleImpl
-						.pattern_MotherOfExistingFamilyToFemale_24_4_addtoreturnedresult_blackBB(result,
-								isApplicableMatch);
-				if (result4_black == null) {
+				// create correspondence
+				Object[] result6_black = MotherOfExistingFamilyToFemaleImpl
+						.pattern_MotherOfExistingFamilyToFemale_24_6_createcorrespondence_blackBBBBBB(p, persons, f, fm,
+								families, ccMatch);
+				if (result6_black == null) {
 					throw new RuntimeException(
-							"Pattern matching in node [add to returned result] failed." + " Variables: " + "[result] = "
-									+ result + ", " + "[isApplicableMatch] = " + isApplicableMatch + ".");
+							"Pattern matching in node [create correspondence] failed." + " Variables: " + "[p] = " + p
+									+ ", " + "[persons] = " + persons + ", " + "[f] = " + f + ", " + "[fm] = " + fm
+									+ ", " + "[families] = " + families + ", " + "[ccMatch] = " + ccMatch + ".");
 				}
 				MotherOfExistingFamilyToFemaleImpl
-						.pattern_MotherOfExistingFamilyToFemale_24_4_addtoreturnedresult_greenBB(result,
-								isApplicableMatch);
+						.pattern_MotherOfExistingFamilyToFemale_24_6_createcorrespondence_greenBFBB(p, fm, ccMatch);
+				// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result6_green[1];
 
-			} else {
+				// add to returned result
+				Object[] result7_black = MotherOfExistingFamilyToFemaleImpl
+						.pattern_MotherOfExistingFamilyToFemale_24_7_addtoreturnedresult_blackBB(result, ccMatch);
+				if (result7_black == null) {
+					throw new RuntimeException("Pattern matching in node [add to returned result] failed."
+							+ " Variables: " + "[result] = " + result + ", " + "[ccMatch] = " + ccMatch + ".");
+				}
+				MotherOfExistingFamilyToFemaleImpl
+						.pattern_MotherOfExistingFamilyToFemale_24_7_addtoreturnedresult_greenBB(result, ccMatch);
+
 			}
 
+		} else {
 		}
-		return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_24_5_expressionFB(result);
+		return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_24_8_expressionFB(result);
 	}
 
 	/**
@@ -1072,11 +1090,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CSP isApplicable_solveCsp_CC(IsApplicableMatchCC isApplicableMatch, Female p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
+	public CSP isApplicable_solveCsp_CC(Female p, Persons persons, Family f, FamilyMember fm, Families families,
 			Match sourceMatch, Match targetMatch) {// Create CSP
 		CSP csp = CspFactory.eINSTANCE.createCSP();
-		isApplicableMatch.getAttributeInfo().add(csp);
 
 		// Create literals
 		Variable literal0 = CSPFactoryHelper.eINSTANCE.createVariable("literal0", true, csp);
@@ -1104,14 +1120,6 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		// Solve CSP
 		concat.setRuleName("");
 		concat.solve(literal0, var_f_familyName, var_fm_firstName, var_p_fullName);
-
-		// Snapshot pattern match on which CSP is solved
-		isApplicableMatch.registerObject("p", p);
-		isApplicableMatch.registerObject("families2persons", families2persons);
-		isApplicableMatch.registerObject("persons", persons);
-		isApplicableMatch.registerObject("f", f);
-		isApplicableMatch.registerObject("fm", fm);
-		isApplicableMatch.registerObject("families", families);
 		return csp;
 	}
 
@@ -1129,35 +1137,15 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PerformRuleResult perform_CC(IsApplicableMatchCC isApplicableMatch) {
-		// prepare
+	public boolean checkDEC_FWD(Family f, FamilyMember fm, Families families) {// match tgg pattern
 		Object[] result1_black = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_27_1_prepare_blackB(this);
-		if (result1_black == null) {
-			throw new RuntimeException(
-					"Pattern matching in node [prepare] failed." + " Variables: " + "[this] = " + this + ".");
+				.pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_blackBBB(f, fm, families);
+		if (result1_black != null) {
+			return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_27_2_expressionF();
+		} else {
+			return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_27_3_expressionF();
 		}
 
-		// create correspondence links
-		Object[] result2_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_bindingAndBlackFFFFFFB(
-						isApplicableMatch);
-		if (result2_bindingAndBlack == null) {
-			throw new RuntimeException("Pattern matching in node [create correspondence links] failed." + " Variables: "
-					+ "[isApplicableMatch] = " + isApplicableMatch + ".");
-		}
-		Female p = (Female) result2_bindingAndBlack[0];
-		// FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_bindingAndBlack[1];
-		// Persons persons = (Persons) result2_bindingAndBlack[2];
-		// Family f = (Family) result2_bindingAndBlack[3];
-		FamilyMember fm = (FamilyMember) result2_bindingAndBlack[4];
-		// Families families = (Families) result2_bindingAndBlack[5];
-		Object[] result2_green = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_greenBBFF(p, fm);
-		PerformRuleResult result = (PerformRuleResult) result2_green[2];
-		// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result2_green[3];
-
-		return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_27_3_expressionFB(result);
 	}
 
 	/**
@@ -1165,9 +1153,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_FWD(Family f, FamilyMember fm, Families families) {// match tgg pattern
+	public boolean checkDEC_BWD(Female p, Persons persons) {// match tgg pattern
 		Object[] result1_black = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_blackBBB(f, fm, families);
+				.pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_blackBB(p, persons);
 		if (result1_black != null) {
 			return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_28_2_expressionF();
 		} else {
@@ -1181,49 +1169,33 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean checkDEC_BWD(Female p, Persons persons) {// match tgg pattern
-		Object[] result1_black = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_29_1_matchtggpattern_blackBB(p, persons);
-		if (result1_black != null) {
-			return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_29_2_expressionF();
-		} else {
-			return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_29_3_expressionF();
-		}
-
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ModelgeneratorRuleResult generateModel(RuleEntryContainer ruleEntryContainer,
 			FamiliesToPersonsCorr families2personsParameter) {
 		// create result
 		Object[] result1_black = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_30_1_createresult_blackB(this);
+				.pattern_MotherOfExistingFamilyToFemale_29_1_createresult_blackB(this);
 		if (result1_black == null) {
 			throw new RuntimeException(
 					"Pattern matching in node [create result] failed." + " Variables: " + "[this] = " + this + ".");
 		}
 		Object[] result1_green = MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_30_1_createresult_greenFF();
+				.pattern_MotherOfExistingFamilyToFemale_29_1_createresult_greenFF();
 		IsApplicableMatch isApplicableMatch = (IsApplicableMatch) result1_green[0];
 		ModelgeneratorRuleResult ruleResult = (ModelgeneratorRuleResult) result1_green[1];
 
 		// ForEach is applicable core
 		for (Object[] result2_black : MotherOfExistingFamilyToFemaleImpl
-				.pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer,
+				.pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_blackFFFFFBB(ruleEntryContainer,
 						ruleResult)) {
 			// RuleEntryList families2personsList = (RuleEntryList) result2_black[0];
 			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result2_black[1];
-			Families families = (Families) result2_black[2];
-			Family f = (Family) result2_black[3];
-			Persons persons = (Persons) result2_black[4];
+			Persons persons = (Persons) result2_black[2];
+			Families families = (Families) result2_black[3];
+			Family f = (Family) result2_black[4];
 
 			// solve CSP
 			Object[] result3_bindingAndBlack = MotherOfExistingFamilyToFemaleImpl
-					.pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_bindingAndBlackFBBBBBBB(this,
+					.pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_bindingAndBlackFBBBBBBB(this,
 							isApplicableMatch, families2persons, persons, f, families, ruleResult);
 			if (result3_bindingAndBlack == null) {
 				throw new RuntimeException("Pattern matching in node [solve CSP] failed." + " Variables: " + "[this] = "
@@ -1234,16 +1206,16 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 			CSP csp = (CSP) result3_bindingAndBlack[0];
 			// check CSP
 			if (MotherOfExistingFamilyToFemaleImpl
-					.pattern_MotherOfExistingFamilyToFemale_30_4_checkCSP_expressionFBB(this, csp)) {
+					.pattern_MotherOfExistingFamilyToFemale_29_4_checkCSP_expressionFBB(this, csp)) {
 				// check nacs
 				Object[] result5_black = MotherOfExistingFamilyToFemaleImpl
-						.pattern_MotherOfExistingFamilyToFemale_30_5_checknacs_blackBBBB(f, families2persons, persons,
+						.pattern_MotherOfExistingFamilyToFemale_29_5_checknacs_blackBBBB(f, families2persons, persons,
 								families);
 				if (result5_black != null) {
 
 					// perform
 					Object[] result6_black = MotherOfExistingFamilyToFemaleImpl
-							.pattern_MotherOfExistingFamilyToFemale_30_6_perform_blackBBBBB(families2persons, persons,
+							.pattern_MotherOfExistingFamilyToFemale_29_6_perform_blackBBBBB(families2persons, persons,
 									f, families, ruleResult);
 					if (result6_black == null) {
 						throw new RuntimeException("Pattern matching in node [perform] failed." + " Variables: "
@@ -1251,7 +1223,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 								+ "[f] = " + f + ", " + "[families] = " + families + ", " + "[ruleResult] = "
 								+ ruleResult + ".");
 					}
-					MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_30_6_perform_greenFBFBFBB(
+					MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_29_6_perform_greenFBFBFBB(
 							persons, f, ruleResult, csp);
 					// Female p = (Female) result6_green[0];
 					// FamilyMemberToPerson familyMember2Persons = (FamilyMemberToPerson) result6_green[2];
@@ -1264,7 +1236,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 			}
 
 		}
-		return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_30_7_expressionFB(ruleResult);
+		return MotherOfExistingFamilyToFemaleImpl.pattern_MotherOfExistingFamilyToFemale_29_7_expressionFB(ruleResult);
 	}
 
 	/**
@@ -1383,25 +1355,22 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 			return null;
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___CHECK_TYPES_BWD__MATCH:
 			return checkTypes_BWD((Match) arguments.get(0));
-		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_6__EMOFLONEDGE:
-			return isAppropriate_FWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
-		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_6__EMOFLONEDGE:
-			return isAppropriate_BWD_EMoflonEdge_6((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPROPRIATE_FWD_EMOFLON_EDGE_35__EMOFLONEDGE:
+			return isAppropriate_FWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
+		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPROPRIATE_BWD_EMOFLON_EDGE_35__EMOFLONEDGE:
+			return isAppropriate_BWD_EMoflonEdge_35((EMoflonEdge) arguments.get(0));
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___CHECK_ATTRIBUTES_FWD__TRIPLEMATCH:
 			return checkAttributes_FWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___CHECK_ATTRIBUTES_BWD__TRIPLEMATCH:
 			return checkAttributes_BWD((TripleMatch) arguments.get(0));
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPLICABLE_CC__MATCH_MATCH:
 			return isApplicable_CC((Match) arguments.get(0), (Match) arguments.get(1));
-		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPLICABLE_SOLVE_CSP_CC__ISAPPLICABLEMATCHCC_FEMALE_FAMILIESTOPERSONSCORR_PERSONS_FAMILY_FAMILYMEMBER_FAMILIES_MATCH_MATCH:
-			return isApplicable_solveCsp_CC((IsApplicableMatchCC) arguments.get(0), (Female) arguments.get(1),
-					(FamiliesToPersonsCorr) arguments.get(2), (Persons) arguments.get(3), (Family) arguments.get(4),
-					(FamilyMember) arguments.get(5), (Families) arguments.get(6), (Match) arguments.get(7),
-					(Match) arguments.get(8));
+		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPLICABLE_SOLVE_CSP_CC__FEMALE_PERSONS_FAMILY_FAMILYMEMBER_FAMILIES_MATCH_MATCH:
+			return isApplicable_solveCsp_CC((Female) arguments.get(0), (Persons) arguments.get(1),
+					(Family) arguments.get(2), (FamilyMember) arguments.get(3), (Families) arguments.get(4),
+					(Match) arguments.get(5), (Match) arguments.get(6));
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___IS_APPLICABLE_CHECK_CSP_CC__CSP:
 			return isApplicable_checkCsp_CC((CSP) arguments.get(0));
-		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___PERFORM_CC__ISAPPLICABLEMATCHCC:
-			return perform_CC((IsApplicableMatchCC) arguments.get(0));
 		case RulesPackage.MOTHER_OF_EXISTING_FAMILY_TO_FEMALE___CHECK_DEC_FWD__FAMILY_FAMILYMEMBER_FAMILIES:
 			return checkDEC_FWD((Family) arguments.get(0), (FamilyMember) arguments.get(1),
 					(Families) arguments.get(2));
@@ -1808,8 +1777,8 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (families.getFamily().contains(f)) {
-			if (f.equals(fm.getFamily_mother())) {
-				if (persons.equals(families2persons.getTarget())) {
+			if (persons.equals(families2persons.getTarget())) {
+				if (f.equals(fm.getFamily_mother())) {
 					if (families.equals(families2persons.getSource())) {
 						_result.add(new Object[] { families2persons, persons, f, fm, families });
 					}
@@ -1823,14 +1792,14 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families) {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		EMoflonEdge families__f____family = RuntimeFactory.eINSTANCE.createEMoflonEdge();
+		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge fm__f____family_mother = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge f__fm____mother = RuntimeFactory.eINSTANCE.createEMoflonEdge();
-		EMoflonEdge families2persons__persons____target = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		EMoflonEdge families2persons__families____source = RuntimeFactory.eINSTANCE.createEMoflonEdge();
 		String families__f____family_name_prime = "family";
+		String families2persons__persons____target_name_prime = "target";
 		String fm__f____family_mother_name_prime = "family_mother";
 		String f__fm____mother_name_prime = "mother";
-		String families2persons__persons____target_name_prime = "target";
 		String families2persons__families____source_name_prime = "source";
 		isApplicableMatch.getAllContextElements().add(families2persons);
 		isApplicableMatch.getAllContextElements().add(persons);
@@ -1840,25 +1809,25 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		families__f____family.setSrc(families);
 		families__f____family.setTrg(f);
 		isApplicableMatch.getAllContextElements().add(families__f____family);
+		families2persons__persons____target.setSrc(families2persons);
+		families2persons__persons____target.setTrg(persons);
+		isApplicableMatch.getAllContextElements().add(families2persons__persons____target);
 		fm__f____family_mother.setSrc(fm);
 		fm__f____family_mother.setTrg(f);
 		isApplicableMatch.getAllContextElements().add(fm__f____family_mother);
 		f__fm____mother.setSrc(f);
 		f__fm____mother.setTrg(fm);
 		isApplicableMatch.getAllContextElements().add(f__fm____mother);
-		families2persons__persons____target.setSrc(families2persons);
-		families2persons__persons____target.setTrg(persons);
-		isApplicableMatch.getAllContextElements().add(families2persons__persons____target);
 		families2persons__families____source.setSrc(families2persons);
 		families2persons__families____source.setTrg(families);
 		isApplicableMatch.getAllContextElements().add(families2persons__families____source);
 		families__f____family.setName(families__f____family_name_prime);
+		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
 		fm__f____family_mother.setName(fm__f____family_mother_name_prime);
 		f__fm____mother.setName(f__fm____mother_name_prime);
-		families2persons__persons____target.setName(families2persons__persons____target_name_prime);
 		families2persons__families____source.setName(families2persons__families____source_name_prime);
 		return new Object[] { families2persons, persons, f, fm, families, isApplicableMatch, families__f____family,
-				fm__f____family_mother, f__fm____mother, families2persons__persons____target,
+				families2persons__persons____target, fm__f____family_mother, f__fm____mother,
 				families2persons__families____source };
 	}
 
@@ -2471,9 +2440,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_MotherOfExistingFamilyToFemale_20_2_testcorematchandDECs_black_nac_0BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_father_782012 = fm.getFamily_father();
-		if (__DEC_fm_family_father_782012 != null) {
-			if (!f.equals(__DEC_fm_family_father_782012)) {
+		Family __DEC_fm_family_father_574835 = fm.getFamily_father();
+		if (__DEC_fm_family_father_574835 != null) {
+			if (!f.equals(__DEC_fm_family_father_574835)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2483,9 +2452,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_MotherOfExistingFamilyToFemale_20_2_testcorematchandDECs_black_nac_1BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_son_843297 = fm.getFamily_son();
-		if (__DEC_fm_family_son_843297 != null) {
-			if (!f.equals(__DEC_fm_family_son_843297)) {
+		Family __DEC_fm_family_son_772833 = fm.getFamily_son();
+		if (__DEC_fm_family_son_772833 != null) {
+			if (!f.equals(__DEC_fm_family_son_772833)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2495,9 +2464,9 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 
 	public static final Object[] pattern_MotherOfExistingFamilyToFemale_20_2_testcorematchandDECs_black_nac_2BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_daughter_563134 = fm.getFamily_daughter();
-		if (__DEC_fm_family_daughter_563134 != null) {
-			if (!f.equals(__DEC_fm_family_daughter_563134)) {
+		Family __DEC_fm_family_daughter_749304 = fm.getFamily_daughter();
+		if (__DEC_fm_family_daughter_749304 != null) {
+			if (!f.equals(__DEC_fm_family_daughter_749304)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -2733,53 +2702,17 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_bindingFB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_blackB(
 			MotherOfExistingFamilyToFemale _this) {
-		EClass _localVariable_0 = _this.eClass();
-		EClass __eClass = _localVariable_0;
-		if (__eClass != null) {
-			return new Object[] { __eClass, _this };
-		}
-		return null;
+		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_blackFBB(EClass __eClass,
-			MotherOfExistingFamilyToFemale _this) {
-		for (EOperation perform_CC : __eClass.getEOperations()) {
-			String perform_CC_name = perform_CC.getName();
-			if (perform_CC_name.equals("perform_CC")) {
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_bindingAndBlackFFB(
-			MotherOfExistingFamilyToFemale _this) {
-		Object[] result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_binding = pattern_MotherOfExistingFamilyToFemale_24_1_prepare_bindingFB(
-				_this);
-		if (result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_binding != null) {
-			EClass __eClass = (EClass) result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_binding[0];
-
-			Object[] result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_black = pattern_MotherOfExistingFamilyToFemale_24_1_prepare_blackFBB(
-					__eClass, _this);
-			if (result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_black != null) {
-				EOperation perform_CC = (EOperation) result_pattern_MotherOfExistingFamilyToFemale_24_1_prepare_black[0];
-
-				return new Object[] { perform_CC, __eClass, _this };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_greenBF(EOperation perform_CC) {
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_1_prepare_greenF() {
 		IsApplicableRuleResult result = RuntimeFactory.eINSTANCE.createIsApplicableRuleResult();
-		result.setPerformOperation(perform_CC);
-		return new Object[] { perform_CC, result };
+		return new Object[] { result };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_bindingFFFFFBB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_bindingFFFFFBB(
 			Match targetMatch, Match sourceMatch) {
 		EObject _localVariable_0 = targetMatch.getObject("p");
 		EObject _localVariable_1 = targetMatch.getObject("persons");
@@ -2810,207 +2743,139 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_blackBFBBBBBB(
-			Female p, Persons persons, Family f, FamilyMember fm, Families families, Match sourceMatch,
-			Match targetMatch) {
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_blackBBBBBBB(Female p,
+			Persons persons, Family f, FamilyMember fm, Families families, Match sourceMatch, Match targetMatch) {
+		if (!sourceMatch.equals(targetMatch)) {
+			return new Object[] { p, persons, f, fm, families, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_bindingAndBlackFFFFFBB(
+			Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding = pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_bindingFFFFFBB(
+				targetMatch, sourceMatch);
+		if (result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding != null) {
+			Female p = (Female) result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding[0];
+			Persons persons = (Persons) result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding[1];
+			Family f = (Family) result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding[2];
+			FamilyMember fm = (FamilyMember) result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding[3];
+			Families families = (Families) result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_binding[4];
+
+			Object[] result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_black = pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_blackBBBBBBB(
+					p, persons, f, fm, families, sourceMatch, targetMatch);
+			if (result_pattern_MotherOfExistingFamilyToFemale_24_2_matchsrctrgcontext_black != null) {
+
+				return new Object[] { p, persons, f, fm, families, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_bindingFBBBBBBBB(
+			MotherOfExistingFamilyToFemale _this, Female p, Persons persons, Family f, FamilyMember fm,
+			Families families, Match sourceMatch, Match targetMatch) {
+		CSP _localVariable_5 = _this.isApplicable_solveCsp_CC(p, persons, f, fm, families, sourceMatch, targetMatch);
+		CSP csp = _localVariable_5;
+		if (csp != null) {
+			return new Object[] { csp, _this, p, persons, f, fm, families, sourceMatch, targetMatch };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_blackB(CSP csp) {
+		return new Object[] { csp };
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_bindingAndBlackFBBBBBBBB(
+			MotherOfExistingFamilyToFemale _this, Female p, Persons persons, Family f, FamilyMember fm,
+			Families families, Match sourceMatch, Match targetMatch) {
+		Object[] result_pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_binding = pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_bindingFBBBBBBBB(
+				_this, p, persons, f, fm, families, sourceMatch, targetMatch);
+		if (result_pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_binding != null) {
+			CSP csp = (CSP) result_pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_binding[0];
+
+			Object[] result_pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_black = pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_blackB(
+					csp);
+			if (result_pattern_MotherOfExistingFamilyToFemale_24_3_solvecsp_black != null) {
+
+				return new Object[] { csp, _this, p, persons, f, fm, families, sourceMatch, targetMatch };
+			}
+		}
+		return null;
+	}
+
+	public static final boolean pattern_MotherOfExistingFamilyToFemale_24_4_checkCSP_expressionFB(CSP csp) {
+		boolean _localVariable_0 = csp.check();
+		boolean _result = Boolean.valueOf(_localVariable_0);
+		return _result;
+	}
+
+	public static final Iterable<Object[]> pattern_MotherOfExistingFamilyToFemale_24_5_matchcorrcontext_blackFBBBB(
+			Persons persons, Families families, Match sourceMatch, Match targetMatch) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		if (!sourceMatch.equals(targetMatch)) {
-			if (families.getFamily().contains(f)) {
-				if (persons.getPerson().contains(p)) {
-					if (f.equals(fm.getFamily_mother())) {
-						for (FamiliesToPersonsCorr families2persons : org.moflon.core.utilities.eMoflonEMFUtil
-								.getOppositeReferenceTyped(persons, FamiliesToPersonsCorr.class, "target")) {
-							if (families.equals(families2persons.getSource())) {
-								_result.add(new Object[] { p, families2persons, persons, f, fm, families, sourceMatch,
-										targetMatch });
-							}
-						}
-					}
+			for (FamiliesToPersonsCorr families2persons : org.moflon.core.utilities.eMoflonEMFUtil
+					.getOppositeReferenceTyped(persons, FamiliesToPersonsCorr.class, "target")) {
+				if (families.equals(families2persons.getSource())) {
+					_result.add(new Object[] { families2persons, persons, families, sourceMatch, targetMatch });
 				}
 			}
 		}
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_2_matchcontext_greenBBBBBBBFB(Female p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		IsApplicableMatchCC isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatchCC();
-		String isApplicableMatch_ruleName_prime = "MotherOfExistingFamilyToFemale";
-		isApplicableMatch.setSourceMatch(sourceMatch);
-		isApplicableMatch.setTargetMatch(targetMatch);
-		isApplicableMatch.getAllContextElements().add(f);
-		isApplicableMatch.getAllContextElements().add(fm);
-		isApplicableMatch.getAllContextElements().add(families);
-		isApplicableMatch.getAllContextElements().add(p);
-		isApplicableMatch.getAllContextElements().add(persons);
-		isApplicableMatch.getAllContextElements().add(families2persons);
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { p, families2persons, persons, f, fm, families, sourceMatch, isApplicableMatch,
-				targetMatch };
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_5_matchcorrcontext_greenBBBF(
+			FamiliesToPersonsCorr families2persons, Match sourceMatch, Match targetMatch) {
+		CCMatch ccMatch = RuntimeFactory.eINSTANCE.createCCMatch();
+		String ccMatch_ruleName_prime = "MotherOfExistingFamilyToFemale";
+		ccMatch.setSourceMatch(sourceMatch);
+		ccMatch.setTargetMatch(targetMatch);
+		ccMatch.getAllContextElements().add(families2persons);
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { families2persons, sourceMatch, targetMatch, ccMatch };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_bindingFBBBBBBBBBB(
-			MotherOfExistingFamilyToFemale _this, IsApplicableMatchCC isApplicableMatch, Female p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		CSP _localVariable_0 = _this.isApplicable_solveCsp_CC(isApplicableMatch, p, families2persons, persons, f, fm,
-				families, sourceMatch, targetMatch);
-		CSP csp = _localVariable_0;
-		if (csp != null) {
-			return new Object[] { csp, _this, isApplicableMatch, p, families2persons, persons, f, fm, families,
-					sourceMatch, targetMatch };
-		}
-		return null;
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_6_createcorrespondence_blackBBBBBB(Female p,
+			Persons persons, Family f, FamilyMember fm, Families families, CCMatch ccMatch) {
+		return new Object[] { p, persons, f, fm, families, ccMatch };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_blackB(CSP csp) {
-		return new Object[] { csp };
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_6_createcorrespondence_greenBFBB(Female p,
+			FamilyMember fm, CCMatch ccMatch) {
+		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
+		familyMember2Persons.setSource(fm);
+		familyMember2Persons.setTarget(p);
+		ccMatch.getCreateCorr().add(familyMember2Persons);
+		return new Object[] { p, familyMember2Persons, fm, ccMatch };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_bindingAndBlackFBBBBBBBBBB(
-			MotherOfExistingFamilyToFemale _this, IsApplicableMatchCC isApplicableMatch, Female p,
-			FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm, Families families,
-			Match sourceMatch, Match targetMatch) {
-		Object[] result_pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_binding = pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_bindingFBBBBBBBBBB(
-				_this, isApplicableMatch, p, families2persons, persons, f, fm, families, sourceMatch, targetMatch);
-		if (result_pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_binding != null) {
-			CSP csp = (CSP) result_pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_binding[0];
-
-			Object[] result_pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_black = pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_blackB(
-					csp);
-			if (result_pattern_MotherOfExistingFamilyToFemale_24_3_checkcsp_black != null) {
-
-				return new Object[] { csp, _this, isApplicableMatch, p, families2persons, persons, f, fm, families,
-						sourceMatch, targetMatch };
-			}
-		}
-		return null;
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_7_addtoreturnedresult_blackBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_4_addtoreturnedresult_blackBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		return new Object[] { result, isApplicableMatch };
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_4_addtoreturnedresult_greenBB(
-			IsApplicableRuleResult result, IsApplicableMatch isApplicableMatch) {
-		result.getIsApplicableMatch().add(isApplicableMatch);
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_24_7_addtoreturnedresult_greenBB(
+			IsApplicableRuleResult result, CCMatch ccMatch) {
+		result.getIsApplicableMatch().add(ccMatch);
 		boolean result_success_prime = Boolean.valueOf(true);
-		String isApplicableMatch_ruleName_prime = "MotherOfExistingFamilyToFemale";
+		String ccMatch_ruleName_prime = "MotherOfExistingFamilyToFemale";
 		result.setSuccess(Boolean.valueOf(result_success_prime));
-		isApplicableMatch.setRuleName(isApplicableMatch_ruleName_prime);
-		return new Object[] { result, isApplicableMatch };
+		ccMatch.setRuleName(ccMatch_ruleName_prime);
+		return new Object[] { result, ccMatch };
 	}
 
-	public static final IsApplicableRuleResult pattern_MotherOfExistingFamilyToFemale_24_5_expressionFB(
+	public static final IsApplicableRuleResult pattern_MotherOfExistingFamilyToFemale_24_8_expressionFB(
 			IsApplicableRuleResult result) {
 		IsApplicableRuleResult _result = result;
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_prepare_blackB(
-			MotherOfExistingFamilyToFemale _this) {
-		return new Object[] { _this };
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_bindingFFFFFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		EObject _localVariable_0 = isApplicableMatch.getObject("p");
-		EObject _localVariable_1 = isApplicableMatch.getObject("families2persons");
-		EObject _localVariable_2 = isApplicableMatch.getObject("persons");
-		EObject _localVariable_3 = isApplicableMatch.getObject("f");
-		EObject _localVariable_4 = isApplicableMatch.getObject("fm");
-		EObject _localVariable_5 = isApplicableMatch.getObject("families");
-		EObject tmpP = _localVariable_0;
-		EObject tmpFamilies2persons = _localVariable_1;
-		EObject tmpPersons = _localVariable_2;
-		EObject tmpF = _localVariable_3;
-		EObject tmpFm = _localVariable_4;
-		EObject tmpFamilies = _localVariable_5;
-		if (tmpP instanceof Female) {
-			Female p = (Female) tmpP;
-			if (tmpFamilies2persons instanceof FamiliesToPersonsCorr) {
-				FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) tmpFamilies2persons;
-				if (tmpPersons instanceof Persons) {
-					Persons persons = (Persons) tmpPersons;
-					if (tmpF instanceof Family) {
-						Family f = (Family) tmpF;
-						if (tmpFm instanceof FamilyMember) {
-							FamilyMember fm = (FamilyMember) tmpFm;
-							if (tmpFamilies instanceof Families) {
-								Families families = (Families) tmpFamilies;
-								return new Object[] { p, families2persons, persons, f, fm, families,
-										isApplicableMatch };
-							}
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_blackBBBBBBB(
-			Female p, FamiliesToPersonsCorr families2persons, Persons persons, Family f, FamilyMember fm,
-			Families families, IsApplicableMatchCC isApplicableMatch) {
-		if (families.getFamily().contains(f)) {
-			if (persons.getPerson().contains(p)) {
-				if (f.equals(fm.getFamily_mother())) {
-					if (persons.equals(families2persons.getTarget())) {
-						if (families.equals(families2persons.getSource())) {
-							return new Object[] { p, families2persons, persons, f, fm, families, isApplicableMatch };
-						}
-					}
-				}
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_bindingAndBlackFFFFFFB(
-			IsApplicableMatchCC isApplicableMatch) {
-		Object[] result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding = pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_bindingFFFFFFB(
-				isApplicableMatch);
-		if (result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding != null) {
-			Female p = (Female) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[0];
-			FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[1];
-			Persons persons = (Persons) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[2];
-			Family f = (Family) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[3];
-			FamilyMember fm = (FamilyMember) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[4];
-			Families families = (Families) result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_binding[5];
-
-			Object[] result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_black = pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_blackBBBBBBB(
-					p, families2persons, persons, f, fm, families, isApplicableMatch);
-			if (result_pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_black != null) {
-
-				return new Object[] { p, families2persons, persons, f, fm, families, isApplicableMatch };
-			}
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_2_createcorrespondencelinks_greenBBFF(
-			Female p, FamilyMember fm) {
-		PerformRuleResult result = RuntimeFactory.eINSTANCE.createPerformRuleResult();
-		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
-		result.getCreatedElements().add(familyMember2Persons);
-		familyMember2Persons.setSource(fm);
-		familyMember2Persons.setTarget(p);
-		return new Object[] { p, fm, result, familyMember2Persons };
-	}
-
-	public static final PerformRuleResult pattern_MotherOfExistingFamilyToFemale_27_3_expressionFB(
-			PerformRuleResult result) {
-		PerformRuleResult _result = result;
-		return _result;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_0BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_0BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_father_253544 = fm.getFamily_father();
-		if (__DEC_fm_family_father_253544 != null) {
-			if (!f.equals(__DEC_fm_family_father_253544)) {
+		Family __DEC_fm_family_father_353916 = fm.getFamily_father();
+		if (__DEC_fm_family_father_353916 != null) {
+			if (!f.equals(__DEC_fm_family_father_353916)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -3018,11 +2883,11 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_1BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_1BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_son_446298 = fm.getFamily_son();
-		if (__DEC_fm_family_son_446298 != null) {
-			if (!f.equals(__DEC_fm_family_son_446298)) {
+		Family __DEC_fm_family_son_833347 = fm.getFamily_son();
+		if (__DEC_fm_family_son_833347 != null) {
+			if (!f.equals(__DEC_fm_family_son_833347)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -3030,11 +2895,11 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_2BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_2BB(
 			FamilyMember fm, Family f) {
-		Family __DEC_fm_family_daughter_378320 = fm.getFamily_daughter();
-		if (__DEC_fm_family_daughter_378320 != null) {
-			if (!f.equals(__DEC_fm_family_daughter_378320)) {
+		Family __DEC_fm_family_daughter_760012 = fm.getFamily_daughter();
+		if (__DEC_fm_family_daughter_760012 != null) {
+			if (!f.equals(__DEC_fm_family_daughter_760012)) {
 				return new Object[] { fm, f };
 			}
 		}
@@ -3042,7 +2907,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_3BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_3BB(
 			FamilyMember fm, Family f) {
 		if (f.equals(fm.getFamily_father())) {
 			return new Object[] { fm, f };
@@ -3050,7 +2915,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_4BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_4BB(
 			FamilyMember fm, Family f) {
 		if (f.equals(fm.getFamily_son())) {
 			return new Object[] { fm, f };
@@ -3058,7 +2923,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_5BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_5BB(
 			FamilyMember fm, Family f) {
 		if (f.equals(fm.getFamily_daughter())) {
 			return new Object[] { fm, f };
@@ -3066,18 +2931,18 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_blackBBB(Family f,
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_blackBBB(Family f,
 			FamilyMember fm, Families families) {
 		if (families.getFamily().contains(f)) {
 			if (f.equals(fm.getFamily_mother())) {
-				if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_0BB(fm, f) == null) {
-					if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_1BB(fm, f) == null) {
-						if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_2BB(fm, f) == null) {
-							if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_3BB(fm,
+				if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_0BB(fm, f) == null) {
+					if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_1BB(fm, f) == null) {
+						if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_2BB(fm, f) == null) {
+							if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_3BB(fm,
 									f) == null) {
-								if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_4BB(fm,
+								if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_4BB(fm,
 										f) == null) {
-									if (pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_black_nac_5BB(fm,
+									if (pattern_MotherOfExistingFamilyToFemale_27_1_matchtggpattern_black_nac_5BB(fm,
 											f) == null) {
 										return new Object[] { f, fm, families };
 									}
@@ -3087,6 +2952,24 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 					}
 				}
 			}
+		}
+		return null;
+	}
+
+	public static final boolean pattern_MotherOfExistingFamilyToFemale_27_2_expressionF() {
+		boolean _result = Boolean.valueOf(true);
+		return _result;
+	}
+
+	public static final boolean pattern_MotherOfExistingFamilyToFemale_27_3_expressionF() {
+		boolean _result = false;
+		return _result;
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_28_1_matchtggpattern_blackBB(Female p,
+			Persons persons) {
+		if (persons.getPerson().contains(p)) {
+			return new Object[] { p, persons };
 		}
 		return null;
 	}
@@ -3101,30 +2984,12 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_1_matchtggpattern_blackBB(Female p,
-			Persons persons) {
-		if (persons.getPerson().contains(p)) {
-			return new Object[] { p, persons };
-		}
-		return null;
-	}
-
-	public static final boolean pattern_MotherOfExistingFamilyToFemale_29_2_expressionF() {
-		boolean _result = Boolean.valueOf(true);
-		return _result;
-	}
-
-	public static final boolean pattern_MotherOfExistingFamilyToFemale_29_3_expressionF() {
-		boolean _result = false;
-		return _result;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_1_createresult_blackB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_1_createresult_blackB(
 			MotherOfExistingFamilyToFemale _this) {
 		return new Object[] { _this };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_1_createresult_greenFF() {
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_1_createresult_greenFF() {
 		IsApplicableMatch isApplicableMatch = RuntimeFactory.eINSTANCE.createIsApplicableMatch();
 		ModelgeneratorRuleResult ruleResult = RuntimeFactory.eINSTANCE.createModelgeneratorRuleResult();
 		boolean ruleResult_success_prime = false;
@@ -3132,7 +2997,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return new Object[] { isApplicableMatch, ruleResult };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_0BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_0BB(
 			ModelgeneratorRuleResult ruleResult, FamiliesToPersonsCorr families2persons) {
 		if (ruleResult.getCorrObjects().contains(families2persons)) {
 			return new Object[] { ruleResult, families2persons };
@@ -3140,23 +3005,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_1BB(
-			ModelgeneratorRuleResult ruleResult, Families families) {
-		if (ruleResult.getSourceObjects().contains(families)) {
-			return new Object[] { ruleResult, families };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_2BB(
-			ModelgeneratorRuleResult ruleResult, Family f) {
-		if (ruleResult.getSourceObjects().contains(f)) {
-			return new Object[] { ruleResult, f };
-		}
-		return null;
-	}
-
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_3BB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_1BB(
 			ModelgeneratorRuleResult ruleResult, Persons persons) {
 		if (ruleResult.getTargetObjects().contains(persons)) {
 			return new Object[] { ruleResult, persons };
@@ -3164,28 +3013,44 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Iterable<Object[]> pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_blackFFFFFBB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_2BB(
+			ModelgeneratorRuleResult ruleResult, Families families) {
+		if (ruleResult.getSourceObjects().contains(families)) {
+			return new Object[] { ruleResult, families };
+		}
+		return null;
+	}
+
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_3BB(
+			ModelgeneratorRuleResult ruleResult, Family f) {
+		if (ruleResult.getSourceObjects().contains(f)) {
+			return new Object[] { ruleResult, f };
+		}
+		return null;
+	}
+
+	public static final Iterable<Object[]> pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_blackFFFFFBB(
 			RuleEntryContainer ruleEntryContainer, ModelgeneratorRuleResult ruleResult) {
 		LinkedList<Object[]> _result = new LinkedList<Object[]>();
 		for (RuleEntryList families2personsList : ruleEntryContainer.getRuleEntryList()) {
 			for (EObject tmpFamilies2persons : families2personsList.getEntryObjects()) {
 				if (tmpFamilies2persons instanceof FamiliesToPersonsCorr) {
 					FamiliesToPersonsCorr families2persons = (FamiliesToPersonsCorr) tmpFamilies2persons;
-					Families families = families2persons.getSource();
-					if (families != null) {
-						Persons persons = families2persons.getTarget();
-						if (persons != null) {
-							if (pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_0BB(ruleResult,
+					Persons persons = families2persons.getTarget();
+					if (persons != null) {
+						Families families = families2persons.getSource();
+						if (families != null) {
+							if (pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_0BB(ruleResult,
 									families2persons) == null) {
-								if (pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_1BB(
-										ruleResult, families) == null) {
-									if (pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_3BB(
-											ruleResult, persons) == null) {
+								if (pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_1BB(
+										ruleResult, persons) == null) {
+									if (pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_2BB(
+											ruleResult, families) == null) {
 										for (Family f : families.getFamily()) {
-											if (pattern_MotherOfExistingFamilyToFemale_30_2_isapplicablecore_black_nac_2BB(
+											if (pattern_MotherOfExistingFamilyToFemale_29_2_isapplicablecore_black_nac_3BB(
 													ruleResult, f) == null) {
 												_result.add(new Object[] { families2personsList, families2persons,
-														families, f, persons, ruleEntryContainer, ruleResult });
+														persons, families, f, ruleEntryContainer, ruleResult });
 											}
 										}
 									}
@@ -3201,7 +3066,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_bindingFBBBBBBB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_bindingFBBBBBBB(
 			MotherOfExistingFamilyToFemale _this, IsApplicableMatch isApplicableMatch,
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
@@ -3214,22 +3079,22 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_blackB(CSP csp) {
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_blackB(CSP csp) {
 		return new Object[] { csp };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_bindingAndBlackFBBBBBBB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_bindingAndBlackFBBBBBBB(
 			MotherOfExistingFamilyToFemale _this, IsApplicableMatch isApplicableMatch,
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
-		Object[] result_pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_binding = pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_bindingFBBBBBBB(
+		Object[] result_pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_binding = pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_bindingFBBBBBBB(
 				_this, isApplicableMatch, families2persons, persons, f, families, ruleResult);
-		if (result_pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_binding != null) {
-			CSP csp = (CSP) result_pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_binding[0];
+		if (result_pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_binding != null) {
+			CSP csp = (CSP) result_pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_binding[0];
 
-			Object[] result_pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_black = pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_blackB(
+			Object[] result_pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_black = pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_blackB(
 					csp);
-			if (result_pattern_MotherOfExistingFamilyToFemale_30_3_solveCSP_black != null) {
+			if (result_pattern_MotherOfExistingFamilyToFemale_29_3_solveCSP_black != null) {
 
 				return new Object[] { csp, _this, isApplicableMatch, families2persons, persons, f, families,
 						ruleResult };
@@ -3238,14 +3103,14 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final boolean pattern_MotherOfExistingFamilyToFemale_30_4_checkCSP_expressionFBB(
+	public static final boolean pattern_MotherOfExistingFamilyToFemale_29_4_checkCSP_expressionFBB(
 			MotherOfExistingFamilyToFemale _this, CSP csp) {
 		boolean _localVariable_0 = _this.generateModel_checkCsp_BWD(csp);
 		boolean _result = Boolean.valueOf(_localVariable_0);
 		return _result;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_5_checknacs_black_nac_0B(Family f) {
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_5_checknacs_black_nac_0B(Family f) {
 		FamilyMember existingMother = f.getMother();
 		if (existingMother != null) {
 			return new Object[] { f };
@@ -3254,21 +3119,21 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_5_checknacs_blackBBBB(Family f,
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_5_checknacs_blackBBBB(Family f,
 			FamiliesToPersonsCorr families2persons, Persons persons, Families families) {
-		if (pattern_MotherOfExistingFamilyToFemale_30_5_checknacs_black_nac_0B(f) == null) {
+		if (pattern_MotherOfExistingFamilyToFemale_29_5_checknacs_black_nac_0B(f) == null) {
 			return new Object[] { f, families2persons, persons, families };
 		}
 		return null;
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_6_perform_blackBBBBB(
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_6_perform_blackBBBBB(
 			FamiliesToPersonsCorr families2persons, Persons persons, Family f, Families families,
 			ModelgeneratorRuleResult ruleResult) {
 		return new Object[] { families2persons, persons, f, families, ruleResult };
 	}
 
-	public static final Object[] pattern_MotherOfExistingFamilyToFemale_30_6_perform_greenFBFBFBB(Persons persons,
+	public static final Object[] pattern_MotherOfExistingFamilyToFemale_29_6_perform_greenFBFBFBB(Persons persons,
 			Family f, ModelgeneratorRuleResult ruleResult, CSP csp) {
 		Female p = PersonsModelFactory.eINSTANCE.createFemale();
 		FamilyMemberToPerson familyMember2Persons = FamiliesToPersonsFactory.eINSTANCE.createFamilyMemberToPerson();
@@ -3294,7 +3159,7 @@ public class MotherOfExistingFamilyToFemaleImpl extends AbstractRuleImpl impleme
 		return new Object[] { p, persons, familyMember2Persons, f, fm, ruleResult, csp };
 	}
 
-	public static final ModelgeneratorRuleResult pattern_MotherOfExistingFamilyToFemale_30_7_expressionFB(
+	public static final ModelgeneratorRuleResult pattern_MotherOfExistingFamilyToFemale_29_7_expressionFB(
 			ModelgeneratorRuleResult ruleResult) {
 		ModelgeneratorRuleResult _result = ruleResult;
 		return _result;

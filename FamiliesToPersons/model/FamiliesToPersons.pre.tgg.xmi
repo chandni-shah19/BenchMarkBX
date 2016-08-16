@@ -1,225 +1,209 @@
 <?xml version="1.0" encoding="ASCII"?>
 <org.moflon.tgg.language:TripleGraphGrammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:csp="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//csp" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.moflon.tgg.language="platform:/plugin/org.moflon.tgg.language/model/Language.ecore" name="FamiliesToPersons">
+  <domain name="Source" metamodel="//@metamodel.1" type="SOURCE"/>
+  <domain name="Correspondence" metamodel="//@metamodel.0"/>
+  <domain name="Target" metamodel="//@metamodel.2" type="TARGET"/>
+  <tggRule name="FatherToMale" refines="//@tggRule.5" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Male"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.0/@linkVariable.2" outgoingLink="//@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_father" target="//@tggRule.0/@objectVariable.0" source="//@tggRule.0/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_father"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.3" source="//@tggRule.0/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="ExistingFamily2Person" refines="//@tggRule.5" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2" abstractRule="true">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.1/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" outgoingLink="//@tggRule.1/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.1" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families/family"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="DaughterOfExistingFamilyToFemale" refines="//@tggRule.7 //@tggRule.1" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <csp/>
+  </tggRule>
+  <tggRule name="SonOfExistingFamilyToMale" refines="//@tggRule.6 //@tggRule.1" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <csp/>
+  </tggRule>
+  <tggRule name="MotherOfExistingFamilyToFemale" refines="//@tggRule.1 //@tggRule.8" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="existingMother" outgoingLink="//@tggRule.4/@linkVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.4/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_mother" target="//@tggRule.4/@objectVariable.1" source="//@tggRule.4/@objectVariable.0" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_mother"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="FamilyMember2Person" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2" abstractRule="true">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families2persons" outgoingLink="//@tggRule.5/@linkVariable.2 //@tggRule.5/@linkVariable.4" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" incomingLink="//@tggRule.5/@linkVariable.4" outgoingLink="//@tggRule.5/@linkVariable.3" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.5/@linkVariable.0 //@tggRule.5/@linkVariable.5" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Person"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.5/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="persons" incomingLink="//@tggRule.5/@linkVariable.2" outgoingLink="//@tggRule.5/@linkVariable.5" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.5/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.3" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.4" source="//@tggRule.5/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.5/@objectVariable.5" source="//@tggRule.5/@objectVariable.0" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family" target="//@tggRule.5/@objectVariable.6" source="//@tggRule.5/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families/family"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.5/@objectVariable.2" source="//@tggRule.5/@objectVariable.0" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="person" target="//@tggRule.5/@objectVariable.3" source="//@tggRule.5/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons/person"/>
+    </linkVariable>
+    <csp>
+      <constraints variables="//@tggRule.5/@csp/@variables.2 //@tggRule.5/@csp/@variables.1 //@tggRule.5/@csp/@variables.0 //@tggRule.5/@csp/@variables.3" name="concat">
+        <signature type="EString" index="2"/>
+        <signature type="EString" index="1"/>
+        <signature type="EString"/>
+        <signature type="EString" index="3"/>
+        <allowedAdornments value="BFBB"/>
+        <allowedAdornments value="BBBF"/>
+        <allowedAdornments value="BFFB"/>
+        <allowedAdornments value="BBFB"/>
+        <allowedAdornments value="BBBB"/>
+        <modelgenAdornments value="BFBF"/>
+        <modelgenAdornments value="BFBB"/>
+        <modelgenAdornments value="BFFF"/>
+        <modelgenAdornments value="BBBF"/>
+        <modelgenAdornments value="BFFB"/>
+        <modelgenAdornments value="BBFF"/>
+        <modelgenAdornments value="BBFB"/>
+        <modelgenAdornments value="BBBB"/>
+      </constraints>
+      <variables xsi:type="csp:AttributeVariable" attribute="firstName" objectVariable="fm"/>
+      <variables xsi:type="csp:AttributeVariable" attribute="familyName" objectVariable="f"/>
+      <variables xsi:type="csp:Literal" bound="true" value="ACED0005740004222C2022"/>
+      <variables xsi:type="csp:AttributeVariable" attribute="fullName" objectVariable="p"/>
+    </csp>
+  </tggRule>
+  <tggRule name="SonToMale" refines="//@tggRule.5" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.6/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Male"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.6/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.6/@linkVariable.0 //@tggRule.6/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.6/@linkVariable.1" outgoingLink="//@tggRule.6/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.6/@objectVariable.0" source="//@tggRule.6/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.6/@objectVariable.3" source="//@tggRule.6/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_son" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_son"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="DaughterToFemale" refines="//@tggRule.5" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.7/@linkVariable.0 //@tggRule.7/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.7/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.7/@linkVariable.0" outgoingLink="//@tggRule.7/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.7/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Female"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.7/@objectVariable.2" source="//@tggRule.7/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_daughter" target="//@tggRule.7/@objectVariable.1" source="//@tggRule.7/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_daughter"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.7/@objectVariable.3" source="//@tggRule.7/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="MotherToFemale" refines="//@tggRule.5" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.8/@linkVariable.0 //@tggRule.8/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.8/@linkVariable.0" outgoingLink="//@tggRule.8/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.8/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.8/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Female"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.8/@objectVariable.1" source="//@tggRule.8/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.8/@objectVariable.3" source="//@tggRule.8/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_mother" target="//@tggRule.8/@objectVariable.2" source="//@tggRule.8/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_mother"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="FatherOfExistingFamilyToMale" refines="//@tggRule.0 //@tggRule.1" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.9/@linkVariable.0" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="existingFather" outgoingLink="//@tggRule.9/@linkVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_father" target="//@tggRule.9/@objectVariable.0" source="//@tggRule.9/@objectVariable.1" domain="//@domain.0">
+      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_father"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="Families2Persons" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families2persons" outgoingLink="//@tggRule.10/@linkVariable.0 //@tggRule.10/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" incomingLink="//@tggRule.10/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="persons" incomingLink="//@tggRule.10/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.10/@objectVariable.1" source="//@tggRule.10/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.10/@objectVariable.2" source="//@tggRule.10/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1"/>
+    <csp/>
+  </tggRule>
+  <metamodel name="FamiliesToPersons">
+    <outermostPackage href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#/"/>
+  </metamodel>
   <metamodel name="FamiliesModel">
     <outermostPackage href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#/"/>
   </metamodel>
   <metamodel name="PersonsModel">
     <outermostPackage href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#/"/>
   </metamodel>
-  <metamodel name="FamiliesToPersons">
-    <outermostPackage href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#/"/>
-  </metamodel>
-  <domain name="Source" metamodel="//@metamodel.0" type="SOURCE"/>
-  <domain name="Target" metamodel="//@metamodel.1" type="TARGET"/>
-  <domain name="Correspondence" metamodel="//@metamodel.2"/>
-  <tggRule name="FamilyMember2Person" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1" abstractRule="true">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.0/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families2persons" outgoingLink="//@tggRule.0/@linkVariable.3 //@tggRule.0/@linkVariable.5" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.0/@linkVariable.1 //@tggRule.0/@linkVariable.4" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Person"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" incomingLink="//@tggRule.0/@linkVariable.3" outgoingLink="//@tggRule.0/@linkVariable.2" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="persons" incomingLink="//@tggRule.0/@linkVariable.5" outgoingLink="//@tggRule.0/@linkVariable.4" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.3" source="//@tggRule.0/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family" target="//@tggRule.0/@objectVariable.1" source="//@tggRule.0/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families/family"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.5" source="//@tggRule.0/@objectVariable.2" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="person" target="//@tggRule.0/@objectVariable.4" source="//@tggRule.0/@objectVariable.6" bindingOperator="CREATE" domain="//@domain.1">
-      <type href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons/person"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.6" source="//@tggRule.0/@objectVariable.2" domain="//@domain.2"/>
-    <csp>
-      <constraints variables="//@tggRule.0/@csp/@variables.1 //@tggRule.0/@csp/@variables.2 //@tggRule.0/@csp/@variables.0 //@tggRule.0/@csp/@variables.3" name="concat">
-        <signature type="EString" index="3"/>
-        <signature type="EString"/>
-        <signature type="EString" index="2"/>
-        <signature type="EString" index="1"/>
-        <allowedAdornments value="BBBB"/>
-        <allowedAdornments value="BBFB"/>
-        <allowedAdornments value="BFBB"/>
-        <allowedAdornments value="BFFB"/>
-        <allowedAdornments value="BBBF"/>
-        <modelgenAdornments value="BFBB"/>
-        <modelgenAdornments value="BBBB"/>
-        <modelgenAdornments value="BBFF"/>
-        <modelgenAdornments value="BFFF"/>
-        <modelgenAdornments value="BBFB"/>
-        <modelgenAdornments value="BFFB"/>
-        <modelgenAdornments value="BBBF"/>
-        <modelgenAdornments value="BFBF"/>
-      </constraints>
-      <variables xsi:type="csp:AttributeVariable" attribute="firstName" objectVariable="fm"/>
-      <variables xsi:type="csp:Literal" bound="true" value="ACED0005740004222C2022"/>
-      <variables xsi:type="csp:AttributeVariable" attribute="familyName" objectVariable="f"/>
-      <variables xsi:type="csp:AttributeVariable" attribute="fullName" objectVariable="p"/>
-    </csp>
-  </tggRule>
-  <tggRule name="MotherToFemale" refines="//@tggRule.0" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.1/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Female"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.1/@linkVariable.2" outgoingLink="//@tggRule.1/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.1/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.0" source="//@tggRule.1/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_mother" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_mother"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.2" source="//@tggRule.1/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/source"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="Families2Persons" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="persons" incomingLink="//@tggRule.2/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Persons"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families2persons" outgoingLink="//@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamiliesToPersonsCorr"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" incomingLink="//@tggRule.2/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2"/>
-    <csp/>
-  </tggRule>
-  <tggRule name="DaughterToFemale" refines="//@tggRule.0" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.3/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Female"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.3/@linkVariable.0 //@tggRule.3/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.3/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.3/@linkVariable.1" outgoingLink="//@tggRule.3/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.0" source="//@tggRule.3/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.3" source="//@tggRule.3/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/source"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_daughter" target="//@tggRule.3/@objectVariable.2" source="//@tggRule.3/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_daughter"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="SonOfExistingFamilyToMale" refines="//@tggRule.6 //@tggRule.10" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <csp/>
-  </tggRule>
-  <tggRule name="DaughterOfExistingFamilyToFemale" refines="//@tggRule.3 //@tggRule.6" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <csp/>
-  </tggRule>
-  <tggRule name="ExistingFamily2Person" refines="//@tggRule.0" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1" abstractRule="true">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="families" outgoingLink="//@tggRule.6/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.6/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family" target="//@tggRule.6/@objectVariable.1" source="//@tggRule.6/@objectVariable.0" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Families/family"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="FatherOfExistingFamilyToMale" refines="//@tggRule.6 //@tggRule.8" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="existingFather" outgoingLink="//@tggRule.7/@linkVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.7/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_father" target="//@tggRule.7/@objectVariable.1" source="//@tggRule.7/@objectVariable.0" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_father"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="FatherToMale" refines="//@tggRule.0" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.8/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Male"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.8/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.8/@linkVariable.0 //@tggRule.8/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.8/@linkVariable.2" outgoingLink="//@tggRule.8/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.8/@objectVariable.0" source="//@tggRule.8/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_father" target="//@tggRule.8/@objectVariable.1" source="//@tggRule.8/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_father"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.8/@objectVariable.3" source="//@tggRule.8/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/source"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="MotherOfExistingFamilyToFemale" refines="//@tggRule.1 //@tggRule.6" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.9/@linkVariable.0" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="existingMother" outgoingLink="//@tggRule.9/@linkVariable.0" bindingSemantics="NEGATIVE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_mother" target="//@tggRule.9/@objectVariable.0" source="//@tggRule.9/@objectVariable.1" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_mother"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
-  <tggRule name="SonToMale" refines="//@tggRule.0" correspondence="//@domain.2" source="//@domain.0" target="//@domain.1">
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p" incomingLink="//@tggRule.10/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.1">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/PersonsModel/model/PersonsModel.ecore#//Male"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="familyMember2Persons" outgoingLink="//@tggRule.10/@linkVariable.0 //@tggRule.10/@linkVariable.2" bindingOperator="CREATE" domain="//@domain.2">
-      <type xsi:type="ecore:EClass" href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f" incomingLink="//@tggRule.10/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//Family"/>
-    </objectVariable>
-    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="fm" incomingLink="//@tggRule.10/@linkVariable.2" outgoingLink="//@tggRule.10/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
-      <type xsi:type="ecore:EClass" href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember"/>
-    </objectVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.10/@objectVariable.0" source="//@tggRule.10/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/target"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="family_son" target="//@tggRule.10/@objectVariable.2" source="//@tggRule.10/@objectVariable.3" bindingOperator="CREATE" domain="//@domain.0">
-      <type href="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore#//FamilyMember/family_son"/>
-    </linkVariable>
-    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.10/@objectVariable.3" source="//@tggRule.10/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.2">
-      <type href="platform:/resource/FamiliesToPersons/model/FamiliesToPersons.ecore#//FamilyMemberToPerson/source"/>
-    </linkVariable>
-    <csp/>
-  </tggRule>
 </org.moflon.tgg.language:TripleGraphGrammar>

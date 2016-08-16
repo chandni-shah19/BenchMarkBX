@@ -10,6 +10,8 @@ import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EcoreFactory;
+import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
@@ -59,7 +61,8 @@ public abstract class PersonImpl extends EObjectImpl implements Person {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Date BIRTHDAY_EDEFAULT = null;
+	protected static final Date BIRTHDAY_EDEFAULT = (Date) EcoreFactory.eINSTANCE
+			.createFromString(EcorePackage.eINSTANCE.getEDate(), "");
 
 	/**
 	 * The cached value of the '{@link #getBirthday() <em>Birthday</em>}' attribute.

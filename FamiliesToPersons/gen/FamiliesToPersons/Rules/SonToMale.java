@@ -22,7 +22,6 @@ import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
 import org.moflon.tgg.runtime.EMoflonEdge;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
-import org.moflon.tgg.runtime.IsApplicableMatchCC;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
 import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
@@ -212,7 +211,7 @@ public interface SonToMale extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_EMoflonEdge_7(EMoflonEdge _edge_family);
+	EObjectContainer isAppropriate_FWD_EMoflonEdge_36(EMoflonEdge _edge_family);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -220,7 +219,7 @@ public interface SonToMale extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_EMoflonEdge_7(EMoflonEdge _edge_person);
+	EObjectContainer isAppropriate_BWD_EMoflonEdge_36(EMoflonEdge _edge_person);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,8 +251,8 @@ public interface SonToMale extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(IsApplicableMatchCC isApplicableMatch, Male p, FamiliesToPersonsCorr families2persons,
-			Persons persons, Family f, FamilyMember fm, Families families, Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Male p, Persons persons, Family f, FamilyMember fm, Families families,
+			Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -262,14 +261,6 @@ public interface SonToMale extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean isApplicable_checkCsp_CC(CSP csp);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	PerformRuleResult perform_CC(IsApplicableMatchCC isApplicableMatch);
 
 	/**
 	 * <!-- begin-user-doc -->

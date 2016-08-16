@@ -22,58 +22,13 @@ public interface RulesFactory extends EFactory {
 	RulesFactory eINSTANCE = FamiliesToPersons.Rules.impl.RulesFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Family Member2 Person</em>'.
+	 * Returns a new object of class '<em>Father To Male</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Family Member2 Person</em>'.
+	 * @return a new object of class '<em>Father To Male</em>'.
 	 * @generated
 	 */
-	FamilyMember2Person createFamilyMember2Person();
-
-	/**
-	 * Returns a new object of class '<em>Mother To Female</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Mother To Female</em>'.
-	 * @generated
-	 */
-	MotherToFemale createMotherToFemale();
-
-	/**
-	 * Returns a new object of class '<em>Families2 Persons</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Families2 Persons</em>'.
-	 * @generated
-	 */
-	Families2Persons createFamilies2Persons();
-
-	/**
-	 * Returns a new object of class '<em>Daughter To Female</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Daughter To Female</em>'.
-	 * @generated
-	 */
-	DaughterToFemale createDaughterToFemale();
-
-	/**
-	 * Returns a new object of class '<em>Son Of Existing Family To Male</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Son Of Existing Family To Male</em>'.
-	 * @generated
-	 */
-	SonOfExistingFamilyToMale createSonOfExistingFamilyToMale();
-
-	/**
-	 * Returns a new object of class '<em>Daughter Of Existing Family To Female</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Daughter Of Existing Family To Female</em>'.
-	 * @generated
-	 */
-	DaughterOfExistingFamilyToFemale createDaughterOfExistingFamilyToFemale();
+	FatherToMale createFatherToMale();
 
 	/**
 	 * Returns a new object of class '<em>Existing Family2 Person</em>'.
@@ -85,22 +40,22 @@ public interface RulesFactory extends EFactory {
 	ExistingFamily2Person createExistingFamily2Person();
 
 	/**
-	 * Returns a new object of class '<em>Father Of Existing Family To Male</em>'.
+	 * Returns a new object of class '<em>Daughter Of Existing Family To Female</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Father Of Existing Family To Male</em>'.
+	 * @return a new object of class '<em>Daughter Of Existing Family To Female</em>'.
 	 * @generated
 	 */
-	FatherOfExistingFamilyToMale createFatherOfExistingFamilyToMale();
+	DaughterOfExistingFamilyToFemale createDaughterOfExistingFamilyToFemale();
 
 	/**
-	 * Returns a new object of class '<em>Father To Male</em>'.
+	 * Returns a new object of class '<em>Son Of Existing Family To Male</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Father To Male</em>'.
+	 * @return a new object of class '<em>Son Of Existing Family To Male</em>'.
 	 * @generated
 	 */
-	FatherToMale createFatherToMale();
+	SonOfExistingFamilyToMale createSonOfExistingFamilyToMale();
 
 	/**
 	 * Returns a new object of class '<em>Mother Of Existing Family To Female</em>'.
@@ -112,6 +67,15 @@ public interface RulesFactory extends EFactory {
 	MotherOfExistingFamilyToFemale createMotherOfExistingFamilyToFemale();
 
 	/**
+	 * Returns a new object of class '<em>Family Member2 Person</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Family Member2 Person</em>'.
+	 * @generated
+	 */
+	FamilyMember2Person createFamilyMember2Person();
+
+	/**
 	 * Returns a new object of class '<em>Son To Male</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +83,42 @@ public interface RulesFactory extends EFactory {
 	 * @generated
 	 */
 	SonToMale createSonToMale();
+
+	/**
+	 * Returns a new object of class '<em>Daughter To Female</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Daughter To Female</em>'.
+	 * @generated
+	 */
+	DaughterToFemale createDaughterToFemale();
+
+	/**
+	 * Returns a new object of class '<em>Mother To Female</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Mother To Female</em>'.
+	 * @generated
+	 */
+	MotherToFemale createMotherToFemale();
+
+	/**
+	 * Returns a new object of class '<em>Father Of Existing Family To Male</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Father Of Existing Family To Male</em>'.
+	 * @generated
+	 */
+	FatherOfExistingFamilyToMale createFatherOfExistingFamilyToMale();
+
+	/**
+	 * Returns a new object of class '<em>Families2 Persons</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Families2 Persons</em>'.
+	 * @generated
+	 */
+	Families2Persons createFamilies2Persons();
 
 	/**
 	 * Returns the package supported by this factory.

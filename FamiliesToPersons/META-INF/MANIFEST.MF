@@ -1,11 +1,12 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: FamiliesToPersons;singleton:=true
-Export-Package: FamiliesToPersons.Rules.util,
+Export-Package: FamiliesToPersons,
  FamiliesToPersons.Rules,
  FamiliesToPersons.Rules.impl,
- FamiliesToPersons,
+ FamiliesToPersons.Rules.util,
+ FamiliesToPersons.impl,
  FamiliesToPersons.util,
- FamiliesToPersons.impl
+ org.moflon.tie
 Bundle-Name: FamiliesToPersons
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,

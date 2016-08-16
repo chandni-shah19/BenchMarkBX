@@ -16,17 +16,17 @@
   </eClassifiers>
   <eSubpackages name="Rules" nsURI="platform:/plugin/FamiliesToPersons/model/FamiliesToPersons.ecore#//Rules"
       nsPrefix="Rules">
-    <eClassifiers xsi:type="ecore:EClass" name="FamilyMember2Person" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="MotherToFemale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="Families2Persons" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DaughterToFemale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="SonOfExistingFamilyToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FatherToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExistingFamily2Person" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="DaughterOfExistingFamilyToFemale"
         eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ExistingFamily2Person" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FatherOfExistingFamilyToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FatherToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="SonOfExistingFamilyToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="MotherOfExistingFamilyToFemale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FamilyMember2Person" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="SonToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DaughterToFemale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="MotherToFemale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FatherOfExistingFamilyToMale" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Families2Persons" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
   </eSubpackages>
 </ecore:EPackage>

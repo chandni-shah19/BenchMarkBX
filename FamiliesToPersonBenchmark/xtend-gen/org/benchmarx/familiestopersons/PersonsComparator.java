@@ -9,15 +9,15 @@ import org.junit.Assert;
 public class PersonsComparator implements Comparator<Persons> {
   @Override
   public void compare(final Persons expected, final Persons actual) {
-    CharSequence _personsToString = this.personsToString(expected);
-    CharSequence _personsToString_1 = this.personsToString(actual);
+    String _personsToString = this.personsToString(expected);
+    String _personsToString_1 = this.personsToString(actual);
     Assert.assertEquals(_personsToString, _personsToString_1);
   }
   
-  public CharSequence personsToString(final Persons persons) {
+  public String personsToString(final Persons persons) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("Persons");
     _builder.newLine();
-    return _builder;
+    return _builder.toString();
   }
 }

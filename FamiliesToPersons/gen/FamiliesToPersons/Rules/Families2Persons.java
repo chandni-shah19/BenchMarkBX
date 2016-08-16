@@ -16,7 +16,6 @@ import org.moflon.tgg.runtime.AbstractRule;
 import org.moflon.tgg.runtime.AttributeConstraintsRuleResult;
 import org.moflon.tgg.runtime.EObjectContainer;
 import org.moflon.tgg.runtime.IsApplicableMatch;
-import org.moflon.tgg.runtime.IsApplicableMatchCC;
 import org.moflon.tgg.runtime.IsApplicableRuleResult;
 import org.moflon.tgg.runtime.Match;
 import org.moflon.tgg.runtime.ModelgeneratorRuleResult;
@@ -106,7 +105,7 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_FWD(PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families);
+	void registerObjects_FWD(PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -186,7 +185,7 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	void registerObjects_BWD(PerformRuleResult ruleresult, EObject persons, EObject families2persons, EObject families);
+	void registerObjects_BWD(PerformRuleResult ruleresult, EObject families2persons, EObject families, EObject persons);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -202,7 +201,7 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_FWD_Families_0(Families families);
+	EObjectContainer isAppropriate_FWD_Families_4(Families families);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -210,7 +209,7 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	EObjectContainer isAppropriate_BWD_Persons_0(Persons persons);
+	EObjectContainer isAppropriate_BWD_Persons_4(Persons persons);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -242,8 +241,7 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @model
 	 * @generated
 	 */
-	CSP isApplicable_solveCsp_CC(IsApplicableMatchCC isApplicableMatch, Persons persons, Families families,
-			Match sourceMatch, Match targetMatch);
+	CSP isApplicable_solveCsp_CC(Families families, Persons persons, Match sourceMatch, Match targetMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,14 +250,6 @@ public interface Families2Persons extends EObject, AbstractRule {
 	 * @generated
 	 */
 	boolean isApplicable_checkCsp_CC(CSP csp);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	PerformRuleResult perform_CC(IsApplicableMatchCC isApplicableMatch);
 
 	/**
 	 * <!-- begin-user-doc -->
