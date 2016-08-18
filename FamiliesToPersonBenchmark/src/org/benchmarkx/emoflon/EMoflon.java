@@ -10,6 +10,7 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
 import FamiliesModel.Families;
 import FamiliesModel.FamiliesModelFactory;
+import FamiliesModel.FamilyMember;
 import FamiliesToPersons.FamiliesToPersonsPackage;
 import PersonsModel.Persons;
 
@@ -29,6 +30,8 @@ public class EMoflon implements BXTool<Families, Persons>   {
 		// perform batch to establish consistent starting state
 		helper.setSrc(familiesRoot);
 		helper.integrateForward();
+		
+		
 	}
 
 	@Override
@@ -41,6 +44,7 @@ public class EMoflon implements BXTool<Families, Persons>   {
 	public void performAndPropagateSourceEdit(Consumer<Families> edit) {
 		helper.setChangeSrc((EObject root) ->  edit.accept((Families) root));
 		helper.integrateForward();
+			
 	}
 
 	@Override

@@ -14,9 +14,9 @@ class FamiliesComparator implements Comparator<Families> {
 	def familyToString(Families families) {
 		return '''
 		Families {
-			«FOR f : families.family SEPARATOR "\n"»
-			Family «f.familyName»
-			«ENDFOR»
+			FOR f : families.family SEPARATOR "\n"
+			Family f.familyName
+			ENDFOR
 		}
 		'''
 	}

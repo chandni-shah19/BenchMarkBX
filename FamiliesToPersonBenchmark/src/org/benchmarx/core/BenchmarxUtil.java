@@ -21,7 +21,6 @@ public class BenchmarxUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		return (T)resource.getContents().get(0);
 	}
 

@@ -10,7 +10,11 @@ import org.junit.Test;
 import FamiliesModel.Families;
 import FamiliesModel.FamiliesModelFactory;
 import FamiliesModel.Family;
+import FamiliesModel.FamilyMember;
+import FamiliesModel.util.FamiliesModelAdapterFactory;
+import PersonsModel.Person;
 import PersonsModel.Persons;
+import PersonsModel.PersonsModelFactory;
 
 public class CreateRootElements {
 
@@ -39,6 +43,15 @@ public class CreateRootElements {
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
+		
+		// Test for family single member e.g family father
+		/* this Way ??????
+		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		assertSource("oneFamilyWithFamilyMemeber");
+		
+		tool.performAndPropagateTargetEdit(this::createMale);
+		assertTarget("personsForOneFamilyMemeber");
+		*/
 	}
 
 	private void assertSource(String path){
@@ -53,6 +66,29 @@ public class CreateRootElements {
 		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Simpson");
 		root.getFamily().add(family);
+		
+		/* or this way ???????
+		FamilyMember familyFather =  FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyFather.setFirstName("XYZ");
+		*/
+	}
+	
+	/*
+	private void createFamilyMember(Families root)
+	{
+		root.getFamily().get(0);
+		FamilyMember familyFather =  FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyFather.setFirstName("XYZ");
+		root.getFamily().get(0).setFather(familyFather);
 	}
 
+	private void createMale(Persons root)
+	{
+		Person male = PersonsModelFactory.eINSTANCE.createMale();
+		male.setFullName("Simpson XYZ");
+		root.getPerson().add(male);
+		
+		
+	}
+	*/
 }
