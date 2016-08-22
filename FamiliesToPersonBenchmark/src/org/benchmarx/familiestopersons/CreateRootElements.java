@@ -44,14 +44,21 @@ public class CreateRootElements {
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 		
-		// Test for family single member e.g family father
-		/* this Way ??????
+		//Test creation of a family member (e.g. family father added in above created one family)
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
-		assertSource("oneFamilyWithFamilyMemeber");
+		assertSource("oneFamilyWithOneFamilyMemebr");
+		assertTarget("PersonWithOneMaleMemeber");
 		
-		tool.performAndPropagateTargetEdit(this::createMale);
-		assertTarget("personsForOneFamilyMemeber");
-		*/
+		//Test for creation of multiple family members (with new family register)
+		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+		assertSource("oneFamilyWithOneMultiFamilyMemebr");
+		assertTarget("PersonWithMaynMaleFemaleMemeber");
+		
+		//Test for name family name change for family 'Shah' to 'Gandhi'
+		tool.performAndPropagateSourceEdit(this::FamilyNameChange);
+		assertSource("NameChangeFamily");
+		assertTarget("AllPersonNameChange");
+		
 	}
 
 	private void assertSource(String path){
@@ -66,29 +73,41 @@ public class CreateRootElements {
 		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Simpson");
 		root.getFamily().add(family);
-		
-		/* or this way ???????
-		FamilyMember familyFather =  FamiliesModelFactory.eINSTANCE.createFamilyMember();
-		familyFather.setFirstName("XYZ");
-		*/
 	}
 	
-	/*
-	private void createFamilyMember(Families root)
-	{
-		root.getFamily().get(0);
-		FamilyMember familyFather =  FamiliesModelFactory.eINSTANCE.createFamilyMember();
-		familyFather.setFirstName("XYZ");
-		root.getFamily().get(0).setFather(familyFather);
-	}
-
-	private void createMale(Persons root)
-	{
-		Person male = PersonsModelFactory.eINSTANCE.createMale();
-		male.setFullName("Simpson XYZ");
-		root.getPerson().add(male);
+	
+	private void createFamilyMember(Families eObject){
+		Family family = eObject.getFamily().get(0);
 		
+		FamilyMember familyMember = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyMember.setFamily_father(family);
+		familyMember.setFirstName("xyz");
 		
 	}
-	*/
+	
+	private void createMultiFamilyMember(Families eObject){
+		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
+		family.setFamilyName("Shah");
+		eObject.getFamily().add(family);
+		
+		FamilyMember familyMemberFather = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyMemberFather.setFamily_father(family);
+		familyMemberFather.setFirstName("AbcFather");
+		
+		FamilyMember familyMemberMother = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyMemberMother.setFamily_mother(family);
+		familyMemberMother.setFirstName("AbcMother");
+		
+		FamilyMember familyMemberDaughter = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		familyMemberDaughter.setFamily_daughter(family);
+		familyMemberDaughter.setFirstName("AbcDaughter1");
+		
+	}
+	
+	private void FamilyNameChange(Families eObject){
+		Family family = eObject.getFamily().get(1);
+		family.setFamilyName("Gandhi");
+		eObject.getFamily().add(1, family);
+			
+	}
 }
