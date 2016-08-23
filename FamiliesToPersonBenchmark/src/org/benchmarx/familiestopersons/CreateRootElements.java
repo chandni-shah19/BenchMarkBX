@@ -36,20 +36,24 @@ public class CreateRootElements {
 		tool.initiateSynchronisationDialogue();
 
 		// Expect root elements of both source and target models
+		System.out.println("Root Elements");
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 
 		// Test creation of a single family in an empty root container
+		System.out.println("For one family");
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 		
 		//Test creation of a family member (e.g. family father added in above created one family)
+		System.out.println("For one family member");
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
 		
 		//Test for creation of multiple family members (with new family register)
+		/*
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		assertSource("oneFamilyWithOneMultiFamilyMember");
 		assertTarget("PersonWithMaynMaleFemaleMember");
@@ -58,7 +62,7 @@ public class CreateRootElements {
 		tool.performAndPropagateSourceEdit(this::FamilyNameChange);
 		assertSource("NameChangeFamily");
 		assertTarget("AllPersonNameChange");
-		
+		*/
 	}
 
 	private void assertSource(String path){
@@ -85,6 +89,7 @@ public class CreateRootElements {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void createMultiFamilyMember(Families eObject){
 		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Shah");
@@ -104,6 +109,7 @@ public class CreateRootElements {
 		
 	}
 	
+	@SuppressWarnings("unused")
 	private void FamilyNameChange(Families eObject){
 		Family family = eObject.getFamily().get(1);
 		family.setFamilyName("Gandhi");
