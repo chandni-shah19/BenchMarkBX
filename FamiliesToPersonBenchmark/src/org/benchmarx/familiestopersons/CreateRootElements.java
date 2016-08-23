@@ -46,13 +46,13 @@ public class CreateRootElements {
 		
 		//Test creation of a family member (e.g. family father added in above created one family)
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
-		assertSource("oneFamilyWithOneFamilyMemebr");
-		assertTarget("PersonWithOneMaleMemeber");
+		assertSource("oneFamilyWithOneFamilyMember");
+		assertTarget("PersonWithOneMaleMember");
 		
 		//Test for creation of multiple family members (with new family register)
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
-		assertSource("oneFamilyWithOneMultiFamilyMemebr");
-		assertTarget("PersonWithMaynMaleFemaleMemeber");
+		assertSource("oneFamilyWithOneMultiFamilyMember");
+		assertTarget("PersonWithMaynMaleFemaleMember");
 		
 		//Test for name family name change for family 'Shah' to 'Gandhi'
 		tool.performAndPropagateSourceEdit(this::FamilyNameChange);

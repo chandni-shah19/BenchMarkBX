@@ -16,8 +16,8 @@ class FamiliesComparator implements Comparator<Families> {
 		Families {
 			FOR f : families.family SEPARATOR "\n"
 			Family f.familyName "\n"
-			father_fm : Family_father.familyMember SEPARATOR "\n"
-			FamilyMemeber fm.firstName "\n"
+			fm : family_father.familyMember SEPARATOR "\n"
+			FamilyMember fm.firstName "\n"
 			ENDFOR
 		}
 		'''
