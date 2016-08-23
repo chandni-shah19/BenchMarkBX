@@ -41,13 +41,11 @@ public class CreateRootElements {
 		assertTarget("rootElementPersons");
 
 		// Test creation of a single family in an empty root container
-		System.out.println("For one family");
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 		
 		//Test creation of a family member (e.g. family father added in above created one family)
-		System.out.println("For one family member");
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
@@ -81,8 +79,8 @@ public class CreateRootElements {
 	
 	
 	private void createFamilyMember(Families eObject){
-		Family family = eObject.getFamily().get(0);
 		
+		Family family = eObject.getFamily().get(0);
 		FamilyMember familyMember = FamiliesModelFactory.eINSTANCE.createFamilyMember();
 		familyMember.setFamily_father(family);
 		familyMember.setFirstName("xyz");
