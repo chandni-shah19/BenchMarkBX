@@ -4,9 +4,9 @@
 #rule FatherOfExistingFamilyToMale #extends ExistingFamily2Person, FatherToMale #with FamiliesToPersons
 
 #source {
-	! existingFather : FamilyMember{
-		-family_father->f
-	}
+	! existingFather : FamilyMember
 	
-	f : Family 
+	f : Family {
+		-father->existingFather
+	}
 }

@@ -5,11 +5,10 @@
 
 #source { 
 	++ f : Family {
-		
+		++ -daughters->fm
 	}
-	++ fm : FamilyMember {
-		++ -family_daughter->f
-	} 
+	
+	++ fm : FamilyMember
 }
 
 #target {

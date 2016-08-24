@@ -8,24 +8,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Family">
     <eStructuralFeatures xsi:type="ecore:EReference" name="father" eType="#//FamilyMember"
-        containment="true" eOpposite="#//FamilyMember/family_father"/>
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="mother" eType="#//FamilyMember"
-        containment="true" eOpposite="#//FamilyMember/family_mother"/>
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sons" upperBound="-1" eType="#//FamilyMember"
-        containment="true" eOpposite="#//FamilyMember/family_son"/>
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="daughters" upperBound="-1"
-        eType="#//FamilyMember" containment="true" eOpposite="#//FamilyMember/family_daughter"/>
+        eType="#//FamilyMember" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FamilyMember">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="family_father" eType="#//Family"
-        eOpposite="#//Family/father"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="family_mother" eType="#//Family"
-        eOpposite="#//Family/mother"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="family_son" eType="#//Family"
-        eOpposite="#//Family/sons"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="family_daughter" eType="#//Family"
-        eOpposite="#//Family/daughters"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

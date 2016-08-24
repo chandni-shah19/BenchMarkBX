@@ -4,9 +4,9 @@
 #rule MotherOfExistingFamilyToFemale #extends ExistingFamily2Person, MotherToFemale #with FamiliesToPersons
 
 #source {
-	! existingMother : FamilyMember{
-		-family_mother->f
-	}
+	! existingMother : FamilyMember
 	
-	f : Family 
+	f : Family {
+		-mother->existingMother
+	}
 }
