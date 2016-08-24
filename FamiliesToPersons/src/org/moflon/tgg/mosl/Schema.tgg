@@ -1,20 +1,20 @@
-#import "platform:/plugin/FamiliesModel/model/FamiliesModel.ecore"
-#import "platform:/plugin/PersonsModel/model/PersonsModel.ecore"
+#import "platform:/plugin/Families/model/Families.ecore"
+#import "platform:/plugin/Persons/model/Persons.ecore"
 
 #schema FamiliesToPersons
 	
 #source {
-	FamiliesModel
+	Families
 }
 
 #target { 
-	PersonsModel
+	Persons
 } 
 
 #correspondence {
 	FamiliesToPersonsCorr{
-		#src->Families
-		#trg->Persons
+		#src->FamilyRegister
+		#trg->PersonRegister
 	}
 	FamilyMemberToPerson{
 		#src->FamilyMember

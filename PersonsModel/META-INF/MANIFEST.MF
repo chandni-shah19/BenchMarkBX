@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: PersonsModel;singleton:=true
-Export-Package: PersonsModel,
- PersonsModel.util,
- PersonsModel.impl
-Bundle-Name: PersonsModel
+Bundle-SymbolicName: Persons;singleton:=true
+Export-Package: Persons,
+ Persons.impl,
+ Persons.util
+Bundle-Name: Persons
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.emf.ecore,
  org.eclipse.emf.ecore.xmi

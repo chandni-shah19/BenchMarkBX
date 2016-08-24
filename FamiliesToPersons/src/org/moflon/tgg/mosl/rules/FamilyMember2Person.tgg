@@ -4,16 +4,16 @@
 #abstract #rule FamilyMember2Person #with FamiliesToPersons
 
 #source { 
-	families : Families {
-		++ -family->f
+	families : FamilyRegister {
+		++ -families->f
 	}
 	++ f : Family
 	++ fm : FamilyMember
 }
 
 #target {
-	persons : Persons {
-		++ -person->p
+	persons : PersonRegister {
+		++ -persons->p
 	}
 	++ p : Person
 }
@@ -30,5 +30,5 @@
 }
 
 #attributeConditions {
-	concat(", ", f.familyName, fm.firstName, p.fullName)
+	concat(", ", f.name, fm.name, p.name)
 }

@@ -4,11 +4,11 @@
 #rule Families2Persons #with FamiliesToPersons
 
 #source { 
-	++ families : Families
+	++ families : FamilyRegister
 }
 
 #target {
-	++ persons : Persons
+	++ persons : PersonRegister
 }
 
 #correspondence {

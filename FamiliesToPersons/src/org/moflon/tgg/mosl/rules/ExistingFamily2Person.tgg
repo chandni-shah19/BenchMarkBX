@@ -4,8 +4,8 @@
 #abstract #rule ExistingFamily2Person #extends FamilyMember2Person #with FamiliesToPersons
 
 #source { 
-	families : Families {
-		-family->f
+	families : FamilyRegister {
+		-families->f
 	}
 	f : Family
 }

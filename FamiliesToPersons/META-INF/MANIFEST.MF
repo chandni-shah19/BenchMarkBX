@@ -18,8 +18,8 @@ Require-Bundle: org.eclipse.emf.ecore,
  SDMLanguage,
  org.moflon.tgg.language,
  org.moflon.tgg.runtime,
- PersonsModel;bundle-version="1.0.0",
- FamiliesModel;bundle-version="1.0.0"
+ Persons;bundle-version="1.0.0",
+ Families;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
