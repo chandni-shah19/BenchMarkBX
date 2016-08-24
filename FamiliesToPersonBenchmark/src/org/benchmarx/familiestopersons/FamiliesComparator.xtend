@@ -1,22 +1,22 @@
 package org.benchmarx.familiestopersons
 
-import FamiliesModel.Families
+import Families.FamilyRegister
 import org.benchmarx.core.Comparator
 
 import static org.junit.Assert.*
 
-class FamiliesComparator implements Comparator<Families> {
+class FamiliesComparator implements Comparator<FamilyRegister> {
 	
-	override compare(Families expected, Families actual) {
+	override compare(FamilyRegister expected, FamilyRegister actual) {
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
-	def familyToString(Families families) {
+	def familyToString(FamilyRegister families) {
 		return '''
 		Families {
-			«FOR f : families.family SEPARATOR "\n"»
-			Family «f.familyName»  "\n"
-			«IF f.father != null»«f.father.firstName»«ENDIF»
+			«FOR f : families.families SEPARATOR "\n"»
+			Family «f.name»  "\n"
+			«IF f.father != null»«f.father.name»«ENDIF»
 			«ENDFOR»
 			
 		}

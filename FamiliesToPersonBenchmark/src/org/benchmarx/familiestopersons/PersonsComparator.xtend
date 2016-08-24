@@ -1,17 +1,17 @@
 package org.benchmarx.familiestopersons
 
+import Persons.PersonRegister
 import org.benchmarx.core.Comparator
 
-import PersonsModel.Persons
 import static org.junit.Assert.*
 
-class PersonsComparator implements Comparator<Persons>{
+class PersonsComparator implements Comparator<PersonRegister>{
 	
-	override compare(Persons expected, Persons actual) {
+	override compare(PersonRegister expected, PersonRegister actual) {
 		assertEquals(personsToString(expected), personsToString(actual))
 	}
 	
-	def personsToString(Persons persons) {
+	def personsToString(PersonRegister persons) {
 		return '''
 		Persons	{
 			FOR f : persons.person SEPARATOR "\n"

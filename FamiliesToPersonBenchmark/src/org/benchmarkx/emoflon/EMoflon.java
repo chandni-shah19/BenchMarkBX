@@ -8,14 +8,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 
-import FamiliesModel.Families;
-import FamiliesModel.FamiliesModelFactory;
-import FamiliesModel.FamilyMember;
+import Families.FamiliesFactory;
+import Families.FamilyRegister;
 import FamiliesToPersons.FamiliesToPersonsPackage;
-import PersonsModel.Persons;
+import Persons.PersonRegister;
 
 
-public class EMoflon implements BXTool<Families, Persons>   {
+public class EMoflon implements BXTool<FamilyRegister, PersonRegister>   {
 	
 	private SynchronizationHelper helper;
 	
@@ -24,7 +23,7 @@ public class EMoflon implements BXTool<Families, Persons>   {
 		BasicConfigurator.configure();
 		helper = new SynchronizationHelper(FamiliesToPersonsPackage.eINSTANCE, "../FamiliesToPersons");
 		Resource r = helper.getResourceSet().createResource(URI.createURI("sourceModel"));
-		Families familiesRoot = FamiliesModelFactory.eINSTANCE.createFamilies();
+		FamilyRegister familiesRoot = FamiliesFactory.eINSTANCE.createFamilyRegister();
 		r.getContents().add(familiesRoot);
 		
 		// perform batch to establish consistent starting state
@@ -35,25 +34,25 @@ public class EMoflon implements BXTool<Families, Persons>   {
 	}
 
 	@Override
-	public void performAndPropagateTargetEdit(Consumer<Persons> edit) {
-		helper.setChangeTrg((EObject root) ->  edit.accept((Persons) root));
+	public void performAndPropagateTargetEdit(Consumer<PersonRegister> edit) {
+		helper.setChangeTrg((EObject root) ->  edit.accept((PersonRegister) root));
 		helper.integrateBackward();
 	}
 
 	@Override
-	public void performAndPropagateSourceEdit(Consumer<Families> edit) {
-		helper.setChangeSrc((EObject root) ->  edit.accept((Families) root));
+	public void performAndPropagateSourceEdit(Consumer<FamilyRegister> edit) {
+		helper.setChangeSrc((EObject root) ->  edit.accept((FamilyRegister) root));
 		helper.integrateForward();
 			
 	}
 
 	@Override
-	public Families getSourceModel() {
-		return (Families) helper.getSrc();
+	public FamilyRegister getSourceModel() {
+		return (FamilyRegister) helper.getSrc();
 	} 
 
 	@Override
-	public Persons getTargetModel() {
-		return (Persons) helper.getTrg();
+	public PersonRegister getTargetModel() {
+		return (PersonRegister) helper.getTrg();
 	}
 }

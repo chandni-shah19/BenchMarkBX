@@ -7,20 +7,17 @@ import org.benchmarx.core.Comparator;
 import org.junit.Before;
 import org.junit.Test;
 
-import FamiliesModel.Families;
-import FamiliesModel.FamiliesModelFactory;
-import FamiliesModel.Family;
-import FamiliesModel.FamilyMember;
-import FamiliesModel.util.FamiliesModelAdapterFactory;
-import PersonsModel.Person;
-import PersonsModel.Persons;
-import PersonsModel.PersonsModelFactory;
+import Families.FamiliesFactory;
+import Families.Family;
+import Families.FamilyMember;
+import Families.FamilyRegister;
+import Persons.PersonRegister;
 
 public class CreateRootElements {
 
-	private BXTool<Families, Persons> tool;
-	private Comparator<Families> familiesComparator;
-	private Comparator<Persons> personsComparator;
+	private BXTool<FamilyRegister, PersonRegister> tool;
+	private Comparator<FamilyRegister> familiesComparator;
+	private Comparator<PersonRegister> personsComparator;
 	private BenchmarxUtil util;
 
 	@Before
@@ -71,37 +68,37 @@ public class CreateRootElements {
 		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
 	}
 
-	private void createFamily(Families root) {
-		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
-		family.setFamilyName("Simpson");
-		root.getFamily().add(family);
+	private void createFamily(FamilyRegister root) {
+		Family family = FamiliesFactory.eINSTANCE.createFamily();
+		family.setName("Simpson");
+		root.getFamilies().add(family);
 	}
 	
 	
-	private void createFamilyMember(Families eObject){
+	private void createFamilyMember(FamilyRegister eObject){
 		
-		Family family = eObject.getFamily().get(0);
-		FamilyMember familyMember = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		Family family = eObject.getFamilies().get(0);
+		FamilyMember familyMember = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familyMember.setFamily_father(family);
-		familyMember.setFirstName("xyz");
+		familyMember.setName("xyz");
 		
 	}
 	
 	@SuppressWarnings("unused")
-	private void createMultiFamilyMember(Families eObject){
-		Family family = FamiliesModelFactory.eINSTANCE.createFamily();
+	private void createMultiFamilyMember(FamilyRegister eObject){
+		Family family = FamiliesFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Shah");
 		eObject.getFamily().add(family);
 		
-		FamilyMember familyMemberFather = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		FamilyMember familyMemberFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familyMemberFather.setFamily_father(family);
 		familyMemberFather.setFirstName("AbcFather");
 		
-		FamilyMember familyMemberMother = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		FamilyMember familyMemberMother = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familyMemberMother.setFamily_mother(family);
 		familyMemberMother.setFirstName("AbcMother");
 		
-		FamilyMember familyMemberDaughter = FamiliesModelFactory.eINSTANCE.createFamilyMember();
+		FamilyMember familyMemberDaughter = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familyMemberDaughter.setFamily_daughter(family);
 		familyMemberDaughter.setFirstName("AbcDaughter1");
 		
