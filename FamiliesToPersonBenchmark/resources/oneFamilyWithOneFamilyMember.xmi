@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FamiliesModel:Families
+<FamilyRegister:FamilyRegister
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:FamiliesModel="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore"
-    xsi:schemaLocation="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore ../../FamiliesModel/model/FamiliesModel.ecore">
-  <family familyName="Simpson">
+    xmlns:FamilyRegister="platform:/plugin/Families/model/Families.ecore"
+    xsi:schemaLocation="platform:/plugin/Families/model/Families.ecore ../../Families/model/Families.ecore">
+  <families name="Simpson">
     <father
-        firstName="xyz"/>
-  </family>
-</FamiliesModel:Families>
+        name="xyz"/>
+  </families>
+</FamilyRegister:FamilyRegister>

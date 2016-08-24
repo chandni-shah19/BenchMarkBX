@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FamiliesModel:Families
+<FamilyRegister:FamilyRegister
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:FamiliesModel="platform:/plugin/FamiliesModel/model/FamiliesModel.ecore">
-  <family familyName="Oppermann">
+    xmlns:FamilyRegister="platform:/plugin/Families/model/Families.ecore">
+  <families name="Oppermann">
     <father
-        firstName="Martin"/>
+        name="Martin"/>
     <mother
-        firstName="Sigrid"/>
-    <sons firstName="Robin"/>
-  </family>
-  <family familyName="Robrecht">
+        name="Sigrid"/>
+    <sons name="Robin"/>
+  </families>
+  <families name="Robrecht">
     <father
-        firstName="Hubert"/>
+        name="Hubert"/>
     <mother
-        firstName="Dagmar"/>
-    <sons firstName="Patrick"/>
+        name="Dagmar"/>
+    <sons name="Patrick"/>
     <daughters
-        firstName="Mareike"/>
-  </family>
-</FamiliesModel:Families>
+        name="Mareike"/>
+  </families>
+</FamilyRegister:FamilyRegister>
