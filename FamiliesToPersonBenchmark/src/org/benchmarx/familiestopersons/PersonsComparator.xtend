@@ -14,8 +14,9 @@ class PersonsComparator implements Comparator<PersonRegister>{
 	def personsToString(PersonRegister persons) {
 		return '''
 		Persons	{
-			FOR f : persons.person SEPARATOR "\n"
-			Person p.fullname "\n"
+			«FOR p: persons.persons SEPARATOR "\n"»
+			Person «p.name»
+			«ENDFOR»
 		'''
 	}
 	

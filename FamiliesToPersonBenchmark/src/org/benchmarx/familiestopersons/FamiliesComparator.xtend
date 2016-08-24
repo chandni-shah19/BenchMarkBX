@@ -16,7 +16,7 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 		Families {
 			«FOR f : families.families SEPARATOR "\n"»
 			Family «f.name»  "\n"
-			«IF f.father != null»«f.father.name»«ENDIF»
+			FamilyMember «IF f.father != null»«f.father.name»«ENDIF»
 			«ENDFOR»
 			
 		}

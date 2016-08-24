@@ -33,7 +33,6 @@ public class CreateRootElements {
 		tool.initiateSynchronisationDialogue();
 
 		// Expect root elements of both source and target models
-		System.out.println("Root Elements");
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 
@@ -78,13 +77,12 @@ public class CreateRootElements {
 	private void createFamilyMember(FamilyRegister eObject){
 		
 		Family family = eObject.getFamilies().get(0);
-		FamilyMember familyMember = FamiliesFactory.eINSTANCE.createFamilyMember();
-		familyMember.setFamily_father(family);
-		familyMember.setName("xyz");
-		
+		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
+		family.setFather(familyFather);
+		familyFather.setName("xyz");
 	}
 	
-	@SuppressWarnings("unused")
+	/*@SuppressWarnings("unused")
 	private void createMultiFamilyMember(FamilyRegister eObject){
 		Family family = FamiliesFactory.eINSTANCE.createFamily();
 		family.setFamilyName("Shah");
@@ -109,6 +107,6 @@ public class CreateRootElements {
 		Family family = eObject.getFamily().get(1);
 		family.setFamilyName("Gandhi");
 		eObject.getFamily().add(1, family);
-			
-	}
+	*/		
+	
 }
