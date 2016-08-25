@@ -32,26 +32,27 @@ public class CreateRootElements {
 	public void testCreateFamily() {
 		tool.initiateSynchronisationDialogue();
 
-		// Expect root elements of both source and target models
+		// Expect root elements of both source and target models (FM1)
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 
-		// Test creation of a single family in an empty root container
+		// Test creation of a single family in an empty root container (FM4)
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 		
-		//Test creation of a family member (e.g. family father added in above created one family)
+		//Test creation of a family member (e.g. family father added in above created one family) (FM5)
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
 		
-		//Test for creation of multiple family members (with new family register)
-		/*
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
-		assertSource("oneFamilyWithOneMultiFamilyMember");
-		assertTarget("PersonWithMaynMaleFemaleMember");
+		//Test for creation of multiple family members (with new family register) (FM6) 
 		
+		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+		assertSource("FamilyWithMultiFamilyMember");
+		assertTarget("PersonWithMultiMember");
+		
+		/*
 		//Test for name family name change for family 'Shah' to 'Gandhi'
 		tool.performAndPropagateSourceEdit(this::FamilyNameChange);
 		assertSource("NameChangeFamily");
@@ -79,29 +80,29 @@ public class CreateRootElements {
 		Family family = eObject.getFamilies().get(0);
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
-		familyFather.setName("xyz");
+		familyFather.setName("Homer");
 	}
 	
-	/*@SuppressWarnings("unused")
 	private void createMultiFamilyMember(FamilyRegister eObject){
-		Family family = FamiliesFactory.eINSTANCE.createFamily();
-		family.setFamilyName("Shah");
-		eObject.getFamily().add(family);
+		Family family = eObject.getFamilies().get(0);
 		
-		FamilyMember familyMemberFather = FamiliesFactory.eINSTANCE.createFamilyMember();
-		familyMemberFather.setFamily_father(family);
-		familyMemberFather.setFirstName("AbcFather");
+		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
+		family.setMother(familyMother);
+		familyMother.setName("Marge");
 		
-		FamilyMember familyMemberMother = FamiliesFactory.eINSTANCE.createFamilyMember();
-		familyMemberMother.setFamily_mother(family);
-		familyMemberMother.setFirstName("AbcMother");
+		FamilyMember familySon = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familySon.setName("Bart");
+		family.getSons().add(familySon);
 		
-		FamilyMember familyMemberDaughter = FamiliesFactory.eINSTANCE.createFamilyMember();
-		familyMemberDaughter.setFamily_daughter(family);
-		familyMemberDaughter.setFirstName("AbcDaughter1");
+		FamilyMember familyDaughterOne = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyDaughterOne.setName("Lisa");
+		family.getDaughters().add(familyDaughterOne);
 		
+		FamilyMember familyDaughterTwo = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyDaughterTwo.setName("Maggie");
+		family.getDaughters().add(familyDaughterTwo);
 	}
-	
+	/*
 	@SuppressWarnings("unused")
 	private void FamilyNameChange(Families eObject){
 		Family family = eObject.getFamily().get(1);
