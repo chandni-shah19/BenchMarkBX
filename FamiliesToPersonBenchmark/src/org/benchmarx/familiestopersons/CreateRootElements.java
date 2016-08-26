@@ -4,6 +4,7 @@ import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,6 +13,10 @@ import Families.Family;
 import Families.FamilyMember;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
+import Persons.PersonsFactory;
+import Persons.Person;
+import Persons.Male;
+import Persons.Female;
 
 public class CreateRootElements {
 
@@ -32,7 +37,7 @@ public class CreateRootElements {
 	public void testCreateFamily() {
 		tool.initiateSynchronisationDialogue();
 
-		// Expect root elements of both source and target models (FM1)
+		// Expect root elements of both source and target models (FM1 and PM1)
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 
@@ -52,14 +57,39 @@ public class CreateRootElements {
 		assertSource("FamilyWithMultiFamilyMember");
 		assertTarget("PersonWithMultiMember");
 		
-		/*
-		//Test for name family name change for family 'Shah' to 'Gandhi'
+		
+		//Test for name FamilyMemberName change and familyName change (FM2 & FM3)
 		tool.performAndPropagateSourceEdit(this::FamilyNameChange);
 		assertSource("NameChangeFamily");
-		assertTarget("AllPersonNameChange");
-		*/
+		assertTarget("NameChangePerson");
+
+		//Test for The role of a family member is changed. (FM7)
+		tool.performAndPropagateSourceEdit(this::familyMemberRoleChange);
+		assertSource("RoleChangeFatherToSon");
+		assertTarget("PersonNoEffect");
+		
+		//Test for deletion family member(FM9)
+		tool.performAndPropagateSourceEdit(this::deleteFamilyMember);
+		assertSource("DeleteFather");
+		assertTarget("DeletePerson");
+		
+		//Test for delete family (FM10)
+		tool.performAndPropagateSourceEdit(this::deleteFamily);
+		assertSource("DeleteFamily");
+		assertTarget("DeleteAllPerson");
+		
+		
+		// Test cases for now PM : TargetEdit
+		//tool.performAndPropagateTargetEdit(this::createPerson);
+		
 	}
 
+	/*private void createPerson(PersonRegister eObject){
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Homer");
+		eObject.getPersons().add(person);
+	}*/
+	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
 	}
@@ -102,12 +132,35 @@ public class CreateRootElements {
 		familyDaughterTwo.setName("Maggie");
 		family.getDaughters().add(familyDaughterTwo);
 	}
-	/*
-	@SuppressWarnings("unused")
-	private void FamilyNameChange(Families eObject){
-		Family family = eObject.getFamily().get(1);
-		family.setFamilyName("Gandhi");
-		eObject.getFamily().add(1, family);
-	*/		
 	
+	
+	private void FamilyNameChange(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		
+		family.getFather().setName("Jay"); //Father name changed from Homer to Jay
+		
+		family.setName("SimpsonS");
+		eObject.getFamilies().add(family); //Family name changed to SimponS
+	}
+		
+	private void familyMemberRoleChange(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		
+		String fatherName = family.getFather().getName();
+		family.getFather().setName(family.getSons().get(0).getName()); //Father name changed to Son name
+		
+		family.getSons().get(0).setName(fatherName); //Son name change to Father name
+	}
+	
+	private void deleteFamilyMember(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		
+		EcoreUtil.delete(family.getFather());
+	}
+	
+	private void deleteFamily(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		
+		EcoreUtil.delete(family);
+	}
 }

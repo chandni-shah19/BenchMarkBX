@@ -1,8 +1,6 @@
 package org.benchmarx.familiestopersons
 
 import Families.FamilyRegister
-import Families.Family;
-import Families.FamilyMember;
 import org.benchmarx.core.Comparator
 
 import static org.junit.Assert.*
@@ -27,7 +25,6 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 					FamilyMember Daughter «f_Son.name» "\n"
 				«ENDFOR»
 			«ENDFOR»
-			
 		}
 		'''
 	}
