@@ -34,61 +34,59 @@ public class CreateRootElements {
 	}
 
 	@Test
-	public void testCreateFamily() {
+	
+	public void testInitialiseSynchronisation()
+	{
+		
 		tool.initiateSynchronisationDialogue();
 
 		// Expect root elements of both source and target models (FM1 and PM1)
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
-
+	}
+	
+	@Test
+	public void testCreateFamily() {
+		
+		testInitialiseSynchronisation();
+		
 		// Test creation of a single family in an empty root container (FM4)
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
+	}	
+	
+	@Test
+	public void testCreateFamilyMemeber(){
+		
+		testCreateFamily();
 		
 		//Test creation of a family member (e.g. family father added in above created one family) (FM5)
 		tool.performAndPropagateSourceEdit(this::createFamilyMember);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
-		
+	}
+	
+	@Test
+	public void testCreateMultiFamilyMember()
+	{
+		testCreateFamilyMemeber();
 		//Test for creation of multiple family members (with new family register) (FM6) 
 		
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
-		assertSource("FamilyWithMultiFamilyMember");
-		assertTarget("PersonWithMultiMember");
+				tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+				assertSource("FamilyWithMultiFamilyMember");
+				assertTarget("PersonWithMultiMember");
+	}
+	
+	@Test
+	public void testFamilyNameChange()
+	{
+		testCreateMultiFamilyMember();
 		
-		
-		//Test for name FamilyMemberName change and familyName change (FM2 & FM3)
-		tool.performAndPropagateSourceEdit(this::FamilyNameChange);
-		assertSource("NameChangeFamily");
-		assertTarget("NameChangePerson");
-
-		//Test for The role of a family member is changed. (FM7)
-		tool.performAndPropagateSourceEdit(this::familyMemberRoleChange);
-		assertSource("RoleChangeFatherToSon");
-		assertTarget("PersonNoEffect");
-		
-		//Test for deletion family member(FM9)
-		tool.performAndPropagateSourceEdit(this::deleteFamilyMember);
-		assertSource("DeleteFather");
-		assertTarget("DeletePerson");
-		
-		//Test for delete family (FM10)
-		tool.performAndPropagateSourceEdit(this::deleteFamily);
-		assertSource("DeleteFamily");
-		assertTarget("DeleteAllPerson");
-		
-		
-		// Test cases for now PM : TargetEdit
-		//tool.performAndPropagateTargetEdit(this::createPerson);
+		tool.performAndPropagateSourceEdit(this::familyNameChange);
 		
 	}
-
-	/*private void createPerson(PersonRegister eObject){
-		Person person = PersonsFactory.eINSTANCE.createMale();
-		person.setName("Homer");
-		eObject.getPersons().add(person);
-	}*/
+	
 	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
@@ -108,6 +106,7 @@ public class CreateRootElements {
 	private void createFamilyMember(FamilyRegister eObject){
 		
 		Family family = eObject.getFamilies().get(0);
+		
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
 		familyFather.setName("Homer");
@@ -131,36 +130,12 @@ public class CreateRootElements {
 		FamilyMember familyDaughterTwo = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familyDaughterTwo.setName("Maggie");
 		family.getDaughters().add(familyDaughterTwo);
+		
 	}
 	
-	
-	private void FamilyNameChange(FamilyRegister eObject){
+	private void familyNameChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		
-		family.getFather().setName("Jay"); //Father name changed from Homer to Jay
-		
-		family.setName("SimpsonS");
-		eObject.getFamilies().add(family); //Family name changed to SimponS
-	}
-		
-	private void familyMemberRoleChange(FamilyRegister eObject){
-		Family family = eObject.getFamilies().get(0);
-		
-		String fatherName = family.getFather().getName();
-		family.getFather().setName(family.getSons().get(0).getName()); //Father name changed to Son name
-		
-		family.getSons().get(0).setName(fatherName); //Son name change to Father name
 	}
 	
-	private void deleteFamilyMember(FamilyRegister eObject){
-		Family family = eObject.getFamilies().get(0);
-		
-		EcoreUtil.delete(family.getFather());
-	}
-	
-	private void deleteFamily(FamilyRegister eObject){
-		Family family = eObject.getFamilies().get(0);
-		
-		EcoreUtil.delete(family);
-	}
 }

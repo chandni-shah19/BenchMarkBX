@@ -7,6 +7,7 @@ import static org.junit.Assert.*
 
 class FamiliesComparator implements Comparator<FamilyRegister> {
 	
+	
 	override compare(FamilyRegister expected, FamilyRegister actual) {
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
@@ -18,11 +19,11 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 			Family «f.name»  "\n"
 			FamilyMember Father: «IF f.father != null»«f.father.name»«ENDIF»
 			FamilyMember Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
-				«FOR f_Daughter : families.families.get(0).daughters SEPARATOR "\n"»
-					FamilyMember Daughter «f_Daughter.name» "\n"
+				«FOR f_Son : f.sons SEPARATOR "\n"»
+					FamilyMember Son «f_Son.name» "\n"
 				«ENDFOR»
-				«FOR f_Son : families.families.get(0).sons SEPARATOR "\n"»
-					FamilyMember Daughter «f_Son.name» "\n"
+				«FOR f_Daughter : f.daughters SEPARATOR "\n"»
+					FamilyMember Daughter «f_Daughter.name» "\n"
 				«ENDFOR»
 			«ENDFOR»
 		}
