@@ -1,6 +1,8 @@
 package org.benchmarx.familiestopersons;
 
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
@@ -14,14 +16,12 @@ import Families.FamiliesFactory;
 import Families.Family;
 import Families.FamilyMember;
 import Families.FamilyRegister;
-import Persons.PersonRegister;
+
 import Persons.PersonsFactory;
+import Persons.PersonRegister;
 import Persons.Person;
 import Persons.Male;
 import Persons.Female;
-
-import org.eclipse.emf.common.util.ECollections;
-import org.eclipse.emf.common.util.EList;
 
 public class CreateRootElements {
 
@@ -38,8 +38,9 @@ public class CreateRootElements {
 		personsComparator = new PersonsComparator();
 	}
 
-	@Test
+	// Possible updates in Family Model, i.e test cases for source edit
 	
+	@Test
 	public void testInitialiseSynchronisation()
 	{
 		tool.initiateSynchronisationDialogue();
@@ -162,6 +163,40 @@ public class CreateRootElements {
 		assertTarget("DeleteAllPerson");		
 	}
 	
+	// Possible updates in Person Model, i.e test cases for target edit
+	
+	@Test
+	public void testCreatePerson() {
+		tool.initiateSynchronisationDialogue();
+		
+		// Test for new person is added. (PM4)
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		assertTarget("PersonWithOneMaleMember");
+		assertSource("oneFamilyWithOneFamilyMember");
+	}
+	
+	/*
+	@Test
+	public void testBirthdayChange(){
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		//Test for birthday change of person (PM3)
+		tool.performAndPropagateTargetEdit((this::birthdayChange));
+	}*/
+	
+	@Test
+	public void testCreateMultiPerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		//many people added, with different family name so other test cases can be tested  e.g if full name change for the person
+		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		assertTarget("PersonWithMultiMember");
+		assertSource("FamilyWithMultiFamilyMember");
+		
+	}
+	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
 	}
@@ -257,4 +292,41 @@ public class CreateRootElements {
 		Family family = eObject.getFamilies().get(1);
 		EcoreUtil.delete(family);
 	}
+	
+	//
+	private void createPerson(PersonRegister eObject) {
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Simpson, Homer");
+		eObject.getPersons().add(person);
+		
+	}
+	
+	@SuppressWarnings("unused")
+	private void birthdayChange(PersonRegister eObject) {
+		Person person = eObject.getPersons().get(0);
+		@SuppressWarnings("deprecation")
+		Date date1 = new Date(2011, 07, 3);
+		
+		
+	}
+	
+	private void createMultiPerson(PersonRegister eObject) {
+		Person person1 = PersonsFactory.eINSTANCE.createFemale();
+		person1.setName("Simpson, Marge");
+		eObject.getPersons().add(person1);
+		
+		Person person2 = PersonsFactory.eINSTANCE.createMale();
+		person2.setName("Simpson, Bart");
+		eObject.getPersons().add(person2);
+		
+		Person person3 = PersonsFactory.eINSTANCE.createFemale();
+		person3.setName("Simpson, Lisa");
+		eObject.getPersons().add(person3);
+		
+		Person person4 = PersonsFactory.eINSTANCE.createFemale();
+		person4.setName("Simpson, Maggie");
+		eObject.getPersons().add(person4);
+		
+	}
+	
 }
