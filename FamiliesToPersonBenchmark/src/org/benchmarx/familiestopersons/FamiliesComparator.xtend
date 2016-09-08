@@ -4,11 +4,15 @@ import Families.FamilyRegister
 import org.benchmarx.core.Comparator
 
 import static org.junit.Assert.*
+import org.eclipse.emf.common.util.ECollections
+import org.eclipse.emf.common.util.EList
+import Families.Family
 
 class FamiliesComparator implements Comparator<FamilyRegister> {
 	
 	
 	override compare(FamilyRegister expected, FamilyRegister actual) {
+		
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
@@ -30,3 +34,6 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 		'''
 	}
 }
+
+	
+

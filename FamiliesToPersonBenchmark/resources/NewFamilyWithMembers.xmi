@@ -6,15 +6,13 @@
     xmlns:Families="platform:/plugin/Families/model/Families.ecore"
     xsi:schemaLocation="platform:/plugin/Families/model/Families.ecore ../../Families/model/Families.ecore">
   <families
-      name="SimpsonS">
+      name="Bachchan">
     <father
-        name="Homer"/>
+        name="Amitabh"/>
     <mother
-        name="Marge"/>
-    <sons name="Bart"/>
+        name="Jaya"/>
+    <sons name="Abhishek"/>
     <daughters
-        name="Lisa"/>
-    <daughters
-        name="Maggie"/>
+        name="Shweta"/>
   </families>
 </Families:FamilyRegister>

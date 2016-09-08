@@ -17,5 +17,6 @@ Require-Bundle: org.eclipse.emf.ecore,
  org.moflon.tgg.runtime;bundle-version="2.0.0",
  org.moflon.tgg.language;bundle-version="2.0.0",
  org.moflon.core.utilities;bundle-version="1.1.0",
- org.eclipse.emf.ecore.xmi
+ org.eclipse.emf.ecore.xmi,
+ org.eclipse.emf.common
 
