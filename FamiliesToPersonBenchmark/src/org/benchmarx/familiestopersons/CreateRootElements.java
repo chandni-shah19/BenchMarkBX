@@ -1,7 +1,5 @@
 package org.benchmarx.familiestopersons;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.benchmarkx.emoflon.EMoflon;
@@ -16,12 +14,9 @@ import Families.FamiliesFactory;
 import Families.Family;
 import Families.FamilyMember;
 import Families.FamilyRegister;
-
-import Persons.PersonsFactory;
-import Persons.PersonRegister;
 import Persons.Person;
-import Persons.Male;
-import Persons.Female;
+import Persons.PersonRegister;
+import Persons.PersonsFactory;
 
 public class CreateRootElements {
 
@@ -183,7 +178,7 @@ public class CreateRootElements {
 		
 		//Test for birthday change of person (PM3)
 		tool.performAndPropagateTargetEdit((this::birthdayChange));
-	}*/
+	}
 	
 	@Test
 	public void testCreateMultiPerson() {
@@ -195,7 +190,7 @@ public class CreateRootElements {
 		assertTarget("PersonWithMultiMember");
 		assertSource("FamilyWithMultiFamilyMember");
 		
-	}
+	}*/
 	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
