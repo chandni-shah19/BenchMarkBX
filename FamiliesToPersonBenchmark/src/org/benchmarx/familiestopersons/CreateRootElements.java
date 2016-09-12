@@ -6,6 +6,7 @@ import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -178,7 +179,7 @@ public class CreateRootElements {
 		
 		//Test for birthday change of person (PM3)
 		tool.performAndPropagateTargetEdit((this::birthdayChange));
-	}
+	}*/
 	
 	@Test
 	public void testCreateMultiPerson() {
@@ -187,10 +188,22 @@ public class CreateRootElements {
 		
 		//many people added, with different family name so other test cases can be tested  e.g if full name change for the person
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
-		assertTarget("PersonWithMultiMember");
-		assertSource("FamilyWithMultiFamilyMember");
+		assertTarget("PersonMultiMembers");
+		assertSource("FamiliesMultiMembers");
 		
-	}*/
+	}
+	
+	@Test
+	public void testFullNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		
+		//Test for full name change.
+		tool.performAndPropagateTargetEdit(this::nameChangePerson);
+		assertTarget("PersonNameChange");
+		assertSource("MemberNameChange");
+	}
 	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
@@ -307,21 +320,17 @@ public class CreateRootElements {
 	
 	private void createMultiPerson(PersonRegister eObject) {
 		Person person1 = PersonsFactory.eINSTANCE.createFemale();
-		person1.setName("Simpson, Marge");
+		person1.setName("Simpson, Lisa");
 		eObject.getPersons().add(person1);
 		
-		Person person2 = PersonsFactory.eINSTANCE.createMale();
-		person2.setName("Simpson, Bart");
+		Person person2 = PersonsFactory.eINSTANCE.createFemale();
+		person2.setName("Simpson, Marge");
 		eObject.getPersons().add(person2);
-		
-		Person person3 = PersonsFactory.eINSTANCE.createFemale();
-		person3.setName("Simpson, Lisa");
-		eObject.getPersons().add(person3);
-		
-		Person person4 = PersonsFactory.eINSTANCE.createFemale();
-		person4.setName("Simpson, Maggie");
-		eObject.getPersons().add(person4);
-		
+	}
+	
+	private void nameChangePerson(PersonRegister eObject) {
+		Person person = eObject.getPersons().get(0);
+		person.setName("Simpson, HomerX");
 	}
 	
 }
