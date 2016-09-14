@@ -6,7 +6,6 @@ import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -199,11 +198,13 @@ public class CreateRootElements {
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
-		//Test for full name change.
+		//Test for full name change. case a: first name change
 		tool.performAndPropagateTargetEdit(this::nameChangePerson);
 		assertTarget("PersonNameChange");
 		assertSource("MemberNameChange");
 	}
+	
+	
 	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
@@ -330,7 +331,7 @@ public class CreateRootElements {
 	
 	private void nameChangePerson(PersonRegister eObject) {
 		Person person = eObject.getPersons().get(0);
-		person.setName("Simpson, HomerX");
+		person.setName("SimpsonS, Homer");
 	}
 	
 }

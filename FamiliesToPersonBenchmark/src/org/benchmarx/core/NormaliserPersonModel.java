@@ -12,8 +12,7 @@ public class NormaliserPersonModel implements Comparator<Person>{
 		return expected.getName().compareTo(actual.getName());
 	}
 
-	@SuppressWarnings("unchecked")
-	public void Normalize(List list1){
+	public void Normalize(List<Person> list1){
 		Comparator<Person> comparator = new NormaliserPersonModel();
 		Collections.sort(list1, comparator);
 	}
