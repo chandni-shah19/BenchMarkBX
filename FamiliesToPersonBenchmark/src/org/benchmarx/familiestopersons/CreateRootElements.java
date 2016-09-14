@@ -193,18 +193,52 @@ public class CreateRootElements {
 	}
 	
 	@Test
-	public void testFullNameChangePerson() {
+	public void testFirstNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
-		//Test for full name change. case a: first name change
+		//Test for name change (PM2) case a: first name change
 		tool.performAndPropagateTargetEdit(this::nameChangePerson);
 		assertTarget("PersonNameChange");
 		assertSource("MemberNameChange");
 	}
 	
+	@Test
+	public void testFamilyNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		
+		//Test for name change (PM2) case b: family name change (for 2nd case Family name not exist )
+		tool.performAndPropagateTargetEdit(this::familyNameChangePerson);
+		assertTarget("PersonFamilyNameChange");
+		assertSource("MemberFamilyNameChange");
+	}
 	
+	@Test
+	public void testFullNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		
+		//Test for name change (PM2) case c: full name change (both family and first name change)
+		tool.performAndPropagateTargetEdit(this::fullNameChangePerson);
+		assertTarget("PersonFullNameChange");
+		assertSource("MemberFullNameChange");
+	}
+	
+	@Test
+	public void testDeletePerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateTargetEdit(this::createPerson);
+		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		
+		//Test for delete person (PM5)
+		tool.performAndPropagateTargetEdit(this::deletePerson);
+		assertTarget("PersonDelete");
+		assertSource("MemberDelete");
+	}
 	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
@@ -331,7 +365,21 @@ public class CreateRootElements {
 	
 	private void nameChangePerson(PersonRegister eObject) {
 		Person person = eObject.getPersons().get(0);
+		person.setName("Simpson, HomerX");
+	}
+	
+	private void familyNameChangePerson(PersonRegister eObject) {
+		Person person = eObject.getPersons().get(0);
 		person.setName("SimpsonS, Homer");
 	}
 	
+	private void fullNameChangePerson(PersonRegister eObject) {
+		Person person = eObject.getPersons().get(0);
+		person.setName("SimpsonS, HomerX");
+	}
+	
+	private void deletePerson(PersonRegister eObject) {
+		Person person = eObject.getPersons().get(0);
+		EcoreUtil.delete(person);
+	}
 }
