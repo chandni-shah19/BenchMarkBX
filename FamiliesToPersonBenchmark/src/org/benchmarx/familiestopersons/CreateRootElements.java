@@ -1,5 +1,6 @@
 package org.benchmarx.familiestopersons;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.benchmarkx.emoflon.EMoflon;
@@ -131,6 +132,17 @@ public class CreateRootElements {
 	}
 	
 	@Test
+	public void testFamilyMemberDiffFamily() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
+		
+		//Test for a family member is associated with a different family (FM8)
+		tool.performAndPropagateSourceEdit(this::memberNewFamily);
+		assertSource("FamilyMemberWithDiffFamily");
+		assertTarget("PersonsFirstNameChange");
+	}
+	
+	@Test
 	public void testDeleteFamilyMember() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createFamily);
@@ -170,7 +182,7 @@ public class CreateRootElements {
 		assertSource("oneFamilyWithOneFamilyMember");
 	}
 	
-	/*
+	
 	@Test
 	public void testBirthdayChange(){
 		tool.initiateSynchronisationDialogue();
@@ -178,7 +190,9 @@ public class CreateRootElements {
 		
 		//Test for birthday change of person (PM3)
 		tool.performAndPropagateTargetEdit((this::birthdayChange));
-	}*/
+		assertTarget("PersonBirthdayChange");
+		assertSource("oneFamilyWithOneFamilyMember");
+	}
 	
 	@Test
 	public void testCreateMultiPerson() {
@@ -326,6 +340,21 @@ public class CreateRootElements {
 		family.getDaughters().add(familyDaughter);
 	}
 	
+	private void memberNewFamily(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		FamilyMember familyDaughter = family.getDaughters().get(0);
+		
+		Family newFamily = FamiliesFactory.eINSTANCE.createFamily();
+		newFamily.setName("Nanda");
+		eObject.getFamilies().add(newFamily);
+		
+		//adding the daughter as mother in to new family
+		newFamily.setMother(familyDaughter);
+		
+		//deleting daughter from old family
+		EcoreUtil.delete(familyDaughter);
+	}
+	
 	private void deleteFamilyMember(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
 		EcoreUtil.delete(family.getFather());
@@ -344,13 +373,12 @@ public class CreateRootElements {
 		
 	}
 	
-	@SuppressWarnings("unused")
 	private void birthdayChange(PersonRegister eObject) {
 		Person person = eObject.getPersons().get(0);
-		@SuppressWarnings("deprecation")
-		Date date1 = new Date(2011, 07, 3);
-		
-		
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		Date date = cal.getTime();
+		person.setBirthday(date);
 	}
 	
 	private void createMultiPerson(PersonRegister eObject) {
