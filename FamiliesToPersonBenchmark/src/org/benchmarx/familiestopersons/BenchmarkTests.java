@@ -195,6 +195,8 @@ public class BenchmarkTests {
 	@Test
 	public void testBirthdayChange(){
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
 		//Test for birthday change of person (PM3)
@@ -206,9 +208,13 @@ public class BenchmarkTests {
 	@Test
 	public void testCreateMultiPerson() {
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
 		//many people added, with different family name so other test cases can be tested  e.g if full name change for the person
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		assertTarget("PersonMultiMembers");
 		assertSource("FamiliesMultiMembers");
@@ -217,7 +223,11 @@ public class BenchmarkTests {
 	@Test
 	public void testFirstNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case a: first name change
@@ -229,7 +239,11 @@ public class BenchmarkTests {
 	@Test
 	public void testFamilyNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case b: family name change (for 2nd case Family name not exist )
@@ -241,7 +255,11 @@ public class BenchmarkTests {
 	@Test
 	public void testFullNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case c: full name change (both family and first name change)
@@ -253,7 +271,11 @@ public class BenchmarkTests {
 	@Test
 	public void testDeletePerson() {
 		tool.initiateSynchronisationDialogue();
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
+		
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for delete person (PM5)
@@ -393,6 +415,7 @@ public class BenchmarkTests {
 		Person person2 = PersonsFactory.eINSTANCE.createFemale();
 		person2.setName("Simpson, Marge");
 		eObject.getPersons().add(person2);
+
 	}
 	
 	private void nameChangePerson(PersonRegister eObject) {
