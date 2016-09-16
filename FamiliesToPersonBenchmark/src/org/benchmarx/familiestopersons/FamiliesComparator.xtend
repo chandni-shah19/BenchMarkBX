@@ -23,14 +23,14 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 			«val List<Family> sortedList = new ArrayList<Family>(families.families)»
 			«comparator.Normalize(sortedList)»
 			«FOR f : sortedList SEPARATOR "\n"»
-			Family «f.name»  "\n"
-			FamilyMember Father: «IF f.father != null»«f.father.name»«ENDIF»
-			FamilyMember Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
+			Family «f.name»
+			  Father: «IF f.father != null»«f.father.name»«ENDIF»
+			  Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
 				«FOR f_Son : f.sons SEPARATOR "\n"»
-					FamilyMember Son «f_Son.name» "\n"
+				  Son «f_Son.name»
 				«ENDFOR»
 				«FOR f_Daughter : f.daughters SEPARATOR "\n"»
-					FamilyMember Daughter «f_Daughter.name» "\n"
+				  Daughter «f_Daughter.name»
 				«ENDFOR»
 			«ENDFOR»
 		}

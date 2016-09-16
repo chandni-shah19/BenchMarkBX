@@ -19,7 +19,9 @@ import Persons.Person;
 import Persons.PersonRegister;
 import Persons.PersonsFactory;
 
-public class CreateRootElements {
+import static org.junit.Assert.*;
+
+public class BenchmarkTests {
 
 	private BXTool<FamilyRegister, PersonRegister> tool;
 	private Comparator<FamilyRegister> familiesComparator;
@@ -48,7 +50,6 @@ public class CreateRootElements {
 	
 	@Test
 	public void testCreateFamily() {
-		
 		tool.initiateSynchronisationDialogue();
 		
 		// Test creation of a single family in an empty root container (FM4)
@@ -58,8 +59,7 @@ public class CreateRootElements {
 	}	
 	
 	@Test
-	public void testCreateFamilyMemeber(){
-		
+	public void testCreateFamilyMember(){
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createFamily);
 		
@@ -269,7 +269,6 @@ public class CreateRootElements {
 	}
 	
 	private void createFamilyMember(FamilyRegister eObject){
-		
 		Family family = eObject.getFamilies().get(0);
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
@@ -342,17 +341,16 @@ public class CreateRootElements {
 	
 	private void memberNewFamily(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Bachchan"));
 		FamilyMember familyDaughter = family.getDaughters().get(0);
+		assertTrue(familyDaughter.getName().equals("Shweta"));
 		
 		Family newFamily = FamiliesFactory.eINSTANCE.createFamily();
 		newFamily.setName("Nanda");
 		eObject.getFamilies().add(newFamily);
 		
-		//adding the daughter as mother in to new family
+		// This moves the daughter from the old family to the mother in the new family
 		newFamily.setMother(familyDaughter);
-		
-		//deleting daughter from old family
-		EcoreUtil.delete(familyDaughter);
 	}
 	
 	private void deleteFamilyMember(FamilyRegister eObject){
@@ -365,7 +363,6 @@ public class CreateRootElements {
 		EcoreUtil.delete(family);
 	}
 	
-	//
 	private void createPerson(PersonRegister eObject) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Homer");
