@@ -1,5 +1,7 @@
 package org.benchmarx.familiestopersons;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -7,6 +9,7 @@ import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
+import org.benchmarx.core.Configurator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,11 +22,9 @@ import Persons.Person;
 import Persons.PersonRegister;
 import Persons.PersonsFactory;
 
-import static org.junit.Assert.*;
-
 public class BenchmarkTests {
 
-	private BXTool<FamilyRegister, PersonRegister> tool;
+	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
 	private BenchmarxUtil util;
@@ -177,9 +178,17 @@ public class BenchmarkTests {
 		tool.initiateSynchronisationDialogue();
 		
 		// Test for new person is added. (PM4)
+		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
+		
 		assertTarget("PersonWithOneMaleMember");
 		assertSource("oneFamilyWithOneFamilyMember");
+	}
+
+	private Configurator<Decisions> configure() {
+		Configurator<Decisions> c = new Configurator<>();
+		tool.setConfigurator(c);
+		return c;
 	}
 	
 	
@@ -203,7 +212,6 @@ public class BenchmarkTests {
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		assertTarget("PersonMultiMembers");
 		assertSource("FamiliesMultiMembers");
-		
 	}
 	
 	@Test
@@ -367,7 +375,6 @@ public class BenchmarkTests {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Homer");
 		eObject.getPersons().add(person);
-		
 	}
 	
 	private void birthdayChange(PersonRegister eObject) {
