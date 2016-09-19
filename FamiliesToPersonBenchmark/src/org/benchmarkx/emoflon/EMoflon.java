@@ -65,6 +65,9 @@ public class EMoflon implements BXTool<FamilyRegister, PersonRegister, Configura
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
 				handleMothersAndDaughters(configurator, alternatives);
 				handleFathersAndSons(configurator, alternatives);
+				handleMotherExisitingFamiliyAndnew(configurator, alternatives);
+				handleDaughterExisitingFamiliyAndnew(configurator, alternatives);
+				handleFatherExisitingFamiliyAndnew(configurator, alternatives);
 				return org.moflon.tgg.algorithm.configuration.Configurator.super.chooseOne(alternatives);
 			}
 
@@ -81,6 +84,24 @@ public class EMoflon implements BXTool<FamilyRegister, PersonRegister, Configura
 		final String f2m = RulesPackage.eINSTANCE.getFatherToMale().getName();
 		final String s2m = RulesPackage.eINSTANCE.getSonToMale().getName();
 		handleDecision(configurator, alternatives, f2m, s2m, Decisions.PREFER_CREATING_FATHER_OVER_SON);
+	}
+	
+	private void handleMotherExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		final String mE2f = RulesPackage.eINSTANCE.getMotherOfExistingFamilyToFemale().getName();
+		final String m2f = RulesPackage.eINSTANCE.getMotherToFemale().getName();
+		handleDecision(configurator, alternatives, mE2f, m2f, Decisions.PREFER_EXISTINGMother_FAMILY_TO_NEW);
+	}
+	
+	private void handleDaughterExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		final String dE2f = RulesPackage.eINSTANCE.getDaughterOfExistingFamilyToFemale().getName();
+		final String d2f = RulesPackage.eINSTANCE.getDaughterToFemale().getName();
+		handleDecision(configurator, alternatives, dE2f, d2f, Decisions.PREFER_EXISTINGDaughter_FAMILY_TO_NEW);
+	}
+	
+	private void handleFatherExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		final String fE2m = RulesPackage.eINSTANCE.getFatherOfExistingFamilyToMale().getName();
+		final String f2m = RulesPackage.eINSTANCE.getFatherToMale().getName();
+		handleDecision(configurator, alternatives, fE2m, f2m, Decisions.PREFER_EXISTINGFather_FAMILY_TO_NEW);
 	}
 
 	private void handleDecision(Configurator<Decisions> configurator, Collection<RuleResult> alternatives,

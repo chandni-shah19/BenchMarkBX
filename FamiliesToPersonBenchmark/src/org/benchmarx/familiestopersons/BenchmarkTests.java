@@ -214,7 +214,11 @@ public class BenchmarkTests {
 		
 		//many people added, with different family name so other test cases can be tested  e.g if full name change for the person
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
+		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, true);
+		
+		configure().getDecisions().put(Decisions.PREFER_EXISTINGDaughter_FAMILY_TO_NEW, true);
+		configure().getDecisions().put(Decisions.PREFER_EXISTINGMother_FAMILY_TO_NEW, true);
+		
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		assertTarget("PersonMultiMembers");
 		assertSource("FamiliesMultiMembers");
@@ -227,7 +231,7 @@ public class BenchmarkTests {
 		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
+		
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case a: first name change
@@ -243,7 +247,6 @@ public class BenchmarkTests {
 		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case b: family name change (for 2nd case Family name not exist )
@@ -259,7 +262,7 @@ public class BenchmarkTests {
 		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
+		
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for name change (PM2) case c: full name change (both family and first name change)
@@ -275,7 +278,7 @@ public class BenchmarkTests {
 		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
 		tool.performAndPropagateTargetEdit(this::createPerson);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, false);
+		
 		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		
 		//Test for delete person (PM5)
@@ -408,6 +411,8 @@ public class BenchmarkTests {
 	}
 	
 	private void createMultiPerson(PersonRegister eObject) {
+		
+		
 		Person person1 = PersonsFactory.eINSTANCE.createFemale();
 		person1.setName("Simpson, Lisa");
 		eObject.getPersons().add(person1);
@@ -415,6 +420,7 @@ public class BenchmarkTests {
 		Person person2 = PersonsFactory.eINSTANCE.createFemale();
 		person2.setName("Simpson, Marge");
 		eObject.getPersons().add(person2);
+		
 
 	}
 	
