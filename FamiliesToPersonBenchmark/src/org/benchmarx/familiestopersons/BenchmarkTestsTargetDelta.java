@@ -17,6 +17,9 @@ import Persons.Person;
 import Persons.PersonRegister;
 import Persons.PersonsFactory;
 
+/**
+ * This class test the possible updates applied to the source model, i.e Person Model
+ */
 public class BenchmarkTestsTargetDelta {
 
 	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
@@ -39,137 +42,149 @@ public class BenchmarkTestsTargetDelta {
 	public void testInitialiseSynchronisation()
 	{
 		tool.initiateSynchronisationDialogue();
-
-		//------------
 		
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 	}
 	
-	private void assertSource(String path){
-		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
-	}
+	/**
+	 * Test for creation a single male person
+	 */
+	@Test
+	public void testCreatePerson() {
+		tool.initiateSynchronisationDialogue();
 	
-	private void assertTarget(String path){
-		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
-	}
-	
-	// Possible updates in Person Model, i.e test cases for target edit
-	
-		@Test
-		public void testCreatePerson() {
-			tool.initiateSynchronisationDialogue();
+		// ---------------------------------
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
 			
-			// ---------------------------------
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			
-			assertTarget("PersonOneMaleMember");
-			assertSource("oneFamilyWithOneFamilyMember");
-		}
+		assertTarget("PersonOneMaleMember");
+		assertSource("oneFamilyWithOneFamilyMember");
+	}
 
+	/**
+	 * Test for changing the birthday of the person.
+	 */
+	@Test
+	public void testBirthdayChange(){
+		tool.initiateSynchronisationDialogue();
+			
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		
+		//-----------------------------
+		tool.performAndPropagateTargetEdit((this::birthdayChangeOfHomer));
+		assertTarget("PersonBirthdayChange");
+		assertSource("oneFamilyWithOneFamilyMember");
+	}
+	
+	/**
+	 * Test for creating multiple persons together.
+	 */
+	@Test
+	public void testCreateMultiPerson() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+			
+		//----------------
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
+			
+		assertTarget("PersonMultiMembers");
+		assertSource("FamiliesMultiMembers");
+	}
+	
+	/**
+	 * Test for changing the person's first name.
+	 */
+	@Test
+	public void testFirstNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+					   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
+			
+		//----------------
+		tool.performAndPropagateTargetEdit(this::firstNameChangeOfHomer);
+		assertTarget("PersonNameChange");
+		assertSource("MemberNameChange");
+	}
+	
+	/**
+	 * Test for changing the person's family name.
+	 */
+	@Test
+	public void testFamilyNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
+			
+		//----------------
+			configure();
+			tool.performAndPropagateTargetEdit(this::familyNameChangeOfLisa);
+			assertTarget("PersonFamilyNameChange");
+			assertSource("MemberFamilyNameChange");
+	}
+	
+	/**
+	 * Test for changing the person's full name.
+	 */
+	@Test
+	public void testFullNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
+			
+		//----------------
+		configure();
+		tool.performAndPropagateTargetEdit(this::fullNameChangeOfHomer);
+		assertTarget("PersonFullNameChange");
+		assertSource("MemberFullNameChange");
+	}
+	
+	/**
+	 * Test for deleting the person.
+	 */
+	@Test
+	public void testDeletePerson() {
+		tool.initiateSynchronisationDialogue();
+			
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
+			
+		//---------------------- 
+		tool.performAndPropagateTargetEdit(this::deleteHomer);
+		assertTarget("PersonDelete");
+		assertSource("MemberDelete");
+	}
+	
+		private void assertSource(String path){
+			familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
+		}
+		
+		private void assertTarget(String path){
+			personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
+		}
+		
 		private Configurator<Decisions> configure() {
 			Configurator<Decisions> c = new Configurator<>();
 			tool.setConfigurator(c);
 			return c;
 		}
 		
-		
-		@Test
-		public void testBirthdayChange(){
-			tool.initiateSynchronisationDialogue();
-			
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			
-			//-----------------------------
-			tool.performAndPropagateTargetEdit((this::birthdayChangeOfHomer));
-			assertTarget("PersonBirthdayChange");
-			assertSource("oneFamilyWithOneFamilyMember");
-		}
-		
-		@Test
-		public void testCreateMultiPerson() {
-			tool.initiateSynchronisationDialogue();
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-					   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			
-			//----------------
-			
-			tool.performAndPropagateTargetEdit(this::createMarge);
-			tool.performAndPropagateTargetEdit(this::createLisa);
-			
-			assertTarget("PersonMultiMembers");
-			assertSource("FamiliesMultiMembers");
-		}
-		
-		@Test
-		public void testFirstNameChangePerson() {
-			tool.initiateSynchronisationDialogue();
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-					   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			tool.performAndPropagateTargetEdit(this::createMarge);
-			tool.performAndPropagateTargetEdit(this::createLisa);
-			
-			//----------------
-
-			tool.performAndPropagateTargetEdit(this::firstNameChangeOfHomer);
-			assertTarget("PersonNameChange");
-			assertSource("MemberNameChange");
-		}
-		
-		@Test
-		public void testFamilyNameChangePerson() {
-			tool.initiateSynchronisationDialogue();
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-			   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			tool.performAndPropagateTargetEdit(this::createMarge);
-			tool.performAndPropagateTargetEdit(this::createLisa);
-			
-			//----------------
-			
-			configure();
-			tool.performAndPropagateTargetEdit(this::familyNameChangeOfLisa);
-			assertTarget("PersonFamilyNameChange");
-			assertSource("MemberFamilyNameChange");
-		}
-		
-		@Test
-		public void testFullNameChangePerson() {
-			tool.initiateSynchronisationDialogue();
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-			   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			tool.performAndPropagateTargetEdit(this::createMarge);
-			tool.performAndPropagateTargetEdit(this::createLisa);
-			
-			//----------------
-			configure();
-			tool.performAndPropagateTargetEdit(this::fullNameChangeOfHomer);
-			assertTarget("PersonFullNameChange");
-			assertSource("MemberFullNameChange");
-		}
-		
-		@Test
-		public void testDeletePerson() {
-			tool.initiateSynchronisationDialogue();
-			
-			
-			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-					   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-			tool.performAndPropagateTargetEdit(this::createHomer);
-			tool.performAndPropagateTargetEdit(this::createMarge);
-			tool.performAndPropagateTargetEdit(this::createLisa);
-			
-			//---------------------- 
-			tool.performAndPropagateTargetEdit(this::deleteHomer);
-			assertTarget("PersonDelete");
-			assertSource("MemberDelete");
-		}
-	
 		private void createHomer(PersonRegister eObject) {
 			Person person = PersonsFactory.eINSTANCE.createMale();
 			person.setName("Simpson, Homer");

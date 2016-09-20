@@ -17,6 +17,9 @@ import Families.FamilyMember;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
+/**
+ * This class test the possible updates applied to the source model, i.e Family Model
+ */
 public class BenchmarkTestsSourceDelta {
 
 	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
@@ -32,8 +35,6 @@ public class BenchmarkTestsSourceDelta {
 		personsComparator = new PersonsComparator();
 	}
 
-	// Family updates
-	
 	/**
 	 * Expect root elements of both source and target models
 	 */
@@ -42,26 +43,25 @@ public class BenchmarkTestsSourceDelta {
 	{
 		tool.initiateSynchronisationDialogue();
 
-		//------------
-		
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 	}
 	
 	/**
-	 * Test creation of a single family in an empty root container
+	 * Test for creation of a single family in an empty root container
 	 */
 	@Test
 	public void testCreateFamily() {
 		tool.initiateSynchronisationDialogue();
-		
-		//------------
-		
+
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 	}	
 	
+	/**
+	 * Test for creation of a single family member in to the existing family
+	 */
 	@Test
 	public void testCreateFamilyMember(){
 		tool.initiateSynchronisationDialogue();
@@ -73,6 +73,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("PersonWithOneMaleMember");
 	}
 	
+	/**
+	 * Test for creation of a multiple family members in to the existing family
+	 */
 	@Test
 	public void testCreateMultiFamilyMember()
 	{
@@ -86,6 +89,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("PersonWithMultiMember");
 	}
 	
+	/**
+	 * Test for family-name change of the family member
+	 */
 	@Test
 	public void testFamilyNameChange()
 	{
@@ -100,6 +106,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("NameChangePerson");
 	}
 	
+	/**
+	 * Test for first name change of the family member
+	 */
 	@Test
 	public void testFamilyMemeberNameChange() {	
 		tool.initiateSynchronisationDialogue();
@@ -112,6 +121,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("NameChangeOfPerson");
 	}
 	
+	/**
+	 * Test for family member role change, from father to son and from mother to daughter.
+	 */
 	@Test
 	public void testFamilyMemberRoleChange() {
 		tool.initiateSynchronisationDialogue();
@@ -125,6 +137,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("NoChangePerson");
 	}
 	
+	/**
+	 * Test for creation of new family with family members
+	 */
 	@Test 
 	public void testNewFamilyWithMultiMembers(){
 		tool.initiateSynchronisationDialogue();
@@ -135,6 +150,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("PersonsMulti");
 	}
 	
+	/**
+	 * Test for family member moved to new family, i.e. daughter is married and created a new family.
+	 */
 	@Test
 	public void testFamilyMemberDiffFamily() {
 		tool.initiateSynchronisationDialogue();
@@ -146,6 +164,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("PersonsFirstNameChange");
 	}
 	
+	/**
+	 * Test for deletion of family member
+	 */
 	@Test
 	public void testDeleteFamilyMember() {
 		tool.initiateSynchronisationDialogue();
@@ -160,6 +181,9 @@ public class BenchmarkTestsSourceDelta {
 		assertTarget("DeletePerson");
 	}
 	
+	/**
+	 * Test for deletion of family
+	 */
 	@Test
 	public void testDeleteFamily() {
 		tool.initiateSynchronisationDialogue();
