@@ -60,7 +60,7 @@ public class BenchmarkTestsTargetDelta {
 		public void testCreatePerson() {
 			tool.initiateSynchronisationDialogue();
 			
-			// Test for new person is added. (PM4)
+			// ---------------------------------
 			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 			tool.performAndPropagateTargetEdit(this::createHomer);
 			
@@ -82,7 +82,7 @@ public class BenchmarkTestsTargetDelta {
 			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 			tool.performAndPropagateTargetEdit(this::createHomer);
 			
-			//Test for birthday change of person (PM3)
+			//-----------------------------
 			tool.performAndPropagateTargetEdit((this::birthdayChange));
 			assertTarget("PersonBirthdayChange");
 			assertSource("oneFamilyWithOneFamilyMember");
@@ -164,7 +164,7 @@ public class BenchmarkTestsTargetDelta {
 			tool.performAndPropagateTargetEdit(this::createMarge);
 			tool.performAndPropagateTargetEdit(this::createLisa);
 			
-			//Test for delete person (PM5)
+			//---------------------- 
 			tool.performAndPropagateTargetEdit(this::deletePerson);
 			assertTarget("PersonDelete");
 			assertSource("MemberDelete");
@@ -174,7 +174,6 @@ public class BenchmarkTestsTargetDelta {
 			Person person = PersonsFactory.eINSTANCE.createMale();
 			person.setName("Simpson, Homer");
 			eObject.getPersons().add(person);
-			System.out.println("birthday ="+person.getBirthday());
 		}
 		
 		private void birthdayChange(PersonRegister eObject) {

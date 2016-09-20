@@ -67,7 +67,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		
-		//Test creation of a family member (e.g. family father added in above created one family) (FM5)
+		//------------
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
@@ -80,7 +80,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
-		//Test for creation of multiple family members (with new family register) (FM6) 
+		//------------
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		assertSource("FamilyWithMultiFamilyMember");
 		assertTarget("PersonWithMultiMember");
@@ -94,7 +94,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		
-		//Test for family name of a family is changed (FM3)
+		//------------
 		tool.performAndPropagateSourceEdit(this::familyNameChange);
 		assertSource("NameChangeFamily");
 		assertTarget("NameChangePerson");
@@ -106,7 +106,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
-		//Test for name of a family member is changed (FM2)
+		//------------
 		tool.performAndPropagateSourceEdit(this::familyMemberNameChange);
 		assertSource("NameChangeFamilyMember");
 		assertTarget("NameChangeOfPerson");
@@ -119,7 +119,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		
-		//Test for role of a family member is changed (FM7)
+		//------------
 		tool.performAndPropagateSourceEdit(this::familyMemberRoleChange);
 		assertSource("RoleChangeFamilyMember");
 		assertTarget("NoChangePerson");
@@ -129,7 +129,7 @@ public class BenchmarkTestsSourceDelta {
 	public void testNewFamilyWithMultiMembers(){
 		tool.initiateSynchronisationDialogue();
 		
-		//Test for new family creation with multiple family members (FM11)
+		//------------
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		assertSource("NewFamilyWithMembers");
 		assertTarget("PersonsMulti");
@@ -140,7 +140,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		
-		//Test for a family member is associated with a different family (FM8)
+		//------------
 		tool.performAndPropagateSourceEdit(this::memberNewFamily);
 		assertSource("FamilyMemberWithDiffFamily");
 		assertTarget("PersonsFirstNameChange");
@@ -154,7 +154,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		
-		//Test for family member deletion (FM9)
+		//------------
 		tool.performAndPropagateSourceEdit(this::deleteFamilyMember);
 		assertSource("DeleteFamilyMember");
 		assertTarget("DeletePerson");
@@ -168,7 +168,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		
-		//Test for family member deletion (FM10)
+		//------------
 		tool.performAndPropagateSourceEdit(this::deleteFamily);
 		assertSource("DeleteFamily");
 		assertTarget("DeleteAllPerson");		
