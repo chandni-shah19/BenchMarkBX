@@ -24,8 +24,12 @@ class PersonsComparator implements Comparator<PersonRegister>{
 			«val List<Person> sortedList = new ArrayList<Person>(persons.persons)»
 			«comparator.Normalize(sortedList)»
 			«FOR p: sortedList SEPARATOR "\n"»
-				«IF p instanceof Male» Male: «p.name»
-				«ELSE» Female: «p.name»
+				«IF p instanceof Male»
+				 Male: «p.name»
+				 Birthday: «p.birthday»
+				«ELSE»
+				Female: «p.name»
+				Birthday: «p.birthday»
 				«ENDIF»
 			«ENDFOR»
 		'''

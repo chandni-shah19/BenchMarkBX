@@ -64,7 +64,7 @@ public class BenchmarkTestsTargetDelta {
 			configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 			tool.performAndPropagateTargetEdit(this::createHomer);
 			
-			assertTarget("PersonWithOneMaleMember");
+			assertTarget("PersonOneMaleMember");
 			assertSource("oneFamilyWithOneFamilyMember");
 		}
 
@@ -147,7 +147,7 @@ public class BenchmarkTestsTargetDelta {
 			tool.performAndPropagateTargetEdit(this::createLisa);
 			
 			//----------------
-
+			configure();
 			tool.performAndPropagateTargetEdit(this::fullNameChangePerson);
 			assertTarget("PersonFullNameChange");
 			assertSource("MemberFullNameChange");
@@ -174,6 +174,7 @@ public class BenchmarkTestsTargetDelta {
 			Person person = PersonsFactory.eINSTANCE.createMale();
 			person.setName("Simpson, Homer");
 			eObject.getPersons().add(person);
+			System.out.println("birthday ="+person.getBirthday());
 		}
 		
 		private void birthdayChange(PersonRegister eObject) {
