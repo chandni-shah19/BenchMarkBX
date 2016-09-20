@@ -81,7 +81,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamilyMembers);
 		assertSource("FamilyWithMultiFamilyMember");
 		assertTarget("PersonWithMultiMember");
 	}
@@ -92,10 +92,10 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamilyMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::familyNameChange);
+		tool.performAndPropagateSourceEdit(this::familyNameSimpsonChange);
 		assertSource("NameChangeFamily");
 		assertTarget("NameChangePerson");
 	}
@@ -107,7 +107,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::familyMemberNameChange);
+		tool.performAndPropagateSourceEdit(this::familyFatherHomerNameChange);
 		assertSource("NameChangeFamilyMember");
 		assertTarget("NameChangeOfPerson");
 	}
@@ -117,10 +117,10 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamilyMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::familyMemberRoleChange);
+		tool.performAndPropagateSourceEdit(this::familyFatherHomerRoleChangeToSon);
 		assertSource("RoleChangeFamilyMember");
 		assertTarget("NoChangePerson");
 	}
@@ -130,7 +130,7 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
+		tool.performAndPropagateSourceEdit(this::createNewfamilyBachchanWithMembers);
 		assertSource("NewFamilyWithMembers");
 		assertTarget("PersonsMulti");
 	}
@@ -138,10 +138,10 @@ public class BenchmarkTestsSourceDelta {
 	@Test
 	public void testFamilyMemberDiffFamily() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
+		tool.performAndPropagateSourceEdit(this::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::memberNewFamily);
+		tool.performAndPropagateSourceEdit(this::moveDaughterToMotherOfNewFamily);
 		assertSource("FamilyMemberWithDiffFamily");
 		assertTarget("PersonsFirstNameChange");
 	}
@@ -151,11 +151,11 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
-		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamilyMembers);
+		tool.performAndPropagateSourceEdit(this::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::deleteFamilyMember);
+		tool.performAndPropagateSourceEdit(this::deleteFamilyFatherHomer);
 		assertSource("DeleteFamilyMember");
 		assertTarget("DeletePerson");
 	}
@@ -165,11 +165,11 @@ public class BenchmarkTestsSourceDelta {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(this::createFatherHomer);
-		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
-		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamilyMembers);
+		tool.performAndPropagateSourceEdit(this::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(this::deleteFamily);
+		tool.performAndPropagateSourceEdit(this::deleteFamilySimpson);
 		assertSource("DeleteFamily");
 		assertTarget("DeleteAllPerson");		
 	}
@@ -196,7 +196,7 @@ public class BenchmarkTestsSourceDelta {
 		familyFather.setName("Homer");
 	}
 	
-	private void createMultiFamilyMember(FamilyRegister eObject){
+	private void createSimpsonFamilyMembers(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		
 		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
@@ -217,18 +217,18 @@ public class BenchmarkTestsSourceDelta {
 		
 	}
 	
-	private void familyNameChange(FamilyRegister eObject){
+	private void familyNameSimpsonChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		family.setName("SimpsonS");
 	}
 	
-	private void familyMemberNameChange(FamilyRegister eObject){
+	private void familyFatherHomerNameChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		family.getFather().setName("HomerX");
 		
 	}
 	
-	private void familyMemberRoleChange(FamilyRegister eObject){
+	private void familyFatherHomerRoleChangeToSon(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		
 		String familySonName = family.getSons().get(0).getName();
@@ -238,7 +238,7 @@ public class BenchmarkTestsSourceDelta {
 		family.getSons().get(0).setName(familyFatherName);
 	}
 	
-	private void newfamilyMultiMember(FamilyRegister eObject){
+	private void createNewfamilyBachchanWithMembers(FamilyRegister eObject){
 		Family family = FamiliesFactory.eINSTANCE.createFamily();
 		family.setName("Bachchan");
 		eObject.getFamilies().add(family);
@@ -260,7 +260,7 @@ public class BenchmarkTestsSourceDelta {
 		family.getDaughters().add(familyDaughter);
 	}
 	
-	private void memberNewFamily(FamilyRegister eObject){
+	private void moveDaughterToMotherOfNewFamily(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		assertTrue(family.getName().equals("Bachchan"));
 		FamilyMember familyDaughter = family.getDaughters().get(0);
@@ -274,12 +274,12 @@ public class BenchmarkTestsSourceDelta {
 		newFamily.setMother(familyDaughter);
 	}
 	
-	private void deleteFamilyMember(FamilyRegister eObject){
+	private void deleteFamilyFatherHomer(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
 		EcoreUtil.delete(family.getFather());
 	}
 	
-	private void deleteFamily(FamilyRegister eObject){
+	private void deleteFamilySimpson(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
 		EcoreUtil.delete(family);
 	}

@@ -83,7 +83,7 @@ public class BenchmarkTestsTargetDelta {
 			tool.performAndPropagateTargetEdit(this::createHomer);
 			
 			//-----------------------------
-			tool.performAndPropagateTargetEdit((this::birthdayChange));
+			tool.performAndPropagateTargetEdit((this::birthdayChangeOfHomer));
 			assertTarget("PersonBirthdayChange");
 			assertSource("oneFamilyWithOneFamilyMember");
 		}
@@ -115,7 +115,7 @@ public class BenchmarkTestsTargetDelta {
 			
 			//----------------
 
-			tool.performAndPropagateTargetEdit(this::nameChangePerson);
+			tool.performAndPropagateTargetEdit(this::firstNameChangeOfHomer);
 			assertTarget("PersonNameChange");
 			assertSource("MemberNameChange");
 		}
@@ -132,7 +132,7 @@ public class BenchmarkTestsTargetDelta {
 			//----------------
 			
 			configure();
-			tool.performAndPropagateTargetEdit(this::familyNameChangePerson);
+			tool.performAndPropagateTargetEdit(this::familyNameChangeOfLisa);
 			assertTarget("PersonFamilyNameChange");
 			assertSource("MemberFamilyNameChange");
 		}
@@ -148,7 +148,7 @@ public class BenchmarkTestsTargetDelta {
 			
 			//----------------
 			configure();
-			tool.performAndPropagateTargetEdit(this::fullNameChangePerson);
+			tool.performAndPropagateTargetEdit(this::fullNameChangeOfHomer);
 			assertTarget("PersonFullNameChange");
 			assertSource("MemberFullNameChange");
 		}
@@ -165,7 +165,7 @@ public class BenchmarkTestsTargetDelta {
 			tool.performAndPropagateTargetEdit(this::createLisa);
 			
 			//---------------------- 
-			tool.performAndPropagateTargetEdit(this::deletePerson);
+			tool.performAndPropagateTargetEdit(this::deleteHomer);
 			assertTarget("PersonDelete");
 			assertSource("MemberDelete");
 		}
@@ -176,7 +176,7 @@ public class BenchmarkTestsTargetDelta {
 			eObject.getPersons().add(person);
 		}
 		
-		private void birthdayChange(PersonRegister eObject) {
+		private void birthdayChangeOfHomer(PersonRegister eObject) {
 			Person person = eObject.getPersons().get(0);
 			Calendar cal = Calendar.getInstance();
 			cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
@@ -196,33 +196,23 @@ public class BenchmarkTestsTargetDelta {
 			register.getPersons().add(person);
 		}
 		
-		private void nameChangePerson(PersonRegister eObject) {
+		private void firstNameChangeOfHomer(PersonRegister eObject) {
 			Person person = eObject.getPersons().get(0);
 			person.setName("Simpson, HomerX");
 		}
 		
-		private void familyNameChangePerson(PersonRegister register) {
-			Person person = register.getPersons().get(0);
-			person.setName("SimpsonS, Homer");
+		private void familyNameChangeOfLisa(PersonRegister register) {
+			Person person = register.getPersons().get(1);
+			person.setName("SimpsonS, Lisa");
 		}
 		
-		private void fullNameChangePerson(PersonRegister register) {
+		private void fullNameChangeOfHomer(PersonRegister register) {
 			Person person = register.getPersons().get(0);
 			person.setName("SimpsonS, HomerX");
 		}
 		
-		private void deletePerson(PersonRegister register) {
+		private void deleteHomer(PersonRegister register) {
 			Person person = register.getPersons().get(0);
 			EcoreUtil.delete(person);
 		}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
