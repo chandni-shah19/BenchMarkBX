@@ -44,6 +44,7 @@ public class BenchmarkTests {
 	//FIXME Add some extra tests playing around with the decision settings (so add Marge as a daugther etc)
 	//FIXME Make sure that birthdays are printed out in the comparator for Persons
 	//FIXME Create two TestSuites:  one for family changes, one for person changes
+	//FIXME Organise tests into Level 1 (create, delete, attribute change of single objects or links in the model), Level 2 (binary combinations of Level 1 deltas), Level 3, ...
 	
 	// Family updates
 	
