@@ -15,7 +15,6 @@ import org.moflon.tgg.algorithm.synchronization.SynchronizationHelper;
 import Families.FamiliesFactory;
 import Families.FamilyRegister;
 import FamiliesToPersons.FamiliesToPersonsPackage;
-import FamiliesToPersons.Rules.RulesPackage;
 import Persons.PersonRegister;
 
 
@@ -63,57 +62,37 @@ public class EMoflon implements BXTool<FamilyRegister, PersonRegister, Configura
 		helper.setConfigurator(new org.moflon.tgg.algorithm.configuration.Configurator() {
 			@Override
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
-				handleMothersAndDaughters(configurator, alternatives);
-				handleFathersAndSons(configurator, alternatives);
-				handleMotherExisitingFamiliyAndnew(configurator, alternatives);
-				handleDaughterExisitingFamiliyAndnew(configurator, alternatives);
-				handleFatherExisitingFamiliyAndnew(configurator, alternatives);
+				handleChoices(configurator, alternatives);
 				return org.moflon.tgg.algorithm.configuration.Configurator.super.chooseOne(alternatives);
 			}
-
 		});
 	}
 	
-	private void handleMothersAndDaughters(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
-		final String m2f = RulesPackage.eINSTANCE.getMotherToFemale().getName();
-		final String d2f = RulesPackage.eINSTANCE.getDaughterToFemale().getName();
-		handleDecision(configurator, alternatives, m2f, d2f, Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER);
+	private void handleChoices(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		boolean handleExisting = alternatives.stream().anyMatch(rr -> rr.getRule().contains("ExistingFamily"));
+		if(handleExisting) restrictMatchesToExisting(configurator, alternatives);
+	
+		boolean handleParentOrChild = alternatives.stream().anyMatch(rr -> rr.getRule().contains("Mother") || rr.getRule().contains("Father"));
+		if(handleParentOrChild) restrictMatchesForParents(configurator, alternatives);
 	}
 
-	private void handleFathersAndSons(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
-		final String f2m = RulesPackage.eINSTANCE.getFatherToMale().getName();
-		final String s2m = RulesPackage.eINSTANCE.getSonToMale().getName();
-		handleDecision(configurator, alternatives, f2m, s2m, Decisions.PREFER_CREATING_FATHER_OVER_SON);
-	}
-	
-	private void handleMotherExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
-		final String mE2f = RulesPackage.eINSTANCE.getMotherOfExistingFamilyToFemale().getName();
-		final String m2f = RulesPackage.eINSTANCE.getMotherToFemale().getName();
-		handleDecision(configurator, alternatives, mE2f, m2f, Decisions.PREFER_EXISTINGMother_FAMILY_TO_NEW);
-	}
-	
-	private void handleDaughterExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
-		final String dE2f = RulesPackage.eINSTANCE.getDaughterOfExistingFamilyToFemale().getName();
-		final String d2f = RulesPackage.eINSTANCE.getDaughterToFemale().getName();
-		handleDecision(configurator, alternatives, dE2f, d2f, Decisions.PREFER_EXISTINGDaughter_FAMILY_TO_NEW);
-	}
-	
-	private void handleFatherExisitingFamiliyAndnew(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
-		final String fE2m = RulesPackage.eINSTANCE.getFatherOfExistingFamilyToMale().getName();
-		final String f2m = RulesPackage.eINSTANCE.getFatherToMale().getName();
-		handleDecision(configurator, alternatives, fE2m, f2m, Decisions.PREFER_EXISTINGFather_FAMILY_TO_NEW);
-	}
-
-	private void handleDecision(Configurator<Decisions> configurator, Collection<RuleResult> alternatives,
-			final String r1, final String r2, Decisions preferR1) {
-		if(alternatives.size() > 1 && alternatives.stream().allMatch(rr -> rr.isRule(r1) || rr.isRule(r2))){
-			if(configurator.decide(preferR1))
-				alternatives.forEach(rr -> rr.restrictMatchesTo(m -> m.isRule(r1)));
-			else
-				alternatives.forEach(rr -> rr.restrictMatchesTo(m -> m.isRule(r2)));
+	private void restrictMatchesForParents(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		if (configurator.decide(Decisions.PREFER_CREATING_PARENT_TO_CHILD)) {
+			alternatives.forEach(rr -> rr.restrictMatchesTo(m -> rr.getRule().contains("Mother") || rr.getRule().contains("Father")));
+		} else {
+			alternatives.forEach(rr -> rr.restrictMatchesTo(m -> !(rr.getRule().contains("Mother") || rr.getRule().contains("Father"))));
 		}
 		
 		alternatives.removeIf(rr -> rr.isEmpty());
 	}
-	
+
+	private void restrictMatchesToExisting(Configurator<Decisions> configurator, Collection<RuleResult> alternatives) {
+		if (configurator.decide(Decisions.PREFER_EXISTING_FAMILY_TO_NEW)) {
+			alternatives.forEach(rr -> rr.restrictMatchesTo(m -> rr.getRule().contains("ExistingFamily")));
+		} else {
+			alternatives.forEach(rr -> rr.restrictMatchesTo(m -> !rr.getRule().contains("ExistingFamily")));
+		}
+		
+		alternatives.removeIf(rr -> rr.isEmpty());
+	}
 }

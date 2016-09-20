@@ -14,7 +14,8 @@ public class Configurator<D> {
 			throw new IllegalArgumentException("I don't know how to handle: " + decision);
 	}
 	
-	public Map<D, Boolean> getDecisions(){
-		return decisions;
+	public Configurator<D> makeDecision(D d, boolean b){
+		decisions.put(d, b);
+		return this;
 	}
 }

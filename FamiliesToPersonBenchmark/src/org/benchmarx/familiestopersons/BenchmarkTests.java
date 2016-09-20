@@ -37,24 +37,40 @@ public class BenchmarkTests {
 		personsComparator = new PersonsComparator();
 	}
 
-	// Possible updates in Family Model, i.e test cases for source edit
+	//FIXME Documentation for each test as Javadoc
+	//FIXME Rename helper methods to reflect what is done exactly (so createFatherHomer instead of createFamilyMember)
+	//FIXME Remove references to seminar paper, e.g., FM5
+	//FIXME Clearly separate initialization from the actual test (see how I changed the first two tests)
+	//FIXME Add some extra tests playing around with the decision settings (so add Marge as a daugther etc)
+	//FIXME Make sure that birthdays are printed out in the comparator for Persons
+	//FIXME Create two TestSuites:  one for family changes, one for person changes
 	
+	// Family updates
+	
+	/**
+	 * Expect root elements of both source and target models
+	 */
 	@Test
 	public void testInitialiseSynchronisation()
 	{
 		tool.initiateSynchronisationDialogue();
 
-		// Expect root elements of both source and target models (FM1 and PM1)
+		//------------
+		
 		assertSource("rootElementFamilies");
 		assertTarget("rootElementPersons");
 	}
 	
+	/**
+	 * Test creation of a single family in an empty root container
+	 */
 	@Test
 	public void testCreateFamily() {
 		tool.initiateSynchronisationDialogue();
 		
-		// Test creation of a single family in an empty root container (FM4)
-		tool.performAndPropagateSourceEdit(this::createFamily);
+		//------------
+		
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		assertSource("oneFamily");
 		assertTarget("personsForOneFamily");
 	}	
@@ -62,10 +78,10 @@ public class BenchmarkTests {
 	@Test
 	public void testCreateFamilyMember(){
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
 		
 		//Test creation of a family member (e.g. family father added in above created one family) (FM5)
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		assertSource("oneFamilyWithOneFamilyMember");
 		assertTarget("PersonWithOneMaleMember");
 	}
@@ -74,8 +90,8 @@ public class BenchmarkTests {
 	public void testCreateMultiFamilyMember()
 	{
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
 		//Test for creation of multiple family members (with new family register) (FM6) 
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
@@ -87,8 +103,8 @@ public class BenchmarkTests {
 	public void testFamilyNameChange()
 	{
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		
 		//Test for family name of a family is changed (FM3)
@@ -100,8 +116,8 @@ public class BenchmarkTests {
 	@Test
 	public void testFamilyMemeberNameChange() {	
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		
 		//Test for name of a family member is changed (FM2)
 		tool.performAndPropagateSourceEdit(this::familyMemberNameChange);
@@ -112,8 +128,8 @@ public class BenchmarkTests {
 	@Test
 	public void testFamilyMemberRoleChange() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		
 		//Test for role of a family member is changed (FM7)
@@ -146,8 +162,8 @@ public class BenchmarkTests {
 	@Test
 	public void testDeleteFamilyMember() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		
@@ -160,8 +176,8 @@ public class BenchmarkTests {
 	@Test
 	public void testDeleteFamily() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(this::createFamily);
-		tool.performAndPropagateSourceEdit(this::createFamilyMember);
+		tool.performAndPropagateSourceEdit(this::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(this::createFatherHomer);
 		tool.performAndPropagateSourceEdit(this::createMultiFamilyMember);
 		tool.performAndPropagateSourceEdit(this::newfamilyMultiMember);
 		
@@ -178,8 +194,8 @@ public class BenchmarkTests {
 		tool.initiateSynchronisationDialogue();
 		
 		// Test for new person is added. (PM4)
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
 		
 		assertTarget("PersonWithOneMaleMember");
 		assertSource("oneFamilyWithOneFamilyMember");
@@ -196,8 +212,8 @@ public class BenchmarkTests {
 	public void testBirthdayChange(){
 		tool.initiateSynchronisationDialogue();
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
 		
 		//Test for birthday change of person (PM3)
 		tool.performAndPropagateTargetEdit((this::birthdayChange));
@@ -208,18 +224,15 @@ public class BenchmarkTests {
 	@Test
 	public void testCreateMultiPerson() {
 		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
+		//----------------
 		
-		//many people added, with different family name so other test cases can be tested  e.g if full name change for the person
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_MOTHER_OVER_DAUGHTER, true);
-		
-		configure().getDecisions().put(Decisions.PREFER_EXISTINGDaughter_FAMILY_TO_NEW, true);
-		configure().getDecisions().put(Decisions.PREFER_EXISTINGMother_FAMILY_TO_NEW, true);
-		
-		tool.performAndPropagateTargetEdit(this::createMultiPerson);
 		assertTarget("PersonMultiMembers");
 		assertSource("FamiliesMultiMembers");
 	}
@@ -227,14 +240,14 @@ public class BenchmarkTests {
 	@Test
 	public void testFirstNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
-		
-		
-		tool.performAndPropagateTargetEdit(this::createMultiPerson);
-		
-		//Test for name change (PM2) case a: first name change
+		//----------------
+
 		tool.performAndPropagateTargetEdit(this::nameChangePerson);
 		assertTarget("PersonNameChange");
 		assertSource("MemberNameChange");
@@ -243,13 +256,15 @@ public class BenchmarkTests {
 	@Test
 	public void testFamilyNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
+		//----------------
 		
-		tool.performAndPropagateTargetEdit(this::createMultiPerson);
-		
-		//Test for name change (PM2) case b: family name change (for 2nd case Family name not exist )
+		configure();
 		tool.performAndPropagateTargetEdit(this::familyNameChangePerson);
 		assertTarget("PersonFamilyNameChange");
 		assertSource("MemberFamilyNameChange");
@@ -258,14 +273,14 @@ public class BenchmarkTests {
 	@Test
 	public void testFullNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
-		
-		
-		tool.performAndPropagateTargetEdit(this::createMultiPerson);
-		
-		//Test for name change (PM2) case c: full name change (both family and first name change)
+		//----------------
+
 		tool.performAndPropagateTargetEdit(this::fullNameChangePerson);
 		assertTarget("PersonFullNameChange");
 		assertSource("MemberFullNameChange");
@@ -275,11 +290,12 @@ public class BenchmarkTests {
 	public void testDeletePerson() {
 		tool.initiateSynchronisationDialogue();
 		
-		configure().getDecisions().put(Decisions.PREFER_CREATING_FATHER_OVER_SON, true);
-		tool.performAndPropagateTargetEdit(this::createPerson);
 		
-		
-		tool.performAndPropagateTargetEdit(this::createMultiPerson);
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(this::createMarge);
+		tool.performAndPropagateTargetEdit(this::createLisa);
 		
 		//Test for delete person (PM5)
 		tool.performAndPropagateTargetEdit(this::deletePerson);
@@ -295,13 +311,13 @@ public class BenchmarkTests {
 		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
 	}
 
-	private void createFamily(FamilyRegister root) {
+	private void createSimpsonFamily(FamilyRegister register) {
 		Family family = FamiliesFactory.eINSTANCE.createFamily();
 		family.setName("Simpson");
-		root.getFamilies().add(family);
+		register.getFamilies().add(family);
 	}
 	
-	private void createFamilyMember(FamilyRegister eObject){
+	private void createFatherHomer(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
@@ -396,7 +412,7 @@ public class BenchmarkTests {
 		EcoreUtil.delete(family);
 	}
 	
-	private void createPerson(PersonRegister eObject) {
+	private void createHomer(PersonRegister eObject) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Homer");
 		eObject.getPersons().add(person);
@@ -410,18 +426,16 @@ public class BenchmarkTests {
 		person.setBirthday(date);
 	}
 	
-	private void createMultiPerson(PersonRegister eObject) {
-		
-		
-		Person person1 = PersonsFactory.eINSTANCE.createFemale();
-		person1.setName("Simpson, Lisa");
-		eObject.getPersons().add(person1);
-		
-		Person person2 = PersonsFactory.eINSTANCE.createFemale();
-		person2.setName("Simpson, Marge");
-		eObject.getPersons().add(person2);
-		
-
+	private void createMarge(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createFemale();
+		person.setName("Simpson, Marge");
+		register.getPersons().add(person);
+	}
+	
+	private void createLisa(PersonRegister register){
+		Person person = PersonsFactory.eINSTANCE.createFemale();
+		person.setName("Simpson, Lisa");
+		register.getPersons().add(person);
 	}
 	
 	private void nameChangePerson(PersonRegister eObject) {
@@ -429,18 +443,18 @@ public class BenchmarkTests {
 		person.setName("Simpson, HomerX");
 	}
 	
-	private void familyNameChangePerson(PersonRegister eObject) {
-		Person person = eObject.getPersons().get(0);
+	private void familyNameChangePerson(PersonRegister register) {
+		Person person = register.getPersons().get(0);
 		person.setName("SimpsonS, Homer");
 	}
 	
-	private void fullNameChangePerson(PersonRegister eObject) {
-		Person person = eObject.getPersons().get(0);
+	private void fullNameChangePerson(PersonRegister register) {
+		Person person = register.getPersons().get(0);
 		person.setName("SimpsonS, HomerX");
 	}
 	
-	private void deletePerson(PersonRegister eObject) {
-		Person person = eObject.getPersons().get(0);
+	private void deletePerson(PersonRegister register) {
+		Person person = register.getPersons().get(0);
 		EcoreUtil.delete(person);
 	}
 }
