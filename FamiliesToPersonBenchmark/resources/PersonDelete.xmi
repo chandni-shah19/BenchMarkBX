@@ -6,7 +6,7 @@
     xmlns:Persons="platform:/plugin/Persons/model/Persons.ecore"
     xsi:schemaLocation="platform:/plugin/Persons/model/Persons.ecore ../../Persons/model/Persons.ecore">
   <persons xsi:type="Persons:Female"
-      name="Simpson, Marge"/>
+      name="Simpson, Lisa"/>
   <persons xsi:type="Persons:Male"
       name="Simpson, Homer"/>
 </Persons:PersonRegister>
