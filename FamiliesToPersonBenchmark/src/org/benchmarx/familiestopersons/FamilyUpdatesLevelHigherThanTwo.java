@@ -13,7 +13,7 @@ import Families.FamilyRegister;
 import Persons.PersonRegister;
 
 /**
- * This class test the possible updates applied to the source model, i.e Family Model
+ * This class test the possible updates (higher than level 2) for the Family Model .
  */
 public class FamilyUpdatesLevelHigherThanTwo {
 
@@ -33,7 +33,8 @@ public class FamilyUpdatesLevelHigherThanTwo {
 	}
 
 	/**
-	 * Test for creation of a multiple family members in to the existing family
+	 * Test for creation of a multiple family members in to the existing family.
+	 * Expect the creation of multiple person either male or female associated to the family member.
 	 */
 	@Test
 	public void testCreateMultiFamilyMember()
@@ -49,7 +50,8 @@ public class FamilyUpdatesLevelHigherThanTwo {
 	}
 	
 	/**
-	 * Test for creation of new family with family members
+	 * Test for creation of new family with family members.
+	 * Expect the creation of multiple person either male or female corresponding to the family member.
 	 */
 	@Test 
 	public void testNewFamilyWithMultiMembers(){
@@ -62,7 +64,8 @@ public class FamilyUpdatesLevelHigherThanTwo {
 	}
 	
 	/**
-	 * Test for deletion of family
+	 * Test for deletion of family.
+	 * Expected : Delete all corresponding Persons in the Persons Model.
 	 */
 	@Test
 	public void testDeleteFamily() {

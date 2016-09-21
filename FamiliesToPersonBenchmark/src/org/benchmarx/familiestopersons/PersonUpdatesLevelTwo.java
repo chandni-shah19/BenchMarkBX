@@ -13,7 +13,7 @@ import Families.FamilyRegister;
 import Persons.PersonRegister;
 
 /**
- * This class test the possible updates applied to the source model, i.e Person Model
+ * This class test the possible updates (level 2) for the Person Model .
  */
 public class PersonUpdatesLevelTwo {
 
@@ -33,7 +33,8 @@ public class PersonUpdatesLevelTwo {
 	}
 	
 	/**
-	 * Test for creation a single male person
+	 * Test for creation a single male person.
+	 * Expect the creation of corresponding family member in the Families Model with the given first name.
 	 */
 	@Test
 	public void testCreatePerson() {
@@ -49,6 +50,7 @@ public class PersonUpdatesLevelTwo {
 
 	/**
 	 * Test for creating multiple persons together.
+	 * Expect the creation of corresponding family member in the Families Model with the given first name, with prefer decisions.
 	 */
 	@Test
 	public void testCreateMultiPerson() {
@@ -67,6 +69,7 @@ public class PersonUpdatesLevelTwo {
 	
 	/**
 	 * Test for deleting the person.
+	 * Expect the deletion of the corresponding family member in the Families Model.
 	 */
 	@Test
 	public void testDeletePerson() {

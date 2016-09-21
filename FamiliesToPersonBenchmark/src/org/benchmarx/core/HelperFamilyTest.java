@@ -11,12 +11,15 @@ import Families.FamilyMember;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-
 public class HelperFamilyTest {
 
 	public Comparator<FamilyRegister> familiesComparator;
 	public BenchmarxUtil util;
 	public BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
+	
+	public void assertSource(String path){
+		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
+	}
 	
 	public void createSimpsonFamily(FamilyRegister register) {
 		Family family = FamiliesFactory.eINSTANCE.createFamily();

@@ -17,7 +17,9 @@ import Families.FamilyRegister;
 import FamiliesToPersons.FamiliesToPersonsPackage;
 import Persons.PersonRegister;
 
-
+/*
+ * This class implements the bx tool interface for the eMoflon tool.
+ */
 public class EMoflon implements BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>>   {
 	
 	private SynchronizationHelper helper;

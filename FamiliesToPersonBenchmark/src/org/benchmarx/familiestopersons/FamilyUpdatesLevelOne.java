@@ -12,6 +12,9 @@ import org.junit.Test;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
+/**
+ * This class test the possible updates (level 1) for the Family Model .
+ */
 public class FamilyUpdatesLevelOne {
 
 	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
@@ -30,7 +33,7 @@ public class FamilyUpdatesLevelOne {
 	}
 
 	/**
-	 * Expect root elements of both source and target models
+	 * Expect root elements of both source and target models.
 	 */
 	@Test
 	public void testInitialiseSynchronisation()
@@ -41,7 +44,9 @@ public class FamilyUpdatesLevelOne {
 		assertTarget("rootElementPersons");
 	}
 	/**
-	 * Test for family-name change of the family member
+	 * Test for family-name change of the family member.
+	 * Expect the change in the family name in the full name of all associated family members in the person model, 
+	 * by replacing the old family name with the new one.
 	 */
 	@Test
 	public void testFamilyNameChange()
@@ -58,7 +63,8 @@ public class FamilyUpdatesLevelOne {
 	}
 	
 	/**
-	 * Test for first name change of the family member
+	 * Test for first name change of the family member.
+	 * Expect the person full name change by replacing the first name with the new one.
 	 */
 	@Test
 	public void testFamilyMemeberNameChange() {	
