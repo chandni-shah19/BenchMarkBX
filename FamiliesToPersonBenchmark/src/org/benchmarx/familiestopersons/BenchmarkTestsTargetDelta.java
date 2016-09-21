@@ -1,21 +1,16 @@
 package org.benchmarx.familiestopersons;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
 import org.benchmarx.core.Configurator;
-import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.benchmarx.core.HelperPersonTest;
 import org.junit.Before;
 import org.junit.Test;
 
 import Families.FamilyRegister;
-import Persons.Person;
 import Persons.PersonRegister;
-import Persons.PersonsFactory;
 
 /**
  * This class test the possible updates applied to the source model, i.e Person Model
@@ -26,6 +21,7 @@ public class BenchmarkTestsTargetDelta {
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
 	private BenchmarxUtil util;
+	private HelperPersonTest helperPerson;
 	
 	@Before
 	public void initialise() {
@@ -33,6 +29,7 @@ public class BenchmarkTestsTargetDelta {
 		util = new BenchmarxUtil();
 		familiesComparator = new FamiliesComparator();
 		personsComparator = new PersonsComparator();
+		helperPerson = new HelperPersonTest();
 	}
 	
 	/**
@@ -56,7 +53,7 @@ public class BenchmarkTestsTargetDelta {
 	
 		// ---------------------------------
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 			
 		assertTarget("PersonOneMaleMember");
 		assertSource("oneFamilyWithOneFamilyMember");
@@ -70,10 +67,10 @@ public class BenchmarkTestsTargetDelta {
 		tool.initiateSynchronisationDialogue();
 			
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		
 		//-----------------------------
-		tool.performAndPropagateTargetEdit((this::birthdayChangeOfHomer));
+		tool.performAndPropagateTargetEdit((helperPerson::birthdayChangeOfHomer));
 		assertTarget("PersonBirthdayChange");
 		assertSource("oneFamilyWithOneFamilyMember");
 	}
@@ -86,11 +83,11 @@ public class BenchmarkTestsTargetDelta {
 		tool.initiateSynchronisationDialogue();
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 			
 		//----------------
-		tool.performAndPropagateTargetEdit(this::createMarge);
-		tool.performAndPropagateTargetEdit(this::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 			
 		assertTarget("PersonMultiMembers");
 		assertSource("FamiliesMultiMembers");
@@ -104,12 +101,12 @@ public class BenchmarkTestsTargetDelta {
 		tool.initiateSynchronisationDialogue();
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 					   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
-		tool.performAndPropagateTargetEdit(this::createMarge);
-		tool.performAndPropagateTargetEdit(this::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 			
 		//----------------
-		tool.performAndPropagateTargetEdit(this::firstNameChangeOfHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::firstNameChangeOfHomer);
 		assertTarget("PersonNameChange");
 		assertSource("MemberNameChange");
 	}
@@ -122,13 +119,13 @@ public class BenchmarkTestsTargetDelta {
 		tool.initiateSynchronisationDialogue();
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
-		tool.performAndPropagateTargetEdit(this::createMarge);
-		tool.performAndPropagateTargetEdit(this::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 			
 		//----------------
 			configure();
-			tool.performAndPropagateTargetEdit(this::familyNameChangeOfLisa);
+			tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfLisa);
 			assertTarget("PersonFamilyNameChange");
 			assertSource("MemberFamilyNameChange");
 	}
@@ -141,13 +138,13 @@ public class BenchmarkTestsTargetDelta {
 		tool.initiateSynchronisationDialogue();
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
-		tool.performAndPropagateTargetEdit(this::createMarge);
-		tool.performAndPropagateTargetEdit(this::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 			
 		//----------------
 		configure();
-		tool.performAndPropagateTargetEdit(this::fullNameChangeOfHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfHomer);
 		assertTarget("PersonFullNameChange");
 		assertSource("MemberFullNameChange");
 	}
@@ -161,12 +158,13 @@ public class BenchmarkTestsTargetDelta {
 			
 		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(this::createHomer);
-		tool.performAndPropagateTargetEdit(this::createMarge);
-		tool.performAndPropagateTargetEdit(this::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 			
 		//---------------------- 
-		tool.performAndPropagateTargetEdit(this::deleteHomer);
+		configure();
+		tool.performAndPropagateTargetEdit(helperPerson::deleteMarge);
 		assertTarget("PersonDelete");
 		assertSource("MemberDelete");
 	}
@@ -185,49 +183,5 @@ public class BenchmarkTestsTargetDelta {
 			return c;
 		}
 		
-		private void createHomer(PersonRegister eObject) {
-			Person person = PersonsFactory.eINSTANCE.createMale();
-			person.setName("Simpson, Homer");
-			eObject.getPersons().add(person);
-		}
 		
-		private void birthdayChangeOfHomer(PersonRegister eObject) {
-			Person person = eObject.getPersons().get(0);
-			Calendar cal = Calendar.getInstance();
-			cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
-			Date date = cal.getTime();
-			person.setBirthday(date);
-		}
-		
-		private void createMarge(PersonRegister register) {
-			Person person = PersonsFactory.eINSTANCE.createFemale();
-			person.setName("Simpson, Marge");
-			register.getPersons().add(person);
-		}
-		
-		private void createLisa(PersonRegister register){
-			Person person = PersonsFactory.eINSTANCE.createFemale();
-			person.setName("Simpson, Lisa");
-			register.getPersons().add(person);
-		}
-		
-		private void firstNameChangeOfHomer(PersonRegister eObject) {
-			Person person = eObject.getPersons().get(0);
-			person.setName("Simpson, HomerX");
-		}
-		
-		private void familyNameChangeOfLisa(PersonRegister register) {
-			Person person = register.getPersons().get(1);
-			person.setName("SimpsonS, Lisa");
-		}
-		
-		private void fullNameChangeOfHomer(PersonRegister register) {
-			Person person = register.getPersons().get(0);
-			person.setName("SimpsonS, HomerX");
-		}
-		
-		private void deleteHomer(PersonRegister register) {
-			Person person = register.getPersons().get(0);
-			EcoreUtil.delete(person);
-		}
 }
