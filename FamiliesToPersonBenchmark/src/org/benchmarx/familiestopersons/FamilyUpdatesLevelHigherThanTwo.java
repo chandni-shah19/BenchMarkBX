@@ -73,7 +73,7 @@ public class FamilyUpdatesLevelHigherThanTwo {
 		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilySimpson);
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyBachchan);
 		assertSource("DeleteFamily");
 		assertTarget("DeleteAllPerson");		
 	}

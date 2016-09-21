@@ -98,7 +98,7 @@ public class FamilyUpdatesLevelTwo {
 		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherAmitabh);
 		assertSource("DeleteFamilyMember");
 		assertTarget("DeletePerson");
 	}

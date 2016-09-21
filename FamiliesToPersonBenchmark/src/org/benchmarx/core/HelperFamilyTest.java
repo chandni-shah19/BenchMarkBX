@@ -33,6 +33,8 @@ public class HelperFamilyTest {
 	
 	public void createFatherHomer(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
 		familyFather.setName("Homer");
@@ -40,6 +42,7 @@ public class HelperFamilyTest {
 	
 	public void createSimpsonFamilyMembers(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
 		
 		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setMother(familyMother);
@@ -61,17 +64,22 @@ public class HelperFamilyTest {
 	
 	public void familyNameSimpsonChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
 		family.setName("SimpsonS");
 	}
 	
 	public void familyFatherHomerNameChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
 		family.getFather().setName("HomerX");
 		
 	}
 	
 	public void familyFatherHomerRoleChangeToSon(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
 		
 		String familySonName = family.getSons().get(0).getName();
 		String familyFatherName = family.getFather().getName();
@@ -105,6 +113,7 @@ public class HelperFamilyTest {
 	public void moveDaughterToMotherOfNewFamily(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		assertTrue(family.getName().equals("Bachchan"));
+		
 		FamilyMember familyDaughter = family.getDaughters().get(0);
 		assertTrue(familyDaughter.getName().equals("Shweta"));
 		
@@ -116,13 +125,17 @@ public class HelperFamilyTest {
 		newFamily.setMother(familyDaughter);
 	}
 	
-	public void deleteFamilyFatherHomer(FamilyRegister eObject){
+	public void deleteFamilyFatherAmitabh(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
+		assertTrue(family.getName().equals("Bachchan"));
+		
 		EcoreUtil.delete(family.getFather());
 	}
 	
-	public void deleteFamilySimpson(FamilyRegister eObject){
+	public void deleteFamilyBachchan(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
+		assertTrue(family.getName().equals("Bachchan"));
+		
 		EcoreUtil.delete(family);
 	}
 	

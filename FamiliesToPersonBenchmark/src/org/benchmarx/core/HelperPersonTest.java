@@ -1,5 +1,7 @@
 package org.benchmarx.core;
 
+import static org.junit.Assert.assertTrue;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -25,6 +27,8 @@ public class HelperPersonTest {
 	
 	public void birthdayChangeOfHomer(PersonRegister eObject) {
 		Person person = eObject.getPersons().get(0);
+		assertTrue(person.getName().equals("Simpson, Homer"));
+		
 		Calendar cal = Calendar.getInstance();
 		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
 		Date date = cal.getTime();
@@ -45,21 +49,29 @@ public class HelperPersonTest {
 	
 	public void firstNameChangeOfHomer(PersonRegister eObject) {
 		Person person = eObject.getPersons().get(0);
+		assertTrue(person.getName().equals("Simpson, Homer"));
+		
 		person.setName("Simpson, HomerX");
 	}
 	
 	public void familyNameChangeOfLisa(PersonRegister register) {
-		Person person = register.getPersons().get(1);
+		Person person = register.getPersons().get(2);
+		assertTrue(person.getName().equals("Simpson, Lisa"));
+		
 		person.setName("SimpsonS, Lisa");
 	}
 	
 	public void fullNameChangeOfHomer(PersonRegister register) {
 		Person person = register.getPersons().get(0);
+		assertTrue(person.getName().equals("Simpson, Homer"));
+		
 		person.setName("SimpsonS, HomerX");
 	}
 	
 	public void deleteMarge(PersonRegister register) {
 		Person person = register.getPersons().get(1);
+		assertTrue(person.getName().equals("Simpson, Marge"));
+		
 		EcoreUtil.delete(person);
 	}
 }
