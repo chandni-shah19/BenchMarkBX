@@ -11,5 +11,5 @@
   <persons xsi:type="Persons:Female"
       name="Simpson, Marge"/>
   <persons xsi:type="Persons:Female"
-      name="SimpsonS, Lisa"/>
+      name="Jetson, Lisa"/>
 </Persons:PersonRegister>

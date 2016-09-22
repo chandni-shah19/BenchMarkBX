@@ -121,6 +121,30 @@ public class PersonUpdatesLevelOne {
 		assertSource("oneFamilyWithOneFamilyMember");
 	}
 	
+	/**
+	 * Test for changing the person's family name.
+	 * Expect the person has to be associated with another family as the family name does not fit anymore.
+	 * with decisions: if family name already exist, then prefer to add in to existing family.
+	 */
+	@Test
+	public void testNameChangeFamily() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+		tool.performAndPropagateTargetEdit(helperPerson::createBart);
+		
+		tool.performAndPropagateTargetEdit(helperPerson::createAmitabh);
+		tool.performAndPropagateTargetEdit(helperPerson::createJaya);
+		tool.performAndPropagateTargetEdit(helperPerson::createAbhishek);
+		tool.performAndPropagateTargetEdit(helperPerson::createShweta);
+		
+		//--------------------------
+		tool.performAndPropagateTargetEdit((helperPerson::familyNameChangeShweta));
+		
+	}
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
 	}

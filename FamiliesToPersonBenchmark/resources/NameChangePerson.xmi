@@ -6,13 +6,13 @@
     xmlns:Persons="platform:/plugin/Persons/model/Persons.ecore"
     xsi:schemaLocation="platform:/plugin/Persons/model/Persons.ecore ../../Persons/model/Persons.ecore">
   <persons xsi:type="Persons:Male"
-      name="SimpsonS, Homer"/>
+      name="Jetson, Homer"/>
   <persons xsi:type="Persons:Female"
-      name="SimpsonS, Lisa"/>
+      name="Jetson, Lisa"/>
   <persons xsi:type="Persons:Female"
-      name="SimpsonS, Marge"/>
+      name="Jetson, Marge"/>
   <persons xsi:type="Persons:Male"
-      name="SimpsonS, Bart"/>
+      name="Jetson, Bart"/>
   <persons xsi:type="Persons:Female"
-      name="SimpsonS, Maggie"/>
+      name="Jetson, Maggie"/>
 </Persons:PersonRegister>

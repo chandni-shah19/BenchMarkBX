@@ -62,14 +62,14 @@ public class HelperFamilyTest {
 		Family family = eObject.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
 		
-		family.setName("SimpsonS");
+		family.setName("Jetson");
 	}
 	
 	public void familyFatherHomerNameChange(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
 		
-		family.getFather().setName("HomerX");
+		family.getFather().setName("Jay");
 		
 	}
 	

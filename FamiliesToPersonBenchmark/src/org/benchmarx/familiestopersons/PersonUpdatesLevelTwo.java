@@ -88,6 +88,31 @@ public class PersonUpdatesLevelTwo {
 		assertSource("MemberDelete");
 	}
 	
+	/**
+	 * Test for creating the multiple person.
+	 * Expect the same result as {#testCreateMultiPerson()}.
+	 */
+	@Test
+	public void testMultiPersonWithDiffFamilyNames() {
+		tool.initiateSynchronisationDialogue();
+		configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				   .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+			
+		//----------------
+		tool.performAndPropagateTargetEdit(helperPerson::createBart);
+		
+		tool.performAndPropagateTargetEdit(helperPerson::createAmitabh);
+		tool.performAndPropagateTargetEdit(helperPerson::createJaya);
+		tool.performAndPropagateTargetEdit(helperPerson::createAbhishek);
+		tool.performAndPropagateTargetEdit(helperPerson::createShweta);
+			
+		assertTarget("PersonsNewMulti");
+		assertSource("familyMulti");
+	}
+	
 	private void assertSource(String path){
 		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
 	}

@@ -58,14 +58,14 @@ public class HelperPersonTest {
 		Person person = register.getPersons().get(2);
 		assertTrue(person.getName().equals("Simpson, Lisa"));
 		
-		person.setName("SimpsonS, Lisa");
+		person.setName("Jetson, Lisa");
 	}
 	
 	public void fullNameChangeOfHomer(PersonRegister register) {
 		Person person = register.getPersons().get(0);
 		assertTrue(person.getName().equals("Simpson, Homer"));
 		
-		person.setName("SimpsonS, HomerX");
+		person.setName("Jetson, Elroy");
 	}
 	
 	public void deleteMarge(PersonRegister register) {
@@ -73,5 +73,42 @@ public class HelperPersonTest {
 		assertTrue(person.getName().equals("Simpson, Marge"));
 		
 		EcoreUtil.delete(person);
+	}
+	
+	public void createBart(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Simpson, Bart");
+		register.getPersons().add(person);
+	}
+	
+	public void createAmitabh(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Bachchan, Amitabh");
+		register.getPersons().add(person);		
+	}
+	
+	public void createJaya(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createFemale();
+		person.setName("Bachchan, Jaya");
+		register.getPersons().add(person);
+	}
+
+	public void createAbhishek(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Bachchan, Abhishek");
+		register.getPersons().add(person);	
+	}
+	
+	public void createShweta(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createFemale();
+		person.setName("Bachchan, Shweta");
+		register.getPersons().add(person);
+	}
+	
+	public void familyNameChangeShweta(PersonRegister register) {
+		Person person = register.getPersons().get(7);
+		assertTrue(person.getName().equals("Bachchan, Shweta"));
+		
+		person.setName("Nanda, Shweta");
 	}
 }
