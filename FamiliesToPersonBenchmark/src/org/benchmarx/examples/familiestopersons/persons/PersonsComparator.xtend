@@ -1,4 +1,4 @@
-package org.benchmarx.familiestopersons
+package org.benchmarx.examples.familiestopersons.persons
 
 import Persons.Male
 import Persons.Person
@@ -6,15 +6,14 @@ import Persons.PersonRegister
 import java.util.ArrayList
 import java.util.List
 import org.benchmarx.core.Comparator
-import org.benchmarx.core.NormaliserPersonModel
 
 import static org.junit.Assert.*
 
-class PersonsComparator implements Comparator<PersonRegister>{
-	NormaliserPersonModel comparator
+public class PersonsComparator implements Comparator<PersonRegister>{
+	PersonNormaliser comparator
 	
 	override compare(PersonRegister expected, PersonRegister actual) {
-		comparator = new NormaliserPersonModel();
+		comparator = new PersonNormaliser();
 		assertEquals(personsToString(expected), personsToString(actual))
 	}
 	
@@ -22,7 +21,7 @@ class PersonsComparator implements Comparator<PersonRegister>{
 		return '''
 		Persons	{
 			«val List<Person> sortedList = new ArrayList<Person>(persons.persons)»
-			«comparator.Normalize(sortedList)»
+			«comparator.normalize(sortedList)»
 			«FOR p: sortedList SEPARATOR "\n"»
 				«IF p instanceof Male»
 				 Male: «p.name»

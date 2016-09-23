@@ -1,4 +1,4 @@
-package org.benchmarx.familiestopersons;
+package org.benchmarx.examples.familiestopersons;
 
 public enum Decisions {
 	PREFER_CREATING_PARENT_TO_CHILD,

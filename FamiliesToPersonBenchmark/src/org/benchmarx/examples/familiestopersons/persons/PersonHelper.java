@@ -1,32 +1,26 @@
-package org.benchmarx.core;
+package org.benchmarx.examples.familiestopersons.persons;
 
 import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import org.benchmarx.familiestopersons.Decisions;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
-import Families.FamilyRegister;
 import Persons.Person;
 import Persons.PersonRegister;
 import Persons.PersonsFactory;
 
-public class HelperPersonTest {
+public class PersonHelper {
 	
-	public Comparator<PersonRegister> personsComparator;
-	public BenchmarxUtil util;
-	public BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
-	
-	public void createHomer(PersonRegister eObject) {
+	public void createHomer(PersonRegister register) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Homer");
-		eObject.getPersons().add(person);
+		register.getPersons().add(person);
 	}
 	
-	public void birthdayChangeOfHomer(PersonRegister eObject) {
-		Person person = eObject.getPersons().get(0);
+	public void birthdayChangeOfHomer(PersonRegister register) {
+		Person person = register.getPersons().get(0);
 		assertTrue(person.getName().equals("Simpson, Homer"));
 		
 		Calendar cal = Calendar.getInstance();
@@ -47,8 +41,8 @@ public class HelperPersonTest {
 		register.getPersons().add(person);
 	}
 	
-	public void firstNameChangeOfHomer(PersonRegister eObject) {
-		Person person = eObject.getPersons().get(0);
+	public void firstNameChangeOfHomer(PersonRegister register) {
+		Person person = register.getPersons().get(0);
 		assertTrue(person.getName().equals("Simpson, Homer"));
 		
 		person.setName("Simpson, HomerX");

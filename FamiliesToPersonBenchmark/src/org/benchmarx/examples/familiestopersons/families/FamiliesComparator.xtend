@@ -1,19 +1,18 @@
-package org.benchmarx.familiestopersons
+package org.benchmarx.examples.familiestopersons.families
 
+import Families.Family
 import Families.FamilyRegister
+import java.util.ArrayList
+import java.util.List
 import org.benchmarx.core.Comparator
-import org.benchmarx.core.NormaliserFamilyModel
 
 import static org.junit.Assert.*
-import Families.Family
-import java.util.List
-import java.util.ArrayList
 
-class FamiliesComparator implements Comparator<FamilyRegister> {
-	NormaliserFamilyModel comparator
+public class FamiliesComparator implements Comparator<FamilyRegister> {
+	FamilyNormaliser comparator
 	
 	override compare(FamilyRegister expected, FamilyRegister actual) {
-		comparator = new NormaliserFamilyModel();
+		comparator = new FamilyNormaliser();
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
@@ -21,7 +20,7 @@ class FamiliesComparator implements Comparator<FamilyRegister> {
 		return '''
 		Families {
 			«val List<Family> sortedList = new ArrayList<Family>(families.families)»
-			«comparator.Normalize(sortedList)»
+			«comparator.normalize(sortedList)»
 			«FOR f : sortedList SEPARATOR "\n"»
 			Family «f.name»
 			  Father: «IF f.father != null»«f.father.name»«ENDIF»

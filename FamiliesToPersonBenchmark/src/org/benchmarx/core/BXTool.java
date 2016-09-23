@@ -2,7 +2,21 @@ package org.benchmarx.core;
 
 import java.util.function.Consumer;
 
-public interface BXTool<S, T, C> {
+/**
+ * This interface describes the expected functionality of a "BXTool" from the
+ * perspective of the benchmarx.
+ * 
+ * @author aanjorin
+ *
+ * @param <S>
+ *            The root type of all source models
+ * @param <T>
+ *            The root type of all target models
+ * @param <D>
+ *            Represents runtime decisions that can be requested by the tool at
+ *            runtime.
+ **/
+public interface BXTool<S, T, D> {
 
 	public void initiateSynchronisationDialogue();
 
@@ -13,6 +27,6 @@ public interface BXTool<S, T, C> {
 	public S getSourceModel();
 
 	public T getTargetModel();
-	
-	public void setConfigurator(C configurator);
+
+	public void setConfigurator(Configurator<D> configurator);
 }

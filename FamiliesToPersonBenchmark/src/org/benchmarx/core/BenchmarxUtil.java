@@ -8,10 +8,20 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-public class BenchmarxUtil {
+public class BenchmarxUtil<S,T, D> {
 
+	private Comparator<S> src;
+	private Comparator<T> trg;
+	private BXTool<S, T, D> tool;
+	
+	public BenchmarxUtil(Comparator<S> src, Comparator<T> trg, BXTool<S,T,D> tool){
+		this.src = src;
+		this.trg = trg;
+		this.tool = tool;
+	}
+	
 	@SuppressWarnings("unchecked")
-	public <T> T loadExpectedModel(String name) {
+	private <M> M loadExpectedModel(String name) {
 		ResourceSet resourceSet = new ResourceSetImpl();
 		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 	      
@@ -21,7 +31,20 @@ public class BenchmarxUtil {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return (T)resource.getContents().get(0);
+		return (M)resource.getContents().get(0);
 	}
 
+	public void assertSource(String path){
+		src.compare(loadExpectedModel(path), tool.getSourceModel());
+	}
+	
+	public void assertTarget(String path){
+		trg.compare(loadExpectedModel(path), tool.getTargetModel());
+	}
+	
+	public Configurator<D> configure() {
+		Configurator<D> c = new Configurator<>();
+		tool.setConfigurator(c);
+		return c;
+	}
 }

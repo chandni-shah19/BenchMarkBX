@@ -1,11 +1,13 @@
-package org.benchmarx.familiestopersons;
+package org.benchmarx.examples.familiestopersons.families.levels;
 
 import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
-import org.benchmarx.core.Configurator;
-import org.benchmarx.core.HelperFamilyTest;
+import org.benchmarx.examples.familiestopersons.Decisions;
+import org.benchmarx.examples.familiestopersons.families.FamiliesComparator;
+import org.benchmarx.examples.familiestopersons.families.FamilyHelper;
+import org.benchmarx.examples.familiestopersons.persons.PersonsComparator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,19 +19,19 @@ import Persons.PersonRegister;
  */
 public class FamilyUpdatesLevelHigherThanTwo {
 
-	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
+	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
-	private BenchmarxUtil util;
-	private HelperFamilyTest helperFamily;
+	private BenchmarxUtil<FamilyRegister, PersonRegister, Decisions> util;
+	private FamilyHelper helperFamily;
 
 	@Before
 	public void initialise() {
 		tool = new EMoflon();
-		util = new BenchmarxUtil();
 		familiesComparator = new FamiliesComparator();
 		personsComparator = new PersonsComparator();
-		helperFamily = new HelperFamilyTest();
+		helperFamily = new FamilyHelper();
+		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
 	}
 
 	/**
@@ -45,8 +47,8 @@ public class FamilyUpdatesLevelHigherThanTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		assertSource("FamilyWithMultiFamilyMember");
-		assertTarget("PersonWithMultiMember");
+		util.assertSource("FamilyWithMultiFamilyMember");
+		util.assertTarget("PersonWithMultiMember");
 	}
 	
 	/**
@@ -59,8 +61,8 @@ public class FamilyUpdatesLevelHigherThanTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
-		assertSource("NewFamilyWithMembers");
-		assertTarget("PersonsMulti");
+		util.assertSource("NewFamilyWithMembers");
+		util.assertTarget("PersonsMulti");
 	}
 	
 	/**
@@ -77,17 +79,7 @@ public class FamilyUpdatesLevelHigherThanTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyBachchan);
-		assertSource("DeleteFamily");
-		assertTarget("DeleteAllPerson");		
+		util.assertSource("DeleteFamily");
+		util.assertTarget("DeleteAllPerson");		
 	}
-	
-	
-	private void assertSource(String path){
-		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
-	}
-	
-	private void assertTarget(String path){
-		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
-	}
-
 }

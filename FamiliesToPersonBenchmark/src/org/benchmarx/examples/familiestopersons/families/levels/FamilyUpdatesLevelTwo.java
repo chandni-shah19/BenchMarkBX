@@ -1,11 +1,13 @@
-package org.benchmarx.familiestopersons;
+package org.benchmarx.examples.familiestopersons.families.levels;
 
 import org.benchmarkx.emoflon.EMoflon;
 import org.benchmarx.core.BXTool;
 import org.benchmarx.core.BenchmarxUtil;
 import org.benchmarx.core.Comparator;
-import org.benchmarx.core.Configurator;
-import org.benchmarx.core.HelperFamilyTest;
+import org.benchmarx.examples.familiestopersons.Decisions;
+import org.benchmarx.examples.familiestopersons.families.FamiliesComparator;
+import org.benchmarx.examples.familiestopersons.families.FamilyHelper;
+import org.benchmarx.examples.familiestopersons.persons.PersonsComparator;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,19 +19,19 @@ import Persons.PersonRegister;
  */
 public class FamilyUpdatesLevelTwo {
 
-	private BXTool<FamilyRegister, PersonRegister, Configurator<Decisions>> tool;
+	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
-	private BenchmarxUtil util;
-	private HelperFamilyTest helperFamily;
+	private BenchmarxUtil<FamilyRegister, PersonRegister, Decisions> util;
+	private FamilyHelper helperFamily;
 
 	@Before
 	public void initialise() {
 		tool = new EMoflon();
-		util = new BenchmarxUtil();
 		familiesComparator = new FamiliesComparator();
 		personsComparator = new PersonsComparator();
-		helperFamily = new HelperFamilyTest();
+		helperFamily = new FamilyHelper();
+		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
 	}
 
 	/**
@@ -41,8 +43,8 @@ public class FamilyUpdatesLevelTwo {
 		tool.initiateSynchronisationDialogue();
 
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		assertSource("oneFamily");
-		assertTarget("personsForOneFamily");
+		util.assertSource("oneFamily");
+		util.assertTarget("personsForOneFamily");
 	}	
 	
 	
@@ -59,8 +61,8 @@ public class FamilyUpdatesLevelTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		assertSource("oneFamilyWithOneFamilyMember");
-		assertTarget("PersonWithOneMaleMember");
+		util.assertSource("oneFamilyWithOneFamilyMember");
+		util.assertTarget("PersonWithOneMaleMember");
 	}
 	
 	/**
@@ -77,8 +79,8 @@ public class FamilyUpdatesLevelTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToSon);
-		assertSource("RoleChangeFamilyMember");
-		assertTarget("NoChangePerson");
+		util.assertSource("RoleChangeFamilyMember");
+		util.assertTarget("NoChangePerson");
 	}
 	
 	/**
@@ -92,8 +94,8 @@ public class FamilyUpdatesLevelTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::moveDaughterToMotherOfNewFamily);
-		assertSource("FamilyMemberWithDiffFamily");
-		assertTarget("PersonsFirstNameChange");
+		util.assertSource("FamilyMemberWithDiffFamily");
+		util.assertTarget("PersonsFirstNameChange");
 	}
 
 	/**
@@ -110,18 +112,7 @@ public class FamilyUpdatesLevelTwo {
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherAmitabh);
-		assertSource("DeleteFamilyMember");
-		assertTarget("DeletePerson");
+		util.assertSource("DeleteFamilyMember");
+		util.assertTarget("DeletePerson");
 	}
-	
-	
-	private void assertSource(String path){
-		familiesComparator.compare(util.loadExpectedModel(path), tool.getSourceModel());
-	}
-	
-	
-	private void assertTarget(String path){
-		personsComparator.compare(util.loadExpectedModel(path), tool.getTargetModel());
-	}
-
 }

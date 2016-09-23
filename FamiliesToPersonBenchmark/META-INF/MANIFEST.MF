@@ -5,7 +5,7 @@ Bundle-SymbolicName: FamiliesToPersonBenchmark
 Bundle-Version: 1.0.0.qualifier
 Export-Package: org.benchmarkx.emoflon,
  org.benchmarx.core,
- org.benchmarx.familiestopersons
+ org.benchmarx.examples.familiestopersons
 Require-Bundle: org.eclipse.emf.ecore,
  Families,
  Persons,
