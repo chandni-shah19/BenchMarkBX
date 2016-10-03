@@ -91,6 +91,27 @@ public class PersonUpdatesLevelTwo {
 	}
 	
 	/**
+	 * Test for deleting the first person.
+	 * Expect the deletion of the corresponding family member in the Families Model.
+	 */
+	@Test
+	public void testDeleteFirstPerson() {
+		tool.initiateSynchronisationDialogue();
+			
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+				        .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+			
+		//---------------------- 
+		util.configure();
+		tool.performAndPropagateTargetEdit(helperPerson::deleteHomer);
+		util.assertTarget("PersonFirstDelete");
+		util.assertSource("MemberFirstDelete");
+	}
+	
+	/**
 	 * Test for creating the multiple person.
 	 * Expect the same result as {#testCreateMultiPerson()}.
 	 */

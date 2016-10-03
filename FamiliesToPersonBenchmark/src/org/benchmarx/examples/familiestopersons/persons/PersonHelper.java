@@ -69,6 +69,13 @@ public class PersonHelper {
 		EcoreUtil.delete(person);
 	}
 	
+	public void deleteHomer(PersonRegister register) {
+		Person person = register.getPersons().get(0);
+		assertTrue(person.getName().equals("Simpson, Homer"));
+		
+		EcoreUtil.delete(person);
+	}
+	
 	public void createBart(PersonRegister register) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Bart");
