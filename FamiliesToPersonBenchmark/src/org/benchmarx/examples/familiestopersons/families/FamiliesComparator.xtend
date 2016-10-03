@@ -7,12 +7,15 @@ import java.util.List
 import org.benchmarx.core.Comparator
 
 import static org.junit.Assert.*
+import Families.FamilyMember
 
 public class FamiliesComparator implements Comparator<FamilyRegister> {
 	FamilyNormaliser comparator
+	FamilyMemberNormaliser familyMemberComparator
 	
 	override compare(FamilyRegister expected, FamilyRegister actual) {
 		comparator = new FamilyNormaliser();
+		familyMemberComparator = new FamilyMemberNormaliser();
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
@@ -25,10 +28,14 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 			Family «f.name»
 			  Father: «IF f.father != null»«f.father.name»«ENDIF»
 			  Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
-				«FOR f_Son : f.sons SEPARATOR "\n"»
+			«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
+			«familyMemberComparator.normalize(sortedListOfSon)»	
+				«FOR f_Son : sortedListOfSon SEPARATOR "\n"»
 				  Son «f_Son.name»
 				«ENDFOR»
-				«FOR f_Daughter : f.daughters SEPARATOR "\n"»
+			«val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
+			«familyMemberComparator.normalize(sortedListOfDaughter)»	
+				«FOR f_Daughter : sortedListOfDaughter SEPARATOR "\n"»
 				  Daughter «f_Daughter.name»
 				«ENDFOR»
 			«ENDFOR»
