@@ -1,0 +1,45 @@
+#using AtHomeToWeb.*
+#using AttrCondDefLibrary.*
+
+#rule AddFileAndWebElementRule #with AtHomeToWeb
+
+#source { 
+	dir:Directory {
+		++ -files->file
+	}
+	
+	file:File 	
+	
+	!oldDir:Directory {
+		-files->file
+	} 
+}
+
+#target {
+	web:Web {
+		++ -elements->webElt
+	}
+	
+	webElt:WebElement
+	
+	!oldWeb:Web {
+		-elements->webElt
+	}
+}
+
+#correspondence {
+	d2w:DirectoryToWeb {
+		#src->dir
+		#trg->web
+	}
+	
+	f2w:FileToWebElt {
+		#src->file
+		#trg->webElt
+	}
+}
+
+
+#attributeConditions {
+	
+}

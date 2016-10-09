@@ -1,0 +1,11 @@
+
+partial class FileImpl {
+
+
+
+@model bar () <--
+
+		System.out.println("fasdfasdf");
+-->
+
+}

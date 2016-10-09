@@ -1,0 +1,20 @@
+#using AtHomeToWeb.*
+#using AttrCondDefLibrary.*
+
+#rule RootDirToWebRule #with AtHomeToWeb
+
+#source { 
+	++ rootDir:Directory
+}
+
+#target {
+	++ web:Web	
+}
+
+#correspondence {
+	++ r2w:DirectoryToWeb {
+		#src->rootDir
+		#trg->web
+	}
+}
+

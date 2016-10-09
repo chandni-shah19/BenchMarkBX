@@ -1,0 +1,24 @@
+#using AtHomeToWeb.*
+#using AttrCondDefLibrary.*
+
+#rule FileToWebElementRule #with AtHomeToWeb
+
+#source { 
+	++ file:File 	
+}
+
+#target {
+	++ webElt:WebElement
+}
+
+#correspondence {
+	++ f2w:FileToWebElt {
+		#src->file
+		#trg->webElt
+	}
+}
+
+#attributeConditions {
+	eq(file.picture, webElt.picture)
+	setDefaultString(file.name, "???")
+}
