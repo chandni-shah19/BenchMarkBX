@@ -3,8 +3,8 @@ import java.util.Collection;
 import java.util.function.Consumer;
 
 import org.apache.log4j.BasicConfigurator;
-import org.benchmarx.core.BXTool;
-import org.benchmarx.core.Configurator;
+import org.benchmarx.BXTool;
+import org.benchmarx.Configurator;
 import org.benchmarx.examples.familiestopersons.Decisions;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
