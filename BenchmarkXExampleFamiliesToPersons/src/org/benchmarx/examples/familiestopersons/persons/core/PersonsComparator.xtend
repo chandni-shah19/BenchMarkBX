@@ -5,7 +5,7 @@ import Persons.Person
 import Persons.PersonRegister
 import java.util.ArrayList
 import java.util.List
-import org.benchmarx.core.Comparator
+import org.benchmarx.Comparator
 
 import static org.junit.Assert.*
 

@@ -4,7 +4,7 @@ import Families.Family
 import Families.FamilyRegister
 import java.util.ArrayList
 import java.util.List
-import org.benchmarx.core.Comparator
+import org.benchmarx.Comparator
 
 import static org.junit.Assert.*
 import Families.FamilyMember
