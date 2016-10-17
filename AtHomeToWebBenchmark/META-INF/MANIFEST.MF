@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: AtHomeToWebBenchmark
-Bundle-SymbolicName: AtHomeToWebBenchmark
+Bundle-SymbolicName: BenchmarkXExampleAtHomeToWeb
 Bundle-Version: 1.0.0.qualifier
 Export-Package: org.benchmarkx.emoflon.AtHomeToWeb
 Require-Bundle: org.eclipse.emf.ecore;bundle-version="2.11.2",
