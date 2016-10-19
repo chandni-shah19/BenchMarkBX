@@ -1,10 +1,10 @@
-package org.benchmarx.examples.familiestopersons.testsuit.level1.incr.wcorrs.state.auto;
+package org.benchmarx.examples.familiestopersons.testsuit.level1.incr.wocorrs.delta.auto;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class PersonsDelta {
+public class PersonsDelta__IncrWocDelAu {
 
 	@Test
 	public void test() {
