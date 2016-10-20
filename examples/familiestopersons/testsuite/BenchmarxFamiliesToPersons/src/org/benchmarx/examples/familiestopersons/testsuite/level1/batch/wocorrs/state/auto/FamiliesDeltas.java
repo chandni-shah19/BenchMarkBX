@@ -69,7 +69,7 @@ public class FamiliesDeltas {
 	 * Expect the creation of new male person in the persons model, with full name consisting of the first name and family name of the associated family member.
 	 */
 	@Test
-	public void testCreateFamilyMember() // WoCorr/auto/state
+	public void testCreateFamilyMember()
 	{
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);

@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.delta.config;
+package org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.state.config;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.BenchmarxUtil;
@@ -14,7 +14,7 @@ import org.junit.Test;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-public class FamiliesDelta_IncrWocDelCon {
+public class FamiliesDeltas {
 	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
@@ -30,7 +30,6 @@ public class FamiliesDelta_IncrWocDelCon {
 		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
 	}
 	
-	//there is no test case available with 'Configurator' for family delta 
-	// i.e. in combination with 'Config' case currently test case missing 
-	
+	// TODO:  Add tests?
+
 }

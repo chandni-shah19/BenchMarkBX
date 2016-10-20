@@ -14,7 +14,7 @@ import org.junit.Test;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-public class PersonsDelta_IncrWocDelCon {
+public class PersonsDeltas {
 
 	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
@@ -32,8 +32,8 @@ public class PersonsDelta_IncrWocDelCon {
 	}
 	
 	/**
-	 * Test for changing the person's first name.
-	 * Expected : only the first name in the Families Model has to be changed
+	 * Test for changing a person's first name.
+	 * Expected: only the first name of the corresponding member in the families model is to be changed.
 	 */
 	@Test
 	public void testFirstNameChangePerson() {
@@ -43,16 +43,67 @@ public class PersonsDelta_IncrWocDelCon {
 		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+		util.configure();
 			
 		//----------------
 		tool.performAndPropagateTargetEdit(helperPerson::firstNameChangeOfHomer);
+		//----------------
+		
 		util.assertTarget("PersonNameChange");
 		util.assertSource("MemberNameChange");
 	}
 	
 	/**
-	 * Test for deleting the person.
-	 * Expect the deletion of the corresponding family member in the Families Model.
+	 * Test for changing a person's family name.
+	 * Expect the person to be associated with another family as the family name does not fit anymore.
+	 * In this case a new family must be created.
+	 */
+	@Test
+	public void testFamilyNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		        .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+		util.configure();
+			
+		//----------------
+		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfLisa);
+		//----------------
+
+		util.assertTarget("PersonFamilyNameChange");
+		util.assertSource("MemberFamilyNameChange");
+	}
+	
+	// TODO: Add test for case where a fitting family already exists and must be used.
+	// TODO: Add test for case where a fitting family already exists but creating a new family is preferred.
+	
+	/**
+	 * Test for changing a person's full name.
+	 * Expect the same behaviour as {@#testFamilyNameChangePerson} {@#testFirstNameChangePerson()}
+	 */
+	@Test
+	public void testFullNameChangePerson() {
+		tool.initiateSynchronisationDialogue();
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+		   		        .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
+		util.configure();
+			
+		//----------------
+		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfHomer);
+		//----------------
+		
+		util.assertTarget("PersonFullNameChange");
+		util.assertSource("MemberFullNameChange");
+	}	
+	
+	/**
+	 * Test for deleting a person.
+	 * Expect the deletion of the corresponding family member in the families model.
 	 */
 	@Test
 	public void testDeletePerson() {
@@ -63,54 +114,15 @@ public class PersonsDelta_IncrWocDelCon {
 		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
-			
-		//---------------------- 
 		util.configure();
+		
+		//---------------------- 
 		tool.performAndPropagateTargetEdit(helperPerson::deleteMarge);
+		//---------------------- 
+		
 		util.assertTarget("PersonDelete");
 		util.assertSource("MemberDelete");
 	}
 	
-	/**
-	 * Test for changing the person's full name.
-	 * Expect the same behavior as {@#testFamilyNameChangePerson} {@#testFirstNameChangePerson()}
-	 */
-	@Test
-	public void testFullNameChangePerson() {
-		tool.initiateSynchronisationDialogue();
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-		   		        .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
-		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
-		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
-			
-		//----------------
-		util.configure();
-		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfHomer);
-		util.assertTarget("PersonFullNameChange");
-		util.assertSource("MemberFullNameChange");
-	}
-	
-	/**
-	 * Test for changing the person's family name.
-	 * Expect the person has to be associated with another family as the family name does not fit anymore.
-	 * with decisions: if family name already exist, then prefer to add in to existing family.
-	 */
-	@Test
-	public void testFamilyNameChangePerson() {
-		tool.initiateSynchronisationDialogue();
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-		   		        .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
-		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
-		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
-			
-		//----------------
-		util.configure();
-		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfLisa);
-		util.assertTarget("PersonFamilyNameChange");
-		util.assertSource("MemberFamilyNameChange");
-	}
-	
-
+	// TODO: Add test where the first created person is deleted (so delete Homer instead of Marge above)
 }
