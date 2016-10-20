@@ -11,7 +11,10 @@
         name="HomerX"/>
     <mother
         name="Marge"/>
+    <sons name="Bart"/>
     <daughters
         name="Lisa"/>
+    <daughters
+        name="Maggie"/>
   </families>
 </Families:FamilyRegister>

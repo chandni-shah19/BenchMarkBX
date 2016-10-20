@@ -16,29 +16,31 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 	override compare(FamilyRegister expected, FamilyRegister actual) {
 		comparator = new FamilyNormaliser();
 		familyMemberComparator = new FamilyMemberNormaliser();
+		
+		assertTrue(familyToString(expected).startsWith("Families"))
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
 	def familyToString(FamilyRegister families) {
 		return '''
 		Families {
-			«val List<Family> sortedList = new ArrayList<Family>(families.families)»
-			«comparator.normalize(sortedList)»
-			«FOR f : sortedList SEPARATOR "\n"»
-			Family «f.name»
-			  Father: «IF f.father != null»«f.father.name»«ENDIF»
-			  Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
-			«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
-			«familyMemberComparator.normalize(sortedListOfSon)»	
-				«FOR f_Son : sortedListOfSon SEPARATOR "\n"»
-				  Son «f_Son.name»
-				«ENDFOR»
-			«val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
-			«familyMemberComparator.normalize(sortedListOfDaughter)»	
-				«FOR f_Daughter : sortedListOfDaughter SEPARATOR "\n"»
-				  Daughter «f_Daughter.name»
-				«ENDFOR»
-			«ENDFOR»
+			Â«val List<Family> sortedList = new ArrayList<Family>(families.families)Â»
+			Â«comparator.normalize(sortedList)Â»
+			Â«FOR f : sortedList SEPARATOR "\n"Â»
+			Family Â«f.nameÂ»
+			  Father: Â«IF f.father != nullÂ»Â«f.father.nameÂ»Â«ENDIFÂ»
+			  Mother: Â«IF f.mother != nullÂ»Â«f.mother.nameÂ»Â«ENDIFÂ»
+			  Â«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)Â»
+			  Â«familyMemberComparator.normalize(sortedListOfSon)Â»
+			  Â«FOR f_Son : sortedListOfSonÂ»
+			    Son: Â«f_Son.nameÂ»
+			  Â«ENDFORÂ»
+			  Â«val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)Â»
+			  Â«familyMemberComparator.normalize(sortedListOfDaughter)Â»
+			  Â«FOR f_Daughter : sortedListOfDaughterÂ»
+			    Daughter: Â«f_Daughter.nameÂ»
+			  Â«ENDFORÂ»
+			Â«ENDFORÂ»
 		}
 		'''
 	}

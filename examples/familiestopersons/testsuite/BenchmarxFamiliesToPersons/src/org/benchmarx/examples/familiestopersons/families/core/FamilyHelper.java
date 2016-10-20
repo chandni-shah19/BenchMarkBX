@@ -31,8 +31,8 @@ public class FamilyHelper {
 		assertTrue(family.getName().equals("Simpson"));
 		
 		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
-		family.setMother(familyMother);
 		familyMother.setName("Marge");
+		family.setMother(familyMother);
 		
 		FamilyMember familySon = FamiliesFactory.eINSTANCE.createFamilyMember();
 		familySon.setName("Bart");

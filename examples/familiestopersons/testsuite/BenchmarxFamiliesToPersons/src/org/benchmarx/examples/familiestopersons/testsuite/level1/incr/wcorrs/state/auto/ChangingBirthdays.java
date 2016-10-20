@@ -21,6 +21,6 @@ public class ChangingBirthdays extends FamiliesToPersonsTestCase {
 		//-----------------------------
 		
 		util.assertTarget("PersonBirthdayChange");
-		util.assertSource("oneFamilyWithOneFamilyMember");
+		util.assertSource("OneFamilyWithOneFamilyMember");
 	}
 }

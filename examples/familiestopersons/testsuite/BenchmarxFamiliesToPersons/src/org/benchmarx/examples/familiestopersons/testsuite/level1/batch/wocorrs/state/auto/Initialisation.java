@@ -16,7 +16,7 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		//------------
 		
-		util.assertSource("rootElementFamilies");
-		util.assertTarget("rootElementPersons");
+		util.assertSource("RootElementFamilies");
+		util.assertTarget("RootElementPersons");
 	}
 }

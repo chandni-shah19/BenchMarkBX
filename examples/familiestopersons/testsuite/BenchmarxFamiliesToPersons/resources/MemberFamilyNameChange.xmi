@@ -11,6 +11,9 @@
         name="Homer"/>
     <mother
         name="Marge"/>
+    <sons name="Bart"/>
+    <daughters
+        name="Maggie"/>
   </families>
   <families
       name="Jetson">
