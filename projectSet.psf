@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<psf version="2.0">
+<provider id="org.eclipse.egit.core.GitProvider">
+<project reference="1.0,https://github.com/chandni-shah19/BenchMarkBX.git,master,core/Benchmarx"/>
+<project reference="1.0,https://github.com/chandni-shah19/BenchMarkBX.git,master,examples/familiestopersons/testsuite/BenchmarxFamiliesToPersons"/>
+<project reference="1.0,https://github.com/chandni-shah19/BenchMarkBX.git,master,examples/familiestopersons/metamodels/Families"/>
+<project reference="1.0,https://github.com/chandni-shah19/BenchMarkBX.git,master,examples/familiestopersons/implementations/emoflon/FamiliesToPersons"/>
+<project reference="1.0,https://github.com/chandni-shah19/BenchMarkBX.git,master,examples/familiestopersons/metamodels/Persons"/>
+</provider>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1476972212794_5" label="BenchmarX" name="BenchmarX">
+<item elementID="=Benchmarx" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1476972202091_4" label="CatPics" name="CatPics">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AtHome" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/OnTheWeb" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/BenchmarkXExampleAtHomeToWeb" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/AtHomeToWeb" type="4"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1476972168186_2" label="FamiliesToPersons" name="FamiliesToPersons">
+<item elementID="=Families" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=BenchmarxFamiliesToPersons" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=Persons" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=FamiliesToPersons" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+</psf>
