@@ -14,7 +14,7 @@ import org.junit.Test;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-public class PersonsDeltaLevel2_IncrWocStCon {
+public class PersonsDeltas {
 
 	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;

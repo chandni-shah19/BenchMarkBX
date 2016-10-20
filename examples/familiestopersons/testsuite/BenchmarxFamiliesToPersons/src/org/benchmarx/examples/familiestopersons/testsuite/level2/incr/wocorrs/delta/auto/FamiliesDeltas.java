@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.state.auto;
+package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.delta.auto;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.BenchmarxUtil;
@@ -9,13 +9,14 @@ import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator
 import org.benchmarx.examples.familiestopersons.families.core.FamilyHelper;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
 import org.junit.Before;
+import org.junit.Test;
 
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-import org.junit.Test;
 
-public class FamiliesDeltaLevel2_IncrWocStAu {
+public class FamiliesDeltas {
+
 	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
@@ -30,36 +31,44 @@ public class FamiliesDeltaLevel2_IncrWocStAu {
 		helperFamily = new FamilyHelper();
 		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
 	}
-
+	
 	/**
-	 * Test for creation of a multiple family members in to the existing family.
-	 * Expect the creation of multiple person either male or female associated to the family member.
+	 * Test for deletion of a single family member.
+	 * Expect the associated person to be deleted from the persons model.
 	 */
 	@Test
-	public void testCreateMultiFamilyMember()
-	{
+	public void testDeleteFamilyMember() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		util.assertSource("FamilyWithMultiFamilyMember");
-		util.assertTarget("PersonWithMultiMember");
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherAmitabh);
+		//------------
+		
+		util.assertSource("DeleteFamilyMember");
+		util.assertTarget("DeletePerson");
 	}
 	
 	/**
-	 * Test for creation of new family with family members.
-	 * Expect the creation of multiple person either male or female corresponding to the family member.
+	 * Test for deletion of an entire family with all family members.
+	 * Expected: Delete all corresponding persons in the persons model.
 	 */
-	@Test 
-	public void testNewFamilyWithMultiMembers(){
+	@Test
+	public void testDeleteFamily() {
 		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
-		util.assertSource("NewFamilyWithMembers");
-		util.assertTarget("PersonsMulti");
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyBachchan);
+		//------------
+		
+		util.assertSource("DeleteFamily");
+		util.assertTarget("DeleteAllPerson");		
 	}
-	
 }
