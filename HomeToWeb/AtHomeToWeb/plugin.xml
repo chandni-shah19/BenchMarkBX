@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.0"?><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="AtHomeToWeb.AtHomeToWebPackage" genModel="model/AtHomeToWeb.genmodel" uri="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package class="AtHomeToWeb.Rules.RulesPackage" genModel="model/AtHomeToWeb.genmodel" uri="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules"/>
-  </extension>
-</plugin>
