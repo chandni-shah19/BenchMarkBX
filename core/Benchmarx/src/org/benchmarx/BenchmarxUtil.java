@@ -1,6 +1,7 @@
 package org.benchmarx;
 
 import java.io.IOException;
+import java.util.function.Consumer;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -46,5 +47,9 @@ public class BenchmarxUtil<S,T, D> {
 		Configurator<D> c = new Configurator<>();
 		tool.setConfigurator(c);
 		return c;
+	}
+	
+	public <X> Consumer<X> execute(Consumer<X> a){
+		return a;
 	}
 }

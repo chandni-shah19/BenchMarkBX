@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.state.auto;
+package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.delta.auto;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.BenchmarxUtil;
@@ -15,6 +15,7 @@ import Families.FamilyRegister;
 import Persons.PersonRegister;
 
 public class FamiliesDeltas {
+
 	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
 	private Comparator<FamilyRegister> familiesComparator;
 	private Comparator<PersonRegister> personsComparator;
@@ -31,22 +32,42 @@ public class FamiliesDeltas {
 	}
 	
 	/**
-	 * Test for first name change of the family member.
-	 * Expect the person full name change by replacing the first name with the new one.
+	 * Test for family member moved to new family, i.e., daughter marries and is registered under a new family.
+	 * Expect the family name of person to change appropriately in the person model.
 	 */
 	@Test
-	public void testFamilyMemberNameChange()
-	{	
+	public void testFamilyMemberMovesToNewFamily() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::moveDaughterToMotherOfNewFamily);
+		//------------
+		
+		util.assertSource("FamilyMemberWithDiffFamily");
+		util.assertTarget("PersonsFirstNameChange");
+	}
+	
+	/**
+	 * Test for family member role change: here from father to son.
+	 * Expected: Nothing changes in the persons model (person remains male).
+	 */
+	@Test
+	public void testFamilyMemberRoleChange() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerNameChange);
+		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToSon);
 		//------------
 
-		util.assertSource("NameChangeFamilyMember");
-		util.assertTarget("NameChangeOfPerson");
+		util.assertSource("RoleChangeFamilyMember");
+		util.assertTarget("NoChangePerson");
 	}
 	
+	// TODO:  Test for role change from mother to daughter
+	// TODO:  Test for role change from father to mother
+	// TODO:  Test for role change from son to mother
 }

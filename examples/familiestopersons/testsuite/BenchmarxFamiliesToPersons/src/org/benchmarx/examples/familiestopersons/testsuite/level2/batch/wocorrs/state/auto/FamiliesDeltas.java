@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level1.batch.wocorrs.state.auto;
+package org.benchmarx.examples.familiestopersons.testsuite.level2.batch.wocorrs.state.auto;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.BenchmarxUtil;
@@ -32,22 +32,6 @@ public class FamiliesDeltas {
 	}
 	
 	/**
-	 * Test for agreed upon starting state.
-	 * Expect root elements of both source and target models.
-	 */
-	@Test
-	public void testInitialiseSynchronisation()
-	{
-		
-		//------------
-		tool.initiateSynchronisationDialogue();
-		//------------
-		
-		util.assertSource("rootElementFamilies");
-		util.assertTarget("rootElementPersons");
-	}
-	
-	/**
 	 * Test for creation of a single family in an empty root container.
 	 * Expected: Nothing changes in the person model.
 	 */
@@ -62,7 +46,7 @@ public class FamiliesDeltas {
 		
 		util.assertSource("oneFamily");
 		util.assertTarget("personsForOneFamily");
-	}	
+	}
 	
 	/**
 	 * Test for creation of a single family member (a father) in the only existing family.
@@ -72,10 +56,11 @@ public class FamiliesDeltas {
 	public void testCreateFamilyMember()
 	{
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		
 		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(util
+				.execute(helperFamily::createSimpsonFamily)
+				.andThen(helperFamily::createFatherHomer));
 		//------------
 		
 		util.assertSource("oneFamilyWithOneFamilyMember");

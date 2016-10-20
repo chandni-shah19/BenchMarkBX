@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
@@ -42,16 +43,20 @@ public class PersonHelper {
 	}
 	
 	public void firstNameChangeOfHomer(PersonRegister register) {
-		Person person = register.getPersons().get(0);
-		assertTrue(person.getName().equals("Simpson, Homer"));
+		Person person = register.getPersons().stream()
+				.filter(p -> p.getName().equals("Simpson, Homer"))
+				.collect(Collectors.toList())
+				.get(0);
 		
 		person.setName("Simpson, HomerX");
 	}
 	
 	public void familyNameChangeOfLisa(PersonRegister register) {
-		Person person = register.getPersons().get(2);
-		assertTrue(person.getName().equals("Simpson, Lisa"));
-		
+		Person person = register.getPersons().stream()
+				.filter(p -> p.getName().equals("Simpson, Lisa"))
+				.collect(Collectors.toList())
+				.get(0);
+				
 		person.setName("Jetson, Lisa");
 	}
 	
