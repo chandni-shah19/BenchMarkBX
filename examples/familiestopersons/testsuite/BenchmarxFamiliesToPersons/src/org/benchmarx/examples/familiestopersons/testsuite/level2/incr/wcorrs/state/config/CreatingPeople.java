@@ -4,7 +4,7 @@ import org.benchmarx.examples.familiestopersons.Decisions;
 import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
-public class PersonsDeltas extends FamiliesToPersonsTestCase {
+public class CreatingPeople extends FamiliesToPersonsTestCase {
 	
 	/**
 	 * Test for creation of a single male person.
@@ -25,6 +25,7 @@ public class PersonsDeltas extends FamiliesToPersonsTestCase {
 		util.assertSource("oneFamilyWithOneFamilyMember");
 	}
 	
+	// TODO:  Add test for different preference (so prefer child to parent)
 	// TODO: Add a test where there is already a father (so a son has to be created even though creating parents is preferred)
 	// TODO: Repeat these two tests for mothers and daughters 
 }

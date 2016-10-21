@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
@@ -14,6 +15,15 @@ import Persons.PersonsFactory;
 
 public class PersonHelper {
 	
+	private Person getFromRegister(String name, PersonRegister register) {
+		Optional<Person> person = register.getPersons().stream()
+				.filter(p -> p.getName().equals(name))
+				.findAny();
+				
+		assertTrue(person.isPresent());
+		return person.get();
+	}
+	
 	public void createHomer(PersonRegister register) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Homer");
@@ -21,8 +31,7 @@ public class PersonHelper {
 	}
 	
 	public void birthdayChangeOfHomer(PersonRegister register) {
-		Person person = register.getPersons().get(0);
-		assertTrue(person.getName().equals("Simpson, Homer"));
+		Person person = getFromRegister("Simpson, Homer", register);
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
@@ -43,41 +52,27 @@ public class PersonHelper {
 	}
 	
 	public void firstNameChangeOfHomer(PersonRegister register) {
-		Person person = register.getPersons().stream()
-				.filter(p -> p.getName().equals("Simpson, Homer"))
-				.collect(Collectors.toList())
-				.get(0);
-		
+		Person person = getFromRegister("Simpson, Homer", register);
 		person.setName("Simpson, HomerX");
 	}
-	
+
 	public void familyNameChangeOfLisa(PersonRegister register) {
-		Person person = register.getPersons().stream()
-				.filter(p -> p.getName().equals("Simpson, Lisa"))
-				.collect(Collectors.toList())
-				.get(0);
-				
+		Person person = getFromRegister("Simpson, Lisa", register);
 		person.setName("Jetson, Lisa");
 	}
 	
 	public void fullNameChangeOfHomer(PersonRegister register) {
-		Person person = register.getPersons().get(0);
-		assertTrue(person.getName().equals("Simpson, Homer"));
-		
+		Person person = getFromRegister("Simpson, Homer", register);
 		person.setName("Jetson, Elroy");
 	}
 	
 	public void deleteMarge(PersonRegister register) {
-		Person person = register.getPersons().get(1);
-		assertTrue(person.getName().equals("Simpson, Marge"));
-		
+		Person person = getFromRegister("Simpson, Marge", register);
 		EcoreUtil.delete(person);
 	}
 	
 	public void deleteHomer(PersonRegister register) {
-		Person person = register.getPersons().get(0);
-		assertTrue(person.getName().equals("Simpson, Homer"));
-		
+		Person person = getFromRegister("Simpson, Homer", register);
 		EcoreUtil.delete(person);
 	}
 	
@@ -112,9 +107,7 @@ public class PersonHelper {
 	}
 	
 	public void familyNameChangeShweta(PersonRegister register) {
-		Person person = register.getPersons().get(7);
-		assertTrue(person.getName().equals("Bachchan, Shweta"));
-		
+		Person person = getFromRegister("Bachchan, Shweta", register);
 		person.setName("Nanda, Shweta");
 	}
 }

@@ -1,35 +1,9 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.delta.auto;
 
-import org.benchmarx.BXTool;
-import org.benchmarx.BenchmarxUtil;
-import org.benchmarx.Comparator;
-import org.benchmarx.emoflon.familiestopersons.EMoflonFamiliesToPersons;
-import org.benchmarx.examples.familiestopersons.Decisions;
-import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
-import org.benchmarx.examples.familiestopersons.families.core.FamilyHelper;
-import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
-import org.junit.Before;
+import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
-import Families.FamilyRegister;
-import Persons.PersonRegister;
-
-public class FamiliesDeltas {
-
-	private BXTool<FamilyRegister, PersonRegister, Decisions> tool;
-	private Comparator<FamilyRegister> familiesComparator;
-	private Comparator<PersonRegister> personsComparator;
-	private BenchmarxUtil<FamilyRegister, PersonRegister, Decisions> util;
-	private FamilyHelper helperFamily;
-
-	@Before
-	public void initialise() {
-		tool = new EMoflonFamiliesToPersons();
-		familiesComparator = new FamiliesComparator();
-		personsComparator = new PersonsComparator();
-		helperFamily = new FamilyHelper();
-		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
-	}
+public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	
 	/**
 	 * Test for family member moved to new family, i.e., daughter marries and is registered under a new family.
