@@ -1,11 +1,11 @@
-package org.benchmarx.emoflon.familiestopersons;
+package org.benchmarx.examples.familiestopersons.implementations.emoflon;
 import java.util.Collection;
 import java.util.function.Consumer;
 
 import org.apache.log4j.BasicConfigurator;
 import org.benchmarx.BXTool;
 import org.benchmarx.Configurator;
-import org.benchmarx.examples.familiestopersons.Decisions;
+import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;

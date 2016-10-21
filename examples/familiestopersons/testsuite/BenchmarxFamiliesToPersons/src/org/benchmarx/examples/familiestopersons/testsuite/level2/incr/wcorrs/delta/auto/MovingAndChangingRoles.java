@@ -1,8 +1,8 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.delta.auto;
 
 import org.benchmarx.BXTool;
-import org.benchmarx.examples.familiestopersons.Decisions;
-import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
+import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
+import org.benchmarx.examples.familiestopersons.testsuite.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
 import Families.FamilyRegister;

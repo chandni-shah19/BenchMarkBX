@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons;
+package org.benchmarx.examples.familiestopersons.testsuite;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -6,9 +6,9 @@ import java.util.Collection;
 import org.benchmarx.BXTool;
 import org.benchmarx.BenchmarxUtil;
 import org.benchmarx.Comparator;
-import org.benchmarx.emoflon.familiestopersons.EMoflonFamiliesToPersons;
 import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
 import org.benchmarx.examples.familiestopersons.families.core.FamilyHelper;
+import org.benchmarx.examples.familiestopersons.implementations.emoflon.EMoflonFamiliesToPersons;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonHelper;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
 import org.junit.Before;
