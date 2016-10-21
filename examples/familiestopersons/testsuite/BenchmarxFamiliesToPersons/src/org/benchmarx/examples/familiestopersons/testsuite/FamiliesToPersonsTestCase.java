@@ -9,6 +9,7 @@ import org.benchmarx.Comparator;
 import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
 import org.benchmarx.examples.familiestopersons.families.core.FamilyHelper;
 import org.benchmarx.examples.familiestopersons.implementations.emoflon.EMoflonFamiliesToPersons;
+import org.benchmarx.examples.familiestopersons.implementations.qvtr.MediniQVTR;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonHelper;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
 import org.junit.Before;
@@ -40,7 +41,10 @@ public abstract class FamiliesToPersonsTestCase {
 
 	@Parameters
 	public static Collection<BXTool<FamilyRegister, PersonRegister, Decisions>> tools() {
-		return Arrays.asList(new EMoflonFamiliesToPersons());
+		return Arrays.asList(
+				//new EMoflonFamiliesToPersons(),
+				new MediniQVTR()
+			);
 	}
 	
 	protected FamiliesToPersonsTestCase(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
