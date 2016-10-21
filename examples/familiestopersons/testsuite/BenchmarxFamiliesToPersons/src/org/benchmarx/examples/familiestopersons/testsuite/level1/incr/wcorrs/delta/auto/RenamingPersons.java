@@ -1,10 +1,19 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wcorrs.delta.auto;
 
+import org.benchmarx.BXTool;
+import org.benchmarx.examples.familiestopersons.Decisions;
 import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
+import Families.FamilyRegister;
+import Persons.PersonRegister;
+
 public class RenamingPersons extends FamiliesToPersonsTestCase {
 	
+	public RenamingPersons(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
+		super(tool);
+	}
+
 	/**
 	 * Test for changing a person's first name.
 	 * Expected: only the first name of the corresponding member in the families model is to be changed.

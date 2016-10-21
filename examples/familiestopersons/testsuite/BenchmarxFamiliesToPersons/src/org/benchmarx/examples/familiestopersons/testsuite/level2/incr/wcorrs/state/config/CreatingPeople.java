@@ -1,11 +1,19 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.state.config;
 
+import org.benchmarx.BXTool;
 import org.benchmarx.examples.familiestopersons.Decisions;
 import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
+import Families.FamilyRegister;
+import Persons.PersonRegister;
+
 public class CreatingPeople extends FamiliesToPersonsTestCase {
 	
+	public CreatingPeople(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
+		super(tool);
+	}
+
 	/**
 	 * Test for creation of a single male person.
 	 * Expect the creation of a family member in the families model with the given first name.

@@ -1,10 +1,19 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.delta.auto;
 
+import org.benchmarx.BXTool;
+import org.benchmarx.examples.familiestopersons.Decisions;
 import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
+import Families.FamilyRegister;
+import Persons.PersonRegister;
+
 public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	
+	public MovingAndChangingRoles(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
+		super(tool);
+	}
+
 	/**
 	 * Test for family member moved to new family, i.e., daughter marries and is registered under a new family.
 	 * Expect the family name of person to change appropriately in the person model.

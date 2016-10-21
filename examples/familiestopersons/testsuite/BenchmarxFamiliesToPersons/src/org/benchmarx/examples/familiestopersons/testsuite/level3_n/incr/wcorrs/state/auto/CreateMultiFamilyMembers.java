@@ -1,10 +1,19 @@
 package org.benchmarx.examples.familiestopersons.testsuite.level3_n.incr.wcorrs.state.auto;
 
+import org.benchmarx.BXTool;
+import org.benchmarx.examples.familiestopersons.Decisions;
 import org.benchmarx.examples.familiestopersons.FamiliesToPersonsTestCase;
 import org.junit.Test;
 
+import Families.FamilyRegister;
+import Persons.PersonRegister;
+
 public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 	
+	public CreateMultiFamilyMembers(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
+		super(tool);
+	}
+
 	/**
 	 * Test for creation of multiple family members in an existing family.
 	 * Expect the creation of multiple persons (male/female fittingly) associated to the new family members.
