@@ -49,7 +49,7 @@ transformation families2persons (famDB : Families, perDB : Persons) {
 	}
 	
 	query firstName(name : String) : String {
-		name.substring(name.indexOf(',') + 2, name.size())
+		name.substring(name.indexOf(',') + 3, name.size())
 	}
 
 	
@@ -58,21 +58,21 @@ transformation families2persons (famDB : Families, perDB : Persons) {
 	
 		enforce domain famDB familyRegister : Families::FamilyRegister {
 			families = family : Families::Family {
-				familyName = familyName,
+				name = familyName,
 				father = father : Families::FamilyMember {
-					firstName = firstName
+					name = firstName
 				}
 			}
 		};
 		
 		enforce domain perDB personRegister : Persons::PersonRegister {
 			persons = male : Persons::Male {
-				fullName = fullName
+				name = fullName
 			}
 		};
 		
 		where {
-			fullName = familyName + ',' + firstName;
+			fullName = familyName + ', ' + firstName;
 			firstName = firstName(fullName);
 			familyName = familyName(fullName);
 		}
@@ -83,21 +83,21 @@ transformation families2persons (famDB : Families, perDB : Persons) {
 	
 		enforce domain famDB familyRegister : Families::FamilyRegister {
 			families = family : Families::Family {
-				familyName = familyName,
+				name = familyName,
 				sons = son : Families::FamilyMember {
-					firstName = firstName
+					name = firstName
 				}
 			}
 		};
 		
 		enforce domain perDB personRegister : Persons::PersonRegister {
 			persons = male : Persons::Male {
-				fullName = fullName
+				name = fullName
 			}
 		};
 		
 		where {
-			fullName = familyName + ',' + firstName;
+			fullName = familyName + ', ' + firstName;
 			firstName = firstName(fullName);
 			familyName = familyName(fullName);
 		}
@@ -108,21 +108,21 @@ transformation families2persons (famDB : Families, perDB : Persons) {
 	
 		enforce domain famDB familyRegister : Families::FamilyRegister {
 			families = family : Families::Family {
-				familyName = familyName,
+				name = familyName,
 				mother = mother : Families::FamilyMember {
-					firstName = firstName
+					name = firstName
 				}
 			}
 		};
 		
 		enforce domain perDB personRegister : Persons::PersonRegister {
 			persons = female : Persons::Female {
-				fullName = fullName
+				name = fullName
 			}
 		};
 		
 		where {
-			fullName = familyName + ',' + firstName;
+			fullName = familyName + ', ' + firstName;
 			firstName = firstName(fullName);
 			familyName = familyName(fullName);
 		}
@@ -133,21 +133,21 @@ transformation families2persons (famDB : Families, perDB : Persons) {
 	
 		enforce domain famDB familyRegister : Families::FamilyRegister {
 			families = family : Families::Family {
-				familyName = familyName,
+				name = familyName,
 				daughters = daughter : Families::FamilyMember {
-					firstName = firstName
+					name = firstName
 				}
 			}
 		};
 		
 		enforce domain perDB personRegister : Persons::PersonRegister {
 			persons = female : Persons::Female {
-				fullName = fullName
+				name = fullName
 			}
 		};
 		
 		where {
-			fullName = familyName + ',' + firstName;
+			fullName = familyName + ', ' + firstName;
 			firstName = firstName(fullName);
 			familyName = familyName(fullName);
 		}
