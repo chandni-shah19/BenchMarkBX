@@ -28,8 +28,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(util
 				.execute(helperPerson::createHomer)
-			    .andThen(helperPerson::createMarge)
-			    .andThen(helperPerson::createLisa));
+			    .andThen(helperPerson::createMarge));
+		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		//----------------
 		
 		util.assertTarget("PersonMultiMembers");
