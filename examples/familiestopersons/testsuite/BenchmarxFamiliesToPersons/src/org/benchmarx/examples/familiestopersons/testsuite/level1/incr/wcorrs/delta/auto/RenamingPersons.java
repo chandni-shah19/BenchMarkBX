@@ -51,4 +51,6 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 		util.assertTarget("PersonFullNameChange");
 		util.assertSource("MemberFullNameChange");
 	}
+	
+	// TODO:  Add test for changing Bart's full name!
 }

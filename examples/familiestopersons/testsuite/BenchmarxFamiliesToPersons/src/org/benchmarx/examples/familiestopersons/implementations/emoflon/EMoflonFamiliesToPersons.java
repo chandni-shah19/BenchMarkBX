@@ -34,6 +34,11 @@ public class EMoflonFamiliesToPersons implements BXTool<FamilyRegister, PersonRe
 		FamilyRegister familiesRoot = FamiliesFactory.eINSTANCE.createFamilyRegister();
 		r.getContents().add(familiesRoot);
 		
+		// Fix default preferences (which can be overwritten)
+		setConfigurator(new Configurator<Decisions>()
+				.makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+			    .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true));
+		
 		// perform batch to establish consistent starting state
 		helper.setSrc(familiesRoot);
 		helper.integrateForward();	
@@ -68,7 +73,8 @@ public class EMoflonFamiliesToPersons implements BXTool<FamilyRegister, PersonRe
 		helper.setConfigurator(new org.moflon.tgg.algorithm.configuration.Configurator() {
 			@Override
 			public RuleResult chooseOne(Collection<RuleResult> alternatives) {
-				handleChoices(configurator, alternatives);
+				if(alternatives.size() > 1)
+					handleChoices(configurator, alternatives);
 				return org.moflon.tgg.algorithm.configuration.Configurator.super.chooseOne(alternatives);
 			}
 		});
