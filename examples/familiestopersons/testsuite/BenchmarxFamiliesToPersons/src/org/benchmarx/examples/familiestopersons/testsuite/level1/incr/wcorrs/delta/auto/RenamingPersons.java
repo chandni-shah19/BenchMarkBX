@@ -21,9 +21,10 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 	@Test
 	public void testFirstNameChangePerson() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateSourceEdit(util
+				.execute(helperFamily::createSimpsonFamily)
+				.andThen(helperFamily::createFatherHomer)
+				.andThen(helperFamily::createSimpsonFamilyMembers));
 			
 		//----------------
 		tool.performAndPropagateTargetEdit(helperPerson::firstNameChangeOfHomer);
