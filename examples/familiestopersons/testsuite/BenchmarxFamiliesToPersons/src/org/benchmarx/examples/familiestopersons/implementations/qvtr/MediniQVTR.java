@@ -3,6 +3,7 @@ package org.benchmarx.examples.familiestopersons.implementations.qvtr;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,6 +14,7 @@ import org.benchmarx.BXTool;
 import org.benchmarx.Configurator;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -35,6 +37,7 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	private ResourceSet resourceSet;
 	private Resource source;
 	private Resource target;
+	private EObject conf;
 	private String basePath;
 	private String transformation;
 	private FileReader qvtRuleSet;
@@ -61,10 +64,6 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		this.resourceSet = new ResourceSetImpl();
 		this.resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put(
 		    Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
-
-		// Create resources for models
-		source = resourceSet.createResource(URI.createURI("source.xmi"));
-		target = resourceSet.createResource(URI.createURI("target.xmi"));
 		
 		// Collect all necessary packages from the metamodel(s)
 		Collection<EPackage> metaPackages = new ArrayList<EPackage>();
@@ -73,34 +72,58 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		// Make these packages known to the QVT engine
 		init(metaPackages);
 		
+		// Create resources for models
+		source = resourceSet.createResource(URI.createURI("source.xmi"));
+		target = resourceSet.createResource(URI.createURI("target.xmi"));
+		Resource confRes  = resourceSet.createResource(URI.createFileURI(basePath + "conf.xmi"));
+		try {
+			confRes.load(null);
+			conf = confRes.getContents().get(0);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 		// Collect the models, which should participate in the transformation.
 		// You can provide a list of models for each direction.
 		// The models must be added in the same order as defined in your transformation!
 		Collection<Collection<Resource>> modelResources = new ArrayList<Collection<Resource>>();
 		Collection<Resource> firstSetOfModels = new ArrayList<Resource>();
 		Collection<Resource> secondSetOfModels = new ArrayList<Resource>();
+		Collection<Resource> thirdSetOfModels = new ArrayList<Resource>();
 		modelResources.add(firstSetOfModels);
 		modelResources.add(secondSetOfModels);
+		modelResources.add(thirdSetOfModels);
 		firstSetOfModels.add(source);
 		secondSetOfModels.add(target);
+		thirdSetOfModels.add(confRes);
 		
-		URI directory = URI.createFileURI(basePath + "/traces");
+		URI directory = URI.createFileURI(basePath + "traces");
 		this.preExecution(modelResources, directory);
 		
 		source.getContents().add(FamiliesFactory.eINSTANCE.createFamilyRegister());
+		launchFWD();
+	}
+
+	private void launchFWD() {
+		conf.eSet(conf.eClass().getEStructuralFeature("forward"), true);
 		launch(fwdDir);
+	}
+	
+	private void launchBWD() {
+		conf.eSet(conf.eClass().getEStructuralFeature("forward"), false);
+		launch(bwdDir);
 	}
 
 	@Override
 	public void performAndPropagateTargetEdit(Consumer<PersonRegister> edit) {
 		edit.accept(getTargetModel());
-		launch(bwdDir);
+		launchBWD();
 	}
 
 	@Override
 	public void performAndPropagateSourceEdit(Consumer<FamilyRegister> edit) {
 		edit.accept(getSourceModel());
-		launch(fwdDir);
+		launchFWD();
 	}
 
 	@Override
@@ -163,7 +186,7 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	public void launch(String direction) {
 		// Load the QVT relations
 		try {
-			qvtRuleSet = new FileReader(basePath + "/families2persons.qvt");
+			qvtRuleSet = new FileReader(basePath + "families2persons2.qvt");
 		} catch (FileNotFoundException fileNotFoundException) {
 			fileNotFoundException.printStackTrace();
 			return;
@@ -184,5 +207,14 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	protected void collectMetaModels(Collection<EPackage> metaPackages) {
 		metaPackages.add(PersonsPackage.eINSTANCE);
 		metaPackages.add(FamiliesPackage.eINSTANCE);
+		Resource trafoConfig = resourceSet.createResource(URI.createFileURI(basePath + "TransformationConfiguration.ecore"));
+		try {
+			trafoConfig.load(null);
+			EPackage pack = (EPackage) trafoConfig.getContents().get(0);
+			trafoConfig.setURI(URI.createURI(pack.getNsURI()));
+			metaPackages.add(pack);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
