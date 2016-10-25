@@ -61,9 +61,19 @@ public class PersonHelper {
 		person.setName("Jetson, Lisa");
 	}
 	
+	public void familyNameChangeOfShweta(PersonRegister register) {
+		Person person = getFromRegister("Bachchan, Shweta", register);
+		person.setName("Nanda, Shweta");
+	}
+	
 	public void fullNameChangeOfHomer(PersonRegister register) {
 		Person person = getFromRegister("Simpson, Homer", register);
 		person.setName("Jetson, Elroy");
+	}
+	
+	public void fullNameChangeOfBart(PersonRegister register) {
+		Person person = getFromRegister("Simpson, Bart", register);
+		person.setName("Orbit, Henry");
 	}
 	
 	public void deleteMarge(PersonRegister register) {

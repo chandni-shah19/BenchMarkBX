@@ -39,11 +39,29 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 	// TODO: Renaming an empty family?
 	
 	/**
-	 * Test for first name change of the family member.
+	 * Test for name change of a family.
+	 * Expect no change in the persons model.
+	 */
+	@Test
+	public void testFamilyNameChangeOfEmpty()
+	{
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyNameSimpsonChangeEmpty);
+		//------------
+				
+		util.assertSource("NameChangeFamilyEmpty");
+		util.assertTarget("NameChangePersonEmpty");
+	}
+	
+	/**
+	 * Test for first name change of the family member (father).
 	 * Expect the person full name change by replacing the first name with the new one.
 	 */
 	@Test
-	public void testFamilyMemberNameChange()
+	public void testFamilyMemberNameChangeFather()
 	{	
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
@@ -56,6 +74,64 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		util.assertSource("NameChangeFamilyMember");
 		util.assertTarget("NameChangeOfPerson");
 	}
+	
+	/**
+	 * Test for first name change of the family member (mother).
+	 * Expect the person full name change by replacing the first name with the new one.
+	 */
+	@Test
+	public void testFamilyMemberNameChangeMother() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyMotherMargeNameChange);
+		//------------
+
+		util.assertSource("NameChangeFamilyMemberMother");
+		util.assertTarget("NameChangeOfPersonMother");
+	}
+	
+	/**
+	 * Test for first name change of the family member (Daughter).
+	 * Expect the person full name change by replacing the first name with the new one.
+	 */
+	@Test
+	public void testFamilyMemberNameChangeDaughter() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyDaughterLisaNameChange);
+		//------------
+
+		util.assertSource("NameChangeFamilyMemberDaughter");
+		util.assertTarget("NameChangeOfPersonDaughter");
+	}
+	
+	/**
+	 * Test for first name change of the family member (Son).
+	 * Expect the person full name change by replacing the first name with the new one.
+	 */
+	@Test
+	public void testFamilyMemberNameChangeSon() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familySonBartNameChange);
+		//------------
+
+		util.assertSource("NameChangeFamilyMemberSon");
+		util.assertTarget("NameChangeOfPersonSon");
+	}
+	
 	
 	// TODO: How about renaming a mother, son, daughter?
 }

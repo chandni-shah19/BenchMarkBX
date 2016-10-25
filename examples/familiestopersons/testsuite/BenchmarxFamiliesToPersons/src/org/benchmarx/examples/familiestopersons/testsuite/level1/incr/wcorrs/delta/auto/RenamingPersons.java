@@ -36,7 +36,7 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 	
 	/**
 	 * Test for changing a person's full name.
-	 * Expect the same behaviour as {@#testFamilyNameChangePerson} and {@#testFirstNameChangePerson()}
+	 * Expect the same behavior as {@#testFamilyNameChangePerson} and {@#testFirstNameChangePerson()}
 	 */
 	@Test
 	public void testFullNameChangePerson() {
@@ -53,5 +53,21 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 		util.assertSource("MemberFullNameChange");
 	}
 	
+	@Test
+	public void testFullNameChangeSecondPerson() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//----------------
+		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfBart);
+		//----------------
+		
+		util.assertTarget("PersonFullNameChangeSecond");
+		util.assertSource("MemberFullNameChangeSecond");
+		
+		
+	}
 	// TODO:  Add test for changing Bart's full name!
 }

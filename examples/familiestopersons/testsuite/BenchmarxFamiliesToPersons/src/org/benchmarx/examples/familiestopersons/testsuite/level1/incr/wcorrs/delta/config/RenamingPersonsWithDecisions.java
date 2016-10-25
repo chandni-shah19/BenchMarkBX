@@ -35,6 +35,47 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		util.assertSource("MemberFamilyNameChange");
 	}
 	
+	/**
+	 * Test for changing a person's family name.
+	 * Expect the person to be associated with another family as the family name does not fit anymore.
+	 * In this case fitting family already exists and must be used as this is preferred.
+	 */
+	@Test
+	public void testFamilyNameChangePersonToExist() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
+		
+		//----------------
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
+		//----------------
+		
+		util.assertTarget("PersonFamilyNameChangeToExist");
+		util.assertSource("MemberFamilyNameChangeToExist");
+	}
+	
+	/**
+	 * Test for changing a person's family name.
+	 * Expect the person to be associated with another family as the family name does not fit anymore.
+	 * In this case a fitting family already exists but creating a new family is preferred.
+	 */
+	@Test
+	public void testFamilyNameChangePersonToExistNew() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
+		
+		//----------------
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
+		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
+		//----------------
+		
+		util.assertTarget("PersonFamilyNameChangeToExistNew");
+		util.assertSource("MemberFamilyNameChangeToExistNew");
+	}
 	// TODO: Add test for changing the family name of a person where a fitting family already exists and must be used as this is preferred.
 	// TODO: Add test for changing the family name of a person where a fitting family already exists but creating a new family is preferred.
 

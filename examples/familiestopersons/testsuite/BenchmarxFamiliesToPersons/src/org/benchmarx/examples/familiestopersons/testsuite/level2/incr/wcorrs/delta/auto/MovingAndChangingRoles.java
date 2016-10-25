@@ -36,7 +36,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	 * Expected: Nothing changes in the persons model (person remains male).
 	 */
 	@Test
-	public void testFamilyMemberRoleChange() {
+	public void testFamilyMemberRoleChangeFatherToSon() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
@@ -49,6 +49,64 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		util.assertSource("RoleChangeFamilyMember");
 		util.assertTarget("NoChangePerson");
 	}
+	
+	/**
+	 * Test for family member role change: here from mother to daughter.
+	 * Expected: Nothing changes in the persons model (person remains female).
+	 */
+	@Test
+	public void testFamilyMemberRoleChangeMotherToDaughter() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyMotherMargeRoleChangeToDaughterLisa);
+		//------------
+
+		util.assertSource("RoleChangeFamilyMemberMoToDau");
+		util.assertTarget("NoChangePersonFemale");
+	}
+	
+	/**
+	 * Test for family member role change: here from father to mother.
+	 * Expected: Changes in the persons model to male to female.
+	 */
+	@Test
+	public void testFamilyMemberRoleChangeFatherToMother() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToMotherMarge);
+		//------------
+
+		util.assertSource("RoleChangeFamilyMemberFaToMo");
+		util.assertTarget("ChangePersonMToF");
+	}
+	
+	/**
+	 * Test for family member role change: here from son to mother.
+	 * Expected: Changes in the persons model to male to female.
+	 */
+	@Test
+	public void testFamilyMemberRoleChangeSonToMother() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familySonBartRoleChangeToMotherMarge);
+		//------------
+
+		util.assertSource("RoleChangeFamilyMemberSoToMo");
+		util.assertTarget("ChangePersonMaToFe");
+	}
+	
 	
 	// TODO:  Test for role change from mother to daughter
 	// TODO:  Test for role change from father to mother

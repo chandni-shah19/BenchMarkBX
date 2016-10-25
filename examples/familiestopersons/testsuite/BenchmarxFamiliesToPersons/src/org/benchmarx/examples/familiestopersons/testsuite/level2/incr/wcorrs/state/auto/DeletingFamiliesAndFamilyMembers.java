@@ -35,5 +35,25 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		util.assertTarget("DeletePerson");
 	}
 	
+	/**
+	 * Test for deletion of a single family member (father).
+	 * Expect the associated person to be deleted from the persons model.
+	 */
+	@Test
+	public void testDeleteFamilyMemberHomer() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherHomer);
+		//------------
+		
+		util.assertSource("DeleteFamilyMemberHomer");
+		util.assertTarget("DeletePersonHomer");
+	}
+	
+	
 	//TODO:  Add test deleting homer
 }

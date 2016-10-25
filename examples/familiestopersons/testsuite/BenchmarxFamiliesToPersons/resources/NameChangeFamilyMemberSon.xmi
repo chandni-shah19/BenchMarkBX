@@ -7,9 +7,11 @@
     xsi:schemaLocation="platform:/plugin/Families/model/Families.ecore ../../Families/model/Families.ecore">
   <families
       name="Simpson">
+    <father
+        name="Homer"/>
     <mother
         name="Marge"/>
-    <sons name="Bart"/>
+    <sons name="Harry"/>
     <daughters
         name="Lisa"/>
     <daughters

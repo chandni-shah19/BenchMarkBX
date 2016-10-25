@@ -6,11 +6,11 @@
     xmlns:Persons="platform:/plugin/Persons/model/Persons.ecore"
     xsi:schemaLocation="platform:/plugin/Persons/model/Persons.ecore ../../Persons/model/Persons.ecore">
   <persons xsi:type="Persons:Female"
-      name="Simpson, Lisa"/>
-  <persons xsi:type="Persons:Female"
-      name="Simpson, Marge"/>
+      name="Nanda, Shweta"/>
   <persons xsi:type="Persons:Male"
-      name="Simpson, Bart"/>
+      name="Bachchan, Amitabh"/>
+  <persons xsi:type="Persons:Male"
+      name="Bachchan, Abhishek"/>
   <persons xsi:type="Persons:Female"
-      name="Simpson, Maggie"/>
+      name="Bachchan, Jaya"/>
 </Persons:PersonRegister>

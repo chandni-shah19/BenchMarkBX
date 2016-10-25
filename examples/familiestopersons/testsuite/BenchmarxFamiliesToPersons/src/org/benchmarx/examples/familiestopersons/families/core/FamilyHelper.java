@@ -26,6 +26,15 @@ public class FamilyHelper {
 		familyFather.setName("Homer");
 	}
 	
+	public void createMotherMarge(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
+		family.setMother(familyMother);
+		familyMother.setName("Marge");
+	}
+	
 	public void createSimpsonFamilyMembers(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
@@ -55,11 +64,39 @@ public class FamilyHelper {
 		family.setName("Jetson");
 	}
 	
+	public void familyNameSimpsonChangeEmpty(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		family.setName("Jetson");
+	}
+	
 	public void familyFatherHomerNameChange(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
 		
 		family.getFather().setName("Jay");
+	}
+	
+	public void familyMotherMargeNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		family.getMother().setName("Julie");
+	}
+	
+	public void familyDaughterLisaNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		family.getDaughters().get(0).setName("Nancy");
+	}
+	
+	public void familySonBartNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		family.getSons().get(0).setName("Harry");
 	}
 	
 	public void familyFatherHomerRoleChangeToSon(FamilyRegister register){
@@ -71,6 +108,39 @@ public class FamilyHelper {
 		
 		family.getFather().setName(familySonName);
 		family.getSons().get(0).setName(familyFatherName);
+	}
+	
+	public void familyMotherMargeRoleChangeToDaughterLisa(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		String familyDaughterName = family.getDaughters().get(0).getName();
+		String familyMotherName = family.getMother().getName();
+		
+		family.getMother().setName(familyDaughterName);
+		family.getDaughters().get(0).setName(familyMotherName);
+	}
+	
+	public void familyFatherHomerRoleChangeToMotherMarge(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		String familyMotherName = family.getMother().getName();
+		String familyFatherName = family.getFather().getName();
+		
+		family.getFather().setName(familyMotherName);
+		family.getMother().setName(familyFatherName);
+	}
+	
+	public void familySonBartRoleChangeToMotherMarge(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		String familyMotherName = family.getMother().getName();
+		String familySonName = family.getSons().get(0).getName();
+		
+		family.getSons().get(0).setName(familyMotherName);
+		family.getMother().setName(familySonName);
 	}
 	
 	public void createNewfamilyBachchanWithMembers(FamilyRegister register){
@@ -95,6 +165,12 @@ public class FamilyHelper {
 		family.getDaughters().add(familyDaughter);
 	}
 	
+	public void createNandaFamily(FamilyRegister register) {
+		Family family = FamiliesFactory.eINSTANCE.createFamily();
+		family.setName("Nanda");
+		register.getFamilies().add(family);
+	}
+	
 	public void moveDaughterToMotherOfNewFamily(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Bachchan"));
@@ -113,6 +189,13 @@ public class FamilyHelper {
 	public void deleteFamilyFatherAmitabh(FamilyRegister eObject){
 		Family family = eObject.getFamilies().get(1);
 		assertTrue(family.getName().equals("Bachchan"));
+		
+		EcoreUtil.delete(family.getFather());
+	}
+	
+	public void deleteFamilyFatherHomer(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
 		
 		EcoreUtil.delete(family.getFather());
 	}
