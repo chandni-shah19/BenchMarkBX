@@ -17,32 +17,36 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 		comparator = new FamilyNormaliser();
 		familyMemberComparator = new FamilyMemberNormaliser();
 		
-		assertTrue(familyToString(expected).startsWith("Families"))
+		assertTrue(familyToString(expected).startsWith("FamilyRegister"))
 		assertEquals(familyToString(expected), familyToString(actual))
 	}
 	
 	def familyToString(FamilyRegister families) {
 		return '''
-		Families {
-			«val List<Family> sortedList = new ArrayList<Family>(families.families)»
-			«comparator.normalize(sortedList)»
-			«FOR f : sortedList SEPARATOR "\n"»
-			Family «f.name»
-			  Father: «IF f.father != null»«f.father.name»«ENDIF»
-			  Mother: «IF f.mother != null»«f.mother.name»«ENDIF»
-			  «val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
-			  «familyMemberComparator.normalize(sortedListOfSon)»
-			  «FOR f_Son : sortedListOfSon»
-			    Son: «f_Son.name»
-			  «ENDFOR»
-			  «val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
-			  «familyMemberComparator.normalize(sortedListOfDaughter)»
-			  «FOR f_Daughter : sortedListOfDaughter»
-			    Daughter: «f_Daughter.name»
-			  «ENDFOR»
+		FamilyRegister {
+		    families = [
+		    «val List<Family> sortedList = new ArrayList<Family>(families.families)»
+		    «comparator.normalize(sortedList)»
+				«FOR f : sortedList SEPARATOR ", "»
+				Family {
+				      familyName = «f.name»
+				    , father     = «familyMember(f.father)»
+				    , mother     = «familyMember(f.mother)»
+			  		«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
+			  		«familyMemberComparator.normalize(sortedListOfSon)»
+				    , sons       = [«FOR son : sortedListOfSon SEPARATOR ", "»«familyMember(son)»«ENDFOR»]
+			  		«val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
+			  		«familyMemberComparator.normalize(sortedListOfDaughter)»
+					, daughters  = [«FOR daughter : sortedListOfDaughter SEPARATOR ", "»«familyMember(daughter)»«ENDFOR»]
+				}
 			«ENDFOR»
+			]
 		}
 		'''
+	}
+	
+	def familyMember(FamilyMember fm){
+		return '''«IF fm != null»Just (FamilyMember { firstName = «fm.name» })«ELSE»Nothing«ENDIF»'''
 	}
 }
 

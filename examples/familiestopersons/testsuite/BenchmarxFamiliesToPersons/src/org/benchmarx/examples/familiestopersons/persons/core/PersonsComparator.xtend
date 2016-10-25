@@ -15,24 +15,30 @@ public class PersonsComparator implements Comparator<PersonRegister>{
 	override compare(PersonRegister expected, PersonRegister actual) {
 		comparator = new PersonNormaliser();
 		
-		assertTrue(personsToString(expected).startsWith("Persons"))
+		assertTrue(personsToString(expected).startsWith("PersonRegister"))
 		assertEquals(personsToString(expected), personsToString(actual))
 	}
 	
 	def personsToString(PersonRegister persons) {
 		return '''
-		Persons	{
-			«val List<Person> sortedList = new ArrayList<Person>(persons.persons)»
-			«comparator.normalize(sortedList)»
-			«FOR p: sortedList SEPARATOR "\n"»
+		PersonRegister {
+			persons = [
+				«val List<Person> sortedList = new ArrayList<Person>(persons.persons)»
+				«comparator.normalize(sortedList)»x1
+				«FOR p: sortedList SEPARATOR ","»
 				«IF p instanceof Male»
-				 Male: «p.name»
-				 Birthday: «p.birthday»
+				 Male  {   
+				 	      fullName = «p.name»
+				        ,  birthday = «p.birthday»
+				 }
 				«ELSE»
-				Female: «p.name»
-				Birthday: «p.birthday»
+				Female {   
+					       fullName = «p.name»
+				        ,  birthday = «p.birthday»
+				}
 				«ENDIF»
-			«ENDFOR»
+				«ENDFOR»
+			]
 		}
 		'''
 	}
