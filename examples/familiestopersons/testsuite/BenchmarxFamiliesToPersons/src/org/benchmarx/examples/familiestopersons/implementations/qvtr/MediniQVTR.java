@@ -14,7 +14,6 @@ import org.benchmarx.BXTool;
 import org.benchmarx.Configurator;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -28,6 +27,8 @@ import Persons.PersonRegister;
 import Persons.PersonsPackage;
 import de.ikv.emf.qvt.EMFQvtProcessorImpl;
 import de.ikv.medini.qvt.QVTProcessorConsts;
+import transconf2.Direction;
+import transconf2.Transconf2Package;
 import uk.ac.kent.cs.kmf.util.ILog;
 import uk.ac.kent.cs.kmf.util.OutputStreamLog;
 
@@ -37,7 +38,7 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	private ResourceSet resourceSet;
 	private Resource source;
 	private Resource target;
-	private EObject conf;
+	private Direction conf;
 	private String basePath;
 	private String transformation;
 	private FileReader qvtRuleSet;
@@ -78,7 +79,7 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		Resource confRes  = resourceSet.createResource(URI.createFileURI(basePath + "conf.xmi"));
 		try {
 			confRes.load(null);
-			conf = confRes.getContents().get(0);
+			conf = (Direction) confRes.getContents().get(0);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -105,12 +106,12 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	}
 
 	private void launchFWD() {
-		conf.eSet(conf.eClass().getEStructuralFeature("forward"), true);
+		conf.setForward(true);
 		launch(fwdDir);
 	}
 	
 	private void launchBWD() {
-		conf.eSet(conf.eClass().getEStructuralFeature("forward"), false);
+		conf.setForward(false);
 		launch(bwdDir);
 	}
 
@@ -207,14 +208,6 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	protected void collectMetaModels(Collection<EPackage> metaPackages) {
 		metaPackages.add(PersonsPackage.eINSTANCE);
 		metaPackages.add(FamiliesPackage.eINSTANCE);
-		Resource trafoConfig = resourceSet.createResource(URI.createFileURI(basePath + "TransformationConfiguration.ecore"));
-		try {
-			trafoConfig.load(null);
-			EPackage pack = (EPackage) trafoConfig.getContents().get(0);
-			trafoConfig.setURI(URI.createURI(pack.getNsURI()));
-			metaPackages.add(pack);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		metaPackages.add(Transconf2Package.eINSTANCE);
 	}
 }
