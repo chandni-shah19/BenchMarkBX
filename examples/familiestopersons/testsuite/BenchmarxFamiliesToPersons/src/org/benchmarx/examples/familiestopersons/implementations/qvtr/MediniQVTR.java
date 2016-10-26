@@ -4,12 +4,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
+import org.apache.commons.io.output.NullOutputStream;
 import org.benchmarx.BXTool;
 import org.benchmarx.Configurator;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
@@ -33,6 +35,8 @@ import uk.ac.kent.cs.kmf.util.ILog;
 import uk.ac.kent.cs.kmf.util.OutputStreamLog;
 
 public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisions> {
+	private static final String RULESET = "families2persons.qvt";
+
 	private ILog logger;
 	private EMFQvtProcessorImpl processorImpl;
 	private ResourceSet resourceSet;
@@ -44,9 +48,10 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	private FileReader qvtRuleSet;
 	private static final String fwdDir = "perDB";
 	private static final String bwdDir = "famDB";
+
 	
 	public MediniQVTR() {
-		logger = new OutputStreamLog(System.out);
+		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
 		processorImpl = new EMFQvtProcessorImpl(this.logger);
 		processorImpl.setProperty(QVTProcessorConsts.PROP_DEBUG, "true");
 		basePath = "./src/org/benchmarx/examples/familiestopersons/implementations/qvtr/base/";
@@ -185,17 +190,24 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	}
 
 	public void launch(String direction) {
+		PrintStream ps = System.out;
+		PrintStream ps_err = System.err;
+		
 		// Load the QVT relations
 		try {
-			qvtRuleSet = new FileReader(basePath + "families2persons2.qvt");
+			System.setOut(new PrintStream(new NullOutputStream()));
+			System.setErr(new PrintStream(new NullOutputStream()));
+
+			qvtRuleSet = new FileReader(basePath + RULESET);
+			this.transform(qvtRuleSet, transformation, direction);
 		} catch (FileNotFoundException fileNotFoundException) {
 			fileNotFoundException.printStackTrace();
 			return;
-		}
-		try {
-			this.transform(qvtRuleSet, transformation, direction);
 		} catch (Throwable throwable) {
 			throwable.printStackTrace();
+		} finally {		
+			System.setOut(ps);
+			System.setErr(ps_err);
 		}
 	}
 
