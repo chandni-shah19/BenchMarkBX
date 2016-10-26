@@ -3,5 +3,5 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:transconf2="de.ubt.ai1.bw.qvt.transconf2.ecore"
+    xmlns:transconf2="platform:/plugin/TransformationConfiguration/model/TransformationConfiguration.ecore"
     forward="true"/>
