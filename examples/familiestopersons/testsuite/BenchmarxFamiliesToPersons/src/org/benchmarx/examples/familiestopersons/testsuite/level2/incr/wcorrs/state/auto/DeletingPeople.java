@@ -52,5 +52,4 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 		util.assertSource("MemberFirstDelete");
 	}
 	
-	// TODO: Add test where the first created person is deleted (so delete Homer instead of Marge above)
 }

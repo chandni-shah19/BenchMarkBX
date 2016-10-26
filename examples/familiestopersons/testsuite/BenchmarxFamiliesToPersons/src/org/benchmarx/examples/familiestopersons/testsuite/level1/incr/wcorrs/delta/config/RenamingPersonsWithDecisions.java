@@ -76,7 +76,4 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		util.assertTarget("PersonFamilyNameChangeToExistNew");
 		util.assertSource("MemberFamilyNameChangeToExistNew");
 	}
-	// TODO: Add test for changing the family name of a person where a fitting family already exists and must be used as this is preferred.
-	// TODO: Add test for changing the family name of a person where a fitting family already exists but creating a new family is preferred.
-
 }

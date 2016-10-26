@@ -36,7 +36,6 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		util.assertTarget("NameChangePerson");
 	}
 	
-	// TODO: Renaming an empty family?
 	
 	/**
 	 * Test for name change of a family.
@@ -132,6 +131,4 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		util.assertTarget("NameChangeOfPersonSon");
 	}
 	
-	
-	// TODO: How about renaming a mother, son, daughter?
 }

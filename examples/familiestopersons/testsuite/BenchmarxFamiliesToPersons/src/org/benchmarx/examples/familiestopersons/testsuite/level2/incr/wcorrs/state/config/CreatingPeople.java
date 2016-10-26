@@ -131,8 +131,4 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		util.assertTarget("PersonFemaleMemberExistDaughter");
 		util.assertSource("oneFamilyWithOneFamilyMemberExistDaughter");
 	}
-	
-	// TODO:  Add test for different preference (so prefer child to parent)
-	// TODO: Add a test where there is already a father (so a son has to be created even though creating parents is preferred)
-	// TODO: Repeat these two tests for mothers and daughters 
 }

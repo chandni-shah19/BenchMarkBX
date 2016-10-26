@@ -53,7 +53,4 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		util.assertSource("DeleteFamilyMemberHomer");
 		util.assertTarget("DeletePersonHomer");
 	}
-	
-	
-	//TODO:  Add test deleting homer
 }

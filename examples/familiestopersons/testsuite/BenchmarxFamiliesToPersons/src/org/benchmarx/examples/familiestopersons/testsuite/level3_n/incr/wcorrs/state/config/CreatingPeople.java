@@ -41,7 +41,6 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		util.assertSource("familyMulti");
 	}	
 	
-	//TODO: Add same test for different preferences
 	/**
 	 * Test for creating multiple persons with different last names.
 	 * Expect the same result as {#testCreateMultiPerson()}.

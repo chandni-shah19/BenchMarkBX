@@ -107,8 +107,4 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		util.assertTarget("ChangePersonMaToFe");
 	}
 	
-	
-	// TODO:  Test for role change from mother to daughter
-	// TODO:  Test for role change from father to mother
-	// TODO:  Test for role change from son to mother
 }
