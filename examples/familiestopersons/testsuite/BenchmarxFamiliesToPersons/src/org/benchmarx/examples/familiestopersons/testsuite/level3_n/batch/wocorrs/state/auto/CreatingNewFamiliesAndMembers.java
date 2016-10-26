@@ -33,5 +33,4 @@ public class CreatingNewFamiliesAndMembers extends FamiliesToPersonsTestCase {
 		util.assertTarget("PersonWithOneMaleMember");
 	}
 	
-	// TODO: Test for creation of a larger family with all types of members
 }
