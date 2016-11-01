@@ -30,14 +30,14 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 				«FOR f : sortedList SEPARATOR ", "»
 				Family {
 				      familyName = «f.name»
-				    , father     = «familyMember(f.father)»
 				    , mother     = «familyMember(f.mother)»
+				    ,father     = «familyMember(f.father)»
+				    «val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
+				    «familyMemberComparator.normalize(sortedListOfDaughter)»
+				 	, daughters  = [«FOR daughter : sortedListOfDaughter SEPARATOR ", "»«familyMember(daughter)»«ENDFOR»]
 			  		«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
 			  		«familyMemberComparator.normalize(sortedListOfSon)»
 				    , sons       = [«FOR son : sortedListOfSon SEPARATOR ", "»«familyMember(son)»«ENDFOR»]
-			  		«val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
-			  		«familyMemberComparator.normalize(sortedListOfDaughter)»
-					, daughters  = [«FOR daughter : sortedListOfDaughter SEPARATOR ", "»«familyMember(daughter)»«ENDFOR»]
 				}
 			«ENDFOR»
 			]

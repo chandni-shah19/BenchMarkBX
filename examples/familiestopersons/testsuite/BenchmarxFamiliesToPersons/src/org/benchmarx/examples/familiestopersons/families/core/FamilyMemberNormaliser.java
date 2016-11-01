@@ -9,8 +9,8 @@ import Families.FamilyMember;
 public class FamilyMemberNormaliser implements Comparator<FamilyMember>{
 
 	@Override
-	public int compare(FamilyMember expected, FamilyMember actual) {
-		return expected.getName().compareTo(actual.getName());
+	public int compare(FamilyMember member1, FamilyMember member2) {
+		return member1.getName().compareTo(member2.getName());
 	}
 
 	public void normalize(List<FamilyMember> familyMember){
