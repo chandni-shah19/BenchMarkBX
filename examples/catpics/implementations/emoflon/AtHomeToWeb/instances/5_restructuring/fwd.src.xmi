@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AtHome:Directory xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:AtHome="platform:/plugin/AtHome/model/AtHome.ecore" name="root">
+  <subDirs name="Jan">
+    <files name="palindrome.jpg" picture="pictureOfPalindromeCat"/>
+    <files name="gamer.jpg" picture="pictureOfGamer"/>
+  </subDirs>
+  <subDirs name="May">
+    <files name="froghead.jpg" picture="PictureOfFrogHead"/>
+  </subDirs>
+  <files name="burrito.jpg" picture="pictureOfOnlyFace"/>
+  <files name="withperson.jpg" picture="pictureWithPerson"/>
+</AtHome:Directory>

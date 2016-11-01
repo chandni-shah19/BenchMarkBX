@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AtHome="platform:/plugin/AtHome/model/AtHome.ecore" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <targetModel href="fwd.src.xmi#/"/>
+  <addedEdges trg="//@addedNodes.0" name="files">
+    <src href="fwd.src.xmi#/"/>
+  </addedEdges>
+  <addedNodes xsi:type="AtHome:File" name="withperson.jpg" picture="pictureWithPerson"/>
+</org.moflon.tgg.runtime:DeltaSpecification>

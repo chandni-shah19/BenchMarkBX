@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <targetModel href="fwd.src.xmi#/"/>
+  <attributeChanges oldValue="???" newValue="burrito.jpg">
+    <affectedAttribute href="platform:/plugin/AtHome/model/AtHome.ecore#//FileSystemElement/name"/>
+    <affectedNode href="fwd.src.xmi#//@files.0"/>
+  </attributeChanges>
+</org.moflon.tgg.runtime:DeltaSpecification>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ASCII"?>
+<OnTheWeb:Web xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:OnTheWeb="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore">
+  <elements picture="pictureOfPalindromeCat" tags="//@allTags.0 //@allTags.1"/>
+  <elements picture="pictureOfGamer" tags="//@allTags.0"/>
+  <elements picture="PictureOfFrogHead" tags="//@allTags.0"/>
+  <elements picture="pictureOfOnlyFace" tags="//@allTags.2"/>
+  <allTags name="costume"/>
+  <allTags name="food"/>
+  <allTags name="onlyface"/>
+</OnTheWeb:Web>

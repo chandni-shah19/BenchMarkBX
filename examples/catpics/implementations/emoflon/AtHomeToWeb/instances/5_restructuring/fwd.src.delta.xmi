@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.runtime:DeltaSpecification
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:AtHome="platform:/plugin/AtHome/model/AtHome.ecore"
+    xmlns:org.moflon.tgg.runtime="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore">
+  <targetModel
+      href="fwd.src.xmi#/"/>
+  <addedEdges
+      src="//@addedNodes.0"
+      name="files">
+    <trg href="fwd.src.xmi#//@files.1"/>
+  </addedEdges>
+  <addedEdges
+      src="//@addedNodes.0"
+      name="files">
+    <trg href="fwd.src.xmi#//@files.0"/>
+  </addedEdges>
+  <addedEdges
+      src="//@addedNodes.1"
+      name="subDirs">
+    <trg href="fwd.src.xmi#//@subDirs.1"/>
+  </addedEdges>
+  <addedEdges
+      trg="//@addedNodes.0"
+      name="subDirs">
+    <src href="fwd.src.xmi#/"/>
+  </addedEdges>
+  <addedEdges
+      trg="//@addedNodes.1"
+      name="subDirs">
+    <src href="fwd.src.xmi#/"/>
+  </addedEdges>
+  <addedEdges
+      src="//@addedNodes.1"
+      name="subDirs">
+    <trg href="fwd.src.xmi#//@subDirs.0"/>
+  </addedEdges>
+  <addedNodes
+      xsi:type="AtHome:Directory"
+      name="2011"/>
+  <addedNodes
+      xsi:type="AtHome:Directory"
+      name="2010"/>
+  <deletedEdges
+      name="files">
+    <src href="fwd.src.xmi#/"/>
+    <trg href="fwd.src.xmi#//@files.1"/>
+  </deletedEdges>
+  <deletedEdges
+      name="subDirs">
+    <src href="fwd.src.xmi#/"/>
+    <trg href="fwd.src.xmi#//@subDirs.1"/>
+  </deletedEdges>
+  <deletedEdges
+      name="subDirs">
+    <src href="fwd.src.xmi#/"/>
+    <trg href="fwd.src.xmi#//@subDirs.0"/>
+  </deletedEdges>
+  <deletedEdges
+      name="files">
+    <src href="fwd.src.xmi#/"/>
+    <trg href="fwd.src.xmi#//@files.0"/>
+  </deletedEdges>
+</org.moflon.tgg.runtime:DeltaSpecification>
