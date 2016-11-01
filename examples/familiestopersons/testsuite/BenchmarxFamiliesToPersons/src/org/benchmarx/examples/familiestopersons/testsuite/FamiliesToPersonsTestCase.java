@@ -42,7 +42,8 @@ public abstract class FamiliesToPersonsTestCase {
 	@Parameters
 	public static Collection<BXTool<FamilyRegister, PersonRegister, Decisions>> tools() {
 		return Arrays.asList(
-				new EMoflonFamiliesToPersons(),
+				new EMoflonFamiliesToPersons()
+				,
 				new MediniQVTR()
 			);
 	}
