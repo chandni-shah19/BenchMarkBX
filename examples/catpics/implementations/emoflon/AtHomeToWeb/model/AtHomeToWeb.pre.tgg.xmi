@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.moflon.tgg.language:TripleGraphGrammar xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:csp="platform:/plugin/org.moflon.tgg.language/model/Language.ecore#//csp" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:org.moflon.tgg.language="platform:/plugin/org.moflon.tgg.language/model/Language.ecore" name="AtHomeToWeb">
+  <domain name="Source" metamodel="//@metamodel.0" type="SOURCE"/>
+  <domain name="Correspondence" metamodel="//@metamodel.1"/>
+  <domain name="Target" metamodel="//@metamodel.2" type="TARGET"/>
+  <tggRule name="FileToWebElementRule" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="webElt" incomingLink="//@tggRule.0/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//WebElement"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f2w" outgoingLink="//@tggRule.0/@linkVariable.0 //@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="file" incomingLink="//@tggRule.0/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//File"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.0/@objectVariable.0" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.0/@objectVariable.2" source="//@tggRule.0/@objectVariable.1" bindingOperator="CREATE" domain="//@domain.1"/>
+    <csp>
+      <constraints variables="//@tggRule.0/@csp/@variables.0 //@tggRule.0/@csp/@variables.1" name="setDefaultString">
+        <signature type="EString" index="1"/>
+        <signature type="EString"/>
+        <allowedAdornments value="FB"/>
+        <allowedAdornments value="BB"/>
+        <modelgenAdornments value="FF"/>
+        <modelgenAdornments value="FB"/>
+        <modelgenAdornments value="BB"/>
+      </constraints>
+      <constraints variables="//@tggRule.0/@csp/@variables.3 //@tggRule.0/@csp/@variables.2" name="eq">
+        <signature type=""/>
+        <signature type="" index="1"/>
+        <allowedAdornments value="BB"/>
+        <allowedAdornments value="FB"/>
+        <allowedAdornments value="BF"/>
+        <modelgenAdornments value="FF"/>
+        <modelgenAdornments value="BB"/>
+        <modelgenAdornments value="FB"/>
+        <modelgenAdornments value="BF"/>
+      </constraints>
+      <variables xsi:type="csp:AttributeVariable" attribute="name" objectVariable="file"/>
+      <variables xsi:type="csp:Literal" bound="true" value="ACED0005740005223F3F3F22"/>
+      <variables xsi:type="csp:AttributeVariable" attribute="picture" objectVariable="webElt"/>
+      <variables xsi:type="csp:AttributeVariable" attribute="picture" objectVariable="file"/>
+    </csp>
+  </tggRule>
+  <tggRule name="IgnoreDirectoryRule" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="p2w" outgoingLink="//@tggRule.1/@linkVariable.2 //@tggRule.1/@linkVariable.4" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="child" incomingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.3" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="c2w" outgoingLink="//@tggRule.1/@linkVariable.0 //@tggRule.1/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="web" incomingLink="//@tggRule.1/@linkVariable.1 //@tggRule.1/@linkVariable.2" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="parent" incomingLink="//@tggRule.1/@linkVariable.4" outgoingLink="//@tggRule.1/@linkVariable.3" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.1" source="//@tggRule.1/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.2" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.1/@objectVariable.3" source="//@tggRule.1/@objectVariable.0" domain="//@domain.1"/>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="subDirs" target="//@tggRule.1/@objectVariable.1" source="//@tggRule.1/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory/subDirs"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.1/@objectVariable.4" source="//@tggRule.1/@objectVariable.0" domain="//@domain.1"/>
+    <csp/>
+  </tggRule>
+  <tggRule name="AddFileAndWebElementRule" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="webElt" incomingLink="//@tggRule.2/@linkVariable.1 //@tggRule.2/@linkVariable.4 //@tggRule.2/@linkVariable.2" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//WebElement"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="f2w" outgoingLink="//@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.1" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="file" incomingLink="//@tggRule.2/@linkVariable.0 //@tggRule.2/@linkVariable.3 //@tggRule.2/@linkVariable.5" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//File"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="oldWeb" outgoingLink="//@tggRule.2/@linkVariable.2" bindingSemantics="NEGATIVE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="dir" incomingLink="//@tggRule.2/@linkVariable.7" outgoingLink="//@tggRule.2/@linkVariable.5" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="web" incomingLink="//@tggRule.2/@linkVariable.6" outgoingLink="//@tggRule.2/@linkVariable.4" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="oldDir" outgoingLink="//@tggRule.2/@linkVariable.3" bindingSemantics="NEGATIVE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="d2w" outgoingLink="//@tggRule.2/@linkVariable.6 //@tggRule.2/@linkVariable.7" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.1" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.1" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="elements" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.3" domain="//@domain.2">
+      <type href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web/elements"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="files" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.6" domain="//@domain.0">
+      <type href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory/files"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="elements" target="//@tggRule.2/@objectVariable.0" source="//@tggRule.2/@objectVariable.5" bindingOperator="CREATE" domain="//@domain.2">
+      <type href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web/elements"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="files" target="//@tggRule.2/@objectVariable.2" source="//@tggRule.2/@objectVariable.4" bindingOperator="CREATE" domain="//@domain.0">
+      <type href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory/files"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.2/@objectVariable.5" source="//@tggRule.2/@objectVariable.7" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/target"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.2/@objectVariable.4" source="//@tggRule.2/@objectVariable.7" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/source"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <tggRule name="RootDirToWebRule" correspondence="//@domain.1" source="//@domain.0" target="//@domain.2">
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="r2w" outgoingLink="//@tggRule.3/@linkVariable.0 //@tggRule.3/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.1">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="rootDir" incomingLink="//@tggRule.3/@linkVariable.0" bindingOperator="CREATE" domain="//@domain.0">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/AtHome/model/AtHome.ecore#//Directory"/>
+    </objectVariable>
+    <objectVariable xsi:type="org.moflon.tgg.language:TGGObjectVariable" name="web" incomingLink="//@tggRule.3/@linkVariable.1" bindingOperator="CREATE" domain="//@domain.2">
+      <type xsi:type="ecore:EClass" href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#//Web"/>
+    </objectVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="source" target="//@tggRule.3/@objectVariable.1" source="//@tggRule.3/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/source"/>
+    </linkVariable>
+    <linkVariable xsi:type="org.moflon.tgg.language:TGGLinkVariable" name="target" target="//@tggRule.3/@objectVariable.2" source="//@tggRule.3/@objectVariable.0" bindingOperator="CREATE" domain="//@domain.1">
+      <type href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/target"/>
+    </linkVariable>
+    <csp/>
+  </tggRule>
+  <metamodel name="AtHome">
+    <outermostPackage href="platform:/plugin/AtHome/model/AtHome.ecore#/"/>
+  </metamodel>
+  <metamodel name="AtHomeToWeb">
+    <outermostPackage href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#/"/>
+  </metamodel>
+  <metamodel name="OnTheWeb">
+    <outermostPackage href="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore#/"/>
+  </metamodel>
+</org.moflon.tgg.language:TripleGraphGrammar>
