@@ -20,10 +20,23 @@ public class FamilyHelper {
 	public void createFatherHomer(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
-		
+			
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
 		familyFather.setName("Homer");
+	}
+	
+	public void createFatherGeorge(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		
+		if(family.getFather()==null)
+		{
+			FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
+			family.setFather(familyFather);
+			familyFather.setName("George");
+		}
+		
 	}
 	
 	public void createMotherMarge(FamilyRegister register){
@@ -57,9 +70,36 @@ public class FamilyHelper {
 		
 	}
 	
+	public void createOtherSimpsonFamilyMembers(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
+		
+		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyMother.setName("Jane");
+		family.setMother(familyMother);
+		
+		FamilyMember familySon = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familySon.setName("Elroy");
+		family.getSons().add(familySon);
+		
+		FamilyMember familyDaughterOne = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyDaughterOne.setName("Judy");
+		family.getDaughters().add(familyDaughterOne);
+		
+	}
+	
 	public void familyNameSimpsonChange(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
+		
+		family.setName("Jetson");
+	}
+	
+	public void familyNameOtherSimpsonChange(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
 		
 		family.setName("Jetson");
 	}
@@ -78,9 +118,25 @@ public class FamilyHelper {
 		family.getFather().setName("Jay");
 	}
 	
+	public void familyFatherGeorgeNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
+		
+		family.getFather().setName("Jay");
+	}
+	
 	public void familyMotherMargeNameChange(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
+		
+		family.getMother().setName("Julie");
+	}
+	
+	public void familyMotherJaneNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
 		
 		family.getMother().setName("Julie");
 	}
@@ -92,9 +148,25 @@ public class FamilyHelper {
 		family.getDaughters().get(0).setName("Nancy");
 	}
 	
+	public void familyDaughterJudyNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
+		
+		family.getDaughters().get(0).setName("Nancy");
+	}
+	
 	public void familySonBartNameChange(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
+		
+		family.getSons().get(0).setName("Harry");
+	}
+	
+	public void familySonElroyNameChange(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("George"));
 		
 		family.getSons().get(0).setName("Harry");
 	}

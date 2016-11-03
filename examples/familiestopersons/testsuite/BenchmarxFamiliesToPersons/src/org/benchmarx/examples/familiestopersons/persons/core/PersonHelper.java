@@ -55,6 +55,21 @@ public class PersonHelper {
 		Person person = getFromRegister("Simpson, Homer", register);
 		person.setName("Simpson, HomerX");
 	}
+	
+	public void firstNameChangeOfBart(PersonRegister register) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		Date date = cal.getTime();
+		
+		for(int i =0;i<register.getPersons().size();i++)
+		{
+				if(register.getPersons().get(i).getBirthday().toString().equals(date.toString()))
+				{
+					register.getPersons().get(i).setName("Simpson, BartX");
+				}
+		}
+		
+	}
 
 	public void familyNameChangeOfLisa(PersonRegister register) {
 		Person person = getFromRegister("Simpson, Lisa", register);
@@ -76,6 +91,20 @@ public class PersonHelper {
 		person.setName("Orbit, Henry");
 	}
 	
+	public void fullNameChangeOfOtherBart(PersonRegister register) {
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		Date date = cal.getTime();
+		
+		for(int i =0;i<register.getPersons().size();i++)
+		{
+				if(register.getPersons().get(i).getBirthday().toString().equals(date.toString()))
+				{
+					register.getPersons().get(i).setName("Orbit, Henry");
+				}
+		}
+	}
+	
 	public void deleteMarge(PersonRegister register) {
 		Person person = getFromRegister("Simpson, Marge", register);
 		EcoreUtil.delete(person);
@@ -89,6 +118,18 @@ public class PersonHelper {
 	public void createBart(PersonRegister register) {
 		Person person = PersonsFactory.eINSTANCE.createMale();
 		person.setName("Simpson, Bart");
+		register.getPersons().add(person);
+	}
+	
+	public void createOtherBart(PersonRegister register) {
+		Person person = PersonsFactory.eINSTANCE.createMale();
+		person.setName("Simpson, Bart");
+		
+		Calendar cal = Calendar.getInstance();
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		Date date = cal.getTime();
+		
+		person.setBirthday(date);
 		register.getPersons().add(person);
 	}
 	

@@ -17,28 +17,13 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for changing a person's family name.
 	 * Expect the person to be associated with another family as the family name does not fit anymore.
-	 * In this case a fitting family does not exist, so a new family must be created.
-	 */
-	@Test
-	public void testFamilyNameChangePerson() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-			
-		//----------------
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfLisa);
-		//----------------
-
-		util.assertTarget("PersonFamilyNameChange");
-		util.assertSource("MemberFamilyNameChange");
-	}
-	
-	/**
-	 * Test for changing a person's family name.
-	 * Expect the person to be associated with another family as the family name does not fit anymore.
 	 * In this case fitting family already exists and must be used as this is preferred.
+	 * 
+	 * Classification: incr-wcorr-delta-config
+	 * incr: renaming persons family name requires old consistent state as it replace old member name with new one in families model.
+	 * wcorr: it's impossible to guess, as here fitting family already exists. So its unclear weather it has to be fitted in to existing family or new family has to be created.  
+	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
+	 * config: here two decision has to be made weather member has to be created as child or parent in to the new family or existing family.
 	 */
 	@Test
 	public void testFamilyNameChangePersonToExist() {
@@ -60,6 +45,12 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	 * Test for changing a person's family name.
 	 * Expect the person to be associated with another family as the family name does not fit anymore.
 	 * In this case a fitting family already exists but creating a new family is preferred.
+	 * 
+	 * Classification: incr-wcorr-delta-config
+	 * incr: renaming persons family name requires old consistent state as it replace old member name with new one in families model.
+	 * wcorr: it's impossible to guess, as here fitting family already exists. So its unclear weather it has to be fitted in to existing family or new family has to be created.  
+	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
+	 * config: here decision has to be made weather member has to be created as child or parent in to the new family or existing family.
 	 */
 	@Test
 	public void testFamilyNameChangePersonToExistNew() {

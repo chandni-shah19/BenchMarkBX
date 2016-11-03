@@ -17,6 +17,12 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for agreed upon starting state.
 	 * Expect root elements of both source and target models.
+	 * 
+	 * Classification: batch-wocorr-state-auto
+	 * batch: initial state of synchronization, so no need for old consistent state.
+	 * wocorr: easily can apply default strategy and possible to guess, if root element of families created then related persons root element should be created. 
+	 * state: it is possible to guess, based on the current state.
+	 * auto: there is no decision has to be made, as it's a clear what has to be created.
 	 */
 	@Test
 	public void testInitialiseSynchronisation()
