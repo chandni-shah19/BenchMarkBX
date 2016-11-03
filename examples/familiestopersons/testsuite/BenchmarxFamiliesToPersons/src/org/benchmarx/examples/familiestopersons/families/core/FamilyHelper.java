@@ -26,6 +26,16 @@ public class FamilyHelper {
 		familyFather.setName("Homer");
 	}
 	
+	public void createSonHomer(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("Homer"));
+			
+		FamilyMember familySon = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familySon.setName("Homer");
+		family.getSons().add(familySon);
+	}
+	
 	public void createFatherGeorge(FamilyRegister register){
 		Family family = register.getFamilies().get(1);
 		assertTrue(family.getName().equals("Simpson"));
@@ -46,6 +56,16 @@ public class FamilyHelper {
 		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setMother(familyMother);
 		familyMother.setName("Marge");
+	}
+	
+	public void createDaughterMarge(FamilyRegister register){
+		Family family = register.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getMother().getName().equals("Marge"));
+		
+		FamilyMember familyDaughter = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyDaughter.setName("Marge");
+		family.getDaughters().add(familyDaughter);
 	}
 	
 	public void createSimpsonFamilyMembers(FamilyRegister register){
@@ -270,6 +290,24 @@ public class FamilyHelper {
 		assertTrue(family.getName().equals("Simpson"));
 		
 		EcoreUtil.delete(family.getFather());
+	}
+	
+	public void deleteFamilySonHomer(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("Homer"));
+		assertTrue(family.getSons().get(0).getName().equals("Homer"));
+		
+		EcoreUtil.delete(family.getSons().get(0));
+	}
+	
+	public void deleteFamilyDaughterMarge(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getMother().getName().equals("Marge"));
+		assertTrue(family.getDaughters().get(0).getName().equals("Marge"));
+		
+		EcoreUtil.delete(family.getDaughters().get(0));
 	}
 	
 	public void deleteFamilyBachchan(FamilyRegister eObject){

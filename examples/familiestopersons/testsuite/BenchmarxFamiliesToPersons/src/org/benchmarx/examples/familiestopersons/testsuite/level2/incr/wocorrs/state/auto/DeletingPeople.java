@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.state.auto;
+package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.state.auto;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
@@ -17,6 +17,12 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for deleting a person.
 	 * Expect the deletion of the corresponding family member in the families model.
+	 * 
+	 * Classification: incr-wocorr-state-auto
+	 * incr: deleting person requires old consistent state.
+	 * wocorr: it's possible to guess which family member has to be deleted in the families model as only single persons have this name. 
+	 * state: deleting is generally state based, it is easy to decide that it is deleted.
+	 * auto: there is no decision has to be made, as it's a clear what has to be deleted.
 	 */
 	@Test
 	public void testDeletePerson() {
@@ -36,6 +42,7 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for deleting a person.
 	 * Expect the deletion of the corresponding family member in the families model.
+	 * Classification same as @link {@link #testDeletePerson()}
 	 */
 	@Test
 	public void testDeleteFirstPerson() {

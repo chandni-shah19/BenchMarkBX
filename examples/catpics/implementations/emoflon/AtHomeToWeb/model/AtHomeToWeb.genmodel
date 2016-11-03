@@ -6,130 +6,281 @@
     operationReflection="true">
   <foreignModel>AtHomeToWeb.ecore</foreignModel>
   <genPackages prefix="AtHomeToWeb" disposableProviderFactory="true" ecorePackage="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#/">
-    <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/target"/>
-    </genClasses>
     <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//DirectoryToWeb/target"/>
     </genClasses>
+    <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//FileToWebElt/target"/>
+    </genClasses>
     <nestedGenPackages prefix="Rules" disposableProviderFactory="true" ecorePackage="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules">
-      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule">
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD/file"/>
+      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule">
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/dir"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_FWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_FWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/dir"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/dir"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/d2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/d2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_BWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_BWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/d2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/d2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_3">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_3/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD_EMoflonEdge_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD_EMoflonEdge_0/_edge_files"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_3">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_3/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD_EMoflonEdge_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD_EMoflonEdge_0/_edge_elements"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_FWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_BWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/webElt"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_CC/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD/file"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD/dir"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD/webElt"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel/ruleEntryContainer"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/ruleEntryContainer"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/d2wParameter"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/f2wParameter"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD/ruleResult"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/d2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/dir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/webElt"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_checkCsp_BWD/csp"/>
+        </genOperations>
+      </genClasses>
+      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule">
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_FWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/r2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_BWD/isApplicableMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/r2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD/match"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD_Directory_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD_Directory_0/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD_Web_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD_Web_0/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_FWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_BWD/__tripleMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/rootDir"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/targetMatch"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_CC/csp"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_FWD/rootDir"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_BWD/web"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel/ruleEntryContainer"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD/ruleResult"/>
+        </genOperations>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
       <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule">
@@ -159,8 +310,8 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD">
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/p2w"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/child"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/p2w"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/web"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD/parent"/>
         </genOperations>
@@ -169,10 +320,10 @@
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD">
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/p2w"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/child"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/c2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/p2w"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/web"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/c2w"/>
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD/parent"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_FWD">
@@ -202,11 +353,11 @@
         <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_BWD">
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_BWD_Web_6">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_BWD_Web_6/web"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_BWD_Web_1">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_BWD_Web_1/web"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_FWD_EMoflonEdge_6">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_FWD_EMoflonEdge_6/_edge_subDirs"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_FWD_EMoflonEdge_1">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_FWD_EMoflonEdge_1/_edge_subDirs"/>
         </genOperations>
         <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkAttributes_FWD">
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkAttributes_FWD/__tripleMatch"/>
@@ -250,272 +401,121 @@
           <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
-      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule">
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD/dir"/>
+      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule">
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_FWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_FWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD/dir"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_FWD/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD/dir"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD/d2w"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_FWD/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_FWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_FWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD/d2w"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_FWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_FWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD/web"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/perform_BWD/isApplicableMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/perform_BWD/isApplicableMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_BWD/web"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjectsToMatch_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_BWD/web"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD/match"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD/d2w"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_BWD/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD/d2w"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/ruleresult"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/f2w"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_BWD/match"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_BWD/match"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD_EMoflonEdge_7">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD_EMoflonEdge_7/_edge_files"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_0/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD_EMoflonEdge_3">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD_EMoflonEdge_3/_edge_elements"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_0">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_0/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_FWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_BWD/__tripleMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD/__tripleMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC/targetMatch"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/file"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/webElt"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/sourceMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC/targetMatch"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_CC/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC/csp"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD/dir"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD/file"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD/web"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD/webElt"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/ruleEntryContainer"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/f2wParameter"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel/d2wParameter"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel/ruleEntryContainer"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/webElt"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/f2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/file"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/dir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/d2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD/ruleResult"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD/ruleResult"/>
         </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_checkCsp_BWD/csp"/>
-        </genOperations>
-      </genClasses>
-      <genClasses ecoreClass="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule">
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_FWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/r2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/rootDir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/perform_BWD/isApplicableMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD/match"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/ruleresult"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/r2w"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/rootDir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD/match"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD_Directory_3">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD_Directory_3/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD_Web_7">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD_Web_7/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_FWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_BWD/__tripleMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/rootDir"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/web"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/sourceMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC/targetMatch"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_CC">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_CC/csp"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_FWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_FWD/rootDir"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_BWD/web"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel/ruleEntryContainer"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD/isApplicableMatch"/>
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD/ruleResult"/>
-        </genOperations>
-        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_checkCsp_BWD">
-          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_checkCsp_BWD/csp"/>
+        <genOperations ecoreOperation="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD">
+          <genParameters ecoreParameter="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD/csp"/>
         </genOperations>
       </genClasses>
     </nestedGenPackages>

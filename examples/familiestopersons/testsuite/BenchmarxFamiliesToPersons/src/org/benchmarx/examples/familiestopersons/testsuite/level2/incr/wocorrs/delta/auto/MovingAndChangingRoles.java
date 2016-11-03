@@ -1,4 +1,4 @@
-package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.delta.auto;
+package org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.delta.auto;
 
 import org.benchmarx.BXTool;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
@@ -17,6 +17,12 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for family member moved to new family, i.e., daughter marries and is registered under a new family.
 	 * Expect the family name of person to change appropriately in the person model.
+	 * 
+	 * Classification: incr-wocorr-delta-auto
+	 * incr: moving and changing the role of family member requires old consistent state as it replace old family name with new one in persons model either as male or female according to its role.
+	 * wocorr: it's possible to guess, as only one member with this name is available and member which contains this family name has to be renamed in the persons model which is clear. 
+	 * delta: here it delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
+	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
 	 */
 	@Test
 	public void testFamilyMemberMovesToNewFamily() {
@@ -34,6 +40,8 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for family member role change: here from father to son.
 	 * Expected: Nothing changes in the persons model (person remains male).
+	 * 
+	 * Classification same as @link {@link #testFamilyMemberMovesToNewFamily()}
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeFatherToSon() {
@@ -53,6 +61,8 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for family member role change: here from mother to daughter.
 	 * Expected: Nothing changes in the persons model (person remains female).
+	 * 
+	 * Classification same as @link {@link #testFamilyMemberMovesToNewFamily()}
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeMotherToDaughter() {
@@ -72,6 +82,8 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for family member role change: here from father to mother.
 	 * Expected: Changes in the persons model to male to female.
+	 * 
+	 * Classification same as @link {@link #testFamilyMemberMovesToNewFamily()}
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeFatherToMother() {
@@ -91,6 +103,8 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * Test for family member role change: here from son to mother.
 	 * Expected: Changes in the persons model to male to female.
+	 * 
+	 * Classification same as @link {@link #testFamilyMemberMovesToNewFamily()}
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeSonToMother() {
