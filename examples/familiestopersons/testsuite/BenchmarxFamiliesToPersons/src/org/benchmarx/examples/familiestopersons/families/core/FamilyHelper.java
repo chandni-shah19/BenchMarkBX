@@ -316,4 +316,12 @@ public class FamilyHelper {
 		
 		EcoreUtil.delete(family);
 	}
+	
+	public void deleteFirstSimpsonFamily(FamilyRegister eObject){
+		Family family = eObject.getFamilies().get(0);
+		assertTrue(family.getName().equals("Simpson"));
+		assertTrue(family.getFather().getName().equals("Homer"));
+		
+		EcoreUtil.delete(family);
+	}
 }

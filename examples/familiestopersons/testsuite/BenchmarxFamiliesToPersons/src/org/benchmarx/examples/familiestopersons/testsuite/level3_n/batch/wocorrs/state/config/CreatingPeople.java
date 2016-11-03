@@ -18,6 +18,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	 * Test for creating multiple persons together.
 	 * Expect the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer parents to children, and existing families to creating new ones
+	 * 
+	 * Classification: batch-wocorr-state-auto
+	 * batch: creation of female and male person from scratch so no need for old consistent state.
+	 * wocorr: easily can apply default strategy and possible to guess, which member has to be created as child or parent in to new or existing family according to decisions made. 
+	 * state: it is possible to guess, based on the current state.
+	 * config: here decision has to be made, weather person has to created as child or parent in new or existing family.
 	 */
 	@Test
 	public void testCreateMultiPersonPrefTT() {
@@ -40,6 +46,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	 * Test for creating multiple persons together.
 	 * Expect the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer children to parent, and existing families to creating new ones
+	 * 
+	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefFT() {
@@ -62,6 +70,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	 * Test for creating multiple persons together.
 	 * Expect the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer parent to children, and creating new ones to existing families 
+	 * 
+	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefTF() {
@@ -84,6 +94,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	 * Test for creating multiple persons together.
 	 * Expect the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer children to parent, and creating new ones to existing families
+	 * 
+	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefFF() {
