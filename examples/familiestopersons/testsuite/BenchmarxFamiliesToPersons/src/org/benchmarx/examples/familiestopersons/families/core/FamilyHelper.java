@@ -322,6 +322,12 @@ public class FamilyHelper {
 		assertTrue(family.getName().equals("Simpson"));
 		assertTrue(family.getFather().getName().equals("Homer"));
 		
+		EcoreUtil.delete(family.getFather());
+		EcoreUtil.delete(family.getMother());
+		EcoreUtil.delete(family.getSons().get(0));
+		EcoreUtil.delete(family.getDaughters().get(0));
+		EcoreUtil.delete(family.getDaughters().get(0));
+		
 		EcoreUtil.delete(family);
 	}
 }
