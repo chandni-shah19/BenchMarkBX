@@ -47,8 +47,8 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 
 	
 	public MediniQVTR() {
-//		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
-		logger = new OutputStreamLog(System.err); 
+		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
+//		logger = new OutputStreamLog(System.err); 
 		
 		processorImpl = new EMFQvtProcessorImpl(this.logger);
 		processorImpl.setProperty(QVTProcessorConsts.PROP_DEBUG, "true");
@@ -183,8 +183,8 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		
 		// Load the QVT relations
 		try {
-//			System.setOut(new PrintStream(new NullOutputStream()));
-//			System.setErr(new PrintStream(new NullOutputStream()));
+			System.setOut(new PrintStream(new NullOutputStream()));
+			System.setErr(new PrintStream(new NullOutputStream()));
 
 			qvtRuleSet = new FileReader(basePath + RULESET);
 			this.transform(qvtRuleSet, transformation, direction);

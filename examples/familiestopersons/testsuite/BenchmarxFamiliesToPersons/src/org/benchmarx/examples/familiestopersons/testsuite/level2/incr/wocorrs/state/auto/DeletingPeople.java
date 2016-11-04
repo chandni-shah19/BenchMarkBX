@@ -27,8 +27,8 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 	@Test
 	public void testDeletePerson() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
+				   							   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
 		//---------------------- 
@@ -47,8 +47,8 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 	@Test
 	public void testDeleteFirstPerson() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
+											   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
 		//---------------------- 
