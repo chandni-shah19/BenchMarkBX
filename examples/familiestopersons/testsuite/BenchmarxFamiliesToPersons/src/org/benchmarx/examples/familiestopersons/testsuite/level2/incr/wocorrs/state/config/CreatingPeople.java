@@ -134,6 +134,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createBart);
 		// ---------------------------------
 			
@@ -161,6 +162,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		// ---------------------------------
 			

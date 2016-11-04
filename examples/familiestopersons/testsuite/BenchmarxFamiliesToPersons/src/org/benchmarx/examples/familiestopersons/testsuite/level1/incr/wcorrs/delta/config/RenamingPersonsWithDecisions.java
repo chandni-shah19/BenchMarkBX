@@ -32,8 +32,8 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
 		//----------------
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
 		//----------------
 		
@@ -59,8 +59,8 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
 		//----------------
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
-		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
+						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
 		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
 		//----------------
 		
