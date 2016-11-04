@@ -28,7 +28,10 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	@Test
 	public void testFamilyNameChangePersonToExist() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
+			       .andThen(helperFamily::createFatherAmitabh));
+		tool.performAndPropagateSourceEdit(helperFamily::createfamilyBachchanWithOtherRemainingMembers);
+		
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
 		//----------------
@@ -55,7 +58,10 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	@Test
 	public void testFamilyNameChangePersonToExistNew() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
+			       .andThen(helperFamily::createFatherAmitabh));
+		tool.performAndPropagateSourceEdit(helperFamily::createfamilyBachchanWithOtherRemainingMembers);
+		
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
 		//----------------
