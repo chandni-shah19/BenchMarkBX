@@ -1,9 +1,8 @@
-package org.benchmarx.examples.familiestopersons.implementations.qvtr;
+package org.benchmarx.examples.familiestopersons.implementations.medini;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.io.Reader;
 import java.util.ArrayList;
@@ -29,8 +28,6 @@ import Persons.PersonRegister;
 import Persons.PersonsPackage;
 import de.ikv.emf.qvt.EMFQvtProcessorImpl;
 import de.ikv.medini.qvt.QVTProcessorConsts;
-import transconf2.Direction;
-import transconf2.Transconf2Package;
 import uk.ac.kent.cs.kmf.util.ILog;
 import uk.ac.kent.cs.kmf.util.OutputStreamLog;
 
@@ -42,7 +39,6 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	private ResourceSet resourceSet;
 	private Resource source;
 	private Resource target;
-	private Direction conf;
 	private String basePath;
 	private String transformation;
 	private FileReader qvtRuleSet;
@@ -51,16 +47,18 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 
 	
 	public MediniQVTR() {
-		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
+//		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
+		logger = new OutputStreamLog(System.err); 
+		
 		processorImpl = new EMFQvtProcessorImpl(this.logger);
 		processorImpl.setProperty(QVTProcessorConsts.PROP_DEBUG, "true");
-		basePath = "./src/org/benchmarx/examples/familiestopersons/implementations/qvtr/base/";
+		basePath = "./src/org/benchmarx/examples/familiestopersons/implementations/medini/base/";
 		
 		// Tell the QVT engine, which transformation to execute
 		transformation = "families2persons";
 
 		// Tell the QVT engine a directory to work in - e.g. to store the trace (meta)models
-		File tracesFile = new File(basePath + "/traces/trace.trafo");
+		File tracesFile = new File(basePath + "traces/trace.trafo");
 		tracesFile.delete();
 	}
 	
@@ -81,13 +79,6 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		// Create resources for models
 		source = resourceSet.createResource(URI.createURI("source.xmi"));
 		target = resourceSet.createResource(URI.createURI("target.xmi"));
-		Resource confRes  = resourceSet.createResource(URI.createFileURI(basePath + "conf.xmi"));
-		try {
-			confRes.load(null);
-			conf = (Direction) confRes.getContents().get(0);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		
 		// Collect the models, which should participate in the transformation.
 		// You can provide a list of models for each direction.
@@ -101,7 +92,6 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		modelResources.add(thirdSetOfModels);
 		firstSetOfModels.add(source);
 		secondSetOfModels.add(target);
-		thirdSetOfModels.add(confRes);
 		
 		URI directory = URI.createFileURI(basePath + "traces");
 		this.preExecution(modelResources, directory);
@@ -111,12 +101,10 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	}
 
 	private void launchFWD() {
-		conf.setForward(true);
 		launch(fwdDir);
 	}
 	
 	private void launchBWD() {
-		conf.setForward(false);
 		launch(bwdDir);
 	}
 
@@ -195,8 +183,8 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 		
 		// Load the QVT relations
 		try {
-			System.setOut(new PrintStream(new NullOutputStream()));
-			System.setErr(new PrintStream(new NullOutputStream()));
+//			System.setOut(new PrintStream(new NullOutputStream()));
+//			System.setErr(new PrintStream(new NullOutputStream()));
 
 			qvtRuleSet = new FileReader(basePath + RULESET);
 			this.transform(qvtRuleSet, transformation, direction);
@@ -220,6 +208,5 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 	protected void collectMetaModels(Collection<EPackage> metaPackages) {
 		metaPackages.add(PersonsPackage.eINSTANCE);
 		metaPackages.add(FamiliesPackage.eINSTANCE);
-		metaPackages.add(Transconf2Package.eINSTANCE);
 	}
 }
