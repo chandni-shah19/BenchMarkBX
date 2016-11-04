@@ -17,6 +17,12 @@ public class FamilyHelper {
 		register.getFamilies().add(family);
 	}	
 	
+	public void createBachchanFamily(FamilyRegister register) {
+		Family family = FamiliesFactory.eINSTANCE.createFamily();
+		family.setName("Bachchan");
+		register.getFamilies().add(family);
+	}	
+	
 	public void createFatherHomer(FamilyRegister register){
 		Family family = register.getFamilies().get(0);
 		assertTrue(family.getName().equals("Simpson"));
@@ -24,6 +30,15 @@ public class FamilyHelper {
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
 		familyFather.setName("Homer");
+	}
+	
+	public void createFatherAmitabh(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Bachchan"));
+			
+		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
+		family.setFather(familyFather);
+		familyFather.setName("Amitabh");
 	}
 	
 	public void createSonHomer(FamilyRegister register){
@@ -243,6 +258,23 @@ public class FamilyHelper {
 		FamilyMember familyFather = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setFather(familyFather);
 		familyFather.setName("Amitabh");
+		
+		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
+		family.setMother(familyMother);
+		familyMother.setName("Jaya");
+		
+		FamilyMember familySon = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familySon.setName("Abhishek");
+		family.getSons().add(familySon);
+		
+		FamilyMember familyDaughter = FamiliesFactory.eINSTANCE.createFamilyMember();
+		familyDaughter.setName("Shweta");
+		family.getDaughters().add(familyDaughter);
+	}
+	
+	public void createfamilyBachchanWithOtherRemainingMembers(FamilyRegister register){
+		Family family = register.getFamilies().get(1);
+		assertTrue(family.getName().equals("Bachchan"));
 		
 		FamilyMember familyMother = FamiliesFactory.eINSTANCE.createFamilyMember();
 		family.setMother(familyMother);

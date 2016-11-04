@@ -16,7 +16,7 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	}
 
 	/**
-	 * Test for deletion of a single family member.
+	 * Test for deletion of a single family member. (father, where it is created as first member)
 	 * Expect the associated person to be deleted from the persons model.
 	 * 
 	 * Classification: incr-wocorr-state-auto
@@ -31,7 +31,10 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
+			       .andThen(helperFamily::createFatherAmitabh));
+		tool.performAndPropagateSourceEdit(helperFamily::createfamilyBachchanWithOtherRemainingMembers);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherAmitabh);
