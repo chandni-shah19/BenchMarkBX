@@ -29,7 +29,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
 			       .andThen(helperFamily::createFatherAmitabh));
-		tool.performAndPropagateSourceEdit(helperFamily::createfamilyBachchanWithOtherRemainingMembers);
+		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::moveDaughterToMotherOfNewFamily);

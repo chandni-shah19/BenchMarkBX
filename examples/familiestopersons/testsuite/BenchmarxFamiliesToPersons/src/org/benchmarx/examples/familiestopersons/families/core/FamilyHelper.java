@@ -284,7 +284,7 @@ public class FamilyHelper {
 		family.getDaughters().add(familyDaughter);
 	}
 	
-	public void createfamilyBachchanWithOtherRemainingMembers(FamilyRegister register){
+	public void createOtherRemainingMembersInFamilyBachchan(FamilyRegister register){
 		Family family = getFromRegister("Bachchan", register);
 		assertTrue(family.getName().equals("Bachchan"));
 		

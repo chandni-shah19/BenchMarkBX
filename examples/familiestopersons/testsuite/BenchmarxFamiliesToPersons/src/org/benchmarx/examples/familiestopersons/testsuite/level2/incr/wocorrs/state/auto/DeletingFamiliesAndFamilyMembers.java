@@ -28,13 +28,13 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	@Test
 	public void testDeleteFamilyMember() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
+			       							   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
-			       .andThen(helperFamily::createFatherAmitabh));
-		tool.performAndPropagateSourceEdit(helperFamily::createfamilyBachchanWithOtherRemainingMembers);
+			       							   .andThen(helperFamily::createFatherAmitabh));
+		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherAmitabh);
@@ -58,7 +58,6 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
 		//------------
-		util.configure();
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherHomer);
 		//------------
 		
