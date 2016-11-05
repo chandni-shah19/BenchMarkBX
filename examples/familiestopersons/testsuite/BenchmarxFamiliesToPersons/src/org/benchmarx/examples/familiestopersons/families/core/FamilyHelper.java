@@ -10,8 +10,6 @@ import Families.FamiliesFactory;
 import Families.Family;
 import Families.FamilyMember;
 import Families.FamilyRegister;
-import Persons.Person;
-import Persons.PersonRegister;
 
 public class FamilyHelper {
 	
