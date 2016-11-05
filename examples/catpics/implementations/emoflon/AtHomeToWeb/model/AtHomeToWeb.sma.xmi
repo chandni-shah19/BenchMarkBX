@@ -5,6 +5,10 @@
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_FWD_EMoflonEdge_0"/>
       <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_FWD"/>
     </rules>
+    <rules ruleName="FileToWebElementRule">
+      <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_0"/>
+      <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD"/>
+    </rules>
     <rules ruleName="RootDirToWebRule">
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_FWD_Directory_0"/>
       <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkDEC_FWD"/>
@@ -13,15 +17,15 @@
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_FWD_EMoflonEdge_1"/>
       <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkDEC_FWD"/>
     </rules>
-    <rules ruleName="FileToWebElementRule">
-      <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_FWD_File_0"/>
-      <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_FWD"/>
-    </rules>
   </sourceRules>
   <targetRules>
     <rules ruleName="AddFileAndWebElementRule">
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_BWD_EMoflonEdge_0"/>
       <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkDEC_BWD"/>
+    </rules>
+    <rules ruleName="FileToWebElementRule">
+      <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_0"/>
+      <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD"/>
     </rules>
     <rules ruleName="RootDirToWebRule">
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_BWD_Web_0"/>
@@ -30,10 +34,6 @@
     <rules ruleName="IgnoreDirectoryRule" ignore="true">
       <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_BWD_Web_1"/>
       <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkDEC_BWD"/>
-    </rules>
-    <rules ruleName="FileToWebElementRule">
-      <isAppropriateMethods href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_BWD_WebElement_0"/>
-      <checkDECMethod href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkDEC_BWD"/>
     </rules>
   </targetRules>
 </analysis:StaticAnalysis>

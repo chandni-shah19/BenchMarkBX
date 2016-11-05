@@ -10,6 +10,15 @@
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.csp.*">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="csp.constraints.*">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.csp.*">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule"/>
   </importInjectionEntries>
   <importInjectionEntries content="csp.constraints.*">
@@ -27,15 +36,6 @@
   <importInjectionEntries content="org.moflon.tgg.language.csp.*">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule"/>
   </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.csp.*">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="csp.constraints.*">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.language.csp.*">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule"/>
   </importInjectionEntries>
@@ -59,6 +59,30 @@
   </importInjectionEntries>
   <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="java.util.Optional">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
+  </importInjectionEntries>
+  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
+    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
   </importInjectionEntries>
   <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule"/>
@@ -107,47 +131,23 @@
   </importInjectionEntries>
   <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
     <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.runtime.TripleMatchNodeMapping">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="java.util.Optional">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="org.moflon.tgg.algorithm.delta.attribute.CheckAttributeHelper">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
-  </importInjectionEntries>
-  <importInjectionEntries content="SDMLanguage.expressions.ComparingOperator">
-    <eClass href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule"/>
   </importInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_solveCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;file&quot;, file);&#xA;match.registerObject(&quot;dir&quot;, dir);&#xA;">
+  <compilerInjectionEntries content="match.registerObject(&quot;dir&quot;, dir);&#xA;match.registerObject(&quot;file&quot;, file);&#xA;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjectsToMatch_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;d2w&quot;, d2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;dir&quot;, dir);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;ruleresult.registerObject(&quot;d2w&quot;, d2w);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;dir&quot;, dir);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true;">
@@ -162,92 +162,17 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isAppropriate_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;d2w&quot;, d2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;dir&quot;, dir);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;ruleresult.registerObject(&quot;d2w&quot;, d2w);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;dir&quot;, dir);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;rootDir&quot;, rootDir);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;rootDir&quot;,rootDir);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;r2w&quot;, r2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;rootDir&quot;, rootDir);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;rootDir&quot;).eClass()).equals(&quot;AtHome.Directory.&quot;);">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;web&quot;, web);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;r2w&quot;, r2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;rootDir&quot;, rootDir);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;web&quot;).eClass()).equals(&quot;OnTheWeb.Web.&quot;);">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;child&quot;, child);&#xA;match.registerObject(&quot;parent&quot;, parent);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjectsToMatch_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;child&quot;,child);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2w&quot;,p2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;parent&quot;,parent);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_checkCsp_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;child&quot;, child);&#xA;ruleresult.registerObject(&quot;p2w&quot;, p2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;c2w&quot;, c2w);&#xA;ruleresult.registerObject(&quot;parent&quot;, parent);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;child&quot;).eClass()).equals(&quot;AtHome.Directory.&quot;);">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="match.registerObject(&quot;web&quot;, web);&#xA;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjectsToMatch_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return true;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;Variable literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal0&quot;, true, csp);&#xD;&#xA;literal0.setValue(&quot;???&quot;);&#xD;&#xA;literal0.setType(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.name&quot;, true, csp);&#xD;&#xA;var_file_name.setValue(file.getName());&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;SetDefaultString setDefaultString = new SetDefaultString();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(setDefaultString);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;setDefaultString.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;setDefaultString.solve(var_file_name,literal0);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isAppropriate_solveCsp_FWD"/>
@@ -264,7 +189,7 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_FWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;file&quot;).eClass()).equals(&quot;AtHome.File.&quot;);">
@@ -285,17 +210,98 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;">
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;webElt&quot;, webElt);&#xA;ruleresult.registerObject(&quot;file&quot;, file);&#xA;ruleresult.registerObject(&quot;f2w&quot;, f2w);&#xA;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/registerObjects_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;webElt&quot;).eClass()).equals(&quot;OnTheWeb.WebElement.&quot;);">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;rootDir&quot;, rootDir);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;rootDir&quot;,rootDir);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;rootDir&quot;, rootDir);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;r2w&quot;, r2w);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;rootDir&quot;).eClass()).equals(&quot;AtHome.Directory.&quot;);">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;web&quot;, web);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;rootDir&quot;, rootDir);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;ruleresult.registerObject(&quot;r2w&quot;, r2w);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/registerObjects_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;web&quot;).eClass()).equals(&quot;OnTheWeb.Web.&quot;);">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkTypes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;parent&quot;, parent);&#xA;match.registerObject(&quot;child&quot;, child);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjectsToMatch_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;parent&quot;,parent);&#xD;&#xA;isApplicableMatch.registerObject(&quot;child&quot;,child);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2w&quot;,p2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_solveCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_checkCsp_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="ruleresult.registerObject(&quot;parent&quot;, parent);&#xA;ruleresult.registerObject(&quot;c2w&quot;, c2w);&#xA;ruleresult.registerObject(&quot;child&quot;, child);&#xA;ruleresult.registerObject(&quot;p2w&quot;, p2w);&#xA;ruleresult.registerObject(&quot;web&quot;, web);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjects_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true &amp;&amp; org.moflon.util.eMoflonSDMUtil.getFQN(match.getObject(&quot;child&quot;).eClass()).equals(&quot;AtHome.Directory.&quot;);">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="match.registerObject(&quot;web&quot;, web);&#xA;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/registerObjectsToMatch_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isAppropriate_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return true;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkTypes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;AddFileAndWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_FWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;AddFileAndWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/checkAttributes_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;FileToWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal&quot;, true, csp);&#xD;&#xA;var_literal0.setValue(&quot;???&quot;);&#xD;&#xA;var_literal0.setType(&quot;&quot;);&#xA;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_name.setValue(__helper.getValue(&quot;file&quot;, &quot;name&quot;));&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xA;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(__helper.getValue(&quot;file&quot;, &quot;picture&quot;));&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xA;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(__helper.getValue(&quot;webElt&quot;, &quot;picture&quot;));&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xA;&#xA;SetDefaultString setDefaultString0 = new SetDefaultString();&#xD;&#xA;csp.getConstraints().add(setDefaultString0);&#xA;&#xA;Eq eq1 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq1);&#xA;&#xA;setDefaultString0.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;setDefaultString0.solve(var_file_name,var_literal0);&#xA;&#xA;eq1.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;eq1.solve(var_file_picture,var_webElt_picture);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_webElt_picture.setBound(false);&#xD;&#xA;&#x9;setDefaultString0.solve(var_file_name,var_literal0);&#xD;&#xA;&#x9;eq1.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;webElt&quot;, &quot;picture&quot;, var_webElt_picture.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;FileToWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal&quot;, true, csp);&#xD;&#xA;var_literal0.setValue(&quot;???&quot;);&#xD;&#xA;var_literal0.setType(&quot;&quot;);&#xA;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_name.setValue(__helper.getValue(&quot;file&quot;, &quot;name&quot;));&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xA;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(__helper.getValue(&quot;file&quot;, &quot;picture&quot;));&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xA;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(__helper.getValue(&quot;webElt&quot;, &quot;picture&quot;));&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xA;&#xA;SetDefaultString setDefaultString0 = new SetDefaultString();&#xD;&#xA;csp.getConstraints().add(setDefaultString0);&#xA;&#xA;Eq eq1 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq1);&#xA;&#xA;setDefaultString0.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;setDefaultString0.solve(var_file_name,var_literal0);&#xA;&#xA;eq1.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;eq1.solve(var_file_picture,var_webElt_picture);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_file_name.setBound(false);&#xD;&#xA;&#x9;var_file_picture.setBound(false);&#xD;&#xA;&#x9;setDefaultString0.solve(var_file_name,var_literal0);&#xD;&#xA;&#x9;eq1.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;file&quot;, &quot;name&quot;, var_file_name.getValue());&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;file&quot;, &quot;picture&quot;, var_file_picture.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;RootDirToWebRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/checkAttributes_FWD"/>
@@ -309,17 +315,17 @@
   <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;IgnoreDirectoryRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/checkAttributes_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;FileToWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal&quot;, true, csp);&#xD;&#xA;var_literal0.setValue(&quot;???&quot;);&#xD;&#xA;var_literal0.setType(&quot;&quot;);&#xA;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_name.setValue(__helper.getValue(&quot;file&quot;, &quot;name&quot;));&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xA;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(__helper.getValue(&quot;file&quot;, &quot;picture&quot;));&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xA;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(__helper.getValue(&quot;webElt&quot;, &quot;picture&quot;));&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xA;&#xA;SetDefaultString setDefaultString0 = new SetDefaultString();&#xD;&#xA;csp.getConstraints().add(setDefaultString0);&#xA;&#xA;Eq eq1 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq1);&#xA;&#xA;setDefaultString0.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;setDefaultString0.solve(var_file_name,var_literal0);&#xA;&#xA;eq1.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;eq1.solve(var_file_picture,var_webElt_picture);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_webElt_picture.setBound(false);&#xD;&#xA;&#x9;setDefaultString0.solve(var_file_name,var_literal0);&#xD;&#xA;&#x9;eq1.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;webElt&quot;, &quot;picture&quot;, var_webElt_picture.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_FWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="AttributeConstraintsRuleResult ruleResult = org.moflon.tgg.runtime.RuntimeFactory.eINSTANCE.createAttributeConstraintsRuleResult();&#xD;&#xA;ruleResult.setRule(&quot;FileToWebElementRule&quot;);&#x9;&#xD;&#xA;ruleResult.setSuccess(true);&#xD;&#xA;&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;CheckAttributeHelper __helper = new CheckAttributeHelper(__tripleMatch);&#xA;&#xA;&#xA;&#xA;Variable var_literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal&quot;, true, csp);&#xD;&#xA;var_literal0.setValue(&quot;???&quot;);&#xD;&#xA;var_literal0.setType(&quot;&quot;);&#xA;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_name.setValue(__helper.getValue(&quot;file&quot;, &quot;name&quot;));&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xA;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(__helper.getValue(&quot;file&quot;, &quot;picture&quot;));&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xA;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(__helper.getValue(&quot;webElt&quot;, &quot;picture&quot;));&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xA;&#xA;SetDefaultString setDefaultString0 = new SetDefaultString();&#xD;&#xA;csp.getConstraints().add(setDefaultString0);&#xA;&#xA;Eq eq1 = new Eq();&#xD;&#xA;csp.getConstraints().add(eq1);&#xA;&#xA;setDefaultString0.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;setDefaultString0.solve(var_file_name,var_literal0);&#xA;&#xA;eq1.setRuleName(&quot;FileToWebElementRule&quot;);&#xD;&#xA;eq1.solve(var_file_picture,var_webElt_picture);&#xA;&#xA;if(csp.check()){ &#xD;&#xA;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;} else {&#xD;&#xA;&#x9;var_file_name.setBound(false);&#xD;&#xA;&#x9;var_file_picture.setBound(false);&#xD;&#xA;&#x9;setDefaultString0.solve(var_file_name,var_literal0);&#xD;&#xA;&#x9;eq1.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#x9;if(csp.check()){ &#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(true);&#xD;&#xA;&#x9;&#x9;ruleResult.setRequiredChange(true);&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;file&quot;, &quot;name&quot;, var_file_name.getValue());&#xD;&#xA;&#x9;&#x9;__helper.setValue(&quot;file&quot;, &quot;picture&quot;, var_file_picture.getValue());&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;ruleResult.setSuccess(false);&#xD;&#xA;&#x9;&#x9;return ruleResult;&#xD;&#xA;&#x9;}&#x9;&#x9;&#xD;&#xA;}&#x9;&#xA;&#xA;return ruleResult;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/checkAttributes_BWD"/>
-  </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_solveCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/isApplicable_checkCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.picture&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(file.getPicture());&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xD;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt.picture&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(webElt.getPicture());&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/isApplicable_solveCsp_CC"/>
@@ -333,17 +339,17 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/isApplicable_checkCsp_CC"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.picture&quot;, true, csp);&#xD;&#xA;var_file_picture.setValue(file.getPicture());&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xD;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt.picture&quot;, true, csp);&#xD;&#xA;var_webElt_picture.setValue(webElt.getPicture());&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_solveCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/isApplicable_checkCsp_CC"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;webElt&quot;,webElt);&#xD;&#xA;isApplicableMatch.registerObject(&quot;d2w&quot;,d2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;f2w&quot;,f2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;dir&quot;,dir);&#xD;&#xA;isApplicableMatch.registerObject(&quot;file&quot;,file);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/AddFileAndWebElementRule/generateModel_checkCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;Variable literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal0&quot;, true, csp);&#xD;&#xA;literal0.setValue(&quot;???&quot;);&#xD;&#xA;literal0.setType(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.name&quot;, csp);&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xD;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.picture&quot;, csp);&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xD;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt.picture&quot;, csp);&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;SetDefaultString setDefaultString = new SetDefaultString();&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(setDefaultString);&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;setDefaultString.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;setDefaultString.solve(var_file_name,literal0);&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD"/>
+  </compilerInjectionEntries>
+  <compilerInjectionEntries content="return csp.check();">
+    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_solveCsp_BWD"/>
@@ -351,16 +357,10 @@
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/RootDirToWebRule/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2w&quot;,p2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;isApplicableMatch.registerObject(&quot;parent&quot;,parent);&#xD;&#xA;return csp;">
+  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;isApplicableMatch.registerObject(&quot;parent&quot;,parent);&#xD;&#xA;isApplicableMatch.registerObject(&quot;p2w&quot;,p2w);&#xD;&#xA;isApplicableMatch.registerObject(&quot;web&quot;,web);&#xD;&#xA;return csp;">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/generateModel_solveCsp_BWD"/>
   </compilerInjectionEntries>
   <compilerInjectionEntries content="return csp.check();">
     <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/IgnoreDirectoryRule/generateModel_checkCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="// Create CSP&#xD;&#xA;CSP csp = CspFactory.eINSTANCE.createCSP();&#xD;&#xA;isApplicableMatch.getAttributeInfo().add(csp);&#xD;&#xA;&#xD;&#xA;// Create literals&#xD;&#xA;Variable literal0 = CSPFactoryHelper.eINSTANCE.createVariable(&quot;literal0&quot;, true, csp);&#xD;&#xA;literal0.setValue(&quot;???&quot;);&#xD;&#xA;literal0.setType(&quot;&quot;);&#xD;&#xA;&#xD;&#xA;// Create attribute variables&#xD;&#xA;&#xD;&#xA;// Create unbound variables&#xD;&#xA;Variable var_file_name = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.name&quot;, csp);&#xD;&#xA;var_file_name.setType(&quot;String&quot;);&#xD;&#xA;Variable var_file_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;file.picture&quot;, csp);&#xD;&#xA;var_file_picture.setType(&quot;String&quot;);&#xD;&#xA;Variable var_webElt_picture = CSPFactoryHelper.eINSTANCE.createVariable(&quot;webElt.picture&quot;, csp);&#xD;&#xA;var_webElt_picture.setType(&quot;String&quot;);&#xD;&#xA;&#xD;&#xA;// Create constraints&#xD;&#xA;SetDefaultString setDefaultString = new SetDefaultString();&#xD;&#xA;Eq eq = new Eq();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;csp.getConstraints().add(setDefaultString);&#xD;&#xA;csp.getConstraints().add(eq);&#xD;&#xA;&#xD;&#xA;// Solve CSP&#xD;&#xA;setDefaultString.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;setDefaultString.solve(var_file_name,literal0);&#xD;&#xA;eq.setRuleName(&quot;NoRuleName&quot;);&#xD;&#xA;eq.solve(var_file_picture,var_webElt_picture);&#xD;&#xA;&#xD;&#xA;// Snapshot pattern match on which CSP is solved&#xD;&#xA;return csp;">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_solveCsp_BWD"/>
-  </compilerInjectionEntries>
-  <compilerInjectionEntries content="return csp.check();">
-    <eOperation href="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules/FileToWebElementRule/generateModel_checkCsp_BWD"/>
   </compilerInjectionEntries>
 </sdmUtil:CompilerInjection>

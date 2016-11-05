@@ -17,8 +17,8 @@
   <eSubpackages name="Rules" nsURI="platform:/plugin/AtHomeToWeb/model/AtHomeToWeb.ecore#//Rules"
       nsPrefix="Rules">
     <eClassifiers xsi:type="ecore:EClass" name="AddFileAndWebElementRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FileToWebElementRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="RootDirToWebRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
     <eClassifiers xsi:type="ecore:EClass" name="IgnoreDirectoryRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
-    <eClassifiers xsi:type="ecore:EClass" name="FileToWebElementRule" eSuperTypes="platform:/plugin/org.moflon.tgg.runtime/model/Runtime.ecore#//AbstractRule"/>
   </eSubpackages>
 </ecore:EPackage>
