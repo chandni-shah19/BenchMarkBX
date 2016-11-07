@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ASCII"?>
+<OnTheWeb:Web
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:OnTheWeb="platform:/plugin/OnTheWeb/model/OnTheWeb.ecore">
+  <elements
+      picture="pictureOfPalindromeCat"/>
+</OnTheWeb:Web>
