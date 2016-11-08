@@ -14,14 +14,3 @@
 #target {
 	++ p : Male
 }
-
-#correspondence {
-	++ familyMember2Persons : FamilyMemberToPerson {
-		#src->fm
-		#trg->p
-	}
-}
-
-#attributeConditions {
-	
-}
