@@ -15,15 +15,22 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creation of a single male person.
-	 * Expect the creation of a family member in the families model with the given first name.
-	 * Decision: Create a parent (here a father) instead of a child (but only if possible, i.e., no double fathers or double mothers)
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as parent in to the new family(new family, because there is no existing family available)
+	 * <b>Test</b> for creation of a single male person.
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
+	 * Decision: Create a parent (in this example a father) instead of a child (but only if possible, i.e., no double fathers or double mothers)
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * <ul>
+	 * <li><b>incr</b>: family register is required to avoid information
+	 * loss (mapping of (fe)males to mothers/fathers or daughters/sons).
+	 * <li><b>wocorr</b>:  assumption based on unique naming works here as there
+	 * are no persons with the full name exist.
+	 * <li><b>state</b>: its possible to determine that new person is created. 
+	 * <li><b>config</b>: there is only one decisions to be made here: (i)
+	 * whether the member is to be created as a child or parent in their new
+	 * family.
+	 * <ul>
 	 */
 	@Test
 	public void testCreatePerson()
@@ -40,15 +47,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a single male person.
-	 * Expect the creation of a family member in the families model with the given first name.
-	 * Decision: Create a child (here a son) instead of a parent (father).
-	 * 
-	 *  Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as child in to the new family(new family, because there is no existing family available)
+	 * <b>Test</b> for creation of a single male person.
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
+	 * Decision: Create a child (in this example a son) instead of a parent (father).
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * Analogous to @link {@link #testCreatePerson()}
 	 */
 	@Test
 	public void testCreatePersonSon()
@@ -65,15 +70,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a single female person.
-	 * Expect the creation of a family member in the families model with the given first name.
+	 * <b>Test</b> for creation of a single female person.
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
 	 * Decision: Create a parent (here a mother) instead of a child (but only if possible, i.e., no double fathers or double mothers)
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as parent in to the new family(new family, because there is no existing family available)
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * Analogous to @link {@link #testCreatePerson()}
 	 */
 	@Test
 	public void testCreatePersonMother()
@@ -90,15 +93,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a single female person.
-	 * Expect the creation of a family member in the families model with the given first name.
+	 * <b>Test</b> for creation of a single female person.
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
 	 * Decision: Create a child (here a daughter) instead of a parent (here a mother)
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as child in to the new family(new family, because there is no existing family available)
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * Analogous to @link {@link #testCreatePerson()}
 	 */
 	@Test
 	public void testCreatePersonDaughter()
@@ -115,15 +116,15 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a single male person where already one male person is there. (i.e. parent is there)
-	 * Expect the creation of a family member in the families model with the given first name.
+	 * <b>Test</b> for creation of a single male person where already one male person is there. (i.e. parent is there)
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
 	 * Decision: Create a child (here a son) even though creating parents is preferred. 
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as child in to the existing family(because there is existing family available)
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * Analogous to @link {@link #testCreatePerson()} but here, there are two decisions to be made:
+	 * (i) whether the member is to be created as a child or parent in their new family, and 
+	 * (ii) if a new family is to be created or an existing suitable family is to be used.
 	 */
 	@Test
 	public void testCreatePersonSonFatherExist()
@@ -143,15 +144,15 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a single female person where already one female person is there. (i.e. parent is there)
-	 * Expect the creation of a family member in the families model with the given first name.
+	 * <b>Test</b> for creation of a single female person where already one female person is there. (i.e. parent is there)
+	 * <p>
+	 * <b>Expect</b> the creation of a family member in the families model with the given first name.
 	 * Decision: Create a child (here a daughter) even though creating parents is preferred. 
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creating persons requires old consistent state as birthday's of persons must be retained.
-	 * wocorr: it's possible to guess, weather member has to be created as mother/daughter or father/son as only single person is created.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * config: here decision has to be made, member has to be created as child in to the existing family(because there is existing family available)
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * Analogous to @link {@link #testCreatePerson()} but here, there are two decisions to be made:
+	 * (i) whether the member is to be created as a child or parent in their new family, and 
+	 * (ii) if a new family is to be created or an existing suitable family is to be used.
 	 */
 	@Test
 	public void testCreatePersonDaughterMotherExist()

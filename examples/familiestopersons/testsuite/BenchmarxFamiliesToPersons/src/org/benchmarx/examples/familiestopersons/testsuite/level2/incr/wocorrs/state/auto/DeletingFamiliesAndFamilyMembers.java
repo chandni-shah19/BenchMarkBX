@@ -16,14 +16,20 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	}
 
 	/**
-	 * Test for deletion of a single family member. (father, where it is created as first member)
-	 * Expect the associated person to be deleted from the persons model.
-	 * 
-	 * Classification: incr-wocorr-state-auto
-	 * incr: deleting family member requires old consistent state.
-	 * wocorr: it's possible to guess, as only one family is available with this name and which person has to be deleted in the persons model which is clear.
-	 * state: its possible to determine, old and new state of the persons model. 
-	 * auto: there is no decision has to be made, as it's a clear what has to be deleted.
+	 * <b>Test</b> for deletion of a single family member, where member created as first.
+	 * In this case father is created as first member.
+	 * <p>
+	 * <b>Expect</b> the associated person to be deleted from the persons model.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: deleting family member requires old consistent state as
+	 * their birthdays would be otherwise lost.
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as there is family and full names of persons are unique (in this example).
+	 * associated person has to be deleted in the persons model which is clear.
+	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testDeleteFamilyMember() {
@@ -45,10 +51,12 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	}
 	
 	/**
-	 * Test for deletion of a single family member (father).
-	 * Expect the associated person to be deleted from the persons model.
-	 * 
-	 * Classification same as @link {@link #testDeleteFamilyMember()}
+	 * <b>Test</b> for deletion of a single family member, where member created as first.
+	 * In this case father is created as first member.
+	 * <p>
+	 * <b>Expect</b> the associated person to be deleted from the persons model.
+	 * <p>
+	 * <b>Classification</b>: Analogous to @link {@link #testDeleteFamilyMember()}
 	 */
 	@Test
 	public void testDeleteFamilyMemberHomer() {

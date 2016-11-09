@@ -15,14 +15,21 @@ public class DeletingFamilesFamilyMembers extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for deletion of a single family member. (where two members have same name i.e. mother and daughter, delete one of them)
-	 * Expect the associated person to be deleted from the persons model.
-	 * 
-	 * Classification: incr-wcorr-state-auto
-	 * incr: deleting family member requires old consistent state.
-	 * wcorr: it's impossible to guess, as multiple member have same name and which person has to be deleted in the persons model.
-	 * state: its possible to determine, old and new state of the persons model. 
-	 * auto: there is no decision has to be made, as it's a clear what has to be deleted.
+	 * <b>Test</b> for deletion of a single family member, where two members have same name.
+	 * In this case mother and daughter have same name.
+	 * <p>
+	 * <b>Expect</b> the associated person has to be deleted from the persons model.
+	 * <p>
+	 * <b>Classification</b>: incr-wcorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: deleting family member requires the old consistent state as
+	 * their birthdays would be otherwise lost.
+	 * <li><b>wcorr</b>: traceability links are required as it is impossible to
+	 * guess correctly which persons correspond to which family members, given
+	 * that there are multiple persons with the exact same full name.
+	 * <li><b>state</b>:  deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testDeleteFamilyMemberOfSamename() {
@@ -41,10 +48,12 @@ public class DeletingFamilesFamilyMembers extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for deletion of a single (father) family member. (where two members have same name i.e. father and son, delete father)
-	 * Expect the associated person to be deleted from the persons model.
-	 * 
-	 * Classification same as @link {@link #testDeleteFamilyMemberOfSamename()}
+	 * <b>Test</b> for deletion of a single family member, where two members have same name.
+	 * In this case father and son have same name.
+	 * <p>
+	 * <b>Expect</b> the associated person has to be deleted from the persons model.
+	 * <p>
+	 * <b>Classification</b>: Analogous to @link {@link #testDeleteFamilyMemberOfSamename()}
 	 */
 	@Test
 	public void testDeleteFamilyMemberHomerOfSamename() {
