@@ -27,7 +27,7 @@ public class DeletingFamilesFamilyMembers extends FamiliesToPersonsTestCase {
 	 * <li><b>wcorr</b>: traceability links are required as it is impossible to
 	 * guess correctly which persons correspond to which family members, given
 	 * that there are multiple persons with the exact same full name.
-	 * <li><b>state</b>:  deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */

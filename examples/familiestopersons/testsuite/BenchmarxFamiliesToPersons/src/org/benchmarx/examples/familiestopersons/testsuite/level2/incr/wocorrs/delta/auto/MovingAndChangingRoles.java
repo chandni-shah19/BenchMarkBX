@@ -23,7 +23,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	 * <ul>
 	 * <li><b>incr</b>: moving the family member requires old consistent state as
 	 * old person register is required to avoid losing birthdays.
-	 * <li><b>wocorr</b>: it's possible to guess required correspondences as there is family and full names of persons are unique (in this example).
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
 	 * <li><b>delta</b>: moving is delta bases as it cannot be distinguished from combined deletion and creation.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
@@ -52,7 +52,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	 * <ul>
 	 * <li><b>incr</b>: changing the family member role requires old consistent state as
 	 * old person register is required to avoid losing birthdays.
-	 * <li><b>wocorr</b>: it's possible to guess required correspondences as there is family and full names of persons are unique (in this example).
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
 	 * <li><b>delta</b>: changing is delta bases as it cannot be distinguished from combined deletion and creation.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>

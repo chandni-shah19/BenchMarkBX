@@ -15,14 +15,17 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creation of multiple family members in an existing family.
-	 * Expect the creation of multiple persons (male/female fittingly) associated to the new family members.
-	 * 
-	 * Classification: incr-wocorr-state-auto
-	 * incr: creating member requires old consistent state.
-	 * wocorr: it's possible to guess, weather member has to be created as male or female in the persons model.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * auto: there is no decision has to be made, as its clear what has to be created.
+	 * <b>Test</b> for creation of multiple family members in an existing family.
+	 * <p>
+	 * <b>Expect</b> the creation of multiple persons (male/female fittingly) associated to the new family members.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: creation of family and multiple family member requires old(er) state otherwise birthday would be loss for person register.
+	 * <li><b>wocorr</b>: no need for traceability links, as it is easy to determine person has to be created with full name.
+	 * <li><b>state</b>: easy to guess/compute the delta involved here based on the current state.
+	 * <li><b>auto</b>:  propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testCreateMultiFamilyMember()
@@ -40,10 +43,11 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creation of a new family with new family members.
-	 * Expect the creation of multiple persons (male/female fittingly) corresponding to the family member.
-	 * 
-	 * Classification same as @link #testCreateMultiFamilyMember()
+	 * <b>Test</b> for creation of a new family with new family members.
+	 * <p>
+	 * <b>Expect</b> the creation of multiple persons (male/female fittingly) corresponding to the family member.
+	 * <p>
+	 * <b>Classification</b>: Analogous to @link {@link #testCreateMultiFamilyMember()}
 	 */
 	@Test 
 	public void testNewFamilyWithMultiMembers(){

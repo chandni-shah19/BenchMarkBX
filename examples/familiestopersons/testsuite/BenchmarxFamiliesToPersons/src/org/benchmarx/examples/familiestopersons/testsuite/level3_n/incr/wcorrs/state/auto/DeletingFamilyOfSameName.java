@@ -15,14 +15,20 @@ public class DeletingFamilyOfSameName extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for deletion of an entire family with all family members.
-	 * Expected: Delete all corresponding persons in the persons model.
-	 * 
-	 * Classification: incr-wcorr-state-auto
-	 * incr: deleting family requires old consistent state.
-	 * it's impossible to guess, as multiple families have same name and all the members which contains the same family name and unclear which family member is related to which family. 
-	 * state: its possible to determine, old and new state of the families model. 
-	 * auto: there is no decision has to be made, as its clear what has to be deleted.
+	 * <b>Test</b> for deletion of an entire family with all family members.
+	 * <p>
+	 * <b>Expect</b> Delete all corresponding persons in the persons model.
+	 * <p>
+	 * <b>Classification</b>: incr-wcorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: deleting family requires old consistent state as
+	 * their birthdays would be otherwise lost.
+	 * <li><b>wcorr</b>: traceability links are required as it is impossible to
+	 * guess correctly which persons correspond to which family members, given
+	 * that there are multiple persons with the exact same family name.
+	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testDeleteFamilyOfSameName() {

@@ -21,8 +21,8 @@ public class CreatingNewFamilies extends FamiliesToPersonsTestCase {
 	 * <p>
 	 * <b>Classification</b>: batch-wocorr-state-auto
 	 * <ul>
-	 * <li><b>batch</b>: family created from scratch so an old(er) state doesn't require.
-	 * <li><b>wocorr</b>: no need for traceability links, as creating only single family nothing has to be change in persons model.
+	 * <li><b>batch</b>: family created from scratch, it does not require an old(er) state as birthday would not be loss for person register.
+	 * <li><b>wocorr</b>: no need for traceability links, as creating only single family nothing has to be change in persons model which is easy to guess.
 	 * <li><b>state</b>: easy to guess/compute the delta involved here based on the current state (nothing has to be change in persons model)
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>

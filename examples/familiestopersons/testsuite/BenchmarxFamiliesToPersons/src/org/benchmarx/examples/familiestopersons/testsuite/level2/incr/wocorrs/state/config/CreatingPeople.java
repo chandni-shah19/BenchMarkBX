@@ -25,8 +25,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	 * <li><b>incr</b>: family register is required to avoid information
 	 * loss (mapping of (fe)males to mothers/fathers or daughters/sons).
 	 * <li><b>wocorr</b>:  assumption based on unique naming works here as there
-	 * are no persons with the full name exist.
-	 * <li><b>state</b>: its possible to determine that new person is created. 
+	 * are no members with the same name exist.
+	 * <li><b>state</b>: its possible to determine that new member has to created in to associated family. 
 	 * <li><b>config</b>: there is only one decisions to be made here: (i)
 	 * whether the member is to be created as a child or parent in their new
 	 * family.

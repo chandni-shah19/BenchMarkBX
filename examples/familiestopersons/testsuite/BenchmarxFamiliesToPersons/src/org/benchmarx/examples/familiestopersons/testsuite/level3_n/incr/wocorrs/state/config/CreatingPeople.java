@@ -15,15 +15,22 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creating multiple persons with different last names.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
+	 * <b>Test</b> for creating multiple persons with different last names.
+	 * <p>
+	 * <b>Expect</b> the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer parents to children, and existing families to creating new ones
-	 * 
-	 * Classification: incr-wocorr-state-config
-	 * incr: creation of female and male person with different family names requires old consistent state.
-	 * wocorr: easily can apply default strategy and possible to guess, which member has to be created as child or parent in to new or existing family according to decisions made. 
-	 * state: it is possible to guess, based on the current state.
-	 * config: here decision has to be made, weather person has to created as child or parent in new or existing family.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-config
+	 * <ul>
+	 * <li><b>incr</b>: family register is required to avoid information
+	 * loss (mapping of (fe)males to mothers/fathers or daughters/sons).
+	 * <li><b>wocorr</b>: assumption based on unique naming works here as there
+	 * are no member with the same first name exist.
+	 * <li><b>state</b>: its possible to determine that new member has to created in to associated family.
+	 * <li><b>config</b>: there are two decisions to be made:
+	 * (i) whether the member is to be created as a child or parent in their new family, and 
+	 * (ii) if a new family is to be created or an existing suitable family is to be used.
+	 * <ul>
 	 */
 	@Test
 	public void testMultiPersonWithDiffFamilyNamesTT() {
@@ -49,11 +56,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}	
 	
 	/**
-	 * Test for creating multiple persons with different last names.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
+	 * <b>Test</b> for creating multiple persons with different last names.
+	 * <p>
+	 * <b>Expect</b> the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer children to parent, and existing families to creating new ones
-	 * 
-	 * Classification same as @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
+	 * <p>
+	 * <b>Classification</b>: Analogous to @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
 	 */
 	@Test
 	public void testMultiPersonWithDiffFamilyNamesWithDiffPrefFT() {
@@ -76,11 +84,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}	
 	
 	/**
-	 * Test for creating multiple persons with different last names.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
+	 * <b>Test</b> for creating multiple persons with different last names.
+	 * <p>
+	 * <b>Expect</b> the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer parent to children, and creating new ones to existing families 
-	 * 
-	 * Classification same as @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
+	 * <p>
+	 * <b>Classification</b> Analogous to @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
 	 */
 	@Test
 	public void testMultiPersonWithDiffFamilyNamesWithDiffPrefTF() {
@@ -102,11 +111,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}	
 	
 	/**
-	 * Test for creating multiple persons with different last names.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
+	 * <b>Test</b> for creating multiple persons with different last names.
+	 * <p>
+	 * <b>Expect</b> the creation of corresponding family member in the families model with the given first names.
 	 * Decision:  Prefer children to parent, and creating new ones to existing families
-	 * 
-	 * Classification same as @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
+	 * <p>
+	 * <b>Classification</b> Analogous to @link {@link #testMultiPersonWithDiffFamilyNamesTT()}
 	 */
 	@Test
 	public void testMultiPersonWithDiffFamilyNamesWithDiffPrefFF() {

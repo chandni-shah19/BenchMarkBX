@@ -25,7 +25,7 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	 * <ul>
 	 * <li><b>incr</b>: deleting family member requires old consistent state as
 	 * their birthdays would be otherwise lost.
-	 * <li><b>wocorr</b>: it's possible to guess required correspondences as there is family and full names of persons are unique (in this example).
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
 	 * associated person has to be deleted in the persons model which is clear.
 	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
