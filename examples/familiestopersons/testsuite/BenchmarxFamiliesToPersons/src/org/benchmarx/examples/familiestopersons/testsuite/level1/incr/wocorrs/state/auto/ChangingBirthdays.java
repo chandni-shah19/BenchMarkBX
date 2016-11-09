@@ -15,14 +15,19 @@ public class ChangingBirthdays extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for changing the birthday of a person.
-	 * Expected : Nothing has to be change in the families model.
-	 * 
-	 * Classification: incr-wocorr-state-auto
-	 * incr: changing persons birthday requires old consistent state.
-	 * wocorr: it's possible to guess, as only single person is available with this name and birthday is not part of families model so nothing has to be change there which is quite clear. 
-	 * state: here renaming is state base, as it's clear nothing has to be change in families model.
-	 * auto: there is no decision has to be made, as nothing has to be change in families model.
+	 * <b>Test</b> for changing the birthday of a person.
+	 * <p>
+	 * <b>Expected</b>: Nothing has to be changed in the families model.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: old family register is required as decision to map Homer
+	 * to a father would otherwise be lost.
+	 * <li><b>wocorr</b>: assumption based on unique naming works here.
+	 * <li><b>state</b>: as the name of the person remains the same, computing
+	 * the change here is pretty straightforward.
+	 * <li><b>auto</b>: propagation is deterministic (namely doing nothing).
+	 * </ul>
 	 */
 	@Test
 	public void testBirthdayChange()

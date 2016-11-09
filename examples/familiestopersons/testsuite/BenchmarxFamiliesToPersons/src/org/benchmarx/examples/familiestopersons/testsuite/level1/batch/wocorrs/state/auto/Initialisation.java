@@ -15,14 +15,20 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for agreed upon starting state.
-	 * Expect root elements of both source and target models.
-	 * 
-	 * Classification: batch-wocorr-state-auto
-	 * batch: initial state of synchronization, so no need for old consistent state.
-	 * wocorr: easily can apply default strategy and possible to guess, if root element of families created then related persons root element should be created. 
-	 * state: it is possible to guess, based on the current state.
-	 * auto: there is no decision has to be made, as it's a clear what has to be created.
+	 * <b>Test</b> for agreed upon starting state.
+	 * <p>
+	 * <b>Expect</b> root elements of both source and target models.
+	 * <p>
+	 * <b>Classification</b>: batch-wocorr-state-auto
+	 * <ul>
+	 * <li><b>batch</b>: this is the initial state for synchronisation, so an
+	 * old(er) consistent state doesn't exist.
+	 * <li><b>wocorr</b>: no need for traceability links (in general, wcorr and
+	 * batch does not make sense).
+	 * <li><b>state</b>: easy to guess/compute the delta involved here (creating
+	 * a root container).
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testInitialiseSynchronisation()
@@ -33,5 +39,32 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 		
 		util.assertSource("RootElementFamilies");
 		util.assertTarget("RootElementPersons");
+	}
+	
+	/**
+	 * <b>Test</b> for name change of an empty family, i.e, a family without any family members.
+	 * <p>
+	 * <b>Expect</b> no change in the persons model.
+	 * <p>
+	 * <b>Classification</b>: batch-wocorr-state-auto
+	 * <ul>
+	 * <b>batch</b>: person register can be recreated from scratch without loss of information.
+	 * <b>wocorr</b>: no traceability links required.
+	 * <b>state</b>: in this case, renaming and delete+create have the same effect.
+	 * <b>auto</b>: propagation is deterministic so no coice involved.
+	 * </ul>
+	 */
+	@Test
+	public void testFamilyNameChangeOfEmpty()
+	{
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::familyNameSimpsonChangeEmpty);
+		//------------
+				
+		util.assertSource("NameChangeFamilyEmpty");
+		util.assertTarget("NameChangePersonEmpty");
 	}
 }

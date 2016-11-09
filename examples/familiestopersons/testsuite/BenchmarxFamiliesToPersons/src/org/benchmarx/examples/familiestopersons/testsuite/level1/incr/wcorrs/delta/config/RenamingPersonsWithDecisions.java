@@ -15,62 +15,46 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for changing a person's family name.
-	 * Expect the person to be associated with another family as the family name does not fit anymore.
-	 * In this case fitting family already exists and must be used as this is preferred.
-	 * 
-	 * Classification: incr-wcorr-delta-config
-	 * incr: renaming persons family name requires old consistent state as it replace old member name with new one in families model.
-	 * wcorr: it's impossible to guess, as here fitting family already exists. So its unclear weather it has to be fitted in to existing family or new family has to be created.  
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * config: here two decision has to be made weather member has to be created as child or parent in to the new family or existing family.
+	 * <b>Test</b> for changing a person's full name (where another person with
+	 * the same name exists).
+	 * <p>
+	 * <b>Expected</b>: first name of the corresponding member and their family
+	 * name must be changed. As no fitting family exists, a new family must be
+	 * created and the member moved to this new family (as the father of this
+	 * family).
+	 * <p>
+	 * <b>Classification</b>: incr-wcorr-delta-config
+	 * <ul>
+	 * <li><b>incr</b>: Old family register is required to remember the correct
+	 * mapping of female/male persons to daughters/mothers and sons/fathers,
+	 * respectively.
+	 * <li><b>wcorr</b>: it's impossible to guess which family member has to be
+	 * renamed in the families model as two persons (of which one is renamed)
+	 * have the same name.
+	 * <li><b>delta</b>: renaming cannot be distinguished from combined creation
+	 * and deletion.
+	 * <li><b>config</b>: there is a choice involved when moving the family member
+	 * to the new family. Bart is male so one can choose between the father and
+	 * son role. It might seem reasonable to retain the old role (in this case
+	 * son) but it is actually a freedom of choice, and the preference here is
+	 * to establish the family member formally known as Bart as a father of the
+	 * new family.
+	 * </ul>
 	 */
 	@Test
-	public void testFamilyNameChangePersonToExist() {
+	public void testFullNameChangeOfNonUniquePerson() {
 		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
-			       .andThen(helperFamily::createFatherAmitabh));
-		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
-		
-		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
-		
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
+		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::createOtherBart);
+			
 		//----------------
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
-		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
+		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
+		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfOtherBart);
 		//----------------
 		
-		util.assertTarget("PersonFamilyNameChangeToExist");
-		util.assertSource("MemberFamilyNameChangeToExist");
-	}
-	
-	/**
-	 * Test for changing a person's family name.
-	 * Expect the person to be associated with another family as the family name does not fit anymore.
-	 * In this case a fitting family already exists but creating a new family is preferred.
-	 * 
-	 * Classification: incr-wcorr-delta-config
-	 * incr: renaming persons family name requires old consistent state as it replace old member name with new one in families model.
-	 * wcorr: it's impossible to guess, as here fitting family already exists. So its unclear weather it has to be fitted in to existing family or new family has to be created.  
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * config: here decision has to be made weather member has to be created as child or parent in to the new family or existing family.
-	 */
-	@Test
-	public void testFamilyNameChangePersonToExistNew() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
-			       .andThen(helperFamily::createFatherAmitabh));
-		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
-		
-		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
-		
-		//----------------
-		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
-						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
-		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
-		//----------------
-		
-		util.assertTarget("PersonFamilyNameChangeToExistNew");
-		util.assertSource("MemberFamilyNameChangeToExistNew");
+		util.assertTarget("PersonFullNameChangeOther");
+		util.assertSource("MemberFullNameChangeOther");
 	}
 }

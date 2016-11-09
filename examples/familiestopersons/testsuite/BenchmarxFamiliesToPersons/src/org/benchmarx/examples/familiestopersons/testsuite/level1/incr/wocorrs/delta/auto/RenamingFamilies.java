@@ -15,15 +15,21 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for name change of a family.
-	 * Expect a change in the family name part of the full name of all associated family members in the persons model, 
-	 * i.e., by replacing the old family name with the new one.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming family name requires old consistent state as it replace old family name with new one in persons model.
-	 * wocorr: it's possible to guess, as only one family is available with this name and all the members which contains this family name has to be renamed in the persons model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * <b>Test</b> for name change of a family.
+	 * <p>
+	 * <b>Expect</b> a change in the family name part of the full name of all
+	 * associated persons in the person register, i.e., by replacing the old
+	 * family name with the new one.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-delta-auto
+	 * <ul>
+	 * <li><b>incr</b>: old person register is required to avoid losing
+	 * birthdays.
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as there is only one family and full names of persons are unique (in this example).
+	 * name has to be renamed in the persons model which is clear.
+	 * <li><b>delta</b>: renaming cannot be distinguished from combined deletion and creation.
+	 * <li><b>auto</b>: propagation is deterministic.
+	 * </ul>
 	 */
 	@Test
 	public void testFamilyNameChange()
@@ -42,14 +48,21 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for first name change of the family member (father).
-	 * Expect the person full name change by replacing the first name with the new one.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming member name requires old consistent state as it replace old first name with new one in persons model.
-	 * wocorr: it's possible to guess, as only one member is available with this name and this member's first name has to be renamed in the persons model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * <b>Test</b> for first name change of a family member (here the father).
+	 * <p>
+	 * <b>Expect</b> a full name change of the corresponding person by replacing
+	 * the old first name with the new one.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-delta-auto
+	 * <ul>
+	 * <li><b>incr</b>: old person register is required to avoid losing
+	 * birthdays.
+	 * <li><b>wocorr</b>: assumption based on unique names works for this
+	 * example.
+	 * <li><b>delta</b>: renaming cannot be distinguised from combined deletion
+	 * and creation.
+	 * <li><b>auto</b>: propagation is deterministic.
+	 * </ul>
 	 */
 	@Test
 	public void testFamilyMemberNameChangeFather()
@@ -67,14 +80,7 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for first name change of the family member (mother).
-	 * Expect the person full name change by replacing the first name with the new one.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming member name requires old consistent state as it replace old first name with new one in persons model.
-	 * wocorr: it's possible to guess, as only one member is available with this name and this member's first name has to be renamed in the persons model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * Analogous to {@link #testFamilyMemberNameChangeFather()}
 	 */
 	@Test
 	public void testFamilyMemberNameChangeMother() {
@@ -92,14 +98,7 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for first name change of the family member (Daughter).
-	 * Expect the person full name change by replacing the first name with the new one.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming member name requires old consistent state as it replace old first name with new one in persons model.
-	 * wocorr: it's possible to guess, as only one member is available with this name and this member's first name has to be renamed in the persons model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * Analogous to {@link #testFamilyMemberNameChangeFather()}
 	 */
 	@Test
 	public void testFamilyMemberNameChangeDaughter() {
@@ -117,14 +116,7 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for first name change of the family member (Son).
-	 * Expect the person full name change by replacing the first name with the new one.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming member name requires old consistent state as it replace old first name with new one in persons model.
-	 * wocorr: it's possible to guess, as only one member is available with this name and this member's first name has to be renamed in the persons model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * Analogous to {@link #testFamilyMemberNameChangeFather()}
 	 */
 	@Test
 	public void testFamilyMemberNameChangeSon() {
@@ -140,7 +132,4 @@ public class RenamingFamilies extends FamiliesToPersonsTestCase {
 		util.assertSource("NameChangeFamilyMemberSon");
 		util.assertTarget("NameChangeOfPersonSon");
 	}
-	
-	
-
 }

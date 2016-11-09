@@ -15,17 +15,27 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for changing a person's first name. (where two persons have same name)
-	 * Expected: only the first name of the corresponding member in the families model has to be changed.
-	 * 
-	 * Classification: incr-wcorr-delta-auto
-	 * incr: renaming persons first name requires old consistent state as it replace old member name with new one in families model.
-	 * wcorr: it's impossible to guess which family member has to be renamed in the families model as two persons have same name. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * <b>Test</b> for changing a person's first name (where another person with
+	 * the same name exists).
+	 * <p>
+	 * <b>Expected</b>: the first name of the corresponding member in the
+	 * families model should be changed.
+	 * <p>
+	 * <b>Classification</b>: incr-wcorr-delta-auto
+	 * <ul>
+	 * <li><b>incr</b>: the old family register is required as it is impossible
+	 * to guess if female/male persons are mothers/fathers or daughters/sons in
+	 * the family register.
+	 * <li><b>wcorr</b>: it's impossible to guess which family member has to be
+	 * renamed in the families model as two persons (one of which is to be
+	 * renamed) have the same name.
+	 * <li><b>delta</b>: renaming is inherently delta-based as it cannot be
+	 * distinguished from combined deletion and creation.
+	 * <li><b>auto</b>: propagation is deterministic so no choice required.
+	 * </ul>
 	 */
 	@Test
-	public void testFirstNameChangePersonOfSameName() {
+	public void testFirstNameChangeOfNonUniquePerson() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(util
 				.execute(helperFamily::createSimpsonFamily)
@@ -39,31 +49,5 @@ public class RenamingPersons extends FamiliesToPersonsTestCase {
 		
 		util.assertTarget("PersonNameChangeOther");
 		util.assertSource("MemberNameChangeOther");
-	}
-	
-	/**
-	 * Test for changing a person's full name. (where two persons have same name)
-	 * Expected: first name of the corresponding member and family name has to be change in the families model
-	 * 
-	 * Classification: incr-wcorr-delta-auto
-	 * incr: renaming persons full name requires old consistent state as it replace old member name and family name with new one in families model.
-	 * wcorr: it's impossible to guess which family member has to be renamed in the families model as two persons have same name. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
-	 */
-	@Test
-	public void testFullNameChangePersonOfSameName() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		tool.performAndPropagateTargetEdit(helperPerson::createOtherBart);
-			
-		//----------------
-		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfOtherBart);
-		//----------------
-		
-		util.assertTarget("PersonFullNameChangeOther");
-		util.assertSource("MemberFullNameChangeOther");
 	}
 }

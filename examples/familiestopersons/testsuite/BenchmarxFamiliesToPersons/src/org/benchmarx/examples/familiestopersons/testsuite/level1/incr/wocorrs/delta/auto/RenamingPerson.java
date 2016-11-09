@@ -15,14 +15,22 @@ public class RenamingPerson extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for changing a person's first name.
-	 * Expected: only the first name of the corresponding member in the families model has to be changed.
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming persons first name requires old consistent state as it replace old member name with new one in families model.
-	 * wocorr: it's possible to guess, as only one person is available with this name and the related member's name has to be renamed in the families model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
+	 * <b>Test</b> for changing a person's first name.
+	 * <p>
+	 * <b>Expected</b>: only the first name of the corresponding family member
+	 * should be changed.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-delta-auto
+	 * <ul>
+	 * <li><b>incr</b>: changing a persons first name requires old consistent
+	 * family model as the information if females are daughters or mothers (and
+	 * males analogously) would otherwise be lost.
+	 * <li><b>wocorr</b>: assumption of unique names can be used here to compute
+	 * correspondences correctly.
+	 * <li><b>delta</b>: renaming cannot be distinguished from combined deletion
+	 * and creation.
+	 * <li><b>auto</b>: propagation is deterministic.
+	 * </ul>
 	 */
 	@Test
 	public void testFirstNameChangePerson() {
@@ -38,50 +46,5 @@ public class RenamingPerson extends FamiliesToPersonsTestCase {
 		
 		util.assertTarget("PersonNameChange");
 		util.assertSource("MemberNameChange");
-	}
-	
-	/**
-	 * Test for changing a person's full name. (first person i.e., member which is created first in the family)
-	 * Expected: first name of the corresponding member and family name has to be change in the families model
-	 * 
-	 * Classification: incr-wocorr-delta-auto
-	 * incr: renaming persons full name requires old consistent state as it replace old member name and family name with new one in families model.
-	 * wocorr: it's possible to guess, as only one person is available with this name and the related member's name has to be renamed in the families model which is clear. 
-	 * delta: renaming is mostly delta bases as it is impossible to decide weather it is renamed, deleted or recreated.
-	 * auto: there is no decision has to be made, as it's a clear what has to be renamed.
-	 */
-	@Test
-	public void testFullNameChangePerson() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-			
-		//----------------
-		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfHomer);
-		//----------------
-		
-		util.assertTarget("PersonFullNameChange");
-		util.assertSource("MemberFullNameChange");
-	}
-	
-	/**
-	 * Test for changing a person's full name. (second person i.e., member which is not created first in the family)
-	 * Expected and Classification: same as @link {@link #testFullNameChangePerson()}
-	 * 
-	 */
-	@Test
-	public void testFullNameChangeSecondPerson() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		
-		//----------------
-		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfBart);
-		//----------------
-		
-		util.assertTarget("PersonFullNameChangeSecond");
-		util.assertSource("MemberFullNameChangeSecond");
 	}
 }
