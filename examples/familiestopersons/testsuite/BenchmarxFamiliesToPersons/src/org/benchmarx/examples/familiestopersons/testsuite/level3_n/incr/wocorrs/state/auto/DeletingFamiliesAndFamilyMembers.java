@@ -38,9 +38,13 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
+
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
 			       							   .andThen(helperFamily::createFatherAmitabh));
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfBachchan);
+
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyBachchan);

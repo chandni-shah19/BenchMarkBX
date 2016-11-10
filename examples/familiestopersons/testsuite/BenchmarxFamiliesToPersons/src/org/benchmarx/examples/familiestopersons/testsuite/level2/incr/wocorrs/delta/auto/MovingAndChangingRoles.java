@@ -61,6 +61,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToSon);
@@ -79,6 +80,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyMotherMargeRoleChangeToDaughterLisa);
@@ -97,6 +99,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToMotherMarge);
@@ -115,6 +118,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familySonBartRoleChangeToMotherMarge);

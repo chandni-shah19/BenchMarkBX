@@ -38,6 +38,70 @@ public class PersonHelper {
 		person.setBirthday(date);
 	}
 	
+	public void setBirthdaysOfSimpson(PersonRegister register) {
+		Calendar cal = Calendar.getInstance();
+		Date date;
+		
+		Person person1 = getFromRegister("Simpson, Homer", register);
+		
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person1.setBirthday(date);
+		
+		Person person2 = getFromRegister("Simpson, Marge", register);
+		
+		cal.set(2013, Calendar.FEBRUARY, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person2.setBirthday(date);
+		
+		Person person3 = getFromRegister("Simpson, Bart", register);
+		
+		cal.set(2013, Calendar.MARCH, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person3.setBirthday(date);
+		
+		Person person4 = getFromRegister("Simpson, Lisa", register);
+		
+		cal.set(2013, Calendar.MARCH, 8, 10, 11, 12); 
+		date = cal.getTime();
+		person4.setBirthday(date);
+		
+		Person person5 = getFromRegister("Simpson, Maggie", register);
+		
+		cal.set(2013, Calendar.MARCH, 7, 10, 11, 12); 
+		date = cal.getTime();
+		person5.setBirthday(date);
+	}
+	
+	public void setBirthdaysOfBachchan(PersonRegister register) {
+		Calendar cal = Calendar.getInstance();
+		Date date;
+		
+		Person person1 = getFromRegister("Bachchan, Amitabh", register);
+		
+		cal.set(2013, Calendar.JANUARY, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person1.setBirthday(date);
+		
+		Person person2 = getFromRegister("Bachchan, Jaya", register);
+		
+		cal.set(2013, Calendar.FEBRUARY, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person2.setBirthday(date);
+		
+		Person person3 = getFromRegister("Bachchan, Abhishek", register);
+		
+		cal.set(2013, Calendar.MARCH, 9, 10, 11, 12); 
+		date = cal.getTime();
+		person3.setBirthday(date);
+		
+		Person person4 = getFromRegister("Bachchan, Shweta", register);
+		
+		cal.set(2013, Calendar.MARCH, 8, 10, 11, 12); 
+		date = cal.getTime();
+		person4.setBirthday(date);
+	}
+	
 	public void createMarge(PersonRegister register) {
 		Person person = PersonsFactory.eINSTANCE.createFemale();
 		person.setName("Simpson, Marge");

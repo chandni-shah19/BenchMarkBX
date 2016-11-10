@@ -37,6 +37,7 @@ public class DeletingFamilyOfSameName extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
