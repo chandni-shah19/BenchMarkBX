@@ -1,8 +1,3 @@
-org.benchmarx.examples.familiestopersons.families.core
-org.benchmarx.examples.familiestopersons.implementations.emoflon
-org.benchmarx.examples.familiestopersons.implementations.medini
-org.benchmarx.examples.familiestopersons.persons.core
-org.benchmarx.examples.familiestopersons.testsuite
 org.benchmarx.examples.familiestopersons.testsuite.level1.batch.wocorrs.state.auto
 org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wcorrs.delta.auto
 org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wcorrs.delta.config
