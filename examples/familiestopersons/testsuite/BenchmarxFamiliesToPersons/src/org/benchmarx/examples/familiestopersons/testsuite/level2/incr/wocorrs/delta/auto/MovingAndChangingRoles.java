@@ -45,7 +45,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	/**
 	 * <b>Test</b> for a swap of family member roles via renaming of the family members (here father and son).
 	 * <p>
-	 * <b>Expect</b> appropriate male persons should be renamed.
+	 * <b>Expect</b> appropriate persons should be renamed.
 	 * <p>
 	 * <b>Classification</b>: incr-wocorr-delta-auto
 	 * <ul>
@@ -90,7 +90,6 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	
 	/**
 	 * Analogous to @link {@link #testFamilyMemberSwapRoleFatherToSonViaRenaming()}, but here for mother <-> father.
-	 * Note that the gender of the persons must be changed.
 	 */
 	@Test
 	public void testFamilyMemberSwapRoleFatherToMotherViaRenaming() {
@@ -109,7 +108,6 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	
 	/**
 	 * Analogous to @link {@link #testFamilyMemberSwapRoleFatherToSonViaRenaming()}, but here for mother <-> son.
-	 * Note that the gender of the persons must be changed.
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeSonToMother() {
