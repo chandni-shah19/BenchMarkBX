@@ -17,13 +17,13 @@ public class CreatingNewFamilies extends FamiliesToPersonsTestCase {
 	/**
 	 * <b>Test</b> for creation of a single family in an empty root container.
 	 * <p>
-	 * <b>Expect</b> Nothing has to change in the person model.
+	 * <b>Expect</b> nothing to be changed in the person model.
 	 * <p>
 	 * <b>Classification</b>: batch-wocorr-state-auto
 	 * <ul>
-	 * <li><b>batch</b>: family created from scratch, it does not require an old(er) state as birthday would not be loss for person register.
-	 * <li><b>wocorr</b>: no need for traceability links, as creating only single family nothing has to be change in persons model which is easy to guess.
-	 * <li><b>state</b>: easy to guess/compute the delta involved here based on the current state (nothing has to be change in persons model)
+	 * <li><b>batch</b>: no information loss, so the empty persons register can be re-created from scratch.
+	 * <li><b>wocorr</b>: creating a single family does not require traceability links.
+	 * <li><b>state</b>: easy to guess/compute the delta involved here (a new family is added).
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */

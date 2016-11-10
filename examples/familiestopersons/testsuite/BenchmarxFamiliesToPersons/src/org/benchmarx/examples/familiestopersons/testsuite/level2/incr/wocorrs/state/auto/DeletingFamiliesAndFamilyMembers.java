@@ -14,25 +14,48 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	public DeletingFamiliesAndFamilyMembers(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
 		super(tool);
 	}
-
+	
 	/**
-	 * <b>Test</b> for deletion of a single family member, where member created as first.
-	 * In this case father is created as first member.
+	 * <b>Test</b> for deletion of a single family member.
 	 * <p>
-	 * <b>Expect</b> the associated person to be deleted from the persons model.
+	 * <b>Expect</b> the associated person to be deleted from the persons
+	 * register.
 	 * <p>
 	 * <b>Classification</b>: incr-wocorr-state-auto
 	 * <ul>
-	 * <li><b>incr</b>: deleting family member requires old consistent state as
-	 * their birthdays would be otherwise lost.
-	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
-	 * associated person has to be deleted in the persons model which is clear.
-	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>incr</b>: deleting a family member requires old consistent state
+	 * of the persons register as the associated birthdays of all other family
+	 * members (to be precise: of their associated persons) would be otherwise
+	 * lost.
+	 * <li><b>wocorr</b>: it's possible to guess the required correspondences as
+	 * full names of persons are unique (in this example).
+	 * <li><b>state</b>: deletion in this example is state-based, as it's
+	 * reasonably easy to determine what changed from the old and new state of
+	 * the families register.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */
 	@Test
-	public void testDeleteFamilyMember() {
+	public void testDeleteFamilyMemberOneFamily() {
+		tool.initiateSynchronisationDialogue();
+		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
+										       .andThen(helperFamily::createFatherHomer));
+		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherHomer);
+		//------------
+		
+		util.assertSource("DeleteFamilyMemberHomer");
+		util.assertTarget("DeletePersonHomer");
+	}
+
+	/**
+	 * Analogous to @link {@link #testDeleteFamilyMemberOneFamily()}, but here
+	 * there is another family in the families register.
+	 */
+	@Test
+	public void testDeleteFamilyMemberMultipleFamilies() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
 			       							   .andThen(helperFamily::createFatherHomer));
@@ -48,28 +71,5 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		
 		util.assertSource("DeleteFamilyMember");
 		util.assertTarget("DeletePerson");
-	}
-	
-	/**
-	 * <b>Test</b> for deletion of a single family member, where member created as first.
-	 * In this case father is created as first member.
-	 * <p>
-	 * <b>Expect</b> the associated person to be deleted from the persons model.
-	 * <p>
-	 * <b>Classification</b>: Analogous to @link {@link #testDeleteFamilyMember()}
-	 */
-	@Test
-	public void testDeleteFamilyMemberHomer() {
-		tool.initiateSynchronisationDialogue();
-		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createSimpsonFamily)
-										       .andThen(helperFamily::createFatherHomer));
-		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-		
-		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyFatherHomer);
-		//------------
-		
-		util.assertSource("DeleteFamilyMemberHomer");
-		util.assertTarget("DeletePersonHomer");
 	}
 }

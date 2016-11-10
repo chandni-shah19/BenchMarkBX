@@ -15,16 +15,15 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * <b>Test</b> for family member moved to new family, i.e., daughter marries and is registered under a new family.
+	 * <b>Test</b> for moving a family member to a new family, i.e., daughter marries and is registered under a new family.
 	 * <p>
-	 * <b>Expect</b> the family name of person to change appropriately in the person model.
+	 * <b>Expect</b> the family name of the associated person to change appropriately in the person model.
 	 * <p>
 	 * <b>Classification</b>: incr-wocorr-delta-auto
 	 * <ul>
-	 * <li><b>incr</b>: moving the family member requires old consistent state as
-	 * old person register is required to avoid losing birthdays.
+	 * <li><b>incr</b>: moving the family member requires the old consistent state of the persons register to avoid losing birthdays.
 	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
-	 * <li><b>delta</b>: moving is delta bases as it cannot be distinguished from combined deletion and creation.
+	 * <li><b>delta</b>: moving is delta-based as it cannot be distinguished from appropriate renaming.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */
@@ -32,7 +31,7 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	public void testFamilyMemberMovesToNewFamily() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
-			       .andThen(helperFamily::createFatherAmitabh));
+			       							   .andThen(helperFamily::createFatherAmitabh));
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		
 		//------------
@@ -44,21 +43,20 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * <b>Test</b> for family member role change: here from father to son.
+	 * <b>Test</b> for a swap of family member roles via renaming of the family members (here father and son).
 	 * <p>
-	 * <b>Expect</b> nothing has to change in the persons model (person remains male).
+	 * <b>Expect</b> appropriate male persons should be renamed.
 	 * <p>
 	 * <b>Classification</b>: incr-wocorr-delta-auto
 	 * <ul>
-	 * <li><b>incr</b>: changing the family member role requires old consistent state as
-	 * old person register is required to avoid losing birthdays.
+	 * <li><b>incr</b>: requires old person register to avoid losing birthdays.
 	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
-	 * <li><b>delta</b>: changing is delta bases as it cannot be distinguished from combined deletion and creation.
+	 * <li><b>delta</b>: renaming is delta-based as it cannot be distinguished from combined deletion and creation (of appropriate links).
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */
 	@Test
-	public void testFamilyMemberRoleChangeFatherToSon() {
+	public void testFamilyMemberSwapRoleFatherToSonViaRenaming() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
@@ -73,14 +71,10 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * <b>Test</b> for family member role change: here from mother to daughter.
-	 * <p>
-	 * <b>Expect</b> nothing has to be changes in the persons model (person remains female).
-	 * <p>
-	 * <b>Classification</b>: Analogous to @link {@link #testFamilyMemberRoleChangeFatherToSon()}
+	 * Analogous to @link {@link #testFamilyMemberSwapRoleFatherToSonViaRenaming()}, but here for daughter <-> mother.
 	 */
 	@Test
-	public void testFamilyMemberRoleChangeMotherToDaughter() {
+	public void testFamilyMemberSwapRoleMotherToDaughterViaRenaming() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
@@ -95,14 +89,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * <b>Test</b> for family member role change: here from father to mother.
-	 * <p>
-	 * <b>Expect</b> Changes in the persons model from male to female.
-	 * <p>
-	 * <b>Classification</b>: Analogous to as @link {@link testFamilyMemberRoleChangeFatherToSon()}
+	 * Analogous to @link {@link #testFamilyMemberSwapRoleFatherToSonViaRenaming()}, but here for mother <-> father.
+	 * Note that the gender of the persons must be changed.
 	 */
 	@Test
-	public void testFamilyMemberRoleChangeFatherToMother() {
+	public void testFamilyMemberSwapRoleFatherToMotherViaRenaming() {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
@@ -117,11 +108,8 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * <b>Test</b> for family member role change: here from son to mother.
-	 * <p>
-	 * <b>Expect</b> Changes in the persons model from male to female.
-	 * <p>
-	 * <b>Classification</b>: Analogous to as @link {@link testFamilyMemberRoleChangeFatherToSon()}
+	 * Analogous to @link {@link #testFamilyMemberSwapRoleFatherToSonViaRenaming()}, but here for mother <-> son.
+	 * Note that the gender of the persons must be changed.
 	 */
 	@Test
 	public void testFamilyMemberRoleChangeSonToMother() {
