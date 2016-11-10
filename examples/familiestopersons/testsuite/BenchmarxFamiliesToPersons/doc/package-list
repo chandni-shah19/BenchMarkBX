@@ -1,0 +1,17 @@
+org.benchmarx.examples.familiestopersons.testsuite.level1.batch.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wcorrs.delta.auto
+org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wcorrs.delta.config
+org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.delta.auto
+org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.delta.config
+org.benchmarx.examples.familiestopersons.testsuite.level1.incr.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level2.batch.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level2.batch.wocorrs.state.config
+org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wcorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.delta.auto
+org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level2.incr.wocorrs.state.config
+org.benchmarx.examples.familiestopersons.testsuite.level3_n.batch.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level3_n.batch.wocorrs.state.config
+org.benchmarx.examples.familiestopersons.testsuite.level3_n.incr.wcorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level3_n.incr.wocorrs.state.auto
+org.benchmarx.examples.familiestopersons.testsuite.level3_n.incr.wocorrs.state.config
