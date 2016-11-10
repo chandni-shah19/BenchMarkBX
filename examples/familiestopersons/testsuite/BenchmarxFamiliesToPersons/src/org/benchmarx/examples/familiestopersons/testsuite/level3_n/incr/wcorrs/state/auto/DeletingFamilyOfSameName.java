@@ -15,18 +15,19 @@ public class DeletingFamilyOfSameName extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * <b>Test</b> for deletion of an entire family with all family members.
+	 * <b>Test</b> for deletion of an entire family with all its family members.
 	 * <p>
 	 * <b>Expect</b> Delete all corresponding persons in the persons model.
 	 * <p>
 	 * <b>Classification</b>: incr-wcorr-state-auto
 	 * <ul>
-	 * <li><b>incr</b>: deleting family requires old consistent state as
-	 * their birthdays would be otherwise lost.
+	 * <li><b>incr</b>: deleting a family requires old consistent state of
+	 * persons register as all other birthdays would be otherwise lost.
 	 * <li><b>wcorr</b>: traceability links are required as it is impossible to
 	 * guess correctly which persons correspond to which family members, given
 	 * that there are multiple persons with the exact same family name.
-	 * <li><b>state</b>: deleting is state based, as its possible to determine old and new state. 
+	 * <li><b>state</b>: deletion is state-based, as it's possible to determine
+	 * the change from old and new states.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */

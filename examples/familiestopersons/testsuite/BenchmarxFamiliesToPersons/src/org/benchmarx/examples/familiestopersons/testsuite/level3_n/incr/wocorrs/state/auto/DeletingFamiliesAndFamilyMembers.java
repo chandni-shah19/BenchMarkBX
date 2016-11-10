@@ -18,14 +18,17 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 	/**
 	 * <b>Test</b> for deletion of an entire family with all family members.
 	 * <p>
-	 * <b>Expect</b> all corresponding persons in the persons model has to be deleted.
+	 * <b>Expect</b> all corresponding persons in the persons register to be
+	 * deleted.
 	 * <p>
 	 * <b>Classification</b>: incr-wocorr-state-auto
 	 * <ul>
 	 * <li><b>incr</b>: deleting family requires old consistent state as
-	 * their birthdays would be otherwise lost.
-	 * <li><b>wocorr</b>: it's possible to guess required correspondences as full names of persons are unique (in this example).
-	 * <li><b>state</b>:  deleting is state based, as its possible to determine old and new state.
+	 * birthdays (of other people) would be otherwise lost.
+	 * <li><b>wocorr</b>: it's possible to guess required correspondences as
+	 * full names of persons are unique (in this example).
+	 * <li><b>state</b>: deleting is state-based, as it's possible to determine
+	 * the change from old and new states.
 	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * <ul>
 	 */
@@ -36,7 +39,7 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateSourceEdit(util.execute(helperFamily::createBachchanFamily)
-			       .andThen(helperFamily::createFatherAmitabh));
+			       							   .andThen(helperFamily::createFatherAmitabh));
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		
 		//------------
