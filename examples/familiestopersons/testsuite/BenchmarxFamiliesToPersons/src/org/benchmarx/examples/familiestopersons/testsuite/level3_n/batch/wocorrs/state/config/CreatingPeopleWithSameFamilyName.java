@@ -8,22 +8,32 @@ import org.junit.Test;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
 
-public class CreatingPeople extends FamiliesToPersonsTestCase {
-	
-	public CreatingPeople(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
+public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase {
+
+	public CreatingPeopleWithSameFamilyName(BXTool<FamilyRegister, PersonRegister, Decisions> tool) {
 		super(tool);
 	}
 
 	/**
-	 * Test for creating multiple persons together.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
-	 * Decision:  Prefer parents to children, and existing families to creating new ones
-	 * 
-	 * Classification: batch-wocorr-state-auto
-	 * batch: creation of female and male person from scratch so no need for old consistent state.
-	 * wocorr: easily can apply default strategy and possible to guess, which member has to be created as child or parent in to new or existing family according to decisions made. 
-	 * state: it is possible to guess, based on the current state.
-	 * config: here decision has to be made, weather person has to created as child or parent in new or existing family.
+	 * <b>Test</b> for creating multiple persons together with same last name.
+	 * <p>
+	 * <b>Expect</b> the creation of corresponding family members in the
+	 * families model with the given first names, depending on the specified
+	 * preferences.
+	 * <p>
+	 * <b>Classification</b>: batch-wocorr-state-config
+	 * <ul>
+	 * <li><b>batch</b>: starts from the initial state so no information loss
+	 * possible.
+	 * <li><b>wocorr</b>: assumption based on unique naming works here as there
+	 * are no members with the same first name.
+	 * <li><b>state</b>: its possible to determine that new member has to
+	 * created in to associated family.
+	 * <li><b>config</b>: there are two decisions to be made: (i) whether the
+	 * member is to be created as a child or parent (preferred here) in their
+	 * new family, and (ii) if a new family is to be created or an existing
+	 * (preferred here) suitable family is to be used.
+	 * <ul>
 	 */
 	@Test
 	public void testCreateMultiPersonPrefTT() {
@@ -43,11 +53,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creating multiple persons together.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
-	 * Decision:  Prefer children to parent, and existing families to creating new ones
-	 * 
-	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
+	 * Analogous to {@link #testCreateMultiPersonPrefTT()}, but preferring children to parents.
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefFT() {
@@ -67,11 +73,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creating multiple persons together.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
-	 * Decision:  Prefer parent to children, and creating new ones to existing families 
-	 * 
-	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
+	 * Analogous to {@link #testCreateMultiPersonPrefTT()}, but preferring new families to existing.
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefTF() {
@@ -91,11 +93,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Test for creating multiple persons together.
-	 * Expect the creation of corresponding family member in the families model with the given first names.
-	 * Decision:  Prefer children to parent, and creating new ones to existing families
-	 * 
-	 * Classification same as @link {@link #testCreateMultiPersonPrefTT()}
+	 * Analogous to {@link #testCreateMultiPersonPrefTT()}, but preferring children to parents and new families to existing.
 	 */
 	@Test
 	public void testCreateMultiPersonWithDiffPrefFF() {

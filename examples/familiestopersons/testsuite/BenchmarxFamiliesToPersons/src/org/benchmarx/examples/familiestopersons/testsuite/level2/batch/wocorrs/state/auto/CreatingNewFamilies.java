@@ -15,14 +15,17 @@ public class CreatingNewFamilies extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creation of a single family in an empty root container.
-	 * Expected: Nothing changes in the person model.
-	 * 
-	 * Classification: batch-wocorr-state-auto
-	 * batch: initial state of synchronization, family created from scratch so no need for old consistent state.
-	 * wocorr: easily can apply default strategy and possible to guess, as creating only single family nothing has to be change in persons model.
-	 * state: it is possible to guess, based on the current state.
-	 * auto: there is no decision has to be made, as it's a clear what has to be done.
+	 * <b>Test</b> for creation of a single family in an empty root container.
+	 * <p>
+	 * <b>Expect</b> nothing to be changed in the person model.
+	 * <p>
+	 * <b>Classification</b>: batch-wocorr-state-auto
+	 * <ul>
+	 * <li><b>batch</b>: no information loss, so the empty persons register can be re-created from scratch.
+	 * <li><b>wocorr</b>: creating a single family does not require traceability links.
+	 * <li><b>state</b>: easy to guess/compute the delta involved here (a new family is added).
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testCreateFamily()

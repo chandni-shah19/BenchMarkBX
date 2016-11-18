@@ -15,14 +15,17 @@ public class CreatingNewFamiliesAndMembers extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creation of a single family member (a father) in the only existing family.
-	 * Expect the creation of new male person in the persons model, with full name consisting of the first name and family name of the associated family member.
-	 * 
-	 * Classification: batch-wocorr-state-auto
-	 * batch: initial state of synchronization, creation of family and family member from scratch so no need for old consistent state.
-	 * wocorr: easily can apply default strategy and possible to guess, person has to be created with family name and member name. 
-	 * state: it is possible to guess, based on the current state.
-	 * auto: there is no decision has to be made, as it's a clear what has to be created.
+	 * <b>Test</b> for creation of a single family member (a father) in the only existing family.
+	 * <p>
+	 * <b>Expect</b> the creation of a new male person in the persons model, with full name consisting of the first name and family name of the associated family member.
+	 * <p>
+	 * <b>Classification</b>: batch-wocorr-state-auto
+	 * <ul>
+	 * <li><b>batch</b>: creation of family and only one family member does not require old(er) states as there is no information loss.
+	 * <li><b>wocorr</b>: no traceability links required (the only existing link is the trivial correspondence of empty registers).
+	 * <li><b>state</b>: easy to guess/compute the delta involved here based on the old and new state (what was added is clear).
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testCreateFamilyMember()
@@ -39,4 +42,18 @@ public class CreatingNewFamiliesAndMembers extends FamiliesToPersonsTestCase {
 		util.assertTarget("PersonWithOneMaleMember");
 	}
 	
+	/**
+	 * Analogous to @link {@link #testCreateFamilyMember()}, but now for multiple new family members. 
+	 */
+	@Test 
+	public void testNewFamilyWithMultiMembers(){
+		tool.initiateSynchronisationDialogue();
+		
+		//------------
+		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
+		//------------
+		
+		util.assertSource("NewFamilyWithMembers");
+		util.assertTarget("PersonsMulti");
+	}
 }

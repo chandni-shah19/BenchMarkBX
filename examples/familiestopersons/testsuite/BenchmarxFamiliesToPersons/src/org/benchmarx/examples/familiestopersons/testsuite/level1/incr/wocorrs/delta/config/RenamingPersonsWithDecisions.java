@@ -55,7 +55,7 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 	}
 	
 	/**
-	 * Same as {@link #testFamilyNameChangeOfPersonWhereSuitableFamilyExists()},
+	 * Analogous to {@link #testFamilyNameChangeOfPersonWhereSuitableFamilyExists()},
 	 * but here a new family is to be created even though a suitable family
 	 * actually exists and could be used.
 	 */

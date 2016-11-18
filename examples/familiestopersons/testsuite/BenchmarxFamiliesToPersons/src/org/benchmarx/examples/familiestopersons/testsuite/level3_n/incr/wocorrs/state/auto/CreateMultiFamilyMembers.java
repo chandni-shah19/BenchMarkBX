@@ -15,14 +15,22 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 	}
 
 	/**
-	 * Test for creation of multiple family members in an existing family.
-	 * Expect the creation of multiple persons (male/female fittingly) associated to the new family members.
-	 * 
-	 * Classification: incr-wocorr-state-auto
-	 * incr: creating member requires old consistent state.
-	 * wocorr: it's possible to guess, weather member has to be created as male or female in the persons model.  
-	 * state: its possible to determine, old and new state of the families model. 
-	 * auto: there is no decision has to be made, as its clear what has to be created.
+	 * <b>Test</b> for creation of multiple family members in an existing
+	 * family.
+	 * <p>
+	 * <b>Expect</b> the creation of multiple persons (male/female as required)
+	 * associated to the new family members.
+	 * <p>
+	 * <b>Classification</b>: incr-wocorr-state-auto
+	 * <ul>
+	 * <li><b>incr</b>: creation of family and multiple family member requires
+	 * old(er) states, otherwise birthdays would be lost (here for the father).
+	 * <li><b>wocorr</b>: assumption based on unique names works for this
+	 * example.
+	 * <li><b>state</b>: easy to guess/compute the delta involved here based on
+	 * the old and new states (what was added is clear).
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
+	 * <ul>
 	 */
 	@Test
 	public void testCreateMultiFamilyMember()
@@ -30,6 +38,7 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
+		tool.performAndPropagateTargetEdit(helperPerson::birthdayChangeOfHomer);
 		
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
@@ -38,23 +47,4 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 		util.assertSource("FamilyWithMultiFamilyMember");
 		util.assertTarget("PersonWithMultiMember");
 	}
-	
-	/**
-	 * Test for creation of a new family with new family members.
-	 * Expect the creation of multiple persons (male/female fittingly) corresponding to the family member.
-	 * 
-	 * Classification same as @link #testCreateMultiFamilyMember()
-	 */
-	@Test 
-	public void testNewFamilyWithMultiMembers(){
-		tool.initiateSynchronisationDialogue();
-		
-		//------------
-		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
-		//------------
-		
-		util.assertSource("NewFamilyWithMembers");
-		util.assertTarget("PersonsMulti");
-	}
-	
 }

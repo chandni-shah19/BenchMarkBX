@@ -47,10 +47,10 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 	 * <p>
 	 * <b>Classification</b>: batch-wocorr-state-auto
 	 * <ul>
-	 * <b>batch</b>: person register can be recreated from scratch without loss of information.
-	 * <b>wocorr</b>: no traceability links required.
-	 * <b>state</b>: in this case, renaming and delete+create have the same effect.
-	 * <b>auto</b>: propagation is deterministic so no coice involved.
+	 * <li><b>batch</b>: person register can be recreated from scratch without loss of information.
+	 * <li><b>wocorr</b>: no traceability links required.
+	 * <li><b>state</b>: in this case, renaming and delete+create have the same effect.
+	 * <li><b>auto</b>: propagation is deterministic so no choice involved.
 	 * </ul>
 	 */
 	@Test
