@@ -3,8 +3,10 @@ import java.util.Collection;
 import java.util.function.Consumer;
 
 import org.apache.log4j.BasicConfigurator;
-import org.benchmarx.BXTool;
+import org.benchmarx.BXToolForEMF;
 import org.benchmarx.Configurator;
+import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
+import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -22,8 +24,12 @@ import Persons.PersonRegister;
  * 
  * @author aanjorin
  */
-public class EMoflonFamiliesToPersons implements BXTool<FamilyRegister, PersonRegister, Decisions>   {
+public class EMoflonFamiliesToPersons extends BXToolForEMF<FamilyRegister, PersonRegister, Decisions>   {
 	
+	public EMoflonFamiliesToPersons() {
+		super(new FamiliesComparator(), new PersonsComparator());
+	}
+
 	private SynchronizationHelper helper;
 	
 	@Override

@@ -33,12 +33,11 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 	@Test
 	public void testInitialiseSynchronisation()
 	{
+		// No precondition!
 		//------------
 		tool.initiateSynchronisationDialogue();
 		//------------
-		
-		util.assertSource("RootElementFamilies");
-		util.assertTarget("RootElementPersons");
+		util.assertPostcondition("RootElementFamilies", "RootElementPersons");
 	}
 	
 	/**
@@ -59,12 +58,11 @@ public class Initialisation extends FamiliesToPersonsTestCase {
 	{
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
-		
+
+		util.assertPrecondition("Pre_NameChangeFamilyEmpty", "Pre_NameChangePersonEmpty");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyNameSimpsonChangeEmpty);
 		//------------
-				
-		util.assertSource("NameChangeFamilyEmpty");
-		util.assertTarget("NameChangePersonEmpty");
+		util.assertPostcondition("NameChangeFamilyEmpty", "NameChangePersonEmpty");
 	}
 }

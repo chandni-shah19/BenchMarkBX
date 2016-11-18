@@ -11,8 +11,10 @@ import java.util.Iterator;
 import java.util.function.Consumer;
 
 import org.apache.commons.io.output.NullOutputStream;
-import org.benchmarx.BXTool;
+import org.benchmarx.BXToolForEMF;
 import org.benchmarx.Configurator;
+import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
+import org.benchmarx.examples.familiestopersons.persons.core.PersonsComparator;
 import org.benchmarx.examples.familiestopersons.testsuite.Decisions;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EPackage;
@@ -31,7 +33,7 @@ import de.ikv.medini.qvt.QVTProcessorConsts;
 import uk.ac.kent.cs.kmf.util.ILog;
 import uk.ac.kent.cs.kmf.util.OutputStreamLog;
 
-public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisions> {
+public class MediniQVTR extends BXToolForEMF<FamilyRegister, PersonRegister, Decisions> {
 	private static final String RULESET = "families2persons.qvt";
 
 	private ILog logger;
@@ -47,8 +49,10 @@ public class MediniQVTR implements BXTool<FamilyRegister, PersonRegister, Decisi
 
 	
 	public MediniQVTR() {
+		super(new FamiliesComparator(), new PersonsComparator());
+		
 		logger = new OutputStreamLog(new PrintStream(new NullOutputStream())); 
-//		logger = new OutputStreamLog(System.err); 
+		// logger = new OutputStreamLog(System.err); 
 		
 		processorImpl = new EMFQvtProcessorImpl(this.logger);
 		processorImpl.setProperty(QVTProcessorConsts.PROP_DEBUG, "true");

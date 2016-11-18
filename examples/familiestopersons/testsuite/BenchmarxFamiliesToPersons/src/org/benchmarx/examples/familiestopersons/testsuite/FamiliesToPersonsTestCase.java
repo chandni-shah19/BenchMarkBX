@@ -17,8 +17,10 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import Families.FamiliesPackage;
 import Families.FamilyRegister;
 import Persons.PersonRegister;
+import Persons.PersonsPackage;
 
 @RunWith(Parameterized.class)
 public abstract class FamiliesToPersonsTestCase {
@@ -32,9 +34,14 @@ public abstract class FamiliesToPersonsTestCase {
 
 	@Before
 	public void initialise() {
+		// Make sure packages are registered
+		FamiliesPackage.eINSTANCE.getName();
+		PersonsPackage.eINSTANCE.getName();
+		
+		// Initialise all helpers
 		familiesComparator = new FamiliesComparator();
 		personsComparator = new PersonsComparator();
-		util = new BenchmarxUtil<>(familiesComparator, personsComparator, tool);
+		util = new BenchmarxUtil<>(tool);
 		helperFamily = new FamilyHelper();
 		helperPerson = new PersonHelper();
 	}
@@ -43,8 +50,10 @@ public abstract class FamiliesToPersonsTestCase {
 	public static Collection<BXTool<FamilyRegister, PersonRegister, Decisions>> tools() {
 		return Arrays.asList(
 				new EMoflonFamiliesToPersons()
+				,
+				new MediniQVTR()
 //				,
-//				new MediniQVTR()
+//				new BiGULFamiliesToPersons()
 			);
 	}
 	

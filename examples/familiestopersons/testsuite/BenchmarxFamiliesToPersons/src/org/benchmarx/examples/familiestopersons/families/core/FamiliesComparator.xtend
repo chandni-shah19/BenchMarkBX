@@ -13,10 +13,12 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 	FamilyNormaliser comparator
 	FamilyMemberNormaliser familyMemberComparator
 	
-	override compare(FamilyRegister expected, FamilyRegister actual) {
+	new (){
 		comparator = new FamilyNormaliser();
 		familyMemberComparator = new FamilyMemberNormaliser();
-		
+	}
+	
+	override compare(FamilyRegister expected, FamilyRegister actual) {	
 		assertTrue(familyToString(expected).startsWith("FamilyRegister"))
 		assertEquals(familyToString(expected), familyToString(actual))
 	}

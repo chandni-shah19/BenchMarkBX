@@ -12,9 +12,11 @@ import static org.junit.Assert.*
 public class PersonsComparator implements Comparator<PersonRegister>{
 	PersonNormaliser comparator
 	
-	override compare(PersonRegister expected, PersonRegister actual) {
+	new (){
 		comparator = new PersonNormaliser();
-		
+	}
+	
+	override compare(PersonRegister expected, PersonRegister actual) {
 		assertTrue(personsToString(expected).startsWith("PersonRegister"))
 		assertEquals(personsToString(expected), personsToString(actual))
 	}

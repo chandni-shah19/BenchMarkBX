@@ -24,9 +24,9 @@ public interface BXTool<S, T, D> {
 
 	public void performAndPropagateSourceEdit(Consumer<S> edit);
 
-	public S getSourceModel();
-
-	public T getTargetModel();
-
 	public void setConfigurator(Configurator<D> configurator);
+
+	public void assertPostcondition(S source, T target);
+	
+	public void assertPrecondition(S source, T target);
 }

@@ -11,13 +11,9 @@ import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
 public class BenchmarxUtil<S,T, D> {
 
-	private Comparator<S> src;
-	private Comparator<T> trg;
 	private BXTool<S, T, D> tool;
 	
-	public BenchmarxUtil(Comparator<S> src, Comparator<T> trg, BXTool<S,T,D> tool){
-		this.src = src;
-		this.trg = trg;
+	public BenchmarxUtil(BXTool<S,T,D> tool){
 		this.tool = tool;
 	}
 	
@@ -34,13 +30,13 @@ public class BenchmarxUtil<S,T, D> {
 		}
 		return (M)resource.getContents().get(0);
 	}
-
-	public void assertSource(String path){
-		src.compare(loadExpectedModel(path), tool.getSourceModel());
+	
+	public void assertPrecondition(String srcPath, String trgPath){
+		tool.assertPrecondition(loadExpectedModel(srcPath), loadExpectedModel(trgPath));
 	}
 	
-	public void assertTarget(String path){
-		trg.compare(loadExpectedModel(path), tool.getTargetModel());
+	public void assertPostcondition(String srcPath, String trgPath){
+		tool.assertPostcondition(loadExpectedModel(srcPath), loadExpectedModel(trgPath));
 	}
 	
 	public Configurator<D> configure() {
