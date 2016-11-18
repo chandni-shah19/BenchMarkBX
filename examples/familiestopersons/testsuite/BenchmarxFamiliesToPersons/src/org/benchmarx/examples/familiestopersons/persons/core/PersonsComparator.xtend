@@ -30,13 +30,13 @@ public class PersonsComparator implements Comparator<PersonRegister>{
 				«FOR p: sortedList SEPARATOR ","»
 				«IF p instanceof Male»
 				 Male  {   
-				 	      fullName = «p.name»
-				        ,  birthday = «p.birthday»
+				 	      fullName = "«p.name»"
+				        ,  birthday = "«p.birthday»"
 				 }
 				«ELSE»
 				Female {   
-					       fullName = «p.name»
-				        ,  birthday = «p.birthday»
+					       fullName = "«p.name»"
+				        ,  birthday = "«p.birthday»"
 				}
 				«ENDIF»
 				«ENDFOR»

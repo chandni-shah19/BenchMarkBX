@@ -8,6 +8,7 @@ import org.benchmarx.BenchmarxUtil;
 import org.benchmarx.Comparator;
 import org.benchmarx.examples.familiestopersons.families.core.FamiliesComparator;
 import org.benchmarx.examples.familiestopersons.families.core.FamilyHelper;
+import org.benchmarx.examples.familiestopersons.implementations.bigul.BiGULFamiliesToPersons;
 import org.benchmarx.examples.familiestopersons.implementations.emoflon.EMoflonFamiliesToPersons;
 import org.benchmarx.examples.familiestopersons.implementations.medini.MediniQVTR;
 import org.benchmarx.examples.familiestopersons.persons.core.PersonHelper;
@@ -52,8 +53,8 @@ public abstract class FamiliesToPersonsTestCase {
 				new EMoflonFamiliesToPersons()
 				,
 				new MediniQVTR()
-//				,
-//				new BiGULFamiliesToPersons()
+				,
+				new BiGULFamiliesToPersons()
 			);
 	}
 	

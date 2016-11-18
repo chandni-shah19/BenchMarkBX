@@ -93,7 +93,9 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 		
 		try {
 			File pathToExecutable = new File("src/org/benchmarx/examples/familiestopersons/implementations/bigul/FamiliesToPersons");
-			Process process = new ProcessBuilder(pathToExecutable.getAbsoluteFile().toString(), dir, familyRegister, personsRegister).start();
+			String command = "(" + "\"" + dir + "\"" + ", " + familyRegister + "," + personsRegister + ")";
+			System.out.println(command);
+			Process process = new ProcessBuilder(pathToExecutable.getAbsoluteFile().toString(), command).start();
 			InputStream is = process.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is);
 			BufferedReader br = new BufferedReader(isr);

@@ -31,15 +31,15 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 		    «comparator.normalize(sortedList)»
 				«FOR f : sortedList SEPARATOR ", "»
 				Family {
-				      familyName = «f.name»
-				    , mother     = «familyMember(f.mother)»
+				      familyName = "«f.name»"
 				    ,father     = «familyMember(f.father)»
-				    «val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
-				    «familyMemberComparator.normalize(sortedListOfDaughter)»
-				 	, daughters  = [«FOR daughter : sortedListOfDaughter SEPARATOR ", "»«familyMember(daughter)»«ENDFOR»]
+				    , mother     = «familyMember(f.mother)»
 			  		«val List<FamilyMember> sortedListOfSon = new ArrayList<FamilyMember>(f.sons)»
 			  		«familyMemberComparator.normalize(sortedListOfSon)»
 				    , sons       = [«FOR son : sortedListOfSon SEPARATOR ", "»«familyMember(son)»«ENDFOR»]
+				    «val List<FamilyMember> sortedListOfDaughter = new ArrayList<FamilyMember>(f.daughters)»
+				    «familyMemberComparator.normalize(sortedListOfDaughter)»
+				 	, daughters  = [«FOR daughter : sortedListOfDaughter SEPARATOR ", "»«familyMember(daughter)»«ENDFOR»]
 				}
 			«ENDFOR»
 			]
@@ -48,7 +48,7 @@ public class FamiliesComparator implements Comparator<FamilyRegister> {
 	}
 	
 	def familyMember(FamilyMember fm){
-		return '''«IF fm != null»Just (FamilyMember { firstName = «fm.name» })«ELSE»Nothing«ENDIF»'''
+		return '''«IF fm != null»Just (FamilyMember { firstName = "«fm.name»" })«ELSE»Nothing«ENDIF»'''
 	}
 }
 
