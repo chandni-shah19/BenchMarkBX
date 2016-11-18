@@ -53,8 +53,8 @@ public abstract class FamiliesToPersonsTestCase {
 				new EMoflonFamiliesToPersons()
 				,
 				new MediniQVTR()
-				,
-				new BiGULFamiliesToPersons()
+//				,
+//				new BiGULFamiliesToPersons()
 			);
 	}
 	
