@@ -1,10 +1,13 @@
 package org.benchmarx.examples.familiestopersons.implementations.bigul;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -21,6 +24,7 @@ import Persons.PersonRegister;
 import Persons.PersonsFactory;
 
 public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegister, Decisions> {
+	private static final String BIGUL_EXE = "src/org/benchmarx/examples/familiestopersons/implementations/bigul/FamiliesToPersons";
 	private boolean preconditionIsSet;
 	private boolean updated;
 	private FamilyRegister src;
@@ -49,24 +53,24 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 
 	@Override
 	public void performAndPropagateTargetEdit(Consumer<PersonRegister> edit) {
-		if(updated)
-			throw new IllegalStateException("Cannot run BiGUL twice in the same sync run!");
-		
-		edit.accept(trg);
-		
-		if(preconditionIsSet)
-			runBigulBWD(srcHelper.familyToString(src), trgHelper.personsToString(trg));
+		performAndPropagateEdit(() -> edit.accept(trg), () -> runBigulBWD(srcHelper.familyToString(src), trgHelper.personsToString(trg)));
 	}
 
 	@Override
 	public void performAndPropagateSourceEdit(Consumer<FamilyRegister> edit) {
+		performAndPropagateEdit(() -> edit.accept(src), () -> runBigulFWD(srcHelper.familyToString(src), trgHelper.personsToString(trg)));
+	}
+
+	private void performAndPropagateEdit(Runnable edit, Runnable propagation){
 		if(updated)
 			throw new IllegalStateException("Cannot run BiGUL twice in the same sync run!");
 		
-		edit.accept(src);
+		// Just perform the edit and update the target model, BiGUL does not care about deltas
+		edit.run();;
 		
+		// If we're ready to go, run propagation
 		if(preconditionIsSet)
-			runBigulFWD(srcHelper.familyToString(src), trgHelper.personsToString(trg));
+			propagation.run();
 	}
 	
 	private void runBigulBWD(String familyToString, String personsToString) {
@@ -84,22 +88,39 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 		String expectedFamilyRegister = srcHelper.familyToString(fr);
 		String expectedPersonsRegister = trgHelper.personsToString(pr);
 		
-		Assert.assertEquals(expectedFamilyRegister, resultSrc);
-		Assert.assertEquals(expectedPersonsRegister, resultTrg);
+		normaliseAndCompare(expectedFamilyRegister, resultSrc);
+		normaliseAndCompare(expectedPersonsRegister, resultTrg);
 	}
 	
+	private void normaliseAndCompare(String expected, String actual) {
+		Assert.assertEquals(expected.replaceAll("\\s+",""), actual.replaceAll("\\s+",""));
+	}
+
 	private String runBigul(String dir, String familyRegister, String personsRegister) {
+		// Signalises that we have performed a propagation (we can only do this once)
 		updated = true;
 		
 		try {
-			File pathToExecutable = new File("src/org/benchmarx/examples/familiestopersons/implementations/bigul/FamiliesToPersons");
-			String command = "(" + "\"" + dir + "\"" + ", " + familyRegister + "," + personsRegister + ")";
-			System.out.println(command);
-			Process process = new ProcessBuilder(pathToExecutable.getAbsoluteFile().toString(), command).start();
-			InputStream is = process.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is);
-			BufferedReader br = new BufferedReader(isr);
-			return br.readLine();
+			File pathToExecutable = new File(BIGUL_EXE);
+			String input = "(" + "\"" + dir + "\"" + ", " + familyRegister + "," + personsRegister + ")";
+			ProcessBuilder processBuilder = new ProcessBuilder(pathToExecutable.getAbsoluteFile().toString());
+			processBuilder.redirectErrorStream(true);
+			Process process = processBuilder.start();
+			
+			OutputStream stdin = process.getOutputStream();
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stdin));
+			
+			InputStream stdout = process.getInputStream();
+			BufferedReader reader = new BufferedReader(new InputStreamReader(stdout));
+			
+			writer.write(input);
+			writer.flush();
+			writer.close();
+			
+			String output = reader.lines().collect(Collectors.joining(" "));
+			reader.close();
+			
+			return output;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -117,5 +138,6 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 	@Override
 	public void setConfigurator(Configurator<Decisions> configurator) {
 		// No configuration
-	}
+	}	 
 }
+

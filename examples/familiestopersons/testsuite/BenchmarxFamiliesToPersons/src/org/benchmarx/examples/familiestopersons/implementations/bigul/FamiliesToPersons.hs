@@ -220,7 +220,7 @@ classifyByGender = Case
 
 syncL :: BiGUL FamilyRegister Medium
 syncL = $(rearrS [| \(FamilyRegister fs) -> fs |])$
-          align (const True)
+          align isNonEmptyFamily
                 (\(Family { familyName = x }) (y, _) -> x == y)
                 ($(rearrS [| \(Family familyName father mother sons daughters) ->
                                (familyName, (father, sons), (mother, daughters)) |])$
@@ -230,6 +230,9 @@ syncL = $(rearrS [| \(FamilyRegister fs) -> fs |])$
                 (\(n,_) -> Family n Nothing Nothing [] [])
                 (const Nothing)
   where
+    isNonEmptyFamily :: Family -> Bool
+    isNonEmptyFamily (Family _ Nothing Nothing [] []) = False
+    isNonEmptyFamily _                                = True
     familyMemberWrapper :: BiGUL [FamilyMember] [String]
     familyMemberWrapper =
       align (const True) (\_ _ -> True) ($(rearrS [| \(FamilyMember n) -> n |]) Replace) FamilyMember (const Nothing)
