@@ -39,12 +39,11 @@ public class RenamingPerson extends FamiliesToPersonsTestCase {
 				.execute(helperFamily::createSimpsonFamily)
 				.andThen(helperFamily::createFatherHomer)
 				.andThen(helperFamily::createSimpsonFamilyMembers));
-			
+		
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");	
 		//----------------
 		tool.performAndPropagateTargetEdit(helperPerson::firstNameChangeOfHomer);
 		//----------------
-		
-		util.assertTarget("PersonNameChange");
-		util.assertSource("MemberNameChange");
+		util.assertPostcondition("MemberNameChange","PersonNameChange");
 	}
 }

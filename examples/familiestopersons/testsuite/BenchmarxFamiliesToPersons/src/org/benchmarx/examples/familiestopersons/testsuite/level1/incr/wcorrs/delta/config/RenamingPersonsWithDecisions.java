@@ -49,12 +49,11 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateTargetEdit(helperPerson::createOtherBart);
 			
+		util.assertPrecondition("Pre_MemberNameChangeOther", "Pre_PersonNameChangeOther");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfOtherBart);
 		//----------------
-		
-		util.assertTarget("PersonFullNameChangeOther");
-		util.assertSource("MemberFullNameChangeOther");
+		util.assertPostcondition("MemberFullNameChangeOther","PersonFullNameChangeOther");
 	}
 }

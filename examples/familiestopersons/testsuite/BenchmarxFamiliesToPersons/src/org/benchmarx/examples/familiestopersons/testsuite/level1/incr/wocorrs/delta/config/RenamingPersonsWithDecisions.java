@@ -44,14 +44,13 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
+		util.assertPrecondition("Pre_MemberFamilyNameChangeToExist", "Pre_PersonFamilyNameChangeToExist");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
 		//----------------
-		
-		util.assertTarget("PersonFamilyNameChangeToExist");
-		util.assertSource("MemberFamilyNameChangeToExist");
+		util.assertPostcondition("MemberFamilyNameChangeToExist","PersonFamilyNameChangeToExist");
 	}
 	
 	/**
@@ -68,14 +67,13 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		
 		tool.performAndPropagateSourceEdit(helperFamily::createNandaFamily);
 		
+		util.assertPrecondition("Pre_MemberFamilyNameChangeToExist", "Pre_PersonFamilyNameChangeToExist");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
 		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfShweta);
 		//----------------
-		
-		util.assertTarget("PersonFamilyNameChangeToExistNew");
-		util.assertSource("MemberFamilyNameChangeToExistNew");
+		util.assertPostcondition("MemberFamilyNameChangeToExistNew","PersonFamilyNameChangeToExistNew");
 	}
 
 	/**
@@ -92,13 +90,12 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 											   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 			
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::familyNameChangeOfLisa);
 		//----------------
-
-		util.assertTarget("PersonFamilyNameChange");
-		util.assertSource("MemberFamilyNameChange");
+		util.assertPostcondition("MemberFamilyNameChange","PersonFamilyNameChange");
 	}
 	
 	/**
@@ -128,14 +125,13 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
-			
+		
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfHomer);
 		//----------------
-		
-		util.assertTarget("PersonFullNameChange");
-		util.assertSource("MemberFullNameChange");
+		util.assertPostcondition("MemberFullNameChange","PersonFullNameChange");
 	}
 	
 	/**
@@ -149,12 +145,11 @@ public class RenamingPersonsWithDecisions extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::fullNameChangeOfBart);
 		//----------------
-		
-		util.assertTarget("PersonFullNameChangeSecond");
-		util.assertSource("MemberFullNameChangeSecond");
+		util.assertPostcondition("MemberFullNameChangeSecond","PersonFullNameChangeSecond");
 	}
 }

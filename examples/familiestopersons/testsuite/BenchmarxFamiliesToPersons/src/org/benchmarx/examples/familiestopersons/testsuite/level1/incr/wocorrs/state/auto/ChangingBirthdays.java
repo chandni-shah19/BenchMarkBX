@@ -36,11 +36,10 @@ public class ChangingBirthdays extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		
+		util.assertPrecondition("Pre_OneFamilyWithOneFamilyMember", "Pre_PersonBirthdayChange");
 		//-----------------------------
 		tool.performAndPropagateTargetEdit((helperPerson::birthdayChangeOfHomer));
 		//-----------------------------
-		
-		util.assertTarget("PersonBirthdayChange");
-		util.assertSource("OneFamilyWithOneFamilyMember");
+		util.assertPostcondition("OneFamilyWithOneFamilyMember","PersonBirthdayChange");
 	}
 }
