@@ -47,12 +47,11 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamily", "Pre_NameChangeOtherPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyNameOtherSimpsonChange);
 		//------------
-		
-		util.assertSource("NameChangeOtherFamily");
-		util.assertTarget("NameChangeOtherPerson");
+		util.assertPostcondition("NameChangeOtherFamily", "NameChangeOtherPerson");
 	}
 	
 	/**
@@ -86,12 +85,11 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamily", "Pre_NameChangeOtherPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyMotherJaneNameChange);
 		//------------
-
-		util.assertSource("NameChangeFamilyMemberOtherMother");
-		util.assertTarget("NameChangeOfPersonOtherMother");
+		util.assertPostcondition("NameChangeFamilyMemberOtherMother", "NameChangeOfPersonOtherMother");
 	}
 	
 	/**
@@ -108,12 +106,11 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamily", "Pre_NameChangeOtherPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyDaughterJudyNameChange);
 		//------------
-
-		util.assertSource("NameChangeFamilyMemberOtherDaughter");
-		util.assertTarget("NameChangeOfPersonOtherDaughter");
+		util.assertPostcondition("NameChangeFamilyMemberOtherDaughter", "NameChangeOfPersonOtherDaughter");
 	}
 	
 	/**
@@ -130,12 +127,11 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamily", "Pre_NameChangeOtherPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familySonElroyNameChange);
 		//------------
-
-		util.assertSource("NameChangeFamilyMemberOtherSon");
-		util.assertTarget("NameChangeOfPersonOtherSon");
+		util.assertPostcondition("NameChangeFamilyMemberOtherSon", "NameChangeOfPersonOtherSon");
 	}
 	
 	/**
@@ -151,11 +147,10 @@ public class RenamingInFamilies extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamilyMember", "Pre_NameChangeOfOtherPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherGeorgeNameChange);
 		//------------
-
-		util.assertSource("NameChangeOtherFamilyMember");
-		util.assertTarget("NameChangeOfOtherPerson");
+		util.assertPostcondition("NameChangeOtherFamilyMember", "NameChangeOfOtherPerson");
 	}
 }
