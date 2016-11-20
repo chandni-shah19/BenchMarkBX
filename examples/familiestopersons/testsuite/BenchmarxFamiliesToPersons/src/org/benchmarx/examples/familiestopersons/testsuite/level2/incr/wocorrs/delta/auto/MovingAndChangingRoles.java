@@ -34,12 +34,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 			       							   .andThen(helperFamily::createFatherAmitabh));
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		
+		util.assertPrecondition("Pre_FamilyMemberWithDiffFamily", "Pre_PersonsFirstNameChange");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::moveDaughterToMotherOfNewFamily);
 		//------------
-		
-		util.assertSource("FamilyMemberWithDiffFamily");
-		util.assertTarget("PersonsFirstNameChange");
+		util.assertPostcondition("FamilyMemberWithDiffFamily", "PersonsFirstNameChange");
 	}
 	
 	/**
@@ -63,12 +62,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
+		util.assertPrecondition("Pre_RoleChangeFamilyMember", "Pre_NoChangePerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToSon);
 		//------------
-
-		util.assertSource("RoleChangeFamilyMember");
-		util.assertTarget("NoChangePerson");
+		util.assertPostcondition("RoleChangeFamilyMember", "NoChangePerson");
 	}
 	
 	/**
@@ -82,12 +80,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
+		util.assertPrecondition("Pre_RoleChangeFamilyMember", "Pre_NoChangePerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyMotherMargeRoleChangeToDaughterLisa);
 		//------------
-
-		util.assertSource("RoleChangeFamilyMemberMoToDau");
-		util.assertTarget("NoChangePersonFemale");
+		util.assertPostcondition("RoleChangeFamilyMemberMoToDau", "NoChangePersonFemale");
 	}
 	
 	/**
@@ -101,12 +98,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
+		util.assertPrecondition("Pre_RoleChangeFamilyMember", "Pre_NoChangePerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familyFatherHomerRoleChangeToMotherMarge);
 		//------------
-
-		util.assertSource("RoleChangeFamilyMemberFaToMo");
-		util.assertTarget("ChangePersonMToF");
+		util.assertPostcondition("RoleChangeFamilyMemberFaToMo", "ChangePersonMToF");
 	}
 	
 	/**
@@ -120,12 +116,11 @@ public class MovingAndChangingRoles extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfSimpson);
 		
+		util.assertPrecondition("Pre_RoleChangeFamilyMember", "Pre_NoChangePerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::familySonBartRoleChangeToMotherMarge);
 		//------------
-
-		util.assertSource("RoleChangeFamilyMemberSoToMo");
-		util.assertTarget("ChangePersonMaToFe");
+		util.assertPostcondition("RoleChangeFamilyMemberSoToMo", "ChangePersonMaToFe");
 	}
 	
 }

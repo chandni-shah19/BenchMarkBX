@@ -36,14 +36,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	public void testCreateMalePersonAsFather()
 	{
 		tool.initiateSynchronisationDialogue();
-	
+		
+		// No precondition!
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		// ---------------------------------
-			
-		util.assertTarget("PersonOneMaleMember");
-		util.assertSource("OneFamilyWithOneFamilyMember");
+		util.assertPostcondition("OneFamilyWithOneFamilyMember", "PersonOneMaleMember");	
 	}
 	
 	/**
@@ -55,13 +54,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	{
 		tool.initiateSynchronisationDialogue();
 	
+		// No precondition!
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false);
 		tool.performAndPropagateTargetEdit(helperPerson::createBart);
 		// ---------------------------------
-			
-		util.assertTarget("PersonOneMaleMemberSon");
-		util.assertSource("oneFamilyWithOneFamilyMemberSon");
+		util.assertPostcondition("oneFamilyWithOneFamilyMemberSon", "PersonOneMaleMemberSon");
 	}
 	
 	/**
@@ -72,13 +70,12 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	{
 		tool.initiateSynchronisationDialogue();
 	
+		// No precondition!
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createMarge);
 		// ---------------------------------
-			
-		util.assertTarget("PersonOneFemaleMemberMother");
-		util.assertSource("oneFamilyWithOneFamilyMemberMother");
+		util.assertPostcondition("oneFamilyWithOneFamilyMemberMother", "PersonOneFemaleMemberMother");
 	}
 	
 	/**
@@ -88,14 +85,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 	public void testCreatePersonDaughter()
 	{
 		tool.initiateSynchronisationDialogue();
-	
+		
+		// No precondition!
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false);
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		// ---------------------------------
-			
-		util.assertTarget("PersonOneFemaleMemberDaughter");
-		util.assertSource("oneFamilyWithOneFamilyMemberDaughter");
+		util.assertPostcondition("oneFamilyWithOneFamilyMemberDaughter", "PersonOneFemaleMemberDaughter");	
 	}
 	
 }

@@ -31,12 +31,10 @@ public class CreatingNewFamilies extends FamiliesToPersonsTestCase {
 	public void testCreateFamily()
 	{
 		tool.initiateSynchronisationDialogue();
-		
+		// No precondition!
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		//------------
-		
-		util.assertSource("oneFamily");
-		util.assertTarget("personsForOneFamily");
+		util.assertPostcondition("oneFamily", "personsForOneFamily");
 	}
 }

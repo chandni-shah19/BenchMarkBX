@@ -44,12 +44,11 @@ public class DeletingFamilesFamilyMembers extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createMotherMarge);
 		tool.performAndPropagateSourceEdit(helperFamily::createDaughterMarge);
 		
+		util.assertPrecondition("Pre_DeleteFamilyMemberOfSameName", "Pre_DeletePersonSameName");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyDaughterMarge);
 		//------------
-		
-		util.assertSource("DeleteFamilyMemberOfSameName");
-		util.assertTarget("DeletePersonSameName");
+		util.assertPostcondition("DeleteFamilyMemberOfSameName", "DeletePersonSameName");
 	}
 	
 	/**
@@ -63,11 +62,10 @@ public class DeletingFamilesFamilyMembers extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createMotherMarge);
 		tool.performAndPropagateSourceEdit(helperFamily::createSonHomer);
 		
+		util.assertPrecondition("Pre_DeleteFamilyMemberSonHomer", "Pre_DeletePersonSonHomer");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilySonHomer);
 		//------------
-		
-		util.assertSource("DeleteFamilyMemberSonHomer");
-		util.assertTarget("DeletePersonSonHomer");
+		util.assertPostcondition("DeleteFamilyMemberSonHomer", "DeletePersonSonHomer");
 	}
 }

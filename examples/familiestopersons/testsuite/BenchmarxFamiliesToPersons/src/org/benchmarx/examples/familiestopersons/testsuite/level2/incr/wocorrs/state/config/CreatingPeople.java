@@ -40,15 +40,15 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-	
+		
+		util.assertPrecondition("Pre_oneFamilyWithOneFamilyMemberExistSon", "Pre_PersonMaleMemberExistSon");
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createBart);
 		// ---------------------------------
 			
-		util.assertTarget("PersonMaleMemberExistSon");
-		util.assertSource("oneFamilyWithOneFamilyMemberExistSon");
+		util.assertPostcondition("oneFamilyWithOneFamilyMemberExistSon", "PersonMaleMemberExistSon");	
 	}
 	
 	/**
@@ -61,14 +61,13 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createMotherMarge);
-	
+		
+		util.assertPrecondition("Pre_oneFamilyWithOneFamilyMemberExistDaughter", "Pre_PersonFemaleMemberExistDaughter");
 		// ---------------------------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true);
 		util.configure().makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		// ---------------------------------
-			
-		util.assertTarget("PersonFemaleMemberExistDaughter");
-		util.assertSource("oneFamilyWithOneFamilyMemberExistDaughter");
+		util.assertPostcondition("oneFamilyWithOneFamilyMemberExistDaughter", "PersonFemaleMemberExistDaughter");	
 	}
 }

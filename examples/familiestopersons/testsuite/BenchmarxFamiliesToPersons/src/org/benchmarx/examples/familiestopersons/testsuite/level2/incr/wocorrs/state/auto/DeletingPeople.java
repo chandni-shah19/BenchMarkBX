@@ -39,12 +39,11 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 				   							   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");
 		//---------------------- 
 		tool.performAndPropagateTargetEdit(helperPerson::deleteMarge);
 		//---------------------- 
-		
-		util.assertTarget("PersonDelete");
-		util.assertSource("MemberDelete");
+		util.assertPostcondition("MemberDelete", "PersonDelete");
 	}
 	
 	/**
@@ -58,12 +57,11 @@ public class DeletingPeople extends FamiliesToPersonsTestCase {
 											   .andThen(helperFamily::createFatherHomer));
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeFamily", "Pre_NameChangePerson");
 		//---------------------- 
 		tool.performAndPropagateTargetEdit(helperPerson::deleteHomer);
 		//---------------------- 
-		
-		util.assertTarget("PersonFirstDelete");
-		util.assertSource("MemberFirstDelete");
+		util.assertPostcondition("MemberFirstDelete", "PersonFirstDelete");
 	}
 	
 }
