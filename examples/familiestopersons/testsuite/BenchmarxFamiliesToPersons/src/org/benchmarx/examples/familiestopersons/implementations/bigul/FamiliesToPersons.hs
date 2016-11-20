@@ -65,9 +65,9 @@ samplePersonRegister = PersonRegister
   { persons = [ Male   { fullName = "Simpson, Homer"
                        , birthday = "9 Jan 2013" }
               , Female { fullName = "Simpson, Lisa"
-                       , birthday = "" }
+                       , birthday = "Thu Jan 01 00:00:00 CET 1" }
               , Female { fullName = "Simpson, Maggie"
-                       , birthday = "" } ] }
+                       , birthday = "Thu Jan 01 00:00:00 CET 1" } ] }
 
 
 --------
@@ -179,7 +179,7 @@ syncR' = Case
     adaptFamily ps ((firstName, gender):ms) =
       case find (\p -> getFullName p == firstName && isMale p == gender) ps of
         Just p  -> p : adaptFamily (delete p ps) ms
-        Nothing -> (if gender then Male else Female) firstName "" : adaptFamily ps ms
+        Nothing -> (if gender then Male else Female) firstName "Thu Jan 01 00:00:00 CET 1" : adaptFamily ps ms
 
 
 --------
@@ -227,7 +227,9 @@ syncL = $(rearrS [| \(FamilyRegister fs) -> fs |])$
                    Replace `Prod`
                    ((((Replace `Prod` familyMemberWrapper) `Compose` promoteParent) `Prod`
                      ((Replace `Prod` familyMemberWrapper) `Compose` promoteParent)) `Compose` classifyByGender))
-                (\(n,_) -> Family n Nothing Nothing [] [])
+                (\(familyName, ((firstName, gender):_)) ->
+                   let (father, mother) = (if gender then id else flip) (,) (Just (FamilyMember firstName)) Nothing
+                   in  Family familyName father mother [] [])
                 (const Nothing)
   where
     isNonEmptyFamily :: Family -> Bool
