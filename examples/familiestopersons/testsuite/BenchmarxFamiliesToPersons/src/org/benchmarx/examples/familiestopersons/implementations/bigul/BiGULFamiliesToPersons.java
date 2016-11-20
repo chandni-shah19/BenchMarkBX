@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
@@ -25,23 +26,16 @@ import Persons.PersonsFactory;
 
 public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegister, Decisions> {
 	private static final String BIGUL_EXE = "src/org/benchmarx/examples/familiestopersons/implementations/bigul/FamiliesToPersons";
-	private boolean preconditionIsSet;
-	private boolean updated;
 	private FamilyRegister src;
 	private PersonRegister trg;
 	private String resultSrc;
 	private String resultTrg;
 	private FamiliesComparator srcHelper = new FamiliesComparator();
 	private PersonsComparator trgHelper = new PersonsComparator();
+	private BiConsumer<String, String> propagation;
 	
 	@Override
 	public void initiateSynchronisationDialogue() {
-		// Used to decide when the actual test delta is to be propagated
-		preconditionIsSet = false;
-		
-		// Used to indicate that BiGUL has been run and no further delta can be propagated
-		updated = false;
-		
 		// BiGUL does not require any internal state
 		src = FamiliesFactory.eINSTANCE.createFamilyRegister();
 		trg = PersonsFactory.eINSTANCE.createPersonRegister();
@@ -53,26 +47,23 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 
 	@Override
 	public void performAndPropagateTargetEdit(Consumer<PersonRegister> edit) {
-		performAndPropagateEdit(() -> edit.accept(trg), () -> runBigulBWD(srcHelper.familyToString(src), trgHelper.personsToString(trg)));
+		performEdit(edit, trg, this::runBigulBWD);
 	}
 
 	@Override
 	public void performAndPropagateSourceEdit(Consumer<FamilyRegister> edit) {
-		performAndPropagateEdit(() -> edit.accept(src), () -> runBigulFWD(srcHelper.familyToString(src), trgHelper.personsToString(trg)));
-	}
-
-	private void performAndPropagateEdit(Runnable edit, Runnable propagation){
-		if(updated)
-			throw new IllegalStateException("Cannot run BiGUL twice in the same sync run!");
-		
-		// Just perform the edit and update the target model, BiGUL does not care about deltas
-		edit.run();;
-		
-		// If we're ready to go, run propagation
-		if(preconditionIsSet)
-			propagation.run();
+		performEdit(edit, src, this::runBigulFWD);
 	}
 	
+	private <M> void performEdit(Consumer<M> edit, M model, BiConsumer<String, String> p){
+		try {
+			edit.accept(model);
+			propagation =  p;
+		} catch (Error e) {
+			// We are not interested in any problems that might occur while constructing deltas
+		}
+	}
+
 	private void runBigulBWD(String familyToString, String personsToString) {
 		resultSrc = runBigul("bwd", familyToString, personsToString);
 		resultTrg = personsToString;
@@ -85,6 +76,8 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 
 	@Override
 	public void assertPostcondition(FamilyRegister fr, PersonRegister pr) {
+		propagation.accept(srcHelper.familyToString(src), trgHelper.personsToString(trg));
+		
 		String expectedFamilyRegister = srcHelper.familyToString(fr);
 		String expectedPersonsRegister = trgHelper.personsToString(pr);
 		
@@ -97,9 +90,6 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 	}
 
 	private String runBigul(String dir, String familyRegister, String personsRegister) {
-		// Signalises that we have performed a propagation (we can only do this once)
-		updated = true;
-		
 		try {
 			File pathToExecutable = new File(BIGUL_EXE);
 			String input = "(" + "\"" + dir + "\"" + ", " + familyRegister + "," + personsRegister + ")";
@@ -134,7 +124,6 @@ public class BiGULFamiliesToPersons implements BXTool<FamilyRegister, PersonRegi
 	public void assertPrecondition(FamilyRegister source, PersonRegister target) {
 		src = source;
 		trg = target;
-		preconditionIsSet = true;
 	}
 
 	@Override
