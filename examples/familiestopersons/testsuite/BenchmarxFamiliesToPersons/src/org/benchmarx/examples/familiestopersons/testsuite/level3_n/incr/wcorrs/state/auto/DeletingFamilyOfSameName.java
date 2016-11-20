@@ -43,12 +43,11 @@ public class DeletingFamilyOfSameName extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherGeorge);
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherSimpsonFamilyMembers);
 		
+		util.assertPrecondition("Pre_NameChangeOtherFamily", "Pre_DeleteAllPersonSameFamilyName");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFirstSimpsonFamily);
 		//------------
-		
-		util.assertSource("DeleteFamilySameName");
-		util.assertTarget("DeleteAllPersonSameFamilyName");		
+		util.assertPostcondition("DeleteFamilySameName", "DeleteAllPersonSameFamilyName");
 	}
 
 }

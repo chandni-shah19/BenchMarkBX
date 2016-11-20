@@ -45,12 +45,10 @@ public class DeletingFamiliesAndFamilyMembers extends FamiliesToPersonsTestCase 
 		tool.performAndPropagateSourceEdit(helperFamily::createOtherRemainingMembersInFamilyBachchan);
 		tool.performAndPropagateTargetEdit(helperPerson::setBirthdaysOfBachchan);
 
-		
+		util.assertPrecondition("Pre_DeleteFamily", "Pre_DeleteAllPerson");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::deleteFamilyBachchan);
 		//------------
-		
-		util.assertSource("DeleteFamily");
-		util.assertTarget("DeleteAllPerson");		
+		util.assertPostcondition("DeleteFamily", "DeleteAllPerson");
 	}
 }

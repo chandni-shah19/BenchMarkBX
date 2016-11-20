@@ -31,15 +31,13 @@ public class CreatingNewFamiliesAndMembers extends FamiliesToPersonsTestCase {
 	public void testCreateFamilyMember()
 	{
 		tool.initiateSynchronisationDialogue();
-		
+		// No precondition!
 		//------------
 		tool.performAndPropagateSourceEdit(util
 				.execute(helperFamily::createSimpsonFamily)
 				.andThen(helperFamily::createFatherHomer));
 		//------------
-		
-		util.assertSource("oneFamilyWithOneFamilyMember");
-		util.assertTarget("PersonWithOneMaleMember");
+		util.assertPostcondition("oneFamilyWithOneFamilyMember", "PersonWithOneMaleMember");
 	}
 	
 	/**
@@ -48,12 +46,10 @@ public class CreatingNewFamiliesAndMembers extends FamiliesToPersonsTestCase {
 	@Test 
 	public void testNewFamilyWithMultiMembers(){
 		tool.initiateSynchronisationDialogue();
-		
+		// No precondition!
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createNewfamilyBachchanWithMembers);
 		//------------
-		
-		util.assertSource("NewFamilyWithMembers");
-		util.assertTarget("PersonsMulti");
+		util.assertPostcondition("NewFamilyWithMembers", "PersonsMulti");
 	}
 }

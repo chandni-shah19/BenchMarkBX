@@ -39,6 +39,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 	public void testCreateMultiPersonPrefTT() {
 		tool.initiateSynchronisationDialogue();
 		
+		// No precondition!
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
@@ -47,9 +48,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 			    .andThen(helperPerson::createMarge));
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		//----------------
-		
-		util.assertTarget("PersonMultiMembers");
-		util.assertSource("FamiliesMultiMembers");
+		util.assertPostcondition("FamiliesMultiMembers", "PersonMultiMembers");
 	}
 	
 	/**
@@ -59,6 +58,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 	public void testCreateMultiPersonWithDiffPrefFT() {
 		tool.initiateSynchronisationDialogue();
 		
+		// No precondition!
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
@@ -67,9 +67,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 			    .andThen(helperPerson::createBart));
 		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		//----------------
-		
-		util.assertTarget("PersonMultiMembersPref");
-		util.assertSource("FamiliesMultiMembersPref");
+		util.assertPostcondition("FamiliesMultiMembersPref", "PersonMultiMembersPref");
 	}
 	
 	/**
@@ -79,6 +77,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 	public void testCreateMultiPersonWithDiffPrefTF() {
 		tool.initiateSynchronisationDialogue();
 		
+		// No precondition!
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
@@ -87,9 +86,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 			    .andThen(helperPerson::createMarge));
 		tool.performAndPropagateTargetEdit(helperPerson::createLisa);
 		//----------------
-		
-		util.assertTarget("PersonMultiMembersPrefTF");
-		util.assertSource("FamiliesMultiMembersPrefTF");
+		util.assertPostcondition("FamiliesMultiMembersPrefTF", "PersonMultiMembersPrefTF");
 	}
 	
 	/**
@@ -99,6 +96,7 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 	public void testCreateMultiPersonWithDiffPrefFF() {
 		tool.initiateSynchronisationDialogue();
 		
+		// No precondition!
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false)
 						.makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
@@ -107,8 +105,6 @@ public class CreatingPeopleWithSameFamilyName extends FamiliesToPersonsTestCase 
 			    .andThen(helperPerson::createBart));
 		tool.performAndPropagateTargetEdit(helperPerson::createHomer);
 		//----------------
-		
-		util.assertTarget("PersonMultiMembersPrefFF");
-		util.assertSource("FamiliesMultiMembersPrefFF");
+		util.assertPostcondition("FamiliesMultiMembersPrefFF", "PersonMultiMembersPrefFF");
 	}
 }

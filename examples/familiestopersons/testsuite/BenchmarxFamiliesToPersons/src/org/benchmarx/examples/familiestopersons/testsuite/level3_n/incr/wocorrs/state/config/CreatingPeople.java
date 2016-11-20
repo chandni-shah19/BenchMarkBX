@@ -41,6 +41,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 			
+		util.assertPrecondition("Pre_NameChangeFamilyMember", "Pre_NameChangeOfPerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 					    .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
@@ -53,9 +54,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateTargetEdit(helperPerson::createAbhishek);
 		tool.performAndPropagateTargetEdit(helperPerson::createShweta);
 		//----------------
-			
-		util.assertTarget("PersonsNewMulti");
-		util.assertSource("familyMulti");
+		
+		util.assertPostcondition("familyMulti", "PersonsNewMulti");
 	}	
 	
 	/**
@@ -67,6 +67,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 			
+		util.assertPrecondition("Pre_NameChangeFamilyMember", "Pre_NameChangeOfPerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false)
 					    .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, true);
@@ -77,8 +78,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateTargetEdit(helperPerson::createShweta);
 		//----------------
 			
-		util.assertTarget("PersonsNewMultiDiffPref");
-		util.assertSource("familyMultiDiffPref");
+		util.assertPostcondition("familyMultiDiffPref", "PersonsNewMultiDiffPref");
 	}	
 	
 	/**
@@ -89,7 +89,8 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.initiateSynchronisationDialogue();
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
-			
+		
+		util.assertPrecondition("Pre_NameChangeFamilyMember", "Pre_NameChangeOfPerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, true)
 					    .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
@@ -99,8 +100,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateTargetEdit(helperPerson::createAbhishek);
 		//----------------
 			
-		util.assertTarget("PersonsNewMultiDiffPrefTF");
-		util.assertSource("familyMultiDiffPrefTF");
+		util.assertPostcondition("familyMultiDiffPrefTF", "PersonsNewMultiDiffPrefTF");
 	}	
 	
 	/**
@@ -112,6 +112,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamily);
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 			
+		util.assertPrecondition("Pre_NameChangeFamilyMember", "Pre_NameChangeOfPerson");
 		//----------------
 		util.configure().makeDecision(Decisions.PREFER_CREATING_PARENT_TO_CHILD, false)
 					    .makeDecision(Decisions.PREFER_EXISTING_FAMILY_TO_NEW, false);
@@ -120,8 +121,7 @@ public class CreatingPeople extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateTargetEdit(helperPerson::createAbhishek);
 		tool.performAndPropagateTargetEdit(helperPerson::createShweta);
 		//----------------
-			
-		util.assertTarget("PersonsNewMultiDiffPrefFF");
-		util.assertSource("familyMultiDiffPrefFF");
+		
+		util.assertPostcondition("familyMultiDiffPrefFF", "PersonsNewMultiDiffPrefFF");
 	}	
 }

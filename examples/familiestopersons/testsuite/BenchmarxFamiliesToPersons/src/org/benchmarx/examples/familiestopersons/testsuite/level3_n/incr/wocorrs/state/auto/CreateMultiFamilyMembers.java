@@ -40,11 +40,10 @@ public class CreateMultiFamilyMembers extends FamiliesToPersonsTestCase {
 		tool.performAndPropagateSourceEdit(helperFamily::createFatherHomer);
 		tool.performAndPropagateTargetEdit(helperPerson::birthdayChangeOfHomer);
 		
+		util.assertPrecondition("Pre_NameChangeFamilyMember", "PersonBirthdayChange");
 		//------------
 		tool.performAndPropagateSourceEdit(helperFamily::createSimpsonFamilyMembers);
 		//------------
-		
-		util.assertSource("FamilyWithMultiFamilyMember");
-		util.assertTarget("PersonWithMultiMember");
+		util.assertPostcondition("FamilyWithMultiFamilyMember", "PersonWithMultiMember");
 	}
 }
