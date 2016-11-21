@@ -1,4 +1,4 @@
-{-# LANGUAGE TemplateHaskell, TypeFamilies #-}
+{-# LANGUAGE TemplateHaskell, TypeFamilies, TupleSections #-}
 
 import Control.Arrow
 import Control.Applicative
@@ -71,9 +71,9 @@ samplePersonRegister = PersonRegister
 
 
 --------
--- synchronisation
+-- synchronisation with persons
 
-type Medium = [(String, [(String, Bool)])]  -- family name, first name, is male
+type MediumR = [((String, String), Bool)]  -- family name, first name, is male
 
 fuseName :: BiGUL String (String, String)
 fuseName = Case
@@ -89,27 +89,9 @@ fuseName = Case
     ==> \ss (vs, _) -> vs ++ ss
   ]
 
-
---------
--- synchronisation with persons
-
-pMatch :: [Person] -> Medium -> Bool
-pMatch [] [] = True
-pMatch (Male fullName _ : ps) ((familyName, (firstName, True):ns):fs)
-  | get fuseName fullName == Just (familyName, firstName) =
-    pMatch ps ((if null ns then id else ((familyName, ns):)) fs)
-pMatch (Female fullName _ : ps) ((familyName, (firstName, False):ns):fs)
-  | get fuseName fullName == Just (familyName, firstName) =
-    pMatch ps ((if null ns then id else ((familyName, ns):)) fs)
-pMatch _ _ = False
-
 getFullName :: Person -> String
 getFullName (Male   fullName _) = fullName
 getFullName (Female fullName _) = fullName
-
-changeFullName :: (String -> String) -> Person -> Person
-changeFullName f (Male   fullName birthday) = Male   (f fullName) birthday
-changeFullName f (Female fullName birthday) = Female (f fullName) birthday
 
 splitFullName :: String -> (String, String)
 splitFullName = (id *** (tail . tail)) . span (/= ',')
@@ -120,70 +102,71 @@ getFamilyName = fst . splitFullName . getFullName
 getFirstName :: Person -> String
 getFirstName = snd . splitFullName . getFullName
 
-lastMemberReached :: [Person] -> Bool
-lastMemberReached [_] = True
-lastMemberReached (p:q:ps) | getFamilyName p /= getFamilyName q = True
-lastMemberReached _ = False
-
 isMale :: Person -> Bool
 isMale (Male   _ _) = True
 isMale (Female _ _) = False
 
-syncR :: BiGUL PersonRegister Medium
-syncR = $(rearrS [| \(PersonRegister ps) -> ps |]) syncR'
-
-syncR' :: BiGUL [Person] Medium
-syncR' = Case
-  [ $(normalSV [p| [] |] [p| [] |] [p| [] |])
-    ==> $(update [p| _ |] [p| [] |] [d| |])
-  , $(normal [| \(p:ps) ((familyName, [(firstName, gender)]) : _) ->
-                  getFamilyName p == familyName && getFirstName p == firstName && isMale p == gender &&
-                    lastMemberReached (p:ps) |]
-             [| lastMemberReached |])
-    ==> Case
-          [ $(normalSV [p| _ |] [p| ((_, [(_, True)]):_) |] [| \(p:_) -> isMale p |])
-            ==> $(rearrS [| \((Male fullName _):ps) -> (fullName, ps) |])$
-                  $(rearrV [| \((familyName, [(firstName, True)]):vs) -> ((familyName, firstName), vs) |])$
-                    fuseName `Prod` syncR'
-          , $(normalSV [p| _ |] [p| ((_, [(_, False)]):_) |] [| \(p:_) -> not (isMale p) |])
-            ==> $(rearrS [| \((Female fullName _):ps) -> (fullName, ps) |])$
-                  $(rearrV [| \((familyName, [(firstName, False)]):vs) -> ((familyName, firstName), vs) |])$
-                    fuseName `Prod` syncR'
-          ]
-  , $(normal [| \(p:ps) ((familyName, (firstName, gender):_) : _) ->
-                  getFamilyName p == familyName && getFirstName p == firstName && isMale p == gender &&
-                    not (lastMemberReached (p:ps)) |]
-             [| not . lastMemberReached |])
-    ==> Case
-          [ $(normalSV [| \(p:_) -> isMale p |] [p| _ |] [| \(p:_) -> isMale p |])
-            ==> $(rearrS [| \((Male fullName _):ps) -> (fullName, ps) |])$
-                  $(rearrV [| \((familyName, (firstName, True):ns):vs) -> ((familyName,firstName), (familyName,ns):vs) |])$
-                    fuseName `Prod` syncR'
-          , $(normalSV [| \(p:_) -> not (isMale p) |] [p| _ |] [| \(p:_) -> not (isMale p) |])
-            ==> $(rearrS [| \((Female fullName _):ps) -> (fullName, ps) |])$
-                  $(rearrV [| \((familyName, (firstName, False):ns):vs) -> ((familyName,firstName), (familyName,ns):vs) |])$
-                    fuseName `Prod` syncR'
-          ]
-  , $(adaptive [| \_ _ -> otherwise |])
-    ==> adaptPersons
-  ]
-  where
-    adaptPersons :: [Person] -> [(String, [(String, Bool)])] -> [Person]
-    adaptPersons ps ms =
-      let pss = map ((getFamilyName . head) &&& map (changeFullName (snd . splitFullName)))
-                    (groupBy ((==) `on` getFamilyName) ps)
-      in  concat [ map (changeFullName ((familyName ++ ", ") ++))
-                       (adaptFamily (maybe [] id (lookup familyName pss)) ns) | (familyName, ns) <- ms ]
-    adaptFamily :: [Person] -> [(String, Bool)] -> [Person]
-    adaptFamily ps [] = []
-    adaptFamily ps ((firstName, gender):ms) =
-      case find (\p -> getFullName p == firstName && isMale p == gender) ps of
-        Just p  -> p : adaptFamily (delete p ps) ms
-        Nothing -> (if gender then Male else Female) firstName "Thu Jan 01 00:00:00 CET 1" : adaptFamily ps ms
+syncR :: BiGUL PersonRegister MediumR
+syncR =
+  $(rearrS [| \(PersonRegister ps) -> ps |])$
+    align (const True)
+          (\p ((familyName, firstName), gender) ->
+            getFamilyName p == familyName && getFirstName p == firstName && isMale p == gender)
+          (Case
+             [ $(normalSV [p| Male _ _ |] [p| _ |] [p| Male _ _ |])
+               ==> $(update [p| Male name _ |] [p| (name, True) |] [d| name = fuseName |])
+             , $(normalSV [p| Female _ _ |] [p| _ |] [p| Female _ _ |])
+               ==> $(update [p| Female name _ |] [p| (name, False) |] [d| name = fuseName |])
+             ])
+          (\((familyName, firstName), gender) ->
+             (if gender then Male else Female) (familyName ++ ", " ++ firstName) "Thu Jan 01 00:00:00 CET 1")
+          (const Nothing)
 
 
 --------
--- synchronisation with families
+-- intermediate grouping
+
+type MediumL = [(String, [(String, Bool)])]  -- family name, first name, is male
+
+extract :: (Ord a, Show a) => BiGUL (a, [a]) [a]
+extract = Case
+  [ $(normal [| \(s, _) (v:_) -> v == s |] [| \(s, ss) -> null ss || head ss >= s |])
+    ==> $(update [p| (x, xs) |] [p| x:xs |] [d| x = Replace; xs = Replace |])
+  , $(normal [| \(s, _:_) (v:_) -> v < s |] [| \(s, s':_) -> s' < s |])
+    ==> $(rearrS [| \(s, s':ss) -> (s', (s, ss)) |])$
+          $(rearrV [| \(v:vs) -> (v, vs) |])$
+            Replace `Prod` extract
+  , $(adaptive [| \(s, []) (v:_) -> v < s |])
+    ==> \(s, _) _ -> (s, [undefined])
+  ]
+
+syncM :: BiGUL MediumL MediumR
+syncM = Case
+  [ $(normalSV [p| [] |] [p| [] |] [p| [] |])
+    ==> $(update [p| _ |] [p| [] |] [d| |])
+  , $(normalSV [p| ((familyName, []):_) |] [p| _ |] [p| (_, []):_ |])
+    ==> $(update [p| _:rest |] [p| rest |] [d| rest = syncM |])
+  , $(normal [| \((familyName, (firstName, gender):_):_) vs -> ((familyName, firstName), gender) `elem` vs |]
+             [p| (_, _:_):_ |])
+    ==> $(rearrS [| \((familyName, (firstName, gender):ns):ss) ->
+                      (((familyName, firstName), gender), (familyName, ns):ss) |])$
+          (Replace `Prod` syncM) `Compose` extract
+  , $(adaptive [| \_ _ -> otherwise |])
+    ==> adapt
+  ]
+  where
+    adapt :: MediumL -> MediumR -> MediumL
+    adapt [] vs = map ((fst . fst . head) &&& map (snd *** id)) (groupBy ((==) `on` (fst . fst)) vs)
+    adapt ((familyName, ns):ss) vs =
+      let ns' :: [(String, Bool)]
+          ns' = concat (map snd (filter ((== familyName) . fst) ss))
+          vs' :: [(String, Bool)]
+          vs' = map (snd *** id) (filter ((== familyName) . fst . fst) vs) \\ (ns' \\ ns)
+      in  (familyName, vs') : adapt ss (vs \\ (map ((familyName,) *** id) vs'))
+
+
+----------
+---- synchronisation with families
 
 promoteParent :: BiGUL (Maybe FamilyMember, [String]) [String]
 promoteParent = Case
@@ -191,23 +174,11 @@ promoteParent = Case
     ==> $(update [p| (_, ns) |] [p| ns |] [d| ns = Replace |])
   , $(normal [| \(Just (FamilyMember parentName), _) vs -> parentName `elem` vs |] [p| (Just _, _) |])
     ==> $(rearrS [| \(Just (FamilyMember n), ns) -> (n, ns) |])$
-          promoteParent'
+          extract
   , $(adaptive [| \_ _ -> otherwise |])
     ==> \(_, ns) vs -> case vs \\ ns of
                          []  -> (Nothing, vs)
                          n:_ -> (Just (FamilyMember n), delete n vs)
-  ]
-
-promoteParent' :: BiGUL (String, [String]) [String]
-promoteParent' = Case
-  [ $(normal [| \(s, _) (v:_) -> v == s |] [| \(s, ns) -> null ns || head ns >= s |])
-    ==> $(update [p| (n, ns) |] [p| n:ns |] [d| n = Replace; ns = Replace |])
-  , $(normal [| \(s, _:_) (v:_) -> v < s |] [| \(s, n:ns) -> n < s |])
-    ==> $(rearrS [| \(s, n:ns) -> (n, (s, ns)) |])$
-          $(rearrV [| \(v:vs) -> (v, vs) |])$
-            Replace `Prod` promoteParent'
-  , $(adaptive [| \(s, []) (v:_) -> v < s |])
-    ==> \(s, _) _ -> (s, [undefined])
   ]
 
 classifyByGender :: BiGUL ([String],[String]) [(String, Bool)]
@@ -218,7 +189,7 @@ classifyByGender = Case
     ==> \_ vs -> (map fst (filter snd vs), map fst (filter (not . snd) vs))
   ]
 
-syncL :: BiGUL FamilyRegister Medium
+syncL :: BiGUL FamilyRegister MediumL
 syncL = $(rearrS [| \(FamilyRegister fs) -> fs |])$
           align isNonEmptyFamily
                 (\(Family { familyName = x }) (y, _) -> x == y)
@@ -239,10 +210,14 @@ syncL = $(rearrS [| \(FamilyRegister fs) -> fs |])$
     familyMemberWrapper =
       align (const True) (\_ _ -> True) ($(rearrS [| \(FamilyMember n) -> n |]) Replace) FamilyMember (const Nothing)
 
+
+----------
+---- main program
+
 main :: IO ()
 main = do
   (dir, familyRegister, personRegister) <- read <$> getContents
   case dir of
-    "fwd" -> maybe exitFailure print (get syncL familyRegister >>= put syncR personRegister)
-    "bwd" -> maybe exitFailure print (get syncR personRegister >>= put syncL familyRegister)
+    "fwd" -> maybe exitFailure print (get (syncL `Compose` syncM) familyRegister >>= put syncR personRegister)
+    "bwd" -> maybe exitFailure print (get syncR personRegister >>= put (syncL `Compose` syncM) familyRegister)
     _     -> exitFailure
